@@ -1,0 +1,3 @@
+RewriteEngine On
+RewriteRule ^([^/.]+)$ profile.php?profile_username=$1
+RewriteRule ^([^/.]+)/$ profile.php?profile_username=$1

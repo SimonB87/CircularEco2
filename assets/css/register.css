@@ -1,0 +1,8 @@
+.thewrapped {
+	background-image: url("../images/backgrounds/desktop.jpg");
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+	height: 100vh;
+	min-width: 950px;
+}

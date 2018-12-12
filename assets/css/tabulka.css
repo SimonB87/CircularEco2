@@ -1,0 +1,63 @@
+/*Styl pro tabulku*/
+
+.main_column{
+  /*width: 76%;*/
+}
+
+
+.tabulka {
+  margin: 1em 0;
+  width: 100%;
+  overflow: hidden;
+  background: #fff;
+  color: #024457;
+  border-radius: 10px;
+  border: 1px solid #167f92;
+  display: block;
+  text-align: center;
+}
+
+.tabulka tr{
+  padding: 3px 3px;
+  /*border: 2px solid #000;*/
+}
+
+.tabheader {
+   /*display: table-cell;*/
+   padding: 1px;
+   border: 1px solid #fff;
+   background-color: #20aae5;
+   color: #FFF;
+   text-align: justify;
+}
+
+.tabheader td:nth-child(2){
+   background-color: #8fd4f2;
+}
+
+.tabulka_id{
+   width: 20px;
+   color: #20aae5;
+}
+
+ th{
+   /*border: 2px solid #000;*/
+ }
+
+table td {
+  padding: 3px 3px;
+  border: 1px solid #fff;
+}
+
+.tabulka tr:nth-child(even){
+  background-color: lightgray;
+  /*border: 2px solid #000;*/
+}
+
+.hledej {
+  width: 100%;
+  font-size: 12px;
+  padding: 12px 10px 12px 10px;
+  border: 1px solid #ddd;
+  margin-bottom: 12px;
+}
