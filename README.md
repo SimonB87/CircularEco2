@@ -16,3 +16,6 @@ This is link to the [Social website](http://simonburyan.cz/circ/register.php).
 Current: Section 10 Lecture 106.
 
 LocalHost version: database archive provided as for Lesson 105.
+
+*Local station:
+c:\xampp\htdocs\circ8\
