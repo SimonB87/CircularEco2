@@ -108,7 +108,7 @@ nav a:hover{
   float: right;
   width: 70%;
   z-index: -1;
-  min-height: 160px;
+  min-height: 170px;
   position: relative;
 }
 
@@ -346,7 +346,7 @@ iframe{
 /*Styl pro tabulku - začatek */
 
 .main_column{
-  width: 76%;
+  width: 70%;
 }
 
 
@@ -465,4 +465,62 @@ table td {
   max-height: 450px;
   overflow: scroll;
   margin-bottom: 10px;
+}
+
+.loaded_conversations {
+  max-height: 316px;
+  overflow: scroll;
+}
+
+.user_found_messages {
+  border-bottom: 1px solid #d3d3d3;
+  padding: 8px 8px 10px 10px;
+}
+
+.user_found_messages:hover {
+  background-color: #d3d3d3;
+}
+
+.user_found_messages img {
+  height: 35px;
+  float: left;
+}
+
+#grey {
+  color: #8c8c8c;
+}
+
+/*Live search styling*/
+
+.resultDisplay {
+  padding: 5px 5px 0px 5px;
+  height: 65px;
+  border-bottom: 1px solid #d3d3d3;
+}
+
+.resultDisplay a {
+  float: none;
+}
+
+.resultDisplay:hover {
+  background-color: #EBEBEB;
+  text-decoration: none;
+}
+
+.liveSearchProfilePic img {
+  height: 50px;
+  width: 50px;
+  border-radius: 25px;
+  margin: 1px 12px 0 2px;
+  float: left;
+}
+
+.liveSearchText{
+  background-color: transparent;
+  color: #1e96ca;
+}
+
+.liveSearchText p{
+  margin-left: 10px;
+  font-size: 12px;
 }

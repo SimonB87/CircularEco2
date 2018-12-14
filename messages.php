@@ -23,7 +23,6 @@ if($user_to != "new")
 		}
 	}
 
-
 ?>
 
 <div class="user_details column">
@@ -42,6 +41,7 @@ if($user_to != "new")
 
      ?>
    </div>
+
  </div>
 
  <div class="main_column column" id="main_column">
@@ -56,27 +56,46 @@ if($user_to != "new")
 	 }
    ?>
 
-
-
 	 <div class="message_post">
-     <form class="" action="" method="POST">
-       <?php
-       if($user_to == "new") {
-         echo "Select the friends you would like to message <br><br>";
-         echo "To: <input type='text'>";
-         echo "<div class='results'></div>";
-       }
-       else {
-         echo "<textarea name='message_body' id='message_textarea' placeholder='Write your message ...'></textarea>";
-         echo "<input type='submit' name='post_message' class='info' id='message_submit' value='Send This'>";
-       }
-       ?>
-     </form>
-   </div>
+		 <form action="" method="POST">
+			 <?php
+			 if($user_to == "new") {
+				 echo "Select the friend you would like to message <br><br>";
+				 ?>
+				 To: <input type='text' onkeyup='getUsers(this.value, "<?php echo $userLoggedIn; ?>")' name='q' placeholder='Name' autocomplete='off' id='seach_text_input'>
 
+				 <?php
+				 echo "<div class='results'></div>";
+			 }
+			 else {
+				 echo "<textarea name='message_body' id='message_textarea' placeholder='Write your message ...'></textarea>";
+				 echo "<input type='submit' name='post_message' class='info' id='message_submit' value='Send'>";
+			 }
+
+			 ?>
+		 </form>
+
+	 </div>
+
+	 <script>
+			 var div = document.getElementById("scroll_messages");
+
+			 if(div != null) {
+					 div.scrollTop = div.scrollHeight;
+			 }//There was a bug, that was corrected oonly in QnA answer.
+	 </script>
 
  </div>
-<script>
-	var div = document.getElementById("scroll_messages");
-	div.scrollTop = div.scrollHeight;
-</script>
+
+
+ <div class="user_details column" id="conversations">
+		 <h4>Conversations</h4>
+
+		 <div class="loaded_conversations">
+			 <?php echo $message_obj->getConvos(); ?>
+		 </div>
+		 <br>
+	 <!-- a link to a new message-->
+	 <a href="messages.php?u=new">New Message</a>
+
+ </div>
