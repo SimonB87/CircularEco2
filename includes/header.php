@@ -3,6 +3,7 @@ require 'config/config.php';
 include("includes/classes/User.php");
 include("includes/classes/Post.php");
 include("includes/classes/Message.php");
+include("includes/classes/Notification.php");
 
  /*if the user is loggen in, make the username variable equal to username. If user is not logged in, send him back to register page.*/
 if (isset($_SESSION['username'])) {
@@ -50,24 +51,129 @@ else {
     <a href="index.php">Circularní Projekty</a>
   </div>
 
+  <div class="search">
+    <form action="search.php" method="GET" name="search_form">
+      <input type="text" onkeyup="getLiveSearchUsers(this.value, '<?php echo $userLoggedIn; ?>')" name="q" placeholder="Hledejte..." autocomplete="off" id="search_text_input">
+        <!-- this.value is the value of whatever is being typed. -->
+        <div class="button_holder">
+            <img src="assets/images/searchicon.png" alt="">
+        </div>
+    </form>
+
+    <div class="search_results"><!-- this was missing -->
+    </div>
+    <div class="search_results_footer_empty"><!-- this was there -->
+    </div>
+  </div>
+
   <nav>
+    <?php
+      //Unread Messages.
+      $messages = new Message($con, $userLoggedIn);
+      $num_messages = $messages->getUnreadNumber();
+      //Unread Notifications.
+      $notifications = new Notification($con, $userLoggedIn);
+      $num_notifications = $notifications->getUnreadNumber();
+      //Unread Requests.
+      $user_obj = new User($con, $userLoggedIn);
+      $num_requests = $user_obj->getNumberOfFriendRequest();
+     ?>
+
+
     <a href="#">
       <?php
         echo $user['first_name'];
       ?>
     </a>
-    <a href="index.php"><i class="fa fa-home fa-lg"></i></a>
-    <a href="project.php"> Projekty <i class='fas fa-frog'></i> </a>
-    <a href="messages.php"> Zprávy <i class="fa fa-envelope fa-lg"></i></a>
-    <a href="#"><i class="fa fa-bell-o fa-lg"></i></a>
-    <a href="requests.php"> Žádosti <i class="fa fa-users fa-lg"> </i></a>
-    <a href="upload.php"> Profilovka <i class="fa fa-cog fa-lg"></i></a>
-    <a href="#"><i class="fas fa-question"></i></a><!-- link to user-manual -->
-    <a href="contact.php"> Kontakt <i class="far fa-comment"></i></a><!-- link to user-manual -->
-    <a href="includes\handlers\logout.php"><i class="fa fa-sign-out-alt fa-lg"></i></a>
+    <a href="index.php" class="mainMenuItems"><i class="fa fa-home fa-lg"></i></a>
+    <a href="project.php" class="mainMenuItems"> Projekty <i class='fas fa-frog'></i> </a>
+    <!--
+    <a href="messages.php" class="mainMenuItems"><i class="far fa-comment-alt"></i></i></a>
+    -->
+    <a href="javascript:void(0);" onclick="getDropdownData('<?php echo $userLoggedIn; ?>', 'message')" class="mainMenuItems"> Zprávy
+      <i class="fa fa-envelope fa-lg"></i>
+        <?php
+        if($num_notifications > 0){
+            echo '<span class="notification_badge" id="unread_notifications">' . $num_notifications .'</span> ';
+        }
+        ?>
+        </a>
+    <a href="javascript:void(0);" onclick="getDropdownData('<?php echo $userLoggedIn; ?>', 'notification')"  class="mainMenuItems">
+      <i class="fas fa-eye"></i>Upozornění</a>
+        <?php
+        if($num_messages > 0){
+            echo '<span class="notification_badge" id="unread_message">' . $num_messages .'</span> ';
+        }
+        ?>
+
+
+    <a href="requests.php" class="mainMenuItems"> Žádosti <i class="fa fa-users fa-lg"> </i></a>
+        <?php
+        if($num_requests > 0){
+            echo '<span class="notification_badge" id="unread_requests">' . $num_requests .'</span> ';
+        }
+        ?>
+    <a href="upload.php" class="mainMenuItems"> Profilovka <i class="fa fa-cog fa-lg"></i></a>
+    <a href="settings.php" class="mainMenuItems"> Nastavení <i class="fa fa-cog fa-lg"></i></a>
+    <a href="#" class="mainMenuItems"><i class="fas fa-question"></i></a><!-- link to user-manual -->
+    <a href="contact.php" class="mainMenuItems"> Kontakt <i class="far fa-comment"></i></a><!-- link to user-manual -->
+    <a href="includes\handlers\logout.php" class="mainMenuItems"><i class="fa fa-sign-out-alt fa-lg"></i></a>
 
   </nav>
 
+  <div class="dropdown_data_window" style="height:0px; border:none;"></div>
+    <input type="hidden" id="dropdown_data_type" value="">
+  </div>
+
 </div>
+
+<script>
+var userLoggedIn = '<?php echo $userLoggedIn; ?>';
+
+$(document).ready(function() {
+
+  $('.dropdown_data_window').scroll(function() {
+    var inner_height = $('.dropdown_data_window').innerHeight(); //Div containing data
+    var scroll_top = $('.dropdown_data_window').scrollTop();
+    var page = $('.dropdown_data_window').find('.nextPageDropdownData').val();
+    var noMoreData = $('.dropdown_data_window').find('.noMoreDropdownData').val();
+
+    if ((scroll_top + inner_height >= $('.dropdown_data_window')[0].scrollHeight) && noMoreData == 'false') {
+
+      var pageName; //Holds name of page to send ajax request to
+      var type = $('#dropdown_data_type').val();
+
+
+      if(type == 'notification')
+        pageName = "ajax_load_notifications.php";
+      else if(type = 'message')
+        pageName = "ajax_load_messages.php"
+
+
+      var ajaxReq = $.ajax({
+        url: "includes/handlers/" + pageName,
+        type: "POST",
+        data: "page=" + page + "&userLoggedIn=" + userLoggedIn,
+        cache:false,
+
+        success: function(response) {
+          $('.dropdown_data_window').find('.nextPageDropdownData').remove(); //Removes current .nextpage
+          $('.dropdown_data_window').find('.noMoreDropdownData').remove(); //Removes current .nextpage
+
+
+          $('.dropdown_data_window').append(response);
+        }
+      });
+
+    } //End if
+
+    return false;
+
+  }); //End (window).scroll(function())
+
+
+});
+
+</script>
 
 <div class="wrapper">

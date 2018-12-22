@@ -26,8 +26,8 @@ a {
   width: 100%;
   min-width: 1050px; /*set up a minimal screen width*/
   height: 40px;
-  background-color: #20aae5;
-  border-bottom: 0.25em solid #2980b9;
+  background-color: #057705;
+  border-bottom: 0.25em solid #16db16;
   margin: 0 0 10px 0;
   display: inline-flex;
   position: fixed; /*make the nav fixed*/
@@ -53,6 +53,7 @@ nav {
   right: 2px;
   position: absolute;
   margin: 10px 10px 10px 10px;
+  z-index: 1;
 }
 
 nav a{
@@ -60,6 +61,7 @@ nav a{
   color: #fff;
   text-decoration: none;
   font-size: 17px;
+  z-index: 1;
 }
 
 nav a:hover{
@@ -82,6 +84,7 @@ nav a:hover{
   border-radius: 5px;
   box-shadow: 2px 2px 1px #d3d3d3;
   z-index: -1;
+  color: #555;
 }
 
 .user_details{
@@ -132,7 +135,7 @@ nav a:hover{
   height: 60px;
   border: none;
   border-radius: 5px;
-  background-color: #3498db;
+  background-color: #057705;
   font-family: 'Bellota-BoldItalic', sans-serif;
   color: #fff;
   text-shadow: #73b6e2 0.5px 0.5px 0px;
@@ -245,7 +248,7 @@ iframe{
   height: 100%;
   float: left;
   position: relative;
-  background-color: #37B0E9;
+  background-color: #37B0E9;/***********/
   border-right: 10px solid #83D6FE;
   color: #CBEAF8;
   margin-right: 20px;
@@ -269,6 +272,10 @@ iframe{
 .profile_info p {
   margin: 0 0 0 20px;
   word-wrap: break-word;
+}
+
+.tab-content{
+  margin-top: 25px;
 }
 
 .danger {
@@ -494,7 +501,7 @@ table td {
 
 .resultDisplay {
   padding: 5px 5px 0px 5px;
-  height: 65px;
+  height: 70px;
   border-bottom: 1px solid #d3d3d3;
 }
 
@@ -523,4 +530,178 @@ table td {
 .liveSearchText p{
   margin-left: 10px;
   font-size: 12px;
+}
+
+.dropdown_data_window {
+  height: 280px;
+  padding: 0px;
+  background-color: #fff;
+  border: 1px solid #dadada;
+  border-radius: 0 0 8px 8px;
+  border-top: none;
+  width: 300px;
+  position: absolute;
+  right: 10px;
+  top: 40px;
+  overflow: scroll;
+}
+
+.notification_badge {
+  padding: 3px 7px;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1;
+  color: #fff;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: baseline;
+  background-color: #F00;
+  border-radius: 10px;
+  position: absolute;
+  right: -2px;
+  top: -5px;
+  z-index: +1;
+}
+
+.mainMenuItems{
+  /*padding-left: 6px;*/
+}
+
+/* Notification */
+
+.resultDisplayNotification{
+  height: auto;
+  color: #1485BD;
+}
+
+.resultDisplayNotification img {
+  height: 40px;
+  border-radius: 5px;
+  margin: 1px 12px 0px 2px;
+  float: left;
+}
+
+.timestamp_smaller {
+  font-size: 85%;
+  margin: 0;
+}
+
+.search{
+  margin: 8px 0 0 15%;
+}
+
+.search #search_text_input {
+  border: thin solid #e5e5e5;
+  float: left;
+  height: 23px;
+  outline: 0;
+  width: 100px;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.button_holder{
+  background-color: #f1f1f1;
+  border: thin solid #e5e5e5;
+  cursor: pointer;
+  float: left;
+  height: 23px;
+  text-align: center;
+  width: 50px;
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+}
+
+.button_holder img{
+  margin-top: 1px;
+  width: 20px;
+}
+
+
+.search_results {
+  background-color: #fff;
+  border: 1px solid #dadada;
+  border-bottom: none;
+  border-top: none;
+  margin-top: 21px;
+}
+
+.search_results_footer {
+  color: #fff;
+  background-color: #20AAE5;
+  padding: 7px 4px 0px 4px;
+  border: 1px solid #dadada;
+  border-top: none;
+  text-align: center;
+}
+
+.search_results_footer a{
+  color: #fff;
+  text-decoration: none;
+}
+
+.search_result{
+  padding: 10px;
+  height: 100px;
+}
+
+.searchPageFriendButtons{
+  float: right;
+}
+
+.searchPageFriendButtons input[type="submit"]{
+  border: none;
+  border-radius: 5px;
+  padding: 7px 12px;
+  color: #fff;
+}
+
+
+.result_profile_pic{
+  float: left;
+  margin-right: 10px;
+}
+
+#search_hr{
+  margin-bottom: 0px;
+}
+
+#small_profile_pic {
+  height: 55px;
+  margin: 1px 12px 0 2px;
+  float: left;
+}
+
+.settingspara{
+  width: 350px;
+}
+
+.settingsin{
+  float: right;
+  width: 200px;
+}
+
+#settings_input{
+  border: 1px solid #ccc;
+  height: 20px;
+  padding: 4px 6px;
+  margin-bottom: 10px;
+  border-radius: 4px;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.settings_submit{
+  border: none;
+  border-radius: 5px;
+  padding: 7px 12px;
+  color: #fff;
+  margin: 5px 0 20px 0;
+}
+
+.postedImage img{
+  max-width: 100%;
+  max-height: 300px;
+  display: block;
+  margin: 5px auto;
 }

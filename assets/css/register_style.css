@@ -23,7 +23,7 @@ body{
 
 a {
 	text-decoration: none;
-	color: #3498db;
+	color: #057705;
 }
 
 .thewrapped {
@@ -53,7 +53,7 @@ a {
 	font-family: 'Bellota-LightItalic', sans-serif;
 	width: 100%;
 	height: 90px;
-	background-color: #3498db;
+	background-color: #057705;
 	color: #fff;
 	text-align: center;
 	border-top-left-radius: 7px;
@@ -64,18 +64,18 @@ a {
 	font-family: 'Bellota-BoldItalic', sans-serif;
 	margin-top: 0;
 	margin-bottom: 0;
-	color: #2C6C96;
+	color: #DDF3D5;
 	text-shadow: #73B6E2 0.5px 0.5px 0px;
 	font-size: 250%;
 }
 
 input[type="submit"] {
-	background-color: #3498db;
-	border: 1px solid #3498db;
+	background-color: #057705;
+	border: 1px solid #DDF3D5;
 	border-radius: 3px;
 	margin: 5px 0 10px 0;
 	padding: 5px 10px 5px 10px;
-	color: #2C6C96;
+	color: #fff;
 	text-shadow: #73B6E2 0.5px 0.5px 0px;
 	font-family: 'Bellota-BoldItalic', sans-serif;
 	font-size: 100%;

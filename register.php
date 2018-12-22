@@ -7,7 +7,7 @@ require 'includes/form_handlers/login_handler.php';
 
 <html>
 <head>
-	<title>Welcome to CircEco!</title>
+	<title>Cirkulární projekty | Web pro projekty v Cirkulární ekonomice a Oběhovém hospodářství</title>
 	<link rel="stylesheet" type="text/css" href="assets/css/register_style.css">
 	<link rel="stylesheet" type="text/css" href="assets/css/register.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
@@ -40,7 +40,7 @@ require 'includes/form_handlers/login_handler.php';
 		<div class="login_box">
 
 			<div class="login_header">
-				<h1>CircEco!</h1>
+				<h1>Cirkulární projekty</h1>
 				Login or sign up below!
 			</div>
 			<br>

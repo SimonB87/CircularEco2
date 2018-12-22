@@ -5,8 +5,45 @@ include("includes/header.php");
 session_destroy();*/
 
 if(isset($_POST['post'])){
+	$uploadOk = 1;
+$imageName = $_FILES['fileToUpload']['name'];
+$errorMessage = "";
+
+if($imageName != "") {
+	$targetDir = "assets/images/posts/";
+	$imageName = $targetDir . uniqid() . basename($imageName);
+	$imageFileType = pathinfo($imageName, PATHINFO_EXTENSION);
+
+	if($_FILES['fileToUpload']['size'] > 10000000) {
+		$errorMessage = "Sorry your file is too large";
+		$uploadOk = 0;
+	}
+
+	if(strtolower($imageFileType) != "jpeg" && strtolower($imageFileType) != "png" && strtolower($imageFileType) != "jpg") {
+		$errorMessage = "Sorry, only '.jpeg', '.jpg' and '.png' files are allowed";
+		$uploadOk = 0;
+	}
+
+	if($uploadOk) {
+		if(move_uploaded_file($_FILES['fileToUpload']['tmp_name'], $imageName)) {
+			//image uploaded okay
+		}
+		else {
+			//image did not upload
+			$uploadOk = 0;
+		}
+	}
+
+}
+if($uploadOk) {
 	$post = new Post($con, $userLoggedIn);
-	$post->submitPost($_POST['post_text'], 'none');
+	$post->submitPost($_POST['post_text'], 'none', $imageName);
+} else {
+	echo "<div class='alert alert-danger' style='text-align: center;'>
+		$errorMessage
+	</div>";
+}
+
 }
 
 ?>
@@ -34,7 +71,8 @@ if(isset($_POST['post'])){
 
 	<div class="main_column column">
 
-		<form class="post_form" action="index.php" method="POST">
+		<form class="post_form" action="index.php" method="POST" enctype="multipart/form-data">
+			<input type="file" name="fileToUpload" id="fileToUpload">
 			<textarea name="post_text" id="post_text"  placeholder="Got something to share?"></textarea>
 			<input type="submit" name="post" value="POST">
 			<hr>
@@ -54,13 +92,34 @@ if(isset($_POST['post'])){
 
 	</div>
 
+	<div class="user_details column">
+		<h4>Popular topics</h4>
+		<div class="trends">
+			<?php
+				$query = mysqli_query($con, "SELECT * FROM trends ORDER BY hits DESC LIMIT 9");
+				foreach ($query as $row) {
+					$word = $row['title'];
+					$word_dot = strlen($word) >= 14 ? "..." : "";
+
+					$trimmed_word = str_split($word, 14);
+					$trimmed_word = $trimmed_word[0];
+
+					echo "<div style='padding: 1px'>";
+					echo $trimmed_word . $word_dot;
+					echo "<br></div>";
+
+				}
+
+			?>
+		</div>
+
+	</div>
+
 	<script>
 	var userLoggedIn = '<?php echo $userLoggedIn; ?>';
-	/* Script for loading post animation */
-	$(document).ready(function(){
+	$(document).ready(function() {
 		$('#loading').show();
-
-		/*original ajax request for loading first posts.*/
+		//Original ajax request for loading first posts
 		$.ajax({
 			url: "includes/handlers/ajax_load_posts.php",
 			type: "POST",
@@ -72,16 +131,16 @@ if(isset($_POST['post'])){
 				$('.posts_area').html(data);
 			}
 		});
+
 		$(window).scroll(function() {
-			var height = $('.posts_area').height(); //Put the height of this as the div cotaining posts.
+			var height = $('.posts_area').height(); //Div containing posts
 			var scroll_top = $(this).scrollTop();
 			var page = $('.posts_area').find('.nextPage').val();
 			var noMorePosts = $('.posts_area').find('.noMorePosts').val();
 
-			if((document.body.scrollHeight == document.body.scrollTop + window.innerHeight) && noMorePosts == 'false'){
+			if ((document.body.scrollHeight == document.body.scrollTop + window.innerHeight) && noMorePosts == 'false') {
 				$('#loading').show();
 
-				/*original ajax request for loading first posts.*/
 				var ajaxReq = $.ajax({
 					url: "includes/handlers/ajax_load_posts.php",
 					type: "POST",
@@ -89,18 +148,19 @@ if(isset($_POST['post'])){
 					cache:false,
 
 					success: function(response) {
-						$('.posts_area').find('.nextPage').remove();//removes current .nextPage
-						$('.posts_area').find('.noMorePosts').remove();//
+						$('.posts_area').find('.nextPage').remove(); //Removes current .nextpage
+						$('.posts_area').find('.noMorePosts').remove(); //Removes current .nextpage
+
 						$('#loading').hide();
 						$('.posts_area').append(response);
 					}
 				});
-
-			}//end if statement.
+			} //End if
 			return false;
-		});//end $(window).scroll(function()
+		}); //End (window).scroll(function())
 	});
 	</script>
+
 </div> <!-- closing of the wrapper div, this div stars in the included header file-->
 
 </body>
