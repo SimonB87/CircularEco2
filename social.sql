@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Počítač: 127.0.0.1
--- Vytvořeno: Stř 19. pro 2018, 00:03
+-- Vytvořeno: Sob 22. pro 2018, 21:45
 -- Verze serveru: 10.1.30-MariaDB
 -- Verze PHP: 7.2.1
 
@@ -175,7 +175,7 @@ INSERT INTO `messages` (`id`, `user_to`, `user_from`, `body`, `date`, `opened`, 
 (30, 'joe_smith', 'simon_buryan', 'ÄŒau!', '2018-12-14 18:42:58', 'yes', 'yes', 'no'),
 (31, 'joe_smith', 'simon_buryan', 'ÄŒau!', '2018-12-14 18:51:59', 'yes', 'yes', 'no'),
 (32, 'simon_buryan', 'petr_petrov', 'hi there clever guy.', '2018-12-15 19:45:35', 'yes', 'yes', 'no'),
-(33, 'simon_buryan', 'joe_smith', 'I send you greeting from the town :-)', '2018-12-15 19:56:56', 'no', 'yes', 'no'),
+(33, 'simon_buryan', 'joe_smith', 'I send you greeting from the town :-)', '2018-12-15 19:56:56', 'yes', 'yes', 'no'),
 (34, 'simon_buryan', 'george_smith', 'ho are you rolling?', '2018-12-15 20:00:16', 'yes', 'yes', 'no'),
 (35, 'simon_buryan', 'george_smith', 'Doing good? :-)', '2018-12-15 20:00:31', 'yes', 'yes', 'no'),
 (36, 'simon_buryan', 'jim_yanke', 'hi there', '2018-12-15 20:01:11', 'yes', 'yes', 'no'),
@@ -189,12 +189,15 @@ INSERT INTO `messages` (`id`, `user_to`, `user_from`, `body`, `date`, `opened`, 
 (44, 'simon_buryan', 'aneta_aneta', 'Äau', '2018-12-15 21:44:57', 'yes', 'yes', 'no'),
 (45, 'jim_yanke', 'simon_buryan', 'Hello my friend :-)', '2018-12-15 22:51:51', 'no', 'no', 'no'),
 (46, 'george_smith', 'simon_buryan', 'hello there', '2018-12-17 12:42:49', 'yes', 'yes', 'no'),
-(47, 'simon_buryan', 'george_smith', 'how is life in P?', '2018-12-17 21:51:30', 'no', 'yes', 'no'),
-(48, 'simon_buryan', 'george_smith', 'how is life in P?', '2018-12-17 21:51:44', 'no', 'yes', 'no'),
-(49, 'simon_buryan', 'george_smith', 'amigo!', '2018-12-17 22:00:08', 'no', 'yes', 'no'),
-(50, 'simon_buryan', 'joe_smith', 'hi there, man ;-)', '2018-12-18 20:36:59', 'no', 'yes', 'no'),
+(47, 'simon_buryan', 'george_smith', 'how is life in P?', '2018-12-17 21:51:30', 'yes', 'yes', 'no'),
+(48, 'simon_buryan', 'george_smith', 'how is life in P?', '2018-12-17 21:51:44', 'yes', 'yes', 'no'),
+(49, 'simon_buryan', 'george_smith', 'amigo!', '2018-12-17 22:00:08', 'yes', 'yes', 'no'),
+(50, 'simon_buryan', 'joe_smith', 'hi there, man ;-)', '2018-12-18 20:36:59', 'yes', 'yes', 'no'),
 (51, 'simon_buryan', 'jordan_jake', 'hi there friend.', '2018-12-18 21:50:10', 'yes', 'yes', 'no'),
-(52, 'jordan_jake', 'simon_buryan', 'hi there man', '2018-12-18 22:36:19', 'no', 'no', 'no');
+(52, 'jordan_jake', 'simon_buryan', 'hi there man', '2018-12-18 22:36:19', 'no', 'no', 'no'),
+(53, 'jura_krava', 'simon_buryan', 'cau!', '2018-12-21 21:36:58', 'yes', 'no', 'no'),
+(54, 'simon_buryan', 'jura_krava', 'Äau', '2018-12-22 15:36:15', 'no', 'yes', 'no'),
+(55, 'simon_buryan', 'jura_krava', 'Äau', '2018-12-22 15:36:25', 'no', 'yes', 'no');
 
 -- --------------------------------------------------------
 
@@ -224,14 +227,15 @@ INSERT INTO `notifications` (`id`, `user_to`, `user_from`, `message`, `link`, `d
 (7, 'simon_buryan', 'jordan_jake', 'Jordan Jake commented on your profile post', 'post.php?id=66', '2018-12-18 21:49:35', 'yes', 'yes'),
 (8, 'joe_smith', 'jordan_jake', 'Jordan Jake commented on your post', 'post.php?id=66', '2018-12-18 21:49:37', 'no', 'no'),
 (9, 'simon_buryan', 'jordan_jake', 'Jordan Jake commented on your profile post', 'post.php?id=66', '2018-12-18 21:49:37', 'yes', 'yes'),
-(10, 'simon_buryan', 'jordan_jake', 'Jordan Jake commented on your post', 'post.php?id=56', '2018-12-18 21:49:51', 'no', 'yes'),
+(10, 'simon_buryan', 'jordan_jake', 'Jordan Jake commented on your post', 'post.php?id=56', '2018-12-18 21:49:51', 'yes', 'yes'),
 (11, 'george_smith', 'jordan_jake', 'Jordan Jake commented on your profile post', 'post.php?id=56', '2018-12-18 21:49:51', 'no', 'no'),
 (12, 'simon_buryan', 'jordan_jake', 'Jordan Jake liked your post', 'post.php?id=54', '2018-12-18 21:49:56', 'yes', 'yes'),
 (13, 'simon_buryan', 'jordan_jake', 'Jordan Jake commented on your post', 'post.php?id=54', '2018-12-18 21:50:00', 'yes', 'yes'),
 (14, 'jordan_jake', 'simon_buryan', 'Å imon Buryan commented on your profile post', 'post.php?id=54', '2018-12-18 22:35:01', 'no', 'yes'),
 (15, 'simon_buryan', 'jordan_jake', 'Jordan Jake commented on your post', 'post.php?id=54', '2018-12-18 22:35:30', 'yes', 'yes'),
 (16, 'jordan_jake', 'simon_buryan', 'Å imon Buryan liked your post', 'post.php?id=68', '2018-12-18 22:36:03', 'no', 'yes'),
-(17, 'jordan_jake', 'simon_buryan', 'Å imon Buryan commented on your post', 'post.php?id=68', '2018-12-18 22:36:09', 'no', 'yes');
+(17, 'jordan_jake', 'simon_buryan', 'Å imon Buryan commented on your post', 'post.php?id=68', '2018-12-18 22:36:09', 'no', 'yes'),
+(18, 'simon_buryan', 'jura_krava', 'Jura Krava posted on your profile', 'post.php?id=72', '2018-12-22 15:36:23', 'no', 'yes');
 
 -- --------------------------------------------------------
 
@@ -247,71 +251,88 @@ CREATE TABLE `posts` (
   `date_added` datetime NOT NULL,
   `user_closed` varchar(3) NOT NULL,
   `deleted` varchar(3) NOT NULL,
-  `likes` int(11) NOT NULL
+  `likes` int(11) NOT NULL,
+  `image` varchar(500) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Vypisuji data pro tabulku `posts`
 --
 
-INSERT INTO `posts` (`id`, `body`, `added_by`, `user_to`, `date_added`, `user_closed`, `deleted`, `likes`) VALUES
-(8, 'Fist clear post into the database.', 'simon_buryan', 'none', '2018-09-03 13:11:21', 'no', 'no', 0),
-(9, 'Fist clear post into the database.', 'simon_buryan', 'none', '2018-09-03 13:18:25', 'no', 'no', 0),
-(10, 'Hello', 'simon_buryan', 'none', '2018-09-04 19:35:23', 'no', 'no', 0),
-(14, 'post by Petr Petrov', 'petr_petrov', 'none', '2018-11-24 20:38:11', 'no', 'no', 1),
-(15, 'post by Petr Petrov', 'petr_petrov', 'none', '2018-11-24 20:38:46', 'no', 'no', 1),
-(16, 'my fist post', 'george_smith', 'none', '2018-11-24 20:41:09', 'no', 'no', 1),
-(17, 'Hello world', 'jim_yanke', 'none', '2018-11-24 20:42:26', 'no', 'no', 0),
-(18, 'hello there', 'simon_buryan', 'none', '2018-11-25 20:41:14', 'no', 'no', 1),
-(19, 'good day', 'simon_buryan', 'none', '2018-11-25 20:41:25', 'no', 'no', 0),
-(21, 'I am going to the city now :-)', 'joe_smith', 'none', '2018-12-01 16:24:18', 'no', 'no', 1),
-(22, 'Hi there', 'simon_buryan', 'george_smith', '2018-12-01 23:22:15', 'no', 'no', 0),
-(23, 'sda', 'asdfsd', 'asdfsdaf', '2018-12-01 23:43:25', 'no', 'no', 0),
-(24, 'I like your potatoes.', 'simon_buryan', 'petr_petrov', '2018-12-01 23:43:25', 'no', 'no', 0),
-(25, 'sda', 'asdfsd', 'asdfsdaf', '2018-12-01 23:50:28', 'no', 'no', 0),
-(26, 'Good night', 'petr_petrov', 'none', '2018-12-01 23:50:28', 'no', 'no', 0),
-(27, 'sda', 'asdfsd', 'asdfsdaf', '2018-12-01 23:50:58', 'no', 'no', 0),
-(28, 'I like your blue jacket.', 'petr_petrov', 'simon_buryan', '2018-12-01 23:50:58', 'no', 'no', 1),
-(29, 'sda', 'asdfsd', 'asdfsdaf', '2018-12-03 21:23:58', 'no', 'no', 0),
-(30, 'NejlÃ©pe se diskutuje u poÅ™Ã¡dnÃ©ho kafe.', 'simon_buryan', 'none', '2018-12-03 21:23:58', 'no', 'no', 0),
-(31, 'sda', 'asdfsd', 'asdfsdaf', '2018-12-11 00:01:53', 'no', 'no', 0),
-(32, 'hallo?', 'simon_buryan', 'none', '2018-12-11 00:01:53', 'no', 'no', 0),
-(33, 'sda', 'asdfsd', 'asdfsdaf', '2018-12-12 23:53:42', 'no', 'no', 0),
-(34, 'Hi there :-)', 'petr_petrov', 'simon_buryan', '2018-12-12 23:53:42', 'no', 'no', 1),
-(35, 'sda', 'asdfsd', 'asdfsdaf', '2018-12-14 20:16:51', 'no', 'no', 0),
-(36, 'I feel great today :-)', 'simon_buryan', 'none', '2018-12-14 20:16:51', 'no', 'no', 1),
-(37, 'sda', 'asdfsd', 'asdfsdaf', '2018-12-15 19:46:04', 'no', 'no', 0),
-(38, 'Great evening :-)', 'petr_petrov', 'simon_buryan', '2018-12-15 19:46:04', 'no', 'no', 0),
-(39, 'sda', 'asdfsd', 'asdfsdaf', '2018-12-15 19:53:34', 'no', 'no', 0),
-(40, 'This evening is great :-)', 'jim_yanke', 'none', '2018-12-15 19:53:34', 'no', 'no', 0),
-(41, 'sda', 'asdfsd', 'asdfsdaf', '2018-12-15 19:53:48', 'no', 'no', 0),
-(42, 'hello mister :-)', 'jim_yanke', 'simon_buryan', '2018-12-15 19:53:48', 'no', 'no', 1),
-(43, 'sda', 'asdfsd', 'asdfsdaf', '2018-12-15 19:56:40', 'no', 'no', 0),
-(44, 'Hi there friend :-)', 'joe_smith', 'simon_buryan', '2018-12-15 19:56:40', 'no', 'no', 0),
-(45, 'sda', 'asdfsd', 'asdfsdaf', '2018-12-15 19:59:49', 'no', 'no', 0),
-(46, 'I wish you all having a great time :-)', 'george_smith', 'none', '2018-12-15 19:59:49', 'no', 'no', 1),
-(47, 'sda', 'asdfsd', 'asdfsdaf', '2018-12-15 20:00:04', 'no', 'no', 0),
-(48, 'Hi there amigo :-)', 'george_smith', 'simon_buryan', '2018-12-15 20:00:04', 'no', 'no', 1),
-(49, 'sda', 'asdfsd', 'asdfsdaf', '2018-12-15 21:26:50', 'no', 'no', 0),
-(50, 'hello to all', 'martin_skã¡la', 'none', '2018-12-15 21:26:50', 'no', 'no', 0),
-(51, 'sda', 'asdfsd', 'asdfsdaf', '2018-12-15 21:31:11', 'no', 'no', 0),
-(52, 'Hello there', 'jordan_jake', 'none', '2018-12-15 21:31:11', 'no', 'no', 0),
-(53, 'sda', 'asdfsd', 'asdfsdaf', '2018-12-15 21:32:04', 'no', 'no', 0),
-(54, 'Hello member :-)', 'simon_buryan', 'jordan_jake', '2018-12-15 21:32:04', 'no', 'no', 2),
-(55, 'sda', 'asdfsd', 'asdfsdaf', '2018-12-17 12:42:43', 'no', 'no', 0),
-(56, 'Hi there', 'simon_buryan', 'george_smith', '2018-12-17 12:42:43', 'no', 'no', 1),
-(57, 'sda', 'asdfsd', 'asdfsdaf', '2018-12-17 12:58:40', 'no', 'no', 0),
-(58, 'Monday is today. :-)', 'george_smith', 'none', '2018-12-17 12:58:40', 'no', 'no', 0),
-(59, 'sda', 'asdfsd', 'asdfsdaf', '2018-12-17 13:01:43', 'no', 'no', 0),
-(60, 'Wanna grab a tea? :-)', 'george_smith', 'simon_buryan', '2018-12-17 13:01:43', 'no', 'no', 0),
-(61, 'sda', 'asdfsd', 'asdfsdaf', '2018-12-17 21:51:41', 'no', 'no', 0),
-(62, 'hi there mate,', 'george_smith', 'simon_buryan', '2018-12-17 21:51:41', 'no', 'no', 0),
-(63, 'sda', 'asdfsd', 'asdfsdaf', '2018-12-17 22:00:04', 'no', 'no', 0),
-(64, 'amigo!', 'george_smith', 'simon_buryan', '2018-12-17 22:00:04', 'no', 'no', 0),
-(65, 'sda', 'asdfsd', 'asdfsdaf', '2018-12-18 20:36:48', 'no', 'no', 0),
-(66, 'Good evening :-)', 'joe_smith', 'simon_buryan', '2018-12-18 20:36:48', 'no', 'no', 0),
-(67, 'sda', 'asdfsd', 'asdfsdaf', '2018-12-18 21:49:28', 'no', 'no', 0),
-(68, 'hi there', 'jordan_jake', 'simon_buryan', '2018-12-18 21:49:28', 'no', 'no', 1);
+INSERT INTO `posts` (`id`, `body`, `added_by`, `user_to`, `date_added`, `user_closed`, `deleted`, `likes`, `image`) VALUES
+(8, 'Fist clear post into the database.', 'simon_buryan', 'none', '2018-09-03 13:11:21', 'no', 'no', 0, ''),
+(9, 'Fist clear post into the database.', 'simon_buryan', 'none', '2018-09-03 13:18:25', 'no', 'no', 0, ''),
+(10, 'Hello', 'simon_buryan', 'none', '2018-09-04 19:35:23', 'no', 'no', 0, ''),
+(14, 'post by Petr Petrov', 'petr_petrov', 'none', '2018-11-24 20:38:11', 'no', 'no', 1, ''),
+(15, 'post by Petr Petrov', 'petr_petrov', 'none', '2018-11-24 20:38:46', 'no', 'no', 1, ''),
+(16, 'my fist post', 'george_smith', 'none', '2018-11-24 20:41:09', 'no', 'no', 1, ''),
+(17, 'Hello world', 'jim_yanke', 'none', '2018-11-24 20:42:26', 'no', 'no', 0, ''),
+(18, 'hello there', 'simon_buryan', 'none', '2018-11-25 20:41:14', 'no', 'no', 1, ''),
+(19, 'good day', 'simon_buryan', 'none', '2018-11-25 20:41:25', 'no', 'no', 0, ''),
+(21, 'I am going to the city now :-)', 'joe_smith', 'none', '2018-12-01 16:24:18', 'no', 'no', 1, ''),
+(22, 'Hi there', 'simon_buryan', 'george_smith', '2018-12-01 23:22:15', 'no', 'no', 0, ''),
+(23, 'sda', 'asdfsd', 'asdfsdaf', '2018-12-01 23:43:25', 'no', 'no', 0, ''),
+(24, 'I like your potatoes.', 'simon_buryan', 'petr_petrov', '2018-12-01 23:43:25', 'no', 'no', 0, ''),
+(25, 'sda', 'asdfsd', 'asdfsdaf', '2018-12-01 23:50:28', 'no', 'no', 0, ''),
+(26, 'Good night', 'petr_petrov', 'none', '2018-12-01 23:50:28', 'no', 'no', 0, ''),
+(27, 'sda', 'asdfsd', 'asdfsdaf', '2018-12-01 23:50:58', 'no', 'no', 0, ''),
+(28, 'I like your blue jacket.', 'petr_petrov', 'simon_buryan', '2018-12-01 23:50:58', 'no', 'no', 1, ''),
+(29, 'sda', 'asdfsd', 'asdfsdaf', '2018-12-03 21:23:58', 'no', 'no', 0, ''),
+(30, 'NejlÃ©pe se diskutuje u poÅ™Ã¡dnÃ©ho kafe.', 'simon_buryan', 'none', '2018-12-03 21:23:58', 'no', 'no', 0, ''),
+(31, 'sda', 'asdfsd', 'asdfsdaf', '2018-12-11 00:01:53', 'no', 'no', 0, ''),
+(32, 'hallo?', 'simon_buryan', 'none', '2018-12-11 00:01:53', 'no', 'no', 0, ''),
+(33, 'sda', 'asdfsd', 'asdfsdaf', '2018-12-12 23:53:42', 'no', 'no', 0, ''),
+(34, 'Hi there :-)', 'petr_petrov', 'simon_buryan', '2018-12-12 23:53:42', 'no', 'no', 1, ''),
+(35, 'sda', 'asdfsd', 'asdfsdaf', '2018-12-14 20:16:51', 'no', 'no', 0, ''),
+(36, 'I feel great today :-)', 'simon_buryan', 'none', '2018-12-14 20:16:51', 'no', 'no', 1, ''),
+(37, 'sda', 'asdfsd', 'asdfsdaf', '2018-12-15 19:46:04', 'no', 'no', 0, ''),
+(38, 'Great evening :-)', 'petr_petrov', 'simon_buryan', '2018-12-15 19:46:04', 'no', 'no', 0, ''),
+(39, 'sda', 'asdfsd', 'asdfsdaf', '2018-12-15 19:53:34', 'no', 'no', 0, ''),
+(40, 'This evening is great :-)', 'jim_yanke', 'none', '2018-12-15 19:53:34', 'no', 'no', 0, ''),
+(41, 'sda', 'asdfsd', 'asdfsdaf', '2018-12-15 19:53:48', 'no', 'no', 0, ''),
+(42, 'hello mister :-)', 'jim_yanke', 'simon_buryan', '2018-12-15 19:53:48', 'no', 'no', 1, ''),
+(43, 'sda', 'asdfsd', 'asdfsdaf', '2018-12-15 19:56:40', 'no', 'no', 0, ''),
+(44, 'Hi there friend :-)', 'joe_smith', 'simon_buryan', '2018-12-15 19:56:40', 'no', 'no', 0, ''),
+(45, 'sda', 'asdfsd', 'asdfsdaf', '2018-12-15 19:59:49', 'no', 'no', 0, ''),
+(46, 'I wish you all having a great time :-)', 'george_smith', 'none', '2018-12-15 19:59:49', 'no', 'no', 1, ''),
+(47, 'sda', 'asdfsd', 'asdfsdaf', '2018-12-15 20:00:04', 'no', 'no', 0, ''),
+(48, 'Hi there amigo :-)', 'george_smith', 'simon_buryan', '2018-12-15 20:00:04', 'no', 'no', 1, ''),
+(49, 'sda', 'asdfsd', 'asdfsdaf', '2018-12-15 21:26:50', 'no', 'no', 0, ''),
+(50, 'hello to all', 'martin_skã¡la', 'none', '2018-12-15 21:26:50', 'no', 'no', 0, ''),
+(51, 'sda', 'asdfsd', 'asdfsdaf', '2018-12-15 21:31:11', 'no', 'no', 0, ''),
+(52, 'Hello there', 'jordan_jake', 'none', '2018-12-15 21:31:11', 'no', 'no', 0, ''),
+(53, 'sda', 'asdfsd', 'asdfsdaf', '2018-12-15 21:32:04', 'no', 'no', 0, ''),
+(54, 'Hello member :-)', 'simon_buryan', 'jordan_jake', '2018-12-15 21:32:04', 'no', 'no', 2, ''),
+(55, 'sda', 'asdfsd', 'asdfsdaf', '2018-12-17 12:42:43', 'no', 'no', 0, ''),
+(56, 'Hi there', 'simon_buryan', 'george_smith', '2018-12-17 12:42:43', 'no', 'no', 1, ''),
+(57, 'sda', 'asdfsd', 'asdfsdaf', '2018-12-17 12:58:40', 'no', 'no', 0, ''),
+(58, 'Monday is today. :-)', 'george_smith', 'none', '2018-12-17 12:58:40', 'no', 'no', 0, ''),
+(59, 'sda', 'asdfsd', 'asdfsdaf', '2018-12-17 13:01:43', 'no', 'no', 0, ''),
+(60, 'Wanna grab a tea? :-)', 'george_smith', 'simon_buryan', '2018-12-17 13:01:43', 'no', 'no', 0, ''),
+(61, 'sda', 'asdfsd', 'asdfsdaf', '2018-12-17 21:51:41', 'no', 'no', 0, ''),
+(62, 'hi there mate,', 'george_smith', 'simon_buryan', '2018-12-17 21:51:41', 'no', 'no', 0, ''),
+(63, 'sda', 'asdfsd', 'asdfsdaf', '2018-12-17 22:00:04', 'no', 'no', 0, ''),
+(64, 'amigo!', 'george_smith', 'simon_buryan', '2018-12-17 22:00:04', 'no', 'no', 0, ''),
+(65, 'sda', 'asdfsd', 'asdfsdaf', '2018-12-18 20:36:48', 'no', 'no', 0, ''),
+(66, 'Good evening :-)', 'joe_smith', 'simon_buryan', '2018-12-18 20:36:48', 'no', 'no', 0, ''),
+(67, 'sda', 'asdfsd', 'asdfsdaf', '2018-12-18 21:49:28', 'no', 'no', 0, ''),
+(68, 'hi there', 'jordan_jake', 'simon_buryan', '2018-12-18 21:49:28', 'no', 'no', 1, ''),
+(69, 'sda', 'asdfsd', 'asdfsdaf', '2018-12-22 15:36:06', 'no', 'no', 0, ''),
+(70, 'I am here again :-)', 'jura_krava', 'none', '2018-12-22 15:36:06', 'no', 'no', 0, ''),
+(71, 'sda', 'asdfsd', 'asdfsdaf', '2018-12-22 15:36:23', 'no', 'no', 0, ''),
+(72, 'ahoj,', 'jura_krava', 'simon_buryan', '2018-12-22 15:36:23', 'no', 'no', 0, ''),
+(73, 'sda', 'asdfsd', 'asdfsdaf', '2018-12-22 16:44:38', 'no', 'no', 0, ''),
+(74, '<br><iframe width=\'420\' height=\'315\' src=\' \'><iframe><br>', 'simon_buryan', 'none', '2018-12-22 16:44:38', 'no', 'no', 0, ''),
+(75, 'sda', 'asdfsd', 'asdfsdaf', '2018-12-22 16:47:12', 'no', 'no', 0, ''),
+(76, '<br><iframe width=\'420\' height=\'315\' src=\'https://www.youtube.com/embed/PQRyGacBRA4\'></iframe><br>', 'simon_buryan', 'none', '2018-12-22 16:47:12', 'no', 'no', 0, ''),
+(77, 'sda', 'asdfsd', 'asdfsdaf', '2018-12-22 16:53:50', 'no', 'no', 0, ''),
+(78, '<br><iframe width=\'420\' height=\'315\' src=\'https://www.youtube.com/embed/CzAJhW1cfdw\'></iframe><br>', 'simon_buryan', 'none', '2018-12-22 16:53:50', 'no', 'no', 0, ''),
+(79, 'sda', 'asdfsd', 'asdfsdaf', '2018-12-22 17:12:50', 'no', 'no', 0, ''),
+(80, 'Hello guys, I am lookinf forwards for the match on monday :-).', 'petr_petrov', 'none', '2018-12-22 17:12:50', 'no', 'no', 0, ''),
+(81, 'sda', 'asdfsd', 'asdfsdaf', '2018-12-22 17:16:02', 'no', 'no', 0, ''),
+(82, 'Hello guys, I am looking forwards for the match on Tuesday:-). ', 'petr_petrov', 'none', '2018-12-22 17:16:02', 'no', 'no', 0, ''),
+(83, 'hi all', 'simon_buryan', 'none', '2018-12-22 19:46:05', 'no', 'no', 0, 'assets/images/posts/5c1e947d85267thank-you-note.jpg'),
+(84, 'I am free as a bird.', 'simon_buryan', 'none', '2018-12-22 19:50:38', 'no', 'no', 0, 'assets/images/posts/5c1e958e3e004picMe3.jpg');
 
 -- --------------------------------------------------------
 
@@ -353,6 +374,32 @@ INSERT INTO `projects_cycle` (`id`, `nazev`, `popis_dopady`, `podminky_vyuziti`,
 -- --------------------------------------------------------
 
 --
+-- Struktura tabulky `trends`
+--
+
+CREATE TABLE `trends` (
+  `title` varchar(50) NOT NULL,
+  `hits` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Vypisuji data pro tabulku `trends`
+--
+
+INSERT INTO `trends` (`title`, `hits`) VALUES
+('Hello', 1),
+('Guys', 1),
+('Looking', 1),
+('Forwards', 1),
+('Match', 1),
+('Tuesday', 1),
+('Hi', 1),
+('Free', 1),
+('Bird', 1);
+
+-- --------------------------------------------------------
+
+--
 -- Struktura tabulky `users`
 --
 
@@ -376,17 +423,17 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `first_name`, `last_name`, `username`, `email`, `password`, `signup_date`, `profile_pic`, `num_posts`, `num_likes`, `user_closed`, `friend_array`) VALUES
-(20, 'Å imon', 'Buryan', 'simon_buryan', 'Simon.buryan@seznam.cz', '0cbb3ad466ebb557f1317c066e3db03a', '2018-03-18', 'assets/images/profile_pics/simon_buryanb4721c92526ba8961081042cfd1a688dn.jpeg', 11, 8, 'no', ',petr_petrov,george_smith,joe_smith,jim_yanke,jordan_jake,1ai_bot,martin_sklã¡la,jura_krava,aneta_aneta,'),
+(20, 'Å imon', 'Buryan', 'simon_buryan', 'Simon.buryan@seznam.cz', '0cbb3ad466ebb557f1317c066e3db03a', '2018-03-18', 'assets/images/profile_pics/simon_buryanb4721c92526ba8961081042cfd1a688dn.jpeg', 16, 8, 'no', ',petr_petrov,george_smith,joe_smith,jim_yanke,1ai_bot,martin_sklã¡la,aneta_aneta,jordan_jake,jura_krava,'),
 (27, 'Å imon', 'Buryan', 'Å imon_buryan_1', 'Simon.buryan@cez.cz', '0129601396d16c84b32e0cc291f1d256', '2018-04-02', '', 0, 0, '', ''),
 (42, 'Simon', 'Buryan', 'simon_buryan_1', 'Xburs02@vse.cz', '0cbb3ad466ebb557f1317c066e3db03a', '2018-09-03', 'assets/images/profile_pics/defaults/head_emerald.png', 0, 0, 'no', ','),
-(43, 'Petr', 'Petrov', 'petr_petrov', 'Petr@user.us', '29d847ffce86b63c39a756a25b198751', '2018-11-24', 'assets/images/profile_pics/petrov.jpg', 6, 4, 'no', ',petr_petrov,george_smith,simon_buryan,jim_yanke,joe_smith,'),
+(43, 'Petr', 'Petrov', 'petr_petrov', 'Petr@user.us', '29d847ffce86b63c39a756a25b198751', '2018-11-24', 'assets/images/profile_pics/petrov.jpg', 8, 4, 'no', ',petr_petrov,george_smith,simon_buryan,jim_yanke,joe_smith,'),
 (44, 'George', 'Smith', 'george_smith', 'George@user.us', '29d847ffce86b63c39a756a25b198751', '2018-11-24', 'assets/images/profile_pics/george.jpg', 7, 3, 'no', ',petr_petrov,simon_buryan,'),
 (45, 'Jim', 'Yanke', 'jim_yanke', 'Jim@user.us', '29d847ffce86b63c39a756a25b198751', '2018-11-24', 'assets/images/profile_pics/jim.jpg', 3, 1, 'no', ',simon_buryan,petr_petrov,'),
 (46, 'Joe', 'Smith', 'joe_smith', 'Joe@user.us', '29d847ffce86b63c39a756a25b198751', '2018-11-30', 'assets/images/profile_pics/joe.jpg', 3, 1, 'no', ',Å imon_buryan,simon_buryan,petr_petrov,'),
 (48, 'Martin', 'Sklã¡la', 'martin_sklã¡la', 'Martin@user.us', '29d847ffce86b63c39a756a25b198751', '2018-12-15', 'assets/images/profile_pics/defaults/head_emerald.png', 0, 0, 'no', ',simon_buryan,'),
-(49, 'Jordan', 'Jake', 'jordan_jake', 'Jordan@user.us', '29d847ffce86b63c39a756a25b198751', '2018-12-15', 'assets/images/profile_pics/jordan.jpg', 2, 1, 'no', ',simon_buryan,'),
+(49, 'Jordan', 'Michael', 'jordan_jake', 'Jordan@user.us', '29d847ffce86b63c39a756a25b198751', '2018-12-15', 'assets/images/profile_pics/jordan.jpg', 2, 1, 'no', ',simon_buryan,'),
 (50, '1ai', 'Bot', '1ai_bot', '1ai@user.us', '29d847ffce86b63c39a756a25b198751', '2018-12-15', 'assets/images/profile_pics/defaults/head_emerald.png', 0, 0, 'no', ',simon_buryan,'),
-(51, 'Jura', 'Krava', 'jura_krava', 'Jura@user.us', '29d847ffce86b63c39a756a25b198751', '2018-12-15', 'assets/images/profile_pics/defaults/head_deep_blue.png', 0, 0, 'no', ',simon_buryan,'),
+(51, 'Jura', 'Krava', 'jura_krava', 'Jura@user.us', '29d847ffce86b63c39a756a25b198751', '2018-12-15', 'assets/images/profile_pics/defaults/head_deep_blue.png', 2, 0, 'no', ',simon_buryan,'),
 (52, 'Aneta', 'Aneta', 'aneta_aneta', 'Aneta@user.us', '29d847ffce86b63c39a756a25b198751', '2018-12-15', 'assets/images/profile_pics/defaults/head_emerald.png', 0, 0, 'no', ',simon_buryan,');
 
 --
@@ -467,19 +514,19 @@ ALTER TABLE `likes`
 -- AUTO_INCREMENT pro tabulku `messages`
 --
 ALTER TABLE `messages`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=53;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=56;
 
 --
 -- AUTO_INCREMENT pro tabulku `notifications`
 --
 ALTER TABLE `notifications`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT pro tabulku `posts`
 --
 ALTER TABLE `posts`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=69;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=85;
 
 --
 -- AUTO_INCREMENT pro tabulku `users`
