@@ -3,8 +3,8 @@
 *This site should support generation of propoject proposals for decresing waste production in towns.*
 *This project is supported by the TACR agency as a project TL01000217 executed in period 2018-2020*
 
-This is link to the [Social website](http://simonburyan.cz/circ/register.php).
+This is link to the [Social website](http://simonburyan.cz/circ8/register.php).
 
-Current: Section 8 Lecture 58.
+Current: Finished the 16.5 hour course.
 
-LocalHost version: database archive provided as for Lesson 50!
+LocalHost version: database archive provided as for finished course.
