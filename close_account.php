@@ -14,7 +14,7 @@ if(isset($_POST['close_account'])){
 
 ?>
 
-<div class="main_column column">
+<div class="col-md-8 col-xs-12 col-md-push-1 main_column column">
   <h4>Close Account</h4>
   Are you really sure, you want to close your account?<br><br>
   When you close your account, your profile and activity will be hidden from all users. The data is still stored in database.<br><br>

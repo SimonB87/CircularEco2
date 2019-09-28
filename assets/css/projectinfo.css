@@ -1,0 +1,16 @@
+#project-detail {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#project-detail td, #project-detail th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#project-detail tr:nth-child(even){background-color: #f2f2f2;}
+
+#project-detail tr:hover {background-color: #ddd;}
+
+#project-detail .project-detail-ulList { padding: 10px 10px; }

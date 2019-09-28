@@ -25,26 +25,44 @@ if($user_to != "new")
 
 ?>
 
-<div class="user_details column">
-   <a href="<?php echo $userLoggedIn; ?>">  <img src="<?php echo $user['profile_pic']; ?>"> </a>
+<!-- show profile picture-->
+<div class="col-md-3 col-xs-12 user_details user_details_profile">
+	<div class="row user_details_row">
+			<div class="col-xs-12 col-sm-6 col-md-12 column text-center">
+				<a href="<?php echo $userLoggedIn; ?>"><img src="<?php echo $user['profile_pic']; ?>" alt="profile pic"></a>
+				<div class="user_details_left_right">
 
-   <div class="user_details_left_right">
-     <a href="<?php echo $userLoggedIn; ?>">
-     <?php
-     echo $user['first_name'] . " " . $user['last_name'];
+				<!-- show profile name-->
+				<a href="<?php echo $userLoggedIn; ?>">
+				<?php
+				echo $user['first_name'] . " " . $user['last_name'];
+				?>
+				</a>
+				<!-- show number of profile posts-->
+				<br>
+				<?php
+				echo "Posts: " . $user['num_posts'] . "<br>";
+				echo "Likes: " . $user['num_likes'];
+				?>
+				</div>
+		</div>
 
-      ?>
-     </a>
-     <br>
-     <?php echo "Posts: " . $user['num_posts']. "<br>";
-     echo "Likes: " . $user['num_likes'];
+		<div class="col-xs-12 col-sm-6 col-md-12 text-center column" id="conversations">
+	 		 <h4>Conversations</h4>
 
-     ?>
-   </div>
+	 		 <div class="loaded_conversations">
+	 			 <?php echo $message_obj->getConvos(); ?>
+	 		 </div>
+	 		 <br>
+	 	 <!-- a link to a new message-->
+	 	 <a href="messages.php?u=new">New Message</a>
 
- </div>
+	  </div>
 
- <div class="main_column column" id="main_column">
+	</div>
+</div>
+
+ <div class="col-md-8 col-xs-12 col-md-push-1 main_column column" id="main_column">
    <?php
    if($user_to != "new") {
      echo "<h4>You and <a href='$user_to'>" . $user_to_obj->getFirstAndLastName() . "</a></h4><hr><br>";
@@ -84,18 +102,5 @@ if($user_to != "new")
 					 div.scrollTop = div.scrollHeight;
 			 }//There was a bug, that was corrected oonly in QnA answer.
 	 </script>
-
- </div>
-
-
- <div class="user_details column" id="conversations">
-		 <h4>Conversations</h4>
-
-		 <div class="loaded_conversations">
-			 <?php echo $message_obj->getConvos(); ?>
-		 </div>
-		 <br>
-	 <!-- a link to a new message-->
-	 <a href="messages.php?u=new">New Message</a>
 
  </div>

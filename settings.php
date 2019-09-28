@@ -3,7 +3,7 @@ include("includes/header.php");
 include("includes/form_handlers/settings_handler.php");
 ?>
 
-<div class="main_column column">
+<div class="col-md-8 col-xs-12 col-md-push-1 main_column column">
 
   <h4>Account Settings</h4>
   <?php

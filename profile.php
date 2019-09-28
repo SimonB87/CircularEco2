@@ -105,7 +105,7 @@ if(isset($_POST['post_message'])) {
 
 	</div>
 
-	<div class="profile_main_column column">
+	<div class="col-md-8 col-xs-12 col-md-push-1 main_column column">
 
 		<ul class="nav nav-tabs" role="tablist" id="profileTabs">
 			<li role="presentation" class="active"><a href="#newsfeed_div" aria-controls="newsfeed_div" role="tab" data-toggle="tab">Newsfeed</a></li>

@@ -48,32 +48,57 @@ if($uploadOk) {
 
 ?>
 	<!-- show profile picture-->
-	<div class="user_details column">
-		<a href="<?php echo $userLoggedIn; ?>"><img src="<?php echo $user['profile_pic']; ?>" alt="profile pic"></a>
+	<div class="col-md-3 col-xs-12 user_details user_details_profile">
+		<div class="row user_details_row">
+		  <div class="col-xs-12 col-sm-6 col-md-12 text-center column">
+				<a href="<?php echo $userLoggedIn; ?>"><img src="<?php echo $user['profile_pic']; ?>" alt="profile pic"></a>
+				<div class="user_details_left_right">
 
-		<div class="user_details_left_right">
-
-			<!-- show profile name-->
-			<a href="<?php echo $userLoggedIn; ?>">
-			<?php
-			echo $user['first_name'] . " " . $user['last_name'];
-			?>
-			</a>
-			<!-- show number of profile posts-->
-			<br>
-			<?php
-			echo "Posts: " . $user['num_posts'] . "<br>";
-			echo "Likes: " . $user['num_likes'];
-			?>
+					<!-- show profile name-->
+					<a href="<?php echo $userLoggedIn; ?>">
+					<?php
+					echo $user['first_name'] . " " . $user['last_name'];
+					?>
+					</a>
+					<!-- show number of profile posts-->
+					<br>
+					<?php
+					echo "Posts: " . $user['num_posts'] . "<br>";
+					echo "Likes: " . $user['num_likes'];
+					?>
+				</div>
 		</div>
 
+		  <div class="col-xs-12 col-sm-6 col-md-12 user_details_trends column">
+				<h4>Popular topics</h4>
+				<div class="trends">
+						<?php
+							$query = mysqli_query($con, "SELECT * FROM trends ORDER BY hits DESC LIMIT 9");
+							foreach ($query as $row) {
+								$word = $row['title'];
+								$word_dot = strlen($word) >= 14 ? "..." : "";
+
+								$trimmed_word = str_split($word, 14);
+								$trimmed_word = $trimmed_word[0];
+
+								echo "<div style='padding: 1px'>";
+								echo $trimmed_word . $word_dot;
+								echo "<br></div>";
+
+							}
+
+						?>
+				</div>
+			</div>
+    </div>
 	</div>
 
-	<div class="main_column column">
+	<div class="col-md-8 col-xs-12 col-md-push-1 main_column column">
 
 		<form class="post_form" action="index.php" method="POST" enctype="multipart/form-data">
-			<input type="file" name="fileToUpload" id="fileToUpload">
+
 			<textarea name="post_text" id="post_text"  placeholder="Got something to share?"></textarea>
+			<input type="file" name="fileToUpload" id="fileToUpload">
 			<input type="submit" name="post" value="POST">
 			<hr>
 
@@ -92,28 +117,7 @@ if($uploadOk) {
 
 	</div>
 
-	<div class="user_details column">
-		<h4>Popular topics</h4>
-		<div class="trends">
-			<?php
-				$query = mysqli_query($con, "SELECT * FROM trends ORDER BY hits DESC LIMIT 9");
-				foreach ($query as $row) {
-					$word = $row['title'];
-					$word_dot = strlen($word) >= 14 ? "..." : "";
 
-					$trimmed_word = str_split($word, 14);
-					$trimmed_word = $trimmed_word[0];
-
-					echo "<div style='padding: 1px'>";
-					echo $trimmed_word . $word_dot;
-					echo "<br></div>";
-
-				}
-
-			?>
-		</div>
-
-	</div>
 
 	<script>
 	var userLoggedIn = '<?php echo $userLoggedIn; ?>';

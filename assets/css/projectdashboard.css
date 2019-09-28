@@ -1,0 +1,44 @@
+.carousel.slide {
+  padding-top: 30px;
+}
+
+.carousel-inner .item {
+  width: 100%;
+}
+
+a.carousel-control {
+  bottom: unset;
+  bottom: unset;
+}
+
+a.carousel-control > span > i.fa {
+  color: #5bc0de;
+}
+
+.left.carousel-control {
+  left: 35%;
+}
+
+.right.carousel-control {
+  left: unset;
+  right: 35%;
+}
+
+.carousel-inner {
+  display: flex;
+}
+
+.card-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card-header h3 {
+  margin: 0;
+  padding: 5px 0;
+}
+
+ol.carousel-indicators {
+  transform: translateY(45px);
+}

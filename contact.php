@@ -11,28 +11,30 @@ if(isset($_POST['post'])){
 
 ?>
 	<!-- show profile picture-->
-	<div class="user_details column">
-		<a href="<?php echo $userLoggedIn; ?>"><img src="<?php echo $user['profile_pic']; ?>" alt="profile pic"></a>
+	<div class="col-md-3 col-xs-12 user_details user_details_profile">
+		<div class="row user_details_row">
+			  <div class="col-xs-12 col-sm-6 col-md-12 text-center column">
+					<a href="<?php echo $userLoggedIn; ?>"><img src="<?php echo $user['profile_pic']; ?>" alt="profile pic"></a>
+					<div class="user_details_left_right">
 
-		<div class="user_details_left_right">
-
-			<!-- show profile name-->
-			<a href="<?php echo $userLoggedIn; ?>">
-			<?php
-			echo $user['first_name'] . " " . $user['last_name'];
-			?>
-			</a>
-			<!-- show number of profile posts-->
-			<br>
-			<?php
-			echo "Posts: " . $user['num_posts'] . "<br>";
-			echo "Likes: " . $user['num_likes'];
-			?>
+					<!-- show profile name-->
+					<a href="<?php echo $userLoggedIn; ?>">
+					<?php
+					echo $user['first_name'] . " " . $user['last_name'];
+					?>
+					</a>
+					<!-- show number of profile posts-->
+					<br>
+					<?php
+					echo "Posts: " . $user['num_posts'] . "<br>";
+					echo "Likes: " . $user['num_likes'];
+					?>
+					</div>
+			</div>
 		</div>
+</div>
 
-	</div>
-
-	<div class="main_column column">
+	<div class="col-md-8 col-xs-12 col-md-push-1 main_column column">
 
     <div class="developercontact">
       <h1>Ing. Simon Buryan</h1>

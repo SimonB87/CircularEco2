@@ -21,15 +21,36 @@ else {
 <head>
 	<title>Vítejte na webu Circularních projektů</title>
 
+  <!-- for carousel -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+
+
+  <link rel="stylesheet" type="text/css" href="assets/css/carousel-projects.css">
+
+
+
+
+
+  <!-- <script src="assets/js/carousel-projects.js"></script> -->
+
+
+
+  
+
   <!-- jQuery link -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+
 
   <!-- Bootstrap 3.3.2 - https://getbootstrap.com/docs/3.3/getting-started/ -->
   <script src="assets/js/bootstrap.js"></script>
   <link rel="stylesheet"  type="text/css" href="assets/css/bootstrap.css">
 
+  <script src="assets/js/bootbox.js"></script>
+
   <!-- my JS file -->
   <script src="assets/js/demo.js"></script>
+  <!-- my carousel JS file -->
+  <script src="assets/js/carousel.js"></script>
 
   <!-- J Crop Files-->
   <link rel="stylesheet" href="assets/css/jquery.Jcrop.css" type="text/css" />
@@ -38,14 +59,25 @@ else {
   <!-- Fontawesome link -->
   <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.5.0/css/all.css' integrity='sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU' crossorigin='anonymous'>
 
+
   <!-- my style sheet -->
   <link rel="stylesheet" type="text/css" href="assets/css/style.css">
-  <link rel="stylesheet" type="text/css" href="assets/css/tabulka.css">
+  <link rel="stylesheet" type="text/css" href="assets/css/projectinfo.css">
+  <link rel="stylesheet" type="text/css" href="assets/css/projectdashboard.css">
+  
+  <!-- <link rel="stylesheet" type="text/css" href="assets/css/tabulka.css"> -->
+
+
+
+
+  <!------ Include the above in your HEAD tag ---------->
+
+
 
 </head>
 <body>
 
-<div class="top_bar container">
+<div class="top_bar">
   <div class="logo">
     <img class="" src="assets/images/circlogo.png" alt="" width="25" height="25">
     <a href="index.php">Circularní Projekty</a>
@@ -86,37 +118,36 @@ else {
       ?>
     </a>
     <a href="index.php" class="mainMenuItems"><i class="fa fa-home fa-lg"></i></a>
-    <a href="project.php" class="mainMenuItems"> Projekty <i class='fas fa-frog'></i> </a>
+    <a href="project.php" class="mainMenuItems"> <i class='fas fa-frog'></i> </a>
     <!--
     <a href="messages.php" class="mainMenuItems"><i class="far fa-comment-alt"></i></i></a>
     -->
-    <a href="javascript:void(0);" onclick="getDropdownData('<?php echo $userLoggedIn; ?>', 'message')" class="mainMenuItems"> Zprávy
-      <i class="fa fa-envelope fa-lg"></i>
+    <a href="javascript:void(0);" onclick="getDropdownData('<?php echo $userLoggedIn; ?>', 'message')" class="mainMenuItems"> <i class="fa fa-envelope fa-lg"></i>
         <?php
         if($num_notifications > 0){
-            echo '<span class="notification_badge" id="unread_notifications">' . $num_notifications .'</span> ';
+            echo '<span class="notification_badge unread_notification" id="unread_notifications">' . $num_notifications .'</span> ';
         }
         ?>
         </a>
     <a href="javascript:void(0);" onclick="getDropdownData('<?php echo $userLoggedIn; ?>', 'notification')"  class="mainMenuItems">
-      <i class="fas fa-eye"></i>Upozornění</a>
+      <i class="fas fa-eye"></i></a>
         <?php
         if($num_messages > 0){
-            echo '<span class="notification_badge" id="unread_message">' . $num_messages .'</span> ';
+            echo '<span class="notification_badge unread_message" id="unread_message">' . $num_messages .'</span> ';
         }
         ?>
 
 
-    <a href="requests.php" class="mainMenuItems"> Žádosti <i class="fa fa-users fa-lg"> </i></a>
+    <a href="requests.php" class="mainMenuItems"> <i class="fa fa-users fa-lg"> </i></a>
         <?php
         if($num_requests > 0){
-            echo '<span class="notification_badge" id="unread_requests">' . $num_requests .'</span> ';
+            echo '<span class="notification_badge unread_requests" id="unread_requests">' . $num_requests .'</span> ';
         }
         ?>
-    <a href="upload.php" class="mainMenuItems"> Profilovka <i class="fa fa-cog fa-lg"></i></a>
-    <a href="settings.php" class="mainMenuItems"> Nastavení <i class="fa fa-cog fa-lg"></i></a>
+    <!--<a href="upload.php" class="mainMenuItems"> <i class="fa fa-cog fa-lg"></i></a> -->
+    <a href="settings.php" class="mainMenuItems"> <i class="fa fa-cog fa-lg"></i></a>
     <a href="#" class="mainMenuItems"><i class="fas fa-question"></i></a><!-- link to user-manual -->
-    <a href="contact.php" class="mainMenuItems"> Kontakt <i class="far fa-comment"></i></a><!-- link to user-manual -->
+    <a href="contact.php" class="mainMenuItems"> <i class="far fa-comment"></i></a><!-- link to user-manual -->
     <a href="includes\handlers\logout.php" class="mainMenuItems"><i class="fa fa-sign-out-alt fa-lg"></i></a>
 
   </nav>
@@ -176,4 +207,4 @@ $(document).ready(function() {
 
 </script>
 
-<div class="wrapper">
+<div class="row wrapper">

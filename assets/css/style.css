@@ -73,8 +73,8 @@ nav a:hover{
   top: 50px;
   position: relative;
   padding: 0 10px;
-  width: 75%;
-  min-width: 950px;
+  width: 85%;
+  /*min-width: 950px;*/
 }
 
 .column{
@@ -83,24 +83,44 @@ nav a:hover{
   border: 1px solid #d3d3d3;
   border-radius: 5px;
   box-shadow: 2px 2px 1px #d3d3d3;
-  z-index: -1;
+  z-index: 1;
   color: #555;
 }
 
 .user_details{
-  width: 250px;
+  align-items: center;
+  /*width: 200px;*/
   float: left;
+  display: flex;
+  flex-direction: column;
   margin-bottom: 20px;
-
 }
+
+.user_details_row{
+  width: 100%;
+}
+
+.user_details_profile, .user_details_topics{
+  max-height: 600px;
+  padding: 0 0;
+}
 
 .user_details_left_right{
   /*width: 125px;*/ /*deleted CSS section*/
-  display: inline-block;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  /*display: inline-block;
   position: relative;
-  float: right;/*added CSS correction*/
+  float: right;*/  /*added CSS correction*/
 }
-
+
+.user_details_left_right a{
+  color: #057705;
+}
+
 .user_details img{
   height: 125px;
   border-radius: 5px;
@@ -109,9 +129,9 @@ nav a:hover{
 
 .main_column{
   float: right;
-  width: 70%;
-  z-index: -1;
-  min-height: 170px;
+  /*width: 72%;*/
+  z-index: +1;
+  min-height: 92%;
   position: relative;
 }
 
@@ -140,9 +160,10 @@ nav a:hover{
   color: #fff;
   text-shadow: #73b6e2 0.5px 0.5px 0px;
   font-size: 90%;
-  position: absolute;
   outline: 0;
   margin: 0;
+  float: right;
+  transform: translate(-45px,-86px);
 }
 
 .post_form input[type="submit"]:active{
@@ -338,72 +359,56 @@ iframe{
   height: 25px;
   font-size: 15px !important;
   text-align: center;
+  float: right;
+}
+
+.delete_button i.fa-times{
+  color: #fff;
+  transform: translateY(-2px);
 }
 
 .profile_main_column{
   min-width: 675px;
   float: right;
-  width: 70%;
-  z-index: -1;
+  width: 80%;
+  z-index: 1;
   min-height: 160px;
   position: relative;
 }
 
 
-/*Styl pro tabulku - začatek */
+/*Styl pro projekty */
 
-.main_column{
-  width: 70%;
-}
-
-
-.tabulka {
-  margin: 1em 0;
+.projekty-back{
+  background: #057705;
+  background-image: url("../images/backgrounds/projects.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
   width: 100%;
-  overflow: hidden;
-  background: #fff;
-  color: #024457;
-  border-radius: 10px;
-  border: 1px solid #167f92;
-  display: block;
-  text-align: center;
+  height: 150px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
 }
 
-.tabulka tr{
-  padding: 3px 3px;
-  /*border: 2px solid #000;*/
+.projekty-back-title{
+  text-align:center;
+  color:#fff;
+  text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
 }
 
-.tabheader {
-   /*display: table-cell;*/
-   padding: 1px;
-   border: 1px solid #fff;
-   background-color: #20aae5;
-   color: #FFF;
-   text-align: justify;
+.oblast-selection button.btn-default{
+  border: 1px solid darkgrey;
 }
 
-.tabheader td:nth-child(2){
-   background-color: #8fd4f2;
+.row.oblast-selection button.btn{
+  min-width: 150px;
+  float: left;
 }
 
-.tabulka_id{
-   width: 20px;
-   color: #20aae5;
-}
-
- th{
-   /*border: 2px solid #000;*/
- }
-
-table td {
-  padding: 3px 3px;
-  border: 1px solid #fff;
-}
-
-.tabulka tr:nth-child(even){
-  background-color: lightgray;
-  /*border: 2px solid #000;*/
+button.btn.btn-info {
+  float: right!important;
 }
 
 /* developer contact.php*/
@@ -557,10 +562,23 @@ table td {
   vertical-align: baseline;
   background-color: #F00;
   border-radius: 10px;
+  z-index: +3;
   position: absolute;
-  right: -2px;
-  top: -5px;
-  z-index: +1;
+}
+
+.unread_message {
+  right: 1px;
+  top: 0px;
+}
+
+.unread_requests {
+  right: 20px;
+  top: 0px;
+}
+
+.unread_notification{
+  right: 1px;
+  top: 0px;
 }
 
 .mainMenuItems{

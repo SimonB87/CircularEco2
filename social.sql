@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Počítač: 127.0.0.1
--- Vytvořeno: Sob 22. pro 2018, 21:45
+-- Vytvořeno: Ned 01. zář 2019, 14:29
 -- Verze serveru: 10.1.30-MariaDB
 -- Verze PHP: 7.2.1
 
@@ -66,7 +66,9 @@ INSERT INTO `comments` (`id`, `post_body`, `posted_by`, `posted_to`, `date_added
 (21, 'hi there', 'jordan_jake', 'simon_buryan', '2018-12-18 21:50:00', 'no', 54),
 (22, 'Nice to see you!', 'simon_buryan', 'simon_buryan', '2018-12-18 22:35:01', 'no', 54),
 (23, 'yup', 'jordan_jake', 'simon_buryan', '2018-12-18 22:35:30', 'no', 54),
-(24, 'aloha,', 'simon_buryan', 'jordan_jake', '2018-12-18 22:36:09', 'no', 68);
+(24, 'aloha,', 'simon_buryan', 'jordan_jake', '2018-12-18 22:36:09', 'no', 68),
+(25, 'nice,', 'jordan_jake', 'george_smith', '2018-12-23 21:13:16', 'no', 58),
+(26, 'hey :-)', 'george_smith', 'simon_buryan', '2019-01-03 16:10:24', 'no', 87);
 
 -- --------------------------------------------------------
 
@@ -125,7 +127,11 @@ INSERT INTO `likes` (`id`, `username`, `post_id`) VALUES
 (38, 'george_smith', 36),
 (39, 'george_smith', 56),
 (40, 'jordan_jake', 54),
-(41, 'simon_buryan', 68);
+(41, 'simon_buryan', 68),
+(42, 'jordan_jake', 58),
+(43, 'jordan_jake', 56),
+(44, 'george_smith', 86),
+(45, 'george_smith', 87);
 
 -- --------------------------------------------------------
 
@@ -180,7 +186,7 @@ INSERT INTO `messages` (`id`, `user_to`, `user_from`, `body`, `date`, `opened`, 
 (35, 'simon_buryan', 'george_smith', 'Doing good? :-)', '2018-12-15 20:00:31', 'yes', 'yes', 'no'),
 (36, 'simon_buryan', 'jim_yanke', 'hi there', '2018-12-15 20:01:11', 'yes', 'yes', 'no'),
 (37, 'simon_buryan', 'jim_yanke', 'how is life? :-)', '2018-12-15 20:01:20', 'yes', 'yes', 'no'),
-(38, 'jordan_jake', 'simon_buryan', 'Aloha new member ;-)', '2018-12-15 21:32:19', 'yes', 'no', 'no'),
+(38, 'jordan_jake', 'simon_buryan', 'Aloha new member ;-)', '2018-12-15 21:32:19', 'yes', 'yes', 'no'),
 (39, 'simon_buryan', 'jordan_jake', 'hi there, how are you? :-)', '2018-12-15 21:33:08', 'yes', 'yes', 'no'),
 (40, '1ai_bot', 'simon_buryan', 'Hi there', '2018-12-15 21:35:47', 'yes', 'no', 'no'),
 (41, 'simon_buryan', 'martin_sklã¡la', 'ahoj', '2018-12-15 21:40:09', 'no', 'yes', 'no'),
@@ -194,10 +200,13 @@ INSERT INTO `messages` (`id`, `user_to`, `user_from`, `body`, `date`, `opened`, 
 (49, 'simon_buryan', 'george_smith', 'amigo!', '2018-12-17 22:00:08', 'yes', 'yes', 'no'),
 (50, 'simon_buryan', 'joe_smith', 'hi there, man ;-)', '2018-12-18 20:36:59', 'yes', 'yes', 'no'),
 (51, 'simon_buryan', 'jordan_jake', 'hi there friend.', '2018-12-18 21:50:10', 'yes', 'yes', 'no'),
-(52, 'jordan_jake', 'simon_buryan', 'hi there man', '2018-12-18 22:36:19', 'no', 'no', 'no'),
+(52, 'jordan_jake', 'simon_buryan', 'hi there man', '2018-12-18 22:36:19', 'yes', 'yes', 'no'),
 (53, 'jura_krava', 'simon_buryan', 'cau!', '2018-12-21 21:36:58', 'yes', 'no', 'no'),
-(54, 'simon_buryan', 'jura_krava', 'Äau', '2018-12-22 15:36:15', 'no', 'yes', 'no'),
-(55, 'simon_buryan', 'jura_krava', 'Äau', '2018-12-22 15:36:25', 'no', 'yes', 'no');
+(54, 'simon_buryan', 'jura_krava', 'Äau', '2018-12-22 15:36:15', 'yes', 'yes', 'no'),
+(55, 'simon_buryan', 'jura_krava', 'Äau', '2018-12-22 15:36:25', 'yes', 'yes', 'no'),
+(56, 'jura_krava', 'simon_buryan', 'Ahoj', '2019-01-13 15:38:48', 'no', 'no', 'no'),
+(57, 'joe_smith', 'simon_buryan', 'Hi there, how are you?', '2019-01-13 15:39:06', 'no', 'no', 'no'),
+(58, 'joe_smith', 'simon_buryan', 'hello', '2019-09-01 11:37:51', 'no', 'no', 'no');
 
 -- --------------------------------------------------------
 
@@ -222,7 +231,7 @@ CREATE TABLE `notifications` (
 
 INSERT INTO `notifications` (`id`, `user_to`, `user_from`, `message`, `link`, `datetime`, `opened`, `viewed`) VALUES
 (4, 'simon_buryan', 'joe_smith', 'Joe Smith posted on your profile', 'post.php?id=66', '2018-12-18 20:36:48', 'yes', 'yes'),
-(5, 'simon_buryan', 'jordan_jake', 'Jordan Jake posted on your profile', 'post.php?id=68', '2018-12-18 21:49:28', 'no', 'yes'),
+(5, 'simon_buryan', 'jordan_jake', 'Jordan Jake posted on your profile', 'post.php?id=68', '2018-12-18 21:49:28', 'yes', 'yes'),
 (6, 'joe_smith', 'jordan_jake', 'Jordan Jake commented on your post', 'post.php?id=66', '2018-12-18 21:49:35', 'no', 'no'),
 (7, 'simon_buryan', 'jordan_jake', 'Jordan Jake commented on your profile post', 'post.php?id=66', '2018-12-18 21:49:35', 'yes', 'yes'),
 (8, 'joe_smith', 'jordan_jake', 'Jordan Jake commented on your post', 'post.php?id=66', '2018-12-18 21:49:37', 'no', 'no'),
@@ -235,7 +244,13 @@ INSERT INTO `notifications` (`id`, `user_to`, `user_from`, `message`, `link`, `d
 (15, 'simon_buryan', 'jordan_jake', 'Jordan Jake commented on your post', 'post.php?id=54', '2018-12-18 22:35:30', 'yes', 'yes'),
 (16, 'jordan_jake', 'simon_buryan', 'Å imon Buryan liked your post', 'post.php?id=68', '2018-12-18 22:36:03', 'no', 'yes'),
 (17, 'jordan_jake', 'simon_buryan', 'Å imon Buryan commented on your post', 'post.php?id=68', '2018-12-18 22:36:09', 'no', 'yes'),
-(18, 'simon_buryan', 'jura_krava', 'Jura Krava posted on your profile', 'post.php?id=72', '2018-12-22 15:36:23', 'no', 'yes');
+(18, 'simon_buryan', 'jura_krava', 'Jura Krava posted on your profile', 'post.php?id=72', '2018-12-22 15:36:23', 'yes', 'yes'),
+(19, 'george_smith', 'jordan_jake', 'Jordan Michael liked your post', 'post.php?id=58', '2018-12-23 21:13:09', 'no', 'no'),
+(20, 'simon_buryan', 'jordan_jake', 'Jordan Michael liked your post', 'post.php?id=56', '2018-12-23 21:13:10', 'yes', 'yes'),
+(21, 'george_smith', 'jordan_jake', 'Jordan Michael commented on your post', 'post.php?id=58', '2018-12-23 21:13:16', 'no', 'no'),
+(22, 'simon_buryan', 'george_smith', 'George Smith liked your post', 'post.php?id=86', '2019-01-03 16:10:15', 'yes', 'yes'),
+(23, 'simon_buryan', 'george_smith', 'George Smith liked your post', 'post.php?id=87', '2019-01-03 16:10:18', 'yes', 'yes'),
+(24, 'simon_buryan', 'george_smith', 'George Smith commented on your post', 'post.php?id=87', '2019-01-03 16:10:24', 'yes', 'yes');
 
 -- --------------------------------------------------------
 
@@ -304,9 +319,9 @@ INSERT INTO `posts` (`id`, `body`, `added_by`, `user_to`, `date_added`, `user_cl
 (53, 'sda', 'asdfsd', 'asdfsdaf', '2018-12-15 21:32:04', 'no', 'no', 0, ''),
 (54, 'Hello member :-)', 'simon_buryan', 'jordan_jake', '2018-12-15 21:32:04', 'no', 'no', 2, ''),
 (55, 'sda', 'asdfsd', 'asdfsdaf', '2018-12-17 12:42:43', 'no', 'no', 0, ''),
-(56, 'Hi there', 'simon_buryan', 'george_smith', '2018-12-17 12:42:43', 'no', 'no', 1, ''),
+(56, 'Hi there', 'simon_buryan', 'george_smith', '2018-12-17 12:42:43', 'no', 'no', 2, ''),
 (57, 'sda', 'asdfsd', 'asdfsdaf', '2018-12-17 12:58:40', 'no', 'no', 0, ''),
-(58, 'Monday is today. :-)', 'george_smith', 'none', '2018-12-17 12:58:40', 'no', 'no', 0, ''),
+(58, 'Monday is today. :-)', 'george_smith', 'none', '2018-12-17 12:58:40', 'no', 'no', 1, ''),
 (59, 'sda', 'asdfsd', 'asdfsdaf', '2018-12-17 13:01:43', 'no', 'no', 0, ''),
 (60, 'Wanna grab a tea? :-)', 'george_smith', 'simon_buryan', '2018-12-17 13:01:43', 'no', 'no', 0, ''),
 (61, 'sda', 'asdfsd', 'asdfsdaf', '2018-12-17 21:51:41', 'no', 'no', 0, ''),
@@ -332,7 +347,15 @@ INSERT INTO `posts` (`id`, `body`, `added_by`, `user_to`, `date_added`, `user_cl
 (81, 'sda', 'asdfsd', 'asdfsdaf', '2018-12-22 17:16:02', 'no', 'no', 0, ''),
 (82, 'Hello guys, I am looking forwards for the match on Tuesday:-). ', 'petr_petrov', 'none', '2018-12-22 17:16:02', 'no', 'no', 0, ''),
 (83, 'hi all', 'simon_buryan', 'none', '2018-12-22 19:46:05', 'no', 'no', 0, 'assets/images/posts/5c1e947d85267thank-you-note.jpg'),
-(84, 'I am free as a bird.', 'simon_buryan', 'none', '2018-12-22 19:50:38', 'no', 'no', 0, 'assets/images/posts/5c1e958e3e004picMe3.jpg');
+(84, 'I am free as a bird.', 'simon_buryan', 'none', '2018-12-22 19:50:38', 'no', 'no', 0, 'assets/images/posts/5c1e958e3e004picMe3.jpg'),
+(85, 'New profile picture :-)', 'jordan_jake', 'none', '2018-12-23 21:03:16', 'no', 'no', 0, ''),
+(86, 'thank you :-)', 'simon_buryan', 'none', '2019-01-03 15:59:59', 'no', 'no', 1, 'assets/images/posts/5c2e317fbbfd5thxalot.jpg'),
+(87, 'Test of connection ;-)', 'simon_buryan', 'none', '2019-01-03 16:00:09', 'no', 'no', 1, ''),
+(88, 'Heelo everyone :-)', 'simon_buryan', 'none', '2019-01-13 15:38:13', 'no', 'no', 0, ''),
+(89, 'there are many possibilities to recycle....', 'simon_buryan', 'none', '2019-01-13 15:38:30', 'no', 'no', 0, 'assets/images/posts/5c3b5b7628049recycle.jpg'),
+(90, 'new profile picture', 'george_smith', 'none', '2019-01-13 18:17:09', 'no', 'no', 0, 'assets/images/posts/5c3b80a5ae25cgeorge.jpg'),
+(91, 'Recyklase je zÃ¡klad pro redukci odpadu.', 'simon_buryan', 'none', '2019-01-17 17:38:32', 'no', 'no', 0, 'assets/images/posts/5c40bd98804a0recycle.jpg'),
+(92, 'Acadmics at work...', 'simon_buryan', 'none', '2019-08-31 17:25:42', 'no', 'no', 0, 'assets/images/posts/5d6a9f86d854aacademic beer.jpg');
 
 -- --------------------------------------------------------
 
@@ -395,7 +418,21 @@ INSERT INTO `trends` (`title`, `hits`) VALUES
 ('Tuesday', 1),
 ('Hi', 1),
 ('Free', 1),
-('Bird', 1);
+('Bird', 1),
+('Profile', 2),
+('Picture', 2),
+('Thank', 1),
+('Thynk', 2),
+('Heelo', 1),
+('Possibilities', 1),
+('Recycle', 1),
+('Recyklase', 1),
+('Je', 1),
+('Zklad', 1),
+('Pro', 1),
+('Redukci', 1),
+('Odpadu', 1),
+('Acadmics', 1);
 
 -- --------------------------------------------------------
 
@@ -423,15 +460,15 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `first_name`, `last_name`, `username`, `email`, `password`, `signup_date`, `profile_pic`, `num_posts`, `num_likes`, `user_closed`, `friend_array`) VALUES
-(20, 'Å imon', 'Buryan', 'simon_buryan', 'Simon.buryan@seznam.cz', '0cbb3ad466ebb557f1317c066e3db03a', '2018-03-18', 'assets/images/profile_pics/simon_buryanb4721c92526ba8961081042cfd1a688dn.jpeg', 16, 8, 'no', ',petr_petrov,george_smith,joe_smith,jim_yanke,1ai_bot,martin_sklã¡la,aneta_aneta,jordan_jake,jura_krava,'),
+(20, 'Å imon', 'Buryan', 'simon_buryan', 'Simon.buryan@seznam.cz', '0cbb3ad466ebb557f1317c066e3db03a', '2018-03-18', 'assets/images/profile_pics/simon_buryan39ff495e94e8cbf1a011742a5a817efen.jpeg', 23, 11, 'no', ',petr_petrov,george_smith,joe_smith,jim_yanke,1ai_bot,martin_sklã¡la,aneta_aneta,jordan_jake,jura_krava,'),
 (27, 'Å imon', 'Buryan', 'Å imon_buryan_1', 'Simon.buryan@cez.cz', '0129601396d16c84b32e0cc291f1d256', '2018-04-02', '', 0, 0, '', ''),
 (42, 'Simon', 'Buryan', 'simon_buryan_1', 'Xburs02@vse.cz', '0cbb3ad466ebb557f1317c066e3db03a', '2018-09-03', 'assets/images/profile_pics/defaults/head_emerald.png', 0, 0, 'no', ','),
 (43, 'Petr', 'Petrov', 'petr_petrov', 'Petr@user.us', '29d847ffce86b63c39a756a25b198751', '2018-11-24', 'assets/images/profile_pics/petrov.jpg', 8, 4, 'no', ',petr_petrov,george_smith,simon_buryan,jim_yanke,joe_smith,'),
-(44, 'George', 'Smith', 'george_smith', 'George@user.us', '29d847ffce86b63c39a756a25b198751', '2018-11-24', 'assets/images/profile_pics/george.jpg', 7, 3, 'no', ',petr_petrov,simon_buryan,'),
+(44, 'George', 'Smith', 'george_smith', 'George@user.us', '29d847ffce86b63c39a756a25b198751', '2018-11-24', 'assets/images/profile_pics/george_smitha31ebb442c1ebf39abf3c66c123d810en.jpeg', 8, 4, 'no', ',petr_petrov,simon_buryan,jordan_jake,'),
 (45, 'Jim', 'Yanke', 'jim_yanke', 'Jim@user.us', '29d847ffce86b63c39a756a25b198751', '2018-11-24', 'assets/images/profile_pics/jim.jpg', 3, 1, 'no', ',simon_buryan,petr_petrov,'),
 (46, 'Joe', 'Smith', 'joe_smith', 'Joe@user.us', '29d847ffce86b63c39a756a25b198751', '2018-11-30', 'assets/images/profile_pics/joe.jpg', 3, 1, 'no', ',Å imon_buryan,simon_buryan,petr_petrov,'),
 (48, 'Martin', 'Sklã¡la', 'martin_sklã¡la', 'Martin@user.us', '29d847ffce86b63c39a756a25b198751', '2018-12-15', 'assets/images/profile_pics/defaults/head_emerald.png', 0, 0, 'no', ',simon_buryan,'),
-(49, 'Jordan', 'Michael', 'jordan_jake', 'Jordan@user.us', '29d847ffce86b63c39a756a25b198751', '2018-12-15', 'assets/images/profile_pics/jordan.jpg', 2, 1, 'no', ',simon_buryan,'),
+(49, 'Jordan', 'Michael', 'jordan_jake', 'Jordan@user.us', '29d847ffce86b63c39a756a25b198751', '2018-12-15', 'assets/images/profile_pics/jordan_jake5a11310d47c9587067dbe6c31189f42en.jpeg', 3, 1, 'no', ',simon_buryan,george_smith,'),
 (50, '1ai', 'Bot', '1ai_bot', '1ai@user.us', '29d847ffce86b63c39a756a25b198751', '2018-12-15', 'assets/images/profile_pics/defaults/head_emerald.png', 0, 0, 'no', ',simon_buryan,'),
 (51, 'Jura', 'Krava', 'jura_krava', 'Jura@user.us', '29d847ffce86b63c39a756a25b198751', '2018-12-15', 'assets/images/profile_pics/defaults/head_deep_blue.png', 2, 0, 'no', ',simon_buryan,'),
 (52, 'Aneta', 'Aneta', 'aneta_aneta', 'Aneta@user.us', '29d847ffce86b63c39a756a25b198751', '2018-12-15', 'assets/images/profile_pics/defaults/head_emerald.png', 0, 0, 'no', ',simon_buryan,');
@@ -496,7 +533,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT pro tabulku `comments`
 --
 ALTER TABLE `comments`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 
 --
 -- AUTO_INCREMENT pro tabulku `friend_requests`
@@ -508,25 +545,25 @@ ALTER TABLE `friend_requests`
 -- AUTO_INCREMENT pro tabulku `likes`
 --
 ALTER TABLE `likes`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=46;
 
 --
 -- AUTO_INCREMENT pro tabulku `messages`
 --
 ALTER TABLE `messages`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=56;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=59;
 
 --
 -- AUTO_INCREMENT pro tabulku `notifications`
 --
 ALTER TABLE `notifications`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
 -- AUTO_INCREMENT pro tabulku `posts`
 --
 ALTER TABLE `posts`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=85;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=93;
 
 --
 -- AUTO_INCREMENT pro tabulku `users`

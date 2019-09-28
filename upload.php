@@ -34,7 +34,7 @@ if(isset($_FILES['image']['name'])){
 		$ImageType = @explode('/', $_FILES['image']['type']);
 		$type = $ImageType[1]; //file type
 	//Set Upload directory
-		$uploaddir = $_SERVER['DOCUMENT_ROOT'].'/assets/images/profile_pics';
+		$uploaddir = $_SERVER['DOCUMENT_ROOT'].'/circ8/assets/images/profile_pics';
 	//Set File name
 		$file_temp_name = $profile_id.'_original.'.md5(time()).'n'.$type; //the temp file name
 		$fullpath = $uploaddir."/".$file_temp_name; // the temp file path
@@ -157,7 +157,7 @@ if (isset($_POST['x'])){
 }// post x
 ?>
 <div id="Overlay" style=" width:100%; height:100%; border:0px #990000 solid; position:absolute; top:0px; left:0px; z-index:2000; display:none;"></div>
-<div class="main_column column">
+<div class="col-md-8 col-xs-12 col-md-push-1 main_column column">
 
 
 	<div id="formExample">

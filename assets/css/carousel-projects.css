@@ -1,0 +1,135 @@
+/* source: webseotips - https://www.youtube.com/watch?v=mglq2tBjRxk */
+
+/* equal card height */
+.row-equal > div[class*="col-"] {
+  display: flex;
+  flex: 1 0 auto;
+}
+
+.row-equal .card {
+  width: 100%;
+}
+
+/* ensure equal card height inside carousel */
+.carousel-inner > .row-equal.active,
+.carousel-inner > .row-equal.next,
+.carousel-inner > .row-equal.prev {
+  display: flex;
+}
+
+/* prevent flicker during transition */
+.carousel-inner > .row-equal.active.left,
+.carousel-inner > .row-equal.active.right {
+  opacity: 0.5;
+  display: flex;
+}
+
+/* control image height */
+.card-img-top-250 {
+  max-height: 250px;
+  overflow: hidden;
+}
+
+.card-header {
+  height: 120px;
+}
+
+.card-header h3 {
+  color: #16db16;
+  font-size: 19px;
+}
+
+.card-header h3 {
+  cursor: pointer;
+}
+
+.carousel-item-next {
+  display: flex;
+}
+
+.carousel-item-prev {
+  display: flex;
+}
+
+.card .card-block .card-text {
+  padding: 5px 5px;
+  height: 180px;
+}
+
+.carousel.slide .container {
+  width: 100%;
+}
+
+.carousel2.slide .container {
+  width: 100%;
+}
+
+.carousel3.slide .container {
+  width: 100%;
+}
+
+.carousel4.slide .container {
+  width: 100%;
+}
+
+.carousel5.slide .container {
+  width: 100%;
+}
+
+.carousel6.slide .container {
+  width: 100%;
+}
+
+/* new carousel - w3schools */
+
+.carousel-inner > .item > img,
+.carousel-inner > .item > a > img {
+  width: 70%;
+  margin: auto;
+}
+a.left.carousel-control {
+  background: white;
+  opacity: 0.5;
+}
+a.right.carousel-control {
+  background: white;
+  opacity: 0.5;
+}
+span.nextleft,
+span.nextright {
+  color: black;
+}
+
+div.item-one {
+  display: block;
+}
+div.item-wrapper {
+  display: block;
+  float: left;
+  height: 100px;
+  width: 100%;
+  margin-left: 0;
+}
+.item-in-num {
+  display: block;
+  float: left;
+  width: 33%;
+  height: 100%;
+}
+div.carousel-inner {
+  height: 370px;
+}
+ol.carousel-indicators > li.item-visual {
+  background: #16db16;
+}
+ol.carousel-indicators > li.item-visual.active {
+  background: #057705;
+}
+
+div.card > div.card-img-top {
+  max-height: 100px;
+}
+div.card-block > div.card-header {
+  text-align: center;
+  background: #e3e3e3;
+}
