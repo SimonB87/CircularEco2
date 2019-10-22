@@ -29,6 +29,12 @@ $(document).ready(function() {
 			}
 		});
 	});
+
+	//Show mobile menu
+	$("body").find("#nav-menu-mobile-icon").click(function() {
+		$(".mainMenuItems:not(:first-child)").toggleClass("mobileInvisible");
+	});
+
 });
 
 $(document).click(function(e){
@@ -47,8 +53,15 @@ $(document).click(function(e){
 		$(".dropdown_data_window").css({"padding" : "0px", "height" : "0px"});/*get rid of the css inside the div*/
 	}
 
-
 });
+
+/* $(document).ready(function() {
+	//Open Mobile menu
+	$("body").find("#nav-menu-mobile-icon").click(function() {
+		$(".mainMenuItems:not(:first-child)").toggleClass("mobileInvisible");
+		console.log("it works");
+	});
+});    */ 
 
 function getUsers(value, user) {
 	$.post("includes/handlers/ajax_friend_search.php", {query:value, userLoggedIn:user}, function(data) {
