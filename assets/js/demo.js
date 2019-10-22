@@ -8,7 +8,6 @@ $(document).ready(function() {
 		}
 	});
 
-	/**/
 	$('.button_holder').on('click', function(){
 		document.search_form.submit();
 	})
@@ -55,13 +54,6 @@ $(document).click(function(e){
 
 });
 
-/* $(document).ready(function() {
-	//Open Mobile menu
-	$("body").find("#nav-menu-mobile-icon").click(function() {
-		$(".mainMenuItems:not(:first-child)").toggleClass("mobileInvisible");
-		console.log("it works");
-	});
-});    */ 
 
 function getUsers(value, user) {
 	$.post("includes/handlers/ajax_friend_search.php", {query:value, userLoggedIn:user}, function(data) {
@@ -106,7 +98,7 @@ function getDropdownData(user, type) {
 
 }
 
-/*function for searching live on index page.*/
+//function for searching live on index page.
 function getLiveSearchUsers(value, user) {
 
 	$.post("includes/handlers/ajax_search.php", {query:value, userLoggedIn: user}, function(data) {
