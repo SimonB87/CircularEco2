@@ -6,13 +6,11 @@
 
 @font-face {
   font-family: "Bellota-LightItalic";
-
   src: url("../fonts/Bellota-LightItalic.otf");
 }
 
 @font-face {
   font-family: "Bellota-BoldItalic";
-
   src: url("../fonts/Bellota-BoldItalic.otf");
 }
 
@@ -28,9 +26,6 @@ a {
 
 .top_bar {
   width: 100%;
-
-  /* min-width: 1050px;  */
-
   height: 40px;
   background-color: #057705;
   border-bottom: 0.25em solid #16db16;
@@ -107,10 +102,7 @@ span.nav-repsonsive-description {
 
 .user_details {
   align-items: center;
-  /*width: 200px;
-*/
   float: left;
-
   display: flex;
   flex-direction: column;
   margin-bottom: 20px;
@@ -127,17 +119,9 @@ span.nav-repsonsive-description {
 }
 
 .user_details_left_right {
-  /*width: 125px;
-*/ /*deleted CSS section*/
-
   display: flex;
   flex-direction: column;
   align-items: center;
-
-  /*display: inline-block;
-  position: relative;
-
-  float: right;*/ /*added CSS correction*/
 }
 
 .user_details_left_right a {
@@ -154,13 +138,8 @@ span.nav-repsonsive-description {
 
 .main_column {
   float: right;
-
-  /*width: 72%;
-*/
   z-index: +1;
-
   min-height: 92%;
-
   position: relative;
 }
 
@@ -170,69 +149,46 @@ span.nav-repsonsive-description {
 
 .post_form textarea {
   width: 80%;
-
   height: 60px;
-
   border-radius: 5px;
-
   margin-right: 5px;
-
   border: 1px solid #d3d3d3;
-
   font-size: 12px;
-
   resize: none;
-
   padding: 5px;
 }
 
 .post_form input[type="submit"] {
   width: 12%;
-
   height: 60px;
-
   border: none;
-
   border-radius: 5px;
-
   background-color: #057705;
   font-family: "Bellota-BoldItalic", sans-serif;
-
   color: #fff;
-
   text-shadow: #73b6e2 0.5px 0.5px 0px;
-
   font-size: 90%;
-
   outline: 0;
-
   margin: 0;
-
   float: right;
   transform: translate(-45px, -86px);
 }
 
 .post_form input[type="submit"]:active {
   padding: 6px 4px 4px 6px;
-
   color: red;
 }
 
 .status_post {
   width: 96%;
-
   font-size: 15px;
-
   padding: 0px 5px;
-
   min-height: 75px;
-
   cursor: pointer;
 }
 
 .post_profile_pic {
   float: left;
-
   margin-right: 7px;
 }
 
@@ -469,9 +425,6 @@ button.btn.btn-info {
   text-align: center;
 }
 
-.developercontact {
-}
-
 .developertext {
   text-align: center;
 }
@@ -629,10 +582,6 @@ button.btn.btn-info {
 .unread_notification {
   right: 1px;
   top: 0px;
-}
-
-.mainMenuItems {
-  /*padding-left: 6px;*/
 }
 
 /* Notification */
