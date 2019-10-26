@@ -106,7 +106,16 @@ else {
       $num_requests = $user_obj->getNumberOfFriendRequest();
      ?>
 
-    <a href="#" class="mainMenuItems mobileInvisible nav-menu-mobile"><i id="nav-menu-mobile-icon" class="fa fa-bars fa-lg nav-menu-mobile-hamburger"></i></a>
+    <script>
+      function showMobileMenu() {
+        $(".mainMenuItems:not(:first-child)").toggleClass("mobileInvisible");
+        $("a.mainMenuItems.nav-menu-mobile").removeClass("mobileInvisible");
+      }
+    </script>
+
+    <a href="#" class="mainMenuItems nav-menu-mobile">
+      <i id="nav-menu-mobile-icon" class="fa fa-bars fa-lg nav-menu-mobile-hamburger" onclick="showMobileMenu();"></i>
+    </a>
 
     <a href="#" class="mainMenuItems mobileInvisible">
       <span class="nav-icon-mobile"></span>
