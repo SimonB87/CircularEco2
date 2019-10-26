@@ -9,10 +9,10 @@ This is link to the [Social website](http://obcevkruhu.cz/0demo/register.php).
 
 Current tasks:
 
-[ ] Prepare new project table
-[ ] Prepare new project view by project ID
-[ ] Add new project table display
+- [ ] Prepare new project table
+- [ ] Prepare new project view by project ID
+- [ ] Add new project table display
 
 Future tasks:
 
-[ ] New design
+- [ ] New design
