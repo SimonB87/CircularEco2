@@ -125,6 +125,7 @@ else {
     </a>
     <a href="index.php" class="mainMenuItems mobileInvisible"><span class="nav-icon-mobile"><i class="fa fa-home fa-lg"></i></span><span class="nav-repsonsive-description">Domů</span></a>
     <a href="project.php" class="mainMenuItems mobileInvisible"><span class="nav-icon-mobile"><i class='fas fa-frog'></i></span><span class="nav-repsonsive-description">Projekty</span></a>
+    <a href="project_table.php" class="mainMenuItems mobileInvisible"><span class="nav-icon-mobile"><i class='fas fa-dove'></i></span><span class="nav-repsonsive-description">Info-Projekty</span></a>
     <!--
     <a href="messages.php" class="mainMenuItems mobileInvisible"><i class="far fa-comment-alt"></i></i></a>
     -->
