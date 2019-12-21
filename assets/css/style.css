@@ -418,6 +418,10 @@ button.btn.btn-info {
   float: right !important;
 }
 
+button.btn.btn-info a {
+  color: #fff;
+}
+
 /* developer contact.php*/
 .strongtext {
   font-weight: bold;
@@ -722,13 +726,28 @@ button.btn.btn-info {
 }
 
 /* -- Project table --*/
+.mySearchTable_user_details {
+  display: flex;
+  justify-content: flex-start;
+}
 
-.project_table{
+.mySearchTable_user_details .user_details_row {
+  width: unset;
+  min-width: 30rem;
+}
+
+.project_table {
   width: 100%;
+  overflow-x: auto;
+}
+
+.project_table_info {
+  display: none;
+  visibility: hidden;
 }
 
 #mySearchInput {
-  background-image: url('/css/searchicon.png');
+  background-image: url("/css/searchicon.png");
   background-position: 10px 10px;
   background-repeat: no-repeat;
   width: 100%;
@@ -745,17 +764,32 @@ button.btn.btn-info {
   /*font-size: 18px;*/
 }
 
-#mySearchTable th, #mySearchTable td {
+.mySearchTable_header {
+  background-color: #16db16;
+  color: #fff;
+}
+
+.mySearchTable_header:hover {
+  color: #000;
+}
+
+#mySearchTable th,
+#mySearchTable td {
   text-align: left;
   padding: 12px;
+  vertical-align: top;
 }
 
 #mySearchTable tr {
   border-bottom: 1px solid #ddd;
 }
 
-#mySearchable tr.header, #mySearchTable tr:hover {
-  background-color: #f1f1f1;
+#mySearchTable tr:hover {
+  background-color: #8aed8a;
+}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2;
 }
 
 @media only screen and (max-width: 768px) {
@@ -799,5 +833,11 @@ button.btn.btn-info {
   }
   span.nav-repsonsive-description {
     display: block;
+  }
+  .project_table_info {
+    display: block;
+    visibility: visible;
+    font-weight: bold;
+    color: #16db16;
   }
 }
