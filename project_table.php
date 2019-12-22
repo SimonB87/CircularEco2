@@ -39,30 +39,6 @@ include("includes/header.php");
             <input type="text" id="mySearchInput" onkeyup="mySearchFunction()" placeholder="Hledej v projektech.." title="Hledat v projektech">
         <br>
 
-        <div class="row" style="display:none;">
-        <!--
-          <div class="col-md-2">
-            <input type="text" class="hledej form-control" id="myInput0" onkeyup="mySearchColumnFunction(0)" placeholder="Hledej v názvech" title="Hledej v názvech">
-          </div>
-
-          <div class="col-md-2">
-            <input type="text" class="hledej form-control" id="myInput1" onkeyup="mySearchColumnFunction(1)" placeholder="Hledej v plných názvech" title="Hledej v plných názvech">
-          </div>
-
-          <div class="col-md-2">
-            <input type="text" class="hledej form-control" id="myInput2" onkeyup="mySearchColumnFunction(2)" placeholder="Hledej v plných popisech" title="Hledej v plných popisech">
-          </div>
-
-          <div class="col-md-2">
-            <input type="text" class="hledej form-control" id="myInput3" onkeyup="mySearchColumnFunction(3)" placeholder="Hledej v cílové skupině" title="Hledej v cílové skupině">
-          </div>
-
-          <div class="col-md-2">
-            <input type="text" class="hledej form-control" id="myInput4" onkeyup="mySearchColumnFunction(4)" placeholder="Hledej v souvisejících kategoriích" title="Hledej v souvisejících kategoriích">
-          </div>
-        -->
-        </div>
-
         <br>
 
         <table id="mySearchTable" class="search_project_table">
