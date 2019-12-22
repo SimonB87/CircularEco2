@@ -19,20 +19,9 @@ function mySearchFunction() {
 
 //Functions to filter by table columns
 function mySearchColumnFunction(columnNumber) {
-  var input, filter, table, tr, td, i, txtValue;
-
-  if (columnNumber == 0) {
-    input = document.getElementById("myInput0");
-  } else if (columnNumber == 1) {
-    input = document.getElementById("myInput1");
-  } else if (columnNumber == 2) {
-    input = document.getElementById("myInput2");
-  } else if (columnNumber == 3) {
-    input = document.getElementById("myInput3");
-  } else if (columnNumber == 4) {
-    input = document.getElementById("myInput4");
-  }
-
+  var input, filter, table, tr, td, i, txtValue, targetInput;
+  targetInput = "myInput" + columnNumber;
+  input = document.getElementById(targetInput);
   filter = input.value.toUpperCase();
   table = document.getElementById("mySearchTable");
   tr = table.getElementsByTagName("tr");
