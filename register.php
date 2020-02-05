@@ -41,22 +41,22 @@ require 'includes/form_handlers/login_handler.php';
 
 			<div class="login_header">
 				<h1>Cirkulární projekty</h1>
-				Login or sign up below!
+				Přihlaste se nebo se registrujte níže!
 			</div>
 			<br>
 			<div id="first">
 
 				<form action="register.php" method="POST">
-					<input type="email" name="log_email" placeholder="Email Address" value="<?php
+					<input type="email" name="log_email" placeholder="Email" value="<?php
 					if(isset($_SESSION['log_email'])) {
 						echo $_SESSION['log_email'];
 					}
 					?>" required>
 					<br>
-					<input type="password" name="log_password" placeholder="Password">
+					<input type="password" name="log_password" placeholder="Heslo">
 					<br>
-					<?php if(in_array("Email or password was incorrect<br>", $error_array)) echo  "Email or password was incorrect<br>"; ?>
-					<input type="submit" name="login_button" value="Login">
+					<?php if(in_array("Email nebo heslo nejsou správné<br>", $error_array)) echo  "Email nebo heslo nejsou správné<br>"; ?>
+					<input type="submit" name="login_button" value="Přihlásit se">
 					<br>
 					<a href="#" id="signup" class="signup">Nemáte účet? Registrovat lze zde!</a>
 
@@ -121,6 +121,18 @@ require 'includes/form_handlers/login_handler.php';
 				</form>
 			</div>
 
+		</div>
+
+		<div class="demoUser">
+    		<div class="login_header">
+        		<h1>Demo přihlášení</h1>
+    		</div>
+    		<div>
+				<p><strong>Email:</strong></p>
+				<p>demo@uzivatel.cz<br></p>
+				<p><strong>Heslo:</strong></p>
+				<p>Demo123456<br></p>
+			</div>    
 		</div>
 
 	</div>
