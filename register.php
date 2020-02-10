@@ -37,6 +37,10 @@ require 'includes/form_handlers/login_handler.php';
 
 	<div class="thewrapped">
 
+		<div style="margin: 1rem auto;">
+  			<button class="button" style="background-color: #057705; border: none; color: white; padding: 15px 32px; text-align: center; text-decoration: none; display: inline-block; font-size: 16px; margin: 0 auto; cursor: pointer;"><a href="http://obcevkruhu.cz" style="color:#fff;">Zpět na hlavní stránku</a></button>
+		</div>
+ 
 		<div class="login_box">
 
 			<div class="login_header">

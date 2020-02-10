@@ -119,18 +119,19 @@ else {
 
     <a href="#" class="mainMenuItems mobileInvisible">
       <span class="nav-icon-mobile"></span>
+      Uživatel:
       <?php
         echo $user['first_name'];
       ?>
     </a>
-    <a href="index.php" class="mainMenuItems mobileInvisible"><span class="nav-icon-mobile"><i class="fa fa-home fa-lg"></i></span><span class="nav-repsonsive-description">Domů</span></a>
-    <a href="project.php" class="mainMenuItems mobileInvisible"><span class="nav-icon-mobile"><i class='fas fa-frog'></i></span><span class="nav-repsonsive-description">Projekty</span></a>
-    <a href="project_table.php" class="mainMenuItems mobileInvisible"><span class="nav-icon-mobile"><i class='fas fa-dove'></i></span><span class="nav-repsonsive-description">Info-Projekty</span></a>
+    <a href="feed.php" class="mainMenuItems mobileInvisible"><span class="nav-icon-mobile">Novinky <i class="fa fa-home fa-lg"></i></span></a>
+    <a href="project.php" class="mainMenuItems mobileInvisible"><span class="nav-icon-mobile">Projekty<i class='fas fa-frog'></i></span></a>
+    <a href="index.php" class="mainMenuItems mobileInvisible"><span class="nav-icon-mobile">Informace<i class='fas fa-dove'></i></span></a>
     <!--
     <a href="messages.php" class="mainMenuItems mobileInvisible"><i class="far fa-comment-alt"></i></i></a>
     -->
     <a href="javascript:void(0);" onclick="getDropdownData('<?php echo $userLoggedIn; ?>', 'message')" class="mainMenuItems mobileInvisible"> 
-      <span class="nav-icon-mobile"><i class="fa fa-envelope fa-lg"></i></span> <span class="nav-repsonsive-description">Zprávy</span>
+      <span class="nav-icon-mobile">Zprávy<i class="fa fa-envelope fa-lg"></i></span>
         <?php
         if($num_notifications > 0){
             echo '<span class="notification_badge unread_notification" id="unread_notifications">' . $num_notifications .'</span> ';
@@ -138,7 +139,7 @@ else {
         ?>
         </a>
     <a href="javascript:void(0);" onclick="getDropdownData('<?php echo $userLoggedIn; ?>', 'notification')"  class="mainMenuItems mobileInvisible">
-      <span class="nav-icon-mobile"><i class="fas fa-eye"></i></span><span class="nav-repsonsive-description">Upozornění</span> </a>
+      <span class="nav-icon-mobile">Upozornění<i class="fas fa-eye"></i></span><span class="nav-repsonsive-description">Upozornění</span> </a>
         <?php
         if($num_messages > 0){
             echo '<span class="notification_badge unread_message" id="unread_message">' . $num_messages .'</span> ';
@@ -146,17 +147,17 @@ else {
         ?>
 
 
-    <a href="requests.php" class="mainMenuItems mobileInvisible"> <span class="nav-icon-mobile"><i class="fa fa-users fa-lg"> </i></span> <span class="nav-repsonsive-description">Kontakty</span></a>
+    <a href="requests.php" class="mainMenuItems mobileInvisible"> <span class="nav-icon-mobile">Kontakty<i class="fa fa-users fa-lg"> </i></span></a>
         <?php
         if($num_requests > 0){
             echo '<span class="notification_badge unread_requests" id="unread_requests">' . $num_requests .'</span> ';
         }
         ?>
     <!--<a href="upload.php" class="mainMenuItems mobileInvisible"> <i class="fa fa-cog fa-lg"></i></a> -->
-    <a href="settings.php" class="mainMenuItems mobileInvisible"> <span class="nav-icon-mobile"><i class="fa fa-cog fa-lg"></i></span><span class="nav-repsonsive-description">Nastavení</span></a>
-    <a href="#" class="mainMenuItems mobileInvisible"><span class="nav-icon-mobile"><i class="fas fa-question"></i></span><span class="nav-repsonsive-description">Nápověda</span></a><!-- link to user-manual -->
-    <a href="contact.php" class="mainMenuItems mobileInvisible"> <span class="nav-icon-mobile"><i class="far fa-comment"></i></span><span class="nav-repsonsive-description">Správce</span></a><!-- link to user-manual -->
-    <a href="includes\handlers\logout.php" class="mainMenuItems mobileInvisible"><span class="nav-icon-mobile"><i class="fa fa-sign-out-alt fa-lg"></i></span><span class="nav-repsonsive-description">Odejít</span></a>
+    <a href="settings.php" class="mainMenuItems mobileInvisible"> <span class="nav-icon-mobile">Nastavení<i class="fa fa-cog fa-lg"></i></span></a>
+    <a href="#" class="mainMenuItems mobileInvisible"><span class="nav-icon-mobile">Nápověda<i class="fas fa-question"></i></span></a><!-- link to user-manual -->
+    <a href="contact.php" class="mainMenuItems mobileInvisible"> <span class="nav-icon-mobile">Správce<i class="far fa-comment"></i></span></a><!-- link to user-manual -->
+    <a href="includes\handlers\logout.php" class="mainMenuItems mobileInvisible"><span class="nav-icon-mobile">Odejít<i class="fa fa-sign-out-alt fa-lg"></i></span><span class="nav-repsonsive-description"></span></a>
 
   </nav>
 
