@@ -124,9 +124,9 @@ else {
         echo $user['first_name'];
       ?>
     </a>
-    <a href="feed.php" class="mainMenuItems mobileInvisible"><span class="nav-icon-mobile">Novinky <i class="fa fa-home fa-lg"></i></span></a>
+    <a href="index.php" class="mainMenuItems mobileInvisible"><span class="nav-icon-mobile">Novinky <i class="fa fa-home fa-lg"></i></span></a>
     <a href="project.php" class="mainMenuItems mobileInvisible"><span class="nav-icon-mobile">Projekty<i class='fas fa-frog'></i></span></a>
-    <a href="index.php" class="mainMenuItems mobileInvisible"><span class="nav-icon-mobile">Informace<i class='fas fa-dove'></i></span></a>
+    <a href="tableprojects.php" class="mainMenuItems mobileInvisible"><span class="nav-icon-mobile">Informace<i class='fas fa-dove'></i></span></a>
     <!--
     <a href="messages.php" class="mainMenuItems mobileInvisible"><i class="far fa-comment-alt"></i></i></a>
     -->
