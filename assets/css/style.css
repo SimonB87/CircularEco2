@@ -1,7 +1,15 @@
 * {
   margin: 0 0 0 0;
-
   padding: 0 0 0 0;
+}
+
+:root {
+  --main-dark-color: #057705;
+  --main-light-color: #16db16;
+  --link-color: #20aae5;
+  --dark-element-color: #73b6e2;
+  --gray-color: #d3d3d3;
+  --success-color: #2ecc71;
 }
 
 @font-face {
@@ -20,15 +28,15 @@ body {
 }
 
 a {
-  color: #20aae5;
+  color: var(--link-color);
   text-decoration: none;
 }
 
 .top_bar {
   width: 100%;
   height: 40px;
-  background-color: #057705;
-  border-bottom: 0.25em solid #16db16;
+  background-color: var(--main-dark-color);
+  border-bottom: 0.25em solid var(--main-light-color);
   margin: 0 0 10px 0;
   display: inline-flex;
   position: fixed; /*make the nav fixed*/
@@ -41,7 +49,7 @@ a {
   font-size: 150%;
   position: relative;
   top: 8px;
-  text-shadow: #73b6e2 0.5px 0.5px 0px;
+  text-shadow: var(--dark-element-color) 0.5px 0.5px 0px;
   color: #fff;
 }
 
@@ -66,7 +74,7 @@ nav a {
 }
 
 nav a:hover {
-  color: #16db16;
+  color: var(--main-light-color);
   border-bottom: 0px;
 }
 
@@ -98,9 +106,9 @@ span.nav-repsonsive-description {
 .column {
   background-color: #fff;
   padding: 10px;
-  border: 1px solid #d3d3d3;
+  border: 1px solid var(--gray-color);
   border-radius: 5px;
-  box-shadow: 2px 2px 1px #d3d3d3;
+  box-shadow: 2px 2px 1px var(--gray-color);
   z-index: 1;
   color: #555;
 }
@@ -130,7 +138,7 @@ span.nav-repsonsive-description {
 }
 
 .user_details_left_right a {
-  color: #057705;
+  color: var(--main-dark-color);
 }
 
 .user_details img {
@@ -157,7 +165,7 @@ span.nav-repsonsive-description {
   height: 60px;
   border-radius: 5px;
   margin-right: 5px;
-  border: 1px solid #d3d3d3;
+  border: 1px solid var(--gray-color);
   font-size: 12px;
   resize: none;
   padding: 5px;
@@ -168,10 +176,10 @@ span.nav-repsonsive-description {
   height: 60px;
   border: none;
   border-radius: 5px;
-  background-color: #057705;
+  background-color: var(--main-dark-color);
   font-family: "Bellota-BoldItalic", sans-serif;
   color: #fff;
-  text-shadow: #73b6e2 0.5px 0.5px 0px;
+  text-shadow: var(--dark-element-color) 0.5px 0.5px 0px;
   font-size: 90%;
   outline: 0;
   margin: 0;
@@ -222,7 +230,7 @@ iframe {
 }
 
 #comment_form textarea {
-  border-color: #d3d3d3;
+  border-color: var(--gray-color);
   width: 85%;
   height: 35px;
   border-radius: 5px;
@@ -233,7 +241,7 @@ iframe {
 
 #comment_form input[type="submit"] {
   border: none;
-  background-color: #20aae5;
+  background-color: var(--link-color);
   color: #156588;
   border-radius: 5px;
   width: 13%;
@@ -242,13 +250,13 @@ iframe {
   position: absolute;
   font-family: "Bellota-BoldItalic", sans-serif;
   color: #fff;
-  text-shadow: #73b6e2 0.5px 0.5px 0px;
+  text-shadow: var(--dark-element-color) 0.5px 0.5px 0px;
 }
 
 .newsfeedPostOptions {
   padding: 0;
   text-decoration: none;
-  color: #20aae5;
+  color: var(--link-color);
   border: none;
 }
 
@@ -325,7 +333,7 @@ iframe {
 }
 
 .success {
-  background-color: #2ecc71;
+  background-color: var(--success-color);
 }
 
 .info {
@@ -351,7 +359,7 @@ iframe {
   border-radius: 5px;
   margin: 5px;
   border: none;
-  background-color: #2ecc71;
+  background-color: var(--success-color);
   color: #fff;
 }
 
@@ -392,7 +400,7 @@ iframe {
 /*Styl pro projekty */
 
 .projekty-back {
-  background: #057705;
+  background: var(--main-dark-color);
   background-image: url("../images/backgrounds/projects.jpg");
   background-position: center;
   background-repeat: no-repeat;
@@ -430,7 +438,7 @@ button.btn.btn-info a {
 /* developer contact.php*/
 .strongtext {
   font-weight: bold;
-  color: #20aae5;
+  color: var(--link-color);
   text-align: center;
 }
 
@@ -444,7 +452,7 @@ button.btn.btn-info a {
   width: 80%;
   margin-right: 8px;
   border-radius: 5px;
-  border: 1px solid #d3d3d3;
+  border: 1px solid var(--gray-color);
   font-size: 12px;
 }
 
@@ -454,11 +462,11 @@ button.btn.btn-info a {
   margin: 0;
   position: absolute;
   border: none;
-  background-color: #20aae5;
+  background-color: var(--link-color);
   color: #156588;
   border-radius: 5px;
   font-family: "Bellota-BoldItalic", sans-serif;
-  text-shadow: #73b6e2 0.5px 0.5px 0px;
+  text-shadow: var(--dark-element-color) 0.5px 0.5px 0px;
 }
 
 .message {
@@ -477,7 +485,7 @@ button.btn.btn-info a {
 }
 
 .message#green {
-  background-color: #2ecc71;
+  background-color: var(--success-color);
   border-color: #27ae60;
   float: left;
   margin-bottom: 5px;
@@ -497,12 +505,12 @@ button.btn.btn-info a {
 }
 
 .user_found_messages {
-  border-bottom: 1px solid #d3d3d3;
+  border-bottom: 1px solid var(--gray-color);
   padding: 8px 8px 10px 10px;
 }
 
 .user_found_messages:hover {
-  background-color: #d3d3d3;
+  background-color: var(--gray-color);
 }
 
 .user_found_messages img {
@@ -519,7 +527,7 @@ button.btn.btn-info a {
 .resultDisplay {
   padding: 5px 5px 0px 5px;
   height: 70px;
-  border-bottom: 1px solid #d3d3d3;
+  border-bottom: 1px solid var(--gray-color);
 }
 
 .resultDisplay a {
@@ -653,7 +661,7 @@ button.btn.btn-info a {
 
 .search_results_footer {
   color: #fff;
-  background-color: #20aae5;
+  background-color: var(--link-color);
   padding: 7px 4px 0px 4px;
   border: 1px solid #dadada;
   border-top: none;
@@ -770,7 +778,7 @@ button.btn.btn-info a {
 }
 
 .mySearchTable_header {
-  background-color: #16db16;
+  background-color: var(--main-light-color);
   color: #fff;
 }
 
@@ -801,7 +809,7 @@ tr:nth-child(even) {
   nav {
     display: flex;
     flex-direction: column;
-    background: #057705;
+    background: var(--main-dark-color);
     top: 0px;
   }
   nav a {
@@ -843,6 +851,6 @@ tr:nth-child(even) {
     display: block;
     visibility: visible;
     font-weight: bold;
-    color: #16db16;
+    color: var(--main-light-color);
   }
 }
