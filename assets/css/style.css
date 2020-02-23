@@ -34,7 +34,7 @@ a {
 
 .top_bar {
   width: 100%;
-  height: 40px;
+  height: 7rem;
   background-color: var(--main-dark-color);
   border-bottom: 0.25em solid var(--main-light-color);
   margin: 0 0 10px 0;
@@ -58,11 +58,43 @@ a:hover {
 }
 
 nav {
-  float: right;
-  right: 2px;
-  position: absolute;
-  margin: 10px 10px 10px 10px;
-  z-index: 1;
+  margin-left: auto;
+}
+
+nav #burgerIcon {
+  display: none;
+  visibility: hidden;
+}
+
+nav ul {
+  list-style-type: none;
+}
+
+nav #websitePcMenu {
+  display: flex;
+}
+
+nav #websiteMobileMenu {
+  display: none;
+  visibility: hidden;
+}
+
+nav #websitePcMenu li {
+  text-align: center;
+  margin: 0 auto;
+  padding-right: 0.5rem;
+}
+nav #websitePcMenu li a div {
+  margin-top: 0.75rem;
+}
+
+nav #websitePcMenu li a:hover div:nth-child(2) {
+  margin-top: 0.25rem;
+}
+
+nav a div.mainMenuItemIcon {
+  max-height: 3rem;
+  overflow: hidden;
 }
 
 nav a {
@@ -73,31 +105,28 @@ nav a {
   z-index: 1;
 }
 
-nav a:hover {
+nav a div,
+nav a div i {
+  transition: all 0.5s linear 0.1s;
+}
+
+nav a:hover div,
+nav a:hover div i {
   color: var(--main-light-color);
-  border-bottom: 0px;
 }
 
-a.mainMenuItems {
-  border-right: 1px solid white;
-  padding: 0px 2px;
+nav a:hover div i {
+  font-size: 175%;
 }
 
-nav a:visited {
-  text-decoration: none;
-}
-
-nav .nav-menu-mobile {
-  display: none;
-}
-
-span.nav-repsonsive-description {
-  display: none;
+.content {
+  margin: 10rem;
+  position: absolute;
 }
 
 .wrapper {
   margin: 0 auto;
-  top: 50px;
+  top: 8rem;
   position: relative;
   padding: 0 10px;
   width: 85%;
@@ -143,9 +172,7 @@ span.nav-repsonsive-description {
 
 .user_details img {
   height: 125px;
-
   border-radius: 5px;
-
   margin-right: 5px;
 }
 
@@ -806,6 +833,7 @@ tr:nth-child(even) {
 }
 
 @media only screen and (max-width: 768px) {
+  /*
   nav {
     display: flex;
     flex-direction: column;
@@ -844,6 +872,7 @@ tr:nth-child(even) {
   .mainMenuItems {
     padding-bottom: 6px;
   }
+  */
   span.nav-repsonsive-description {
     display: block;
   }
@@ -852,5 +881,72 @@ tr:nth-child(even) {
     visibility: visible;
     font-weight: bold;
     color: var(--main-light-color);
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  nav #burgerIcon {
+    display: block;
+    visibility: visible;
+    color: #fff;
+    padding: 1rem;
+    background-color: var(--main-dark-color);
+    width: 3rem;
+    right: 2rem;
+  }
+
+  nav a#burgerIcon {
+    max-width: 3rem;
+  }
+
+  nav #burgerIcon .burgerIcon--span {
+    float: right;
+  }
+
+  nav #websitePcMenu {
+    display: none;
+    visibility: hidden;
+  }
+
+  nav #websiteMobileMenu {
+    position: absolute;
+    right: 0;
+    top: 4rem;
+    display: flex;
+    visibility: visible;
+    flex-direction: column;
+    font-size: 2rem;
+    margin-top: 10px;
+  }
+
+  nav #websiteMobileMenu .websiteMobileMenu--Item {
+    display: block;
+    visibility: visible;
+  }
+
+  nav #websiteMobileMenu .websiteMobileMenu--Item.invisible {
+    display: none;
+    visibility: hidden;
+  }
+
+  nav #websiteMobileMenu .websiteMobileMenu--Item {
+    width: 20rem;
+  }
+
+  nav #burgerIcon i {
+    border: 2px solid #fff;
+    border-radius: 5px;
+    padding: 5px;
+  }
+
+  nav .websiteMobileMenu--Item {
+    background-color: var(--main-dark-color);
+    padding: 0.5rem 1rem;
+    width: 10rem;
+    float: right;
+  }
+
+  nav .websiteMobileMenu--Icon {
+    padding: 0.5rem;
   }
 }
