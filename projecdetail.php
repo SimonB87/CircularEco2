@@ -35,17 +35,55 @@ include("includes/header.php");
   </div>
   <div class="row">
     <div class="col-md-12">
-      <h2 style="text-align: center;">Pronájem služeb a produktů namísto nákupu</h2>
 
-      <h3>
         <?php
         $actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
         $position_in_string = strpos($actual_link, "number=");
         $project_number = substr($actual_link, $position_in_string + 7);
-        echo "Testing project number: <span style='color:red'>" . $project_number ."</span>";
+        echo "<h4 style='color: #a0a0a0'>Testing project number: <span style='color:coral'>" . $project_number ."</span></h4>";
+
+        //conect to the database
+        //old: $conn = mysqli_conect("md54.wedos.net", "a223948_sbforum", "phx5EXKm", "d223948_sbforum");
+        //in case of error during conecting to the database display error
+        if ($con-> conect_error) {
+          die("conection Failed:". $con-> conect_error);
+        }
+
+        //print the used character set - just for testing
+        //printf("Initial character set: %s\n", mysqli_character_set_name($con));
+
+        /* change character set to utf8 */
+        if (!mysqli_set_charset($con, "utf8")) {
+              printf("Error loading character set utf8: %s\n", mysqli_error($con));
+              exit();
+        } else {
+              //printf("Current character set: %s\n", mysqli_character_set_name($con));//used only for testing
+        }
+
+
+        //Select columns named from "a" to "e" from a database
+        $sql = "SELECT plny_nazev FROM projety_ce WHERE id='$project_number'";
+        //variable to catch the results
+        $results = $con-> query($sql);
+        //function to fatch the data
+        if ($results-> num_rows > 0 ) {
+          while ($row = $results-> fetch_assoc()) {
+
+              echo "<h2 style='text-align: center; color: coral'>".$row["plny_nazev"]."</h2>";
+          }
+          echo "";
+        }
+        else {
+          echo "<h3 style='text-align: center; color: coral'>Projekt s vybraným číslem není v databázi. Vyberte existující projekt!</h3>";
+        }
+        //Close the variable after finishing
+        $con-> close();
+
         ?>
 
-      </h3>
+      <h2 style="text-align: center;">Název: Pronájem služeb a produktů namísto nákupu</h2>
+
+
 
     </div>
   </div>
