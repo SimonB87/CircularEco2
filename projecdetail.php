@@ -62,14 +62,37 @@ include("includes/header.php");
 
 
         //Select columns named from "a" to "e" from a database
-        $sql = "SELECT plny_nazev FROM projety_ce WHERE id='$project_number'";
+        $sql = "SELECT kategorie, plny_nazev, plny_popis, podminky_vyuziti, vyuzitelne_produkty, SWOT_analyza, cilova_skupina, ekonomicke_podminky, personálni_narocnost, pravni_aspekty, priklad_praxe, souvisejici_kategorie FROM projety_ce WHERE id='$project_number'";
         //variable to catch the results
         $results = $con-> query($sql);
         //function to fatch the data
         if ($results-> num_rows > 0 ) {
           while ($row = $results-> fetch_assoc()) {
 
-              echo "<h2 style='text-align: center; color: coral'>".$row["plny_nazev"]."</h2>";
+              echo "<h2 style='text-align: center; color: coral'><br>".$row["plny_nazev"]."</h2>";
+
+              echo "<div> <strong> Kategorie: </strong></div><div>" .$row["kategorie"]. "</div><br>";
+
+              echo "<div> <strong> Plný popis: </strong></div><div>" .$row["plny_popis"]. "</div><br>";
+
+              echo "<div> <strong> Podmínky využití / bariéry: </strong></div><div>" .$row["podminky_vyuziti"]. "</div><br>";
+
+              echo "<div> <strong> Využitelné typy produktů/ odpadů: </strong></div><div>" .$row["vyuzitelne_produkty"]. "</div><br>";
+
+              echo "<div> <strong> SWOT analýza: </strong></div><div>" .$row["SWOT_analyza"]. "</div><br>";
+
+              echo "<div> <strong> Cílová skupina: </strong></div><div>" .$row["cilova_skupina"]. "</div><br>";
+
+              echo "<div> <strong> Ekonomické podmínky a přínosy: </strong></div><div>" .$row["ekonomicke_podminky"]. "</div><br>";
+
+              echo "<div> <strong> Personální náročnost: </strong></div><div>" .$row["personálni_narocnost"]. "</div><br>";
+
+              echo "<div> <strong> Právní aspekty: </strong></div><div>" .$row["pravni_aspekty"]. "</div><br>";
+
+              echo "<div> <strong> Příklad z praxe: </strong></div><div>" .$row["priklad_praxe"]. "</div><br>";
+
+              echo "<div> <strong> Související kategorie </strong></div><div>" .$row["souvisejici_kategorie"]. "</div><br>";
+
           }
           echo "";
         }
