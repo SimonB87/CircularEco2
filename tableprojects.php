@@ -96,14 +96,14 @@ include("includes/header.php");
 
 
             //Select columns named from "a" to "e" from a database
-            $sql = "SELECT web_nazev, plny_nazev, plny_popis, cilova_skupina, souvisejici_kategorie from projety_ce";
+            $sql = "SELECT id, web_nazev, plny_nazev, plny_popis, cilova_skupina, souvisejici_kategorie from projety_ce";
             //variable to catch the results
             $results = $con-> query($sql);
             //function to fatch the data
             if ($results-> num_rows > 0 ) {
                 while ($row = $results-> fetch_assoc()) {
 
-                    echo "<tr><td><strong>".$row["web_nazev"]."</strong></td><td>".$row["plny_nazev"]."</td><td>".$row["plny_popis"]."</td><td>".$row["cilova_skupina"]."</td><td>".$row["souvisejici_kategorie"]."</td></tr>";
+                    echo "<tr><td><strong> <a href='projecdetail.php?projectnumber=".$row["id"]."'>".$row["web_nazev"]."</a></strong></td><td>".$row["plny_nazev"]."</td><td>".$row["plny_popis"]."</td><td>".$row["cilova_skupina"]."</td><td>".$row["souvisejici_kategorie"]."</td></tr>";
                 }
                 echo "";
             }
