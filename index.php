@@ -63,8 +63,8 @@ if($uploadOk) {
 					<!-- show number of profile posts-->
 					<br>
 					<?php
-					echo "Posts: " . $user['num_posts'] . "<br>";
-					echo "Likes: " . $user['num_likes'];
+					echo "Příspěvky: " . $user['num_posts'] . "<br>";
+					echo "Lajky: " . $user['num_likes'];
 					?>
 				</div>
 		</div>
