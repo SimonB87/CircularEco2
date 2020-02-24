@@ -209,8 +209,8 @@ include("includes/header.php");
                       <img class="img-fluid" src="assets/images/projects/friendsmeet.jpg" alt="Carousel 1">
                   </div>
                   <div class="card-block p-t-2">
-                      <div class="card-header"><a href="project1id1.php"><h3>Pronájem služeb a produktů namísto nákupu</h3></a></div>
-                      <div class="card-text">Pronájem nakupovaných produktů se smluvním odběrem a zajištění recyklace po jejich skutečném nebo morálním zastarání/dožití.</div>
+                      <div class="card-header"><a href="projecdetail.php?projectnumber=1101"><h3>Sběr textilu a oděvů v obci</h3></a></div>
+                      <div class="card-text"> Obnošené oděvy a boty, nevyužívané kusy oděvů je možné využít pro sociálně znevýhodněné obyvatele. Pro sběr textilu a bot slouží speciální kontejnery.</div>
                   </div>
 
               </div>
@@ -221,8 +221,8 @@ include("includes/header.php");
                       <img class="img-fluid" src="assets/images/projects/recycle.jpg" alt="Carousel 1">
                   </div>
                   <div class="card-block p-t-2">
-                      <div class="card-header"><h3>Bezobalové hospodářství – obecní akce</h3></div>
-                      <div class="card-text">Snižování spotřeby obalů v rámci průběžné i mimořádné činnosti obce...</div>
+                      <div class="card-header"><a href="projecdetail.php?projectnumber=1102"><h3>RE – USE centra, Opravny produktů (nábytek, elektronika)</h3></a></div>
+                      <div class="card-text">Vznik opraven, kde by se renovovaly, opravovaly, vyměňovaly díly u rozličných produktů používaných v domácnostech.</div>
                   </div>
               </div>
           </div>
@@ -232,8 +232,8 @@ include("includes/header.php");
                       <img class="img-fluid" src="assets/images/projects/textilebag.jpg" alt="Carousel 1">
                   </div>
                   <div class="card-block p-t-2">
-                      <div class="card-header"><h3>Bezobalové hospodářství – sjednocování objednávek</h3></div>
-                      <div class="card-text">Snižování spotřeby obalů v rámci průběžné i mimořádné činnosti obce, a to sjednocením objednávek zboží (kancelářské potřeby, potraviny apod.) do 1 balení, hromadné nakupování na delší období.</div>
+                      <div class="card-header"><a href="projecdetail.php?projectnumber=1103"><h3>Organizování bleších trhů, obecní burzy</h3></a></div>
+                      <div class="card-text">Výměna, darování, prodej rozličných nepotřebných věcí mezi občany – věc neskončí v popelnici a ani na skládce. 3</div>
                   </div>
               </div>
           </div>
@@ -249,8 +249,8 @@ include("includes/header.php");
                       <img class="img-fluid" src="assets/images/projects/youngpeople.jpg" alt="Carousel 1">
                   </div>
                   <div class="card-block p-t-2">
-                      <div class="card-header"><h3>Zelené úřadování</h3></div>
-                      <div class="card-text">Jednoduchá úsporná opatření související s běžnou kancelářskou agendou obce...</div>
+                      <div class="card-header"><a href="projecdetail.php?projectnumber=1104"><h3>Virtuální re-use centrum – nabídka nepotřebných věcí</h3></a></div>
+                      <div class="card-text">Jedná se o webové stránky, aplikaci umožňující nabízet nepotřebné věci z domácnosti občanů. Jedním z typů je Knihovna věcí, či el. verze SWAP (směnný obchod).</div>
                   </div>
               </div>
           </div>
@@ -260,7 +260,7 @@ include("includes/header.php");
                       <img class="img-fluid" src="assets/images/projects/friendsmeet.jpg" alt="Carousel 1">
                   </div>
                   <div class="card-block p-t-2">
-                      <div class="card-header"><h3>Zelené veřejné zakázky</h3></div>
+                      <div class="card-header"><a href="projecdetail.php?projectnumber=1105"><h3>Nabídka stavebních materiálů před demolicí staveb v obci</h3></a></div>
                       <div class="card-text">Zelené úřadování je zkrácený název pro ekologický provoz institucí financovaných z veřejných prostředků, jako jsou např. obecní, městské či krajské úřady, školy, školky, penziony pro důchodce, kulturní centra.</div>
                   </div>
               </div>
@@ -271,8 +271,8 @@ include("includes/header.php");
                       <img class="img-fluid" src="assets/images/projects/friendsmeet.jpg" alt="Carousel 1">
                   </div>
                   <div class="card-block p-t-2">
-                      <div class="card-header"><h3>Zelená péče o veřejná prostranství</h3></div>
-                      <div class="card-text">Nechemické odstraňování plevelů na veřejných prostranstvích a využití mechanických (manuálních) prostředků pro údržbu zeleně (kosy, vřetenové sekačky).</div>
+                      <div class="card-header"><a href="projecdetail.php?projectnumber=1106"><h3>SWAP – výměna zboží, materiálu, výrobku, směnný obchod</h3></a></div>
+                      <div class="card-text">Vyměňuje se vše za vše – dáte své věci na stůl, na zem nebo do krabic a sami si vybíráte, co by se vám hodilo z kousků přinesených ostatními.</div>
                   </div>
               </div>
           </div>
