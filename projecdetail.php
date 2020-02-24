@@ -40,8 +40,7 @@ include("includes/header.php");
         $actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
         $position_in_string = strpos($actual_link, "number=");
         $project_number = substr($actual_link, $position_in_string + 7);
-        echo "<h4 style='color: #a0a0a0'>Testing project number: <span style='color:coral'>" . $project_number ."</span></h4>";
-
+      
         //conect to the database
         //old: $conn = mysqli_conect("md54.wedos.net", "a223948_sbforum", "phx5EXKm", "d223948_sbforum");
         //in case of error during conecting to the database display error
