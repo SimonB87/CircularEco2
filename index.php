@@ -70,7 +70,7 @@ if($uploadOk) {
 		</div>
 
 		  <div class="col-xs-12 col-sm-6 col-md-12 user_details_trends column">
-				<h4>Popular topics</h4>
+				<h4>Populární témata</h4>
 				<div class="trends">
 						<?php
 							$query = mysqli_query($con, "SELECT * FROM trends ORDER BY hits DESC LIMIT 9");
