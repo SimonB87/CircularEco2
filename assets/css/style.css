@@ -117,14 +117,23 @@ nav a div i {
 }
 
 nav a:hover div,
-nav a:hover div i {
+nav a:hover div i,
+nav a:hover .websiteMobileMenu--Icon,
+nav a:hover .websiteMobileMenu--Description {
   color: var(--main-light-color);
 }
 
 nav a:hover div.projectContent,
-nav a:hover div i.projectContent {
+nav a:hover div i.projectContent,
+nav a:hover .websiteMobileMenu--Icon i.projectContent,
+nav a:hover .websiteMobileMenu--Description.projectContent {
   color: var(--secondary-complementary-color);
 }
+
+/*
+.websiteMobileMenu--Icon
+.websiteMobileMenu--Description
+*/
 
 nav a:hover div i {
   font-size: 175%;
