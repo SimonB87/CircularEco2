@@ -10,6 +10,8 @@
   --dark-element-color: #73b6e2;
   --gray-color: #d3d3d3;
   --success-color: #2ecc71;
+  --main-complementary-color: #d6b4b4;
+  --secondary-complementary-color: #ae1506;
 }
 
 @font-face {
@@ -105,6 +107,10 @@ nav a {
   z-index: 1;
 }
 
+nav li .projectContent {
+  color: var(--main-complementary-color);
+}
+
 nav a div,
 nav a div i {
   transition: all 0.5s linear 0.1s;
@@ -113,6 +119,11 @@ nav a div i {
 nav a:hover div,
 nav a:hover div i {
   color: var(--main-light-color);
+}
+
+nav a:hover div.projectContent,
+nav a:hover div i.projectContent {
+  color: var(--secondary-complementary-color);
 }
 
 nav a:hover div i {
@@ -129,6 +140,7 @@ nav a:hover div i {
   top: 8rem;
   position: relative;
   padding: 0 10px;
+  padding-bottom: 7rem;
   width: 85%;
 }
 

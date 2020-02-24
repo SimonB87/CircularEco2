@@ -97,9 +97,9 @@ if($uploadOk) {
 
 		<form class="post_form" action="index.php" method="POST" enctype="multipart/form-data">
 
-			<textarea name="post_text" id="post_text"  placeholder="Got something to share?"></textarea>
+			<textarea name="post_text" id="post_text"  placeholder="Máte něco na sdílení?"></textarea>
 			<input type="file" name="fileToUpload" id="fileToUpload">
-			<input type="submit" name="post" value="POST">
+			<input type="submit" name="post" value="PŘIDAT">
 			<hr>
 
 		</form>

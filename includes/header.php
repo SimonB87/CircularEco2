@@ -131,15 +131,15 @@ else {
 
       <li> 
       <a href="project.php" class="mainMenuItems mobileInvisible">
-        <div class="mainMenuItemIcon"><i class="fas fa-frog"></i></div>
-        <div>Projekty</div>
+        <div class="mainMenuItemIcon"><i class="fas fa-frog projectContent"></i></div>
+        <div class="projectContent">Projekty</div>
       </a>
      </li>
 
      <li>  
       <a href="tableprojects.php" class="mainMenuItems mobileInvisible">
-        <div class="mainMenuItemIcon"><i class="fas fa-dove"></i></div>
-        <div>Informace</div>
+        <div class="mainMenuItemIcon"><i class="fas fa-dove projectContent"></i></div>
+        <div class="projectContent">Informace</div>
       </a>
      </li>
 
@@ -240,15 +240,15 @@ else {
    
     <li class="websiteMobileMenu--Item invisible">
         <a href="project.php"> 
-          <span class="websiteMobileMenu--Icon"> <i class="fas fa-frog"></i> </span> 
-          <span class="websiteMobileMenu--Description">Projekty</span>
+          <span class="websiteMobileMenu--Icon"> <i class="fas fa-frog projectContent"></i> </span> 
+          <span class="websiteMobileMenu--Description projectContent">Projekty</span>
         </a>
     </li>     
   
     <li class="websiteMobileMenu--Item invisible">
         <a href="tableprojects.php"> 
-          <span class="websiteMobileMenu--Icon"> <i class="fas fa-dove"></i> </span> 
-          <span class="websiteMobileMenu--Description">Informace</span>
+          <span class="websiteMobileMenu--Icon"> <i class="fas fa-dove projectContent"></i> </span> 
+          <span class="websiteMobileMenu--Description projectContent">Informace</span>
         </a>
     </li>  
   
