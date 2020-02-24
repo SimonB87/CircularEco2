@@ -1,8 +1,13 @@
-<?php
-include("includes/header.php");
-$message_obj = new Message($con, $userLoggedIn);
-/*destroy all the log ins after refresh
-session_destroy();*/
+<?php
+
+include("includes/header.php");
+
+$message_obj = new Message($con, $userLoggedIn);
+
+/*destroy all the log ins after refresh
+
+session_destroy();*/
+
 
 if(isset($_GET['profile_username'])) {
 	$username = $_GET['profile_username'];
@@ -43,7 +48,8 @@ if(isset($_POST['post_message'])) {
 
 }
 
-?>
+?>
+
 
 	<style media="screen">
 		.wrapper {
@@ -56,9 +62,9 @@ if(isset($_POST['post_message'])) {
 		<img src="<?php echo $user_array['profile_pic']; ?>">
 
 		<div class="profile_info">
-			<p><?php echo "Posts:" . $user_array['num_posts'];?></p>
-			<p><?php echo "Likes:" . $user_array['num_likes'];?></p>
-			<p><?php echo "Friends:" . $num_friends; ?></p>
+			<p><?php echo "Příspěvky: " . $user_array['num_posts'];?></p>
+			<p><?php echo "Lajky: " . $user_array['num_likes'];?></p>
+			<p><?php echo "Spojení: " . $num_friends; ?></p>
 		</div>
 
 		<form action="<?php echo $username; ?>" class="" method="POST">
@@ -104,7 +110,8 @@ if(isset($_POST['post_message'])) {
 		?>
 
 	</div>
-
+
+
 	<div class="col-md-8 col-xs-12 col-md-push-1 main_column column">
 
 		<ul class="nav nav-tabs" role="tablist" id="profileTabs">
@@ -157,7 +164,8 @@ if(isset($_POST['post_message'])) {
 
 		</div>
 
-</div> <!-- closing of the wrapper div, this div stars in the included header file-->
+</div> <!-- closing of the wrapper div, this div stars in the included header file-->
+
 
 <!-- Modal -->
 <div class="modal fade" id="post_form" tabindex="-1" role="dialog" aria-labelledby="postModalLabel" aria-hidden="true">
@@ -243,5 +251,7 @@ $(document).ready(function(){
 </div> <!-- missing closing div section 9 lesson 85 -->
 
 
-</body>
-</html>
+</body>
+
+</html>
+
