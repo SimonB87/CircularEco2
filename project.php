@@ -50,7 +50,7 @@ include("includes/header.php");
         <button type="button" class="btn btn-default btn-success oblast6">Doprava</button>
         <button type="button" class="btn btn-default oblast7">Odpady</button>
         <button type="button" class="btn btn-default oblast8">Inovace</button>
-        <button type="button" class="btn btn-info"><a href="project_table.php" rel="Projekty podrobně">Prohledat projekty</a></button>
+        <button type="button" class="btn btn-info"><a href="tableprojects.php" rel="Projekty podrobně">Prohledat projekty</a></button>
       </div>
     </div>
 
