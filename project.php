@@ -82,7 +82,7 @@ include("includes/header.php");
                       <img class="img-fluid" src="assets/images/projects/friendsmeet.jpg" alt="Carousel 1">
                   </div>
                   <div class="card-block p-t-2">
-                      <div class="card-header"><a href="project1id1.php"><h3>Pronájem služeb a produktů namísto nákupu</h3></a></div>
+                      <div class="card-header"><a href="projecdetail.php?projectnumber=1001"><h3>Pronájem služeb a produktů namísto nákupu</h3></a></div>
                       <div class="card-text">Pronájem nakupovaných produktů se smluvním odběrem a zajištění recyklace po jejich skutečném nebo morálním zastarání/dožití.</div>
                   </div>
 
@@ -94,7 +94,7 @@ include("includes/header.php");
                       <img class="img-fluid" src="assets/images/projects/recycle.jpg" alt="Carousel 1">
                   </div>
                   <div class="card-block p-t-2">
-                      <div class="card-header"><h3>Bezobalové hospodářství – obecní akce</h3></div>
+                      <div class="card-header"><a href="projecdetail.php?projectnumber=1002"><h3>Bezobalové hospodářství – obecní akce</h3></a></div>
                       <div class="card-text">Snižování spotřeby obalů v rámci průběžné i mimořádné činnosti obce...</div>
                   </div>
               </div>
@@ -105,7 +105,7 @@ include("includes/header.php");
                       <img class="img-fluid" src="assets/images/projects/textilebag.jpg" alt="Carousel 1">
                   </div>
                   <div class="card-block p-t-2">
-                      <div class="card-header"><h3>Bezobalové hospodářství – sjednocování objednávek</h3></div>
+                      <div class="card-header"><a href="projecdetail.php?projectnumber=1003"><h3>Bezobalové hospodářství – sjednocování objednávek</h3></a></div>
                       <div class="card-text">Snižování spotřeby obalů v rámci průběžné i mimořádné činnosti obce, a to sjednocením objednávek zboží (kancelářské potřeby, potraviny apod.) do 1 balení, hromadné nakupování na delší období.</div>
                   </div>
               </div>
@@ -122,7 +122,7 @@ include("includes/header.php");
                       <img class="img-fluid" src="assets/images/projects/youngpeople.jpg" alt="Carousel 1">
                   </div>
                   <div class="card-block p-t-2">
-                      <div class="card-header"><h3>Zelené úřadování</h3></div>
+                      <div class="card-header"> <a href="projecdetail.php?projectnumber=1004"> <h3>Zelené úřadování</h3> </a> </div>
                       <div class="card-text">Jednoduchá úsporná opatření související s běžnou kancelářskou agendou obce...</div>
                   </div>
               </div>
@@ -133,7 +133,7 @@ include("includes/header.php");
                       <img class="img-fluid" src="assets/images/projects/friendsmeet.jpg" alt="Carousel 1">
                   </div>
                   <div class="card-block p-t-2">
-                      <div class="card-header"><h3>Zelené veřejné zakázky</h3></div>
+                      <div class="card-header"> <a href="projecdetail.php?projectnumber=1005"> <h3>Zelené veřejné zakázky</h3> </a> </div>
                       <div class="card-text">Zelené úřadování je zkrácený název pro ekologický provoz institucí financovaných z veřejných prostředků, jako jsou např. obecní, městské či krajské úřady, školy, školky, penziony pro důchodce, kulturní centra.</div>
                   </div>
               </div>
@@ -144,7 +144,7 @@ include("includes/header.php");
                       <img class="img-fluid" src="assets/images/projects/friendsmeet.jpg" alt="Carousel 1">
                   </div>
                   <div class="card-block p-t-2">
-                      <div class="card-header"><h3>Zelená péče o veřejná prostranství</h3></div>
+                      <div class="card-header"> <a href="projecdetail.php?projectnumber=1006"> <h3>Zelená péče o veřejná prostranství</h3> </a> </div>
                       <div class="card-text">Nechemické odstraňování plevelů na veřejných prostranstvích a využití mechanických (manuálních) prostředků pro údržbu zeleně (kosy, vřetenové sekačky).</div>
                   </div>
               </div>
