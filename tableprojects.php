@@ -58,28 +58,28 @@ include("includes/header.php");
 
                 <th>Kategorie
                   <br>
-                  <span onclick=""><i>Seřadit</i></span>
+                  <span onclick="sortTable(2)"><i>Seřadit</i></span>
                   <br>
-                  <input type="text" class="hledej form-control" id="myInput4" onkeyup="" placeholder="Hledej ..." title="Hledej ...">
+                  <input type="text" class="hledej form-control" id="myInput4" onkeyup="mySearchColumnFunction(2)" placeholder="Hledej ..." title="Hledej ...">
                 </th>
 
                 <th>Cílová Skupina 
                   <br>
-                  <span onclick="sortTable(2)"><i>Seřadit</i></span>
+                  <span onclick="sortTable(3)"><i>Seřadit</i></span>
                   <br>
-                  <input type="text" class="hledej form-control" id="myInput2" onkeyup="mySearchColumnFunction(2)" placeholder="Hledej ..." title="Hledej ...">
+                  <input type="text" class="hledej form-control" id="myInput2" onkeyup="mySearchColumnFunction(3)" placeholder="Hledej ..." title="Hledej ...">
                 </th>
                 <th>Související kategorie 
                   <br>
-                  <span onclick="sortTable(3)"><i>Seřadit</i></span>
+                  <span onclick="sortTable(4)"><i>Seřadit</i></span>
                   <br>
-                  <input type="text" class="hledej form-control" id="myInput3" onkeyup="mySearchColumnFunction(3)" placeholder="Hledej ..." title="Hledej ...">
+                  <input type="text" class="hledej form-control" id="myInput3" onkeyup="mySearchColumnFunction(4)" placeholder="Hledej ..." title="Hledej ...">
                 </th>
                 <th>Využitelné produkty
                   <br>
-                  <span onclick="sortTable(4)"><i>Seřadit</i></span>
+                  <span onclick="sortTable(5)"><i>Seřadit</i></span>
                   <br>
-                  <input type="text" class="hledej form-control" id="myInput4" onkeyup="mySearchColumnFunction(4)" placeholder="Hledej ..." title="Hledej ...">
+                  <input type="text" class="hledej form-control" id="myInput4" onkeyup="mySearchColumnFunction(5)" placeholder="Hledej ..." title="Hledej ...">
                 </th>
             </tr>
 
@@ -89,6 +89,16 @@ include("includes/header.php");
             //in case of error during conecting to the database display error
             if ($con-> conect_error) {
                 die("conection Failed:". $con-> conect_error);
+            }
+
+            //truncate a string only at a whitespace (by nogdog)
+            function truncate($text, $length) {
+              $length = abs((int)$length);
+              if(strlen($text) > $length) {
+                $text = preg_replace("/^(.{1,$length})(\s.*|$)/s", '\\1...', $text);
+                return($text);
+              }
+              return($text);
             }
 
             //print the used character set - just for testing
@@ -111,7 +121,10 @@ include("includes/header.php");
             if ($results-> num_rows > 0 ) {
                 while ($row = $results-> fetch_assoc()) {
 
-                    echo "<tr><td><strong> <a href='projecdetail.php?projectnumber=".$row["id"]."'>".$row["plny_nazev"]."</a></strong></td><td>".$row["plny_popis"]."</td> <td>".$row["kategorie"]."</td> <td>".$row["cilova_skupina"]."</td><td>".$row["souvisejici_kategorie"]."</td><td>".$row["vyuzitelne_produkty"]."</td></tr>";
+                    $rowEdit_plny_popis = truncate($row["plny_popis"], 600);
+                    $rowEdit_vyuzitelne_produkty = truncate($row["vyuzitelne_produkty"], 600);
+                    
+                    echo "<tr><td><strong> <a href='projecdetail.php?projectnumber=".$row["id"]."'>".$row["plny_nazev"]."</a></strong></td><td>".$rowEdit_plny_popis."</td> <td>".$row["kategorie"]."</td> <td>".$row["cilova_skupina"]."</td><td>".$row["souvisejici_kategorie"]."</td><td>". $rowEdit_vyuzitelne_produkty ."</td></tr>";
                 }
                 echo "";
             }
