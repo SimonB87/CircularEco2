@@ -43,31 +43,39 @@ include("includes/header.php");
 
         <table id="mySearchTable" class="search_project_table">
             <tr class="mySearchTable_header">
-                <th>Název 
+                <th>Plný Název 
                   <br>
                   <span onclick="sortTable(0)"><i>Seřadit</i></span>
                   <br>
                   <input type="text" class="hledej form-control" id="myInput0" onkeyup="mySearchColumnFunction(0)" placeholder="Hledej ..." title="Hledej ...">
                 </th>
-                <th>Plný Název 
+                <th>Plný Popis 
                   <br>
                   <span onclick="sortTable(1)"><i>Seřadit</i></span>
                   <br>
                   <input type="text" class="hledej form-control" id="myInput1" onkeyup="mySearchColumnFunction(1)" placeholder="Hledej ..." title="Hledej ...">
                 </th>
-                <th>Plný Popis 
+
+                <th>Kategorie
+                  <br>
+                  <span onclick=""><i>Seřadit</i></span>
+                  <br>
+                  <input type="text" class="hledej form-control" id="myInput4" onkeyup="" placeholder="Hledej ..." title="Hledej ...">
+                </th>
+
+                <th>Cílová Skupina 
                   <br>
                   <span onclick="sortTable(2)"><i>Seřadit</i></span>
                   <br>
                   <input type="text" class="hledej form-control" id="myInput2" onkeyup="mySearchColumnFunction(2)" placeholder="Hledej ..." title="Hledej ...">
                 </th>
-                <th>Cílová Skupina 
+                <th>Související kategorie 
                   <br>
                   <span onclick="sortTable(3)"><i>Seřadit</i></span>
                   <br>
                   <input type="text" class="hledej form-control" id="myInput3" onkeyup="mySearchColumnFunction(3)" placeholder="Hledej ..." title="Hledej ...">
                 </th>
-                <th>Související kategorie 
+                <th>Využitelné produkty
                   <br>
                   <span onclick="sortTable(4)"><i>Seřadit</i></span>
                   <br>
@@ -96,14 +104,14 @@ include("includes/header.php");
 
 
             //Select columns named from "a" to "e" from a database
-            $sql = "SELECT id, web_nazev, plny_nazev, plny_popis, cilova_skupina, souvisejici_kategorie from projety_ce";
+            $sql = "SELECT id, web_nazev, kategorie, plny_nazev, plny_popis, cilova_skupina, souvisejici_kategorie, vyuzitelne_produkty from projety_ce";
             //variable to catch the results
             $results = $con-> query($sql);
             //function to fatch the data
             if ($results-> num_rows > 0 ) {
                 while ($row = $results-> fetch_assoc()) {
 
-                    echo "<tr><td><strong> <a href='projecdetail.php?projectnumber=".$row["id"]."'>".$row["web_nazev"]."</a></strong></td><td>".$row["plny_nazev"]."</td><td>".$row["plny_popis"]."</td><td>".$row["cilova_skupina"]."</td><td>".$row["souvisejici_kategorie"]."</td></tr>";
+                    echo "<tr><td><strong> <a href='projecdetail.php?projectnumber=".$row["id"]."'>".$row["plny_nazev"]."</a></strong></td><td>".$row["plny_popis"]."</td> <td>".$row["kategorie"]."</td> <td>".$row["cilova_skupina"]."</td><td>".$row["souvisejici_kategorie"]."</td><td>".$row["vyuzitelne_produkty"]."</td></tr>";
                 }
                 echo "";
             }
