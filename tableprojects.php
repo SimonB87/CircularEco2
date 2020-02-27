@@ -63,7 +63,7 @@ include("includes/header.php");
                   <input type="text" class="hledej form-control" id="myInput4" onkeyup="mySearchColumnFunction(2)" placeholder="Hledej ..." title="Hledej ...">
                 </th>
 
-                <th>Cílová Skupina 
+                <th>Cílová skupina 
                   <br>
                   <span onclick="sortTable(3)"><i>Seřadit</i></span>
                   <br>
