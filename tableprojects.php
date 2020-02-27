@@ -43,13 +43,13 @@ include("includes/header.php");
 
         <table id="mySearchTable" class="search_project_table">
             <tr class="mySearchTable_header">
-                <th>Plný Název 
+                <th>Plný název 
                   <br>
                   <span onclick="sortTable(0)"><i>Seřadit</i></span>
                   <br>
                   <input type="text" class="hledej form-control" id="myInput0" onkeyup="mySearchColumnFunction(0)" placeholder="Hledej ..." title="Hledej ...">
                 </th>
-                <th>Plný Popis 
+                <th>Plný popis 
                   <br>
                   <span onclick="sortTable(1)"><i>Seřadit</i></span>
                   <br>
