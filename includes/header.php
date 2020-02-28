@@ -139,7 +139,7 @@ else {
      <li>  
       <a href="tableprojects.php" class="mainMenuItems mobileInvisible">
         <div class="mainMenuItemIcon"><i class="fas fa-dove projectContent"></i></div>
-        <div class="projectContent">Tipová řešení</div>
+        <div class="projectContent">Typová řešení</div>
       </a>
      </li>
 
@@ -248,7 +248,7 @@ else {
     <li class="websiteMobileMenu--Item invisible">
         <a href="tableprojects.php"> 
           <span class="websiteMobileMenu--Icon"> <i class="fas fa-dove projectContent"></i> </span> 
-          <span class="websiteMobileMenu--Description projectContent">Tipová řešení</span>
+          <span class="websiteMobileMenu--Description projectContent">Typová řešení</span>
         </a>
     </li>  
   
