@@ -40,6 +40,13 @@ include("includes/header.php");
         $actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
         $position_in_string = strpos($actual_link, "number=");
         $project_number = substr($actual_link, $position_in_string + 7);
+
+        //security function for injections
+        $link = $con;
+        $project_number = mysqli_real_escape_string($link, $project_number);
+        //testing
+        //echo "Project Number from URL:: " . $project_number;//testing end
+
       
         //conect to the database
         //old: $conn = mysqli_conect("md54.wedos.net", "a223948_sbforum", "phx5EXKm", "d223948_sbforum");
