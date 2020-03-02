@@ -75,7 +75,7 @@ else {
 <div class="top_bar">
   <div class="logo">
     <img class="" src="assets/images/circlogo.png" alt="" width="25" height="25">
-    <a href="index.php">Circularní Projekty</a>
+    <a href="index.php">Circularní řešení</a>
   </div>
 
   <div class="search">
@@ -132,14 +132,14 @@ else {
       <li> 
       <a href="project.php" class="mainMenuItems mobileInvisible">
         <div class="mainMenuItemIcon"><i class="fas fa-frog projectContent"></i></div>
-        <div class="projectContent">Projekty</div>
+        <div class="projectContent">Přehled řešení</div>
       </a>
      </li>
 
      <li>  
       <a href="tableprojects.php" class="mainMenuItems mobileInvisible">
         <div class="mainMenuItemIcon"><i class="fas fa-dove projectContent"></i></div>
-        <div class="projectContent">Informace</div>
+        <div class="projectContent">Typová řešení</div>
       </a>
      </li>
 
@@ -241,14 +241,14 @@ else {
     <li class="websiteMobileMenu--Item invisible">
         <a href="project.php"> 
           <span class="websiteMobileMenu--Icon"> <i class="fas fa-frog projectContent"></i> </span> 
-          <span class="websiteMobileMenu--Description projectContent">Projekty</span>
+          <span class="websiteMobileMenu--Description projectContent">Přehled řešení</span>
         </a>
     </li>     
   
     <li class="websiteMobileMenu--Item invisible">
         <a href="tableprojects.php"> 
           <span class="websiteMobileMenu--Icon"> <i class="fas fa-dove projectContent"></i> </span> 
-          <span class="websiteMobileMenu--Description projectContent">Informace</span>
+          <span class="websiteMobileMenu--Description projectContent">Typová řešení</span>
         </a>
     </li>  
   
