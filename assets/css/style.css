@@ -853,6 +853,11 @@ tr:nth-child(even) {
   background-color: #f2f2f2;
 }
 
+#projectDetailBody #projectDetail--titul {
+  text-align: center;
+  color: coral;
+}
+
 @media only screen and (max-width: 768px) {
   /*
   nav {
