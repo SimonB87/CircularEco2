@@ -34,8 +34,8 @@ include("includes/header.php");
     <h2 class="projekty-back-title">Cirkulární projekty</h2>
   </div>
   <div class="row">
-    <div class="col-md-12">
-      <a href="#" onlixk="htmlToPdf()">Stránku uložit do PDF</a>
+    <div id="projectDetailBody" class="col-md-12">
+      <a href="#" onclick="htmlToPdf();">Stránku uložit do PDF</a>
 
         <?php
         $actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
@@ -75,29 +75,29 @@ include("includes/header.php");
         if ($results-> num_rows > 0 ) {
           while ($row = $results-> fetch_assoc()) {
 
-              echo "<h2 style='text-align: center; color: coral'><br>".$row["plny_nazev"]."</h2>";
+              echo "<h2 id='projectDetail--titul'>".$row["plny_nazev"]."</h2>";
 
-              echo "<div> <strong> Kategorie: </strong></div><div>" .$row["kategorie"]. "</div><br>";
+              echo "<div> <strong> Kategorie: </strong></div><div id='projectDetail--kategorie'>" .$row["kategorie"]. "</div><br>";
 
-              echo "<div> <strong> Plný popis: </strong></div><div>" .$row["plny_popis"]. "</div><br>";
+              echo "<div> <strong> Plný popis: </strong></div><div id='projectDetail--plny_popis'>" .$row["plny_popis"]. "</div><br>";
 
-              echo "<div> <strong> Podmínky využití / bariéry: </strong></div><div>" .$row["podminky_vyuziti"]. "</div><br>";
+              echo "<div> <strong> Podmínky využití / bariéry: </strong></div><div id='projectDetail--podminky_vyuziti'>" .$row["podminky_vyuziti"]. "</div><br>";
 
-              echo "<div> <strong> Využitelné typy produktů/ odpadů: </strong></div><div>" .$row["vyuzitelne_produkty"]. "</div><br>";
+              echo "<div> <strong> Využitelné typy produktů/ odpadů: </strong></div><div id='projectDetail--vyuzitelne_produkty'>" .$row["vyuzitelne_produkty"]. "</div><br>";
 
-              echo "<div> <strong> SWOT analýza: </strong></div><div>" .$row["SWOT_analyza"]. "</div><br>";
+              echo "<div> <strong> SWOT analýza: </strong></div><div id='projectDetail--SWOT_analyza'>" .$row["SWOT_analyza"]. "</div><br>";
 
-              echo "<div> <strong> Cílová skupina: </strong></div><div>" .$row["cilova_skupina"]. "</div><br>";
+              echo "<div> <strong> Cílová skupina: </strong></div><div id='projectDetail--cilova_skupina'>" .$row["cilova_skupina"]. "</div><br>";
 
-              echo "<div> <strong> Ekonomické podmínky a přínosy: </strong></div><div>" .$row["ekonomicke_podminky"]. "</div><br>";
+              echo "<div> <strong> Ekonomické podmínky a přínosy: </strong></div><div id='projectDetail--ekonomicke_podminky'>" .$row["ekonomicke_podminky"]. "</div><br>";
 
-              echo "<div> <strong> Personální náročnost: </strong></div><div>" .$row["personálni_narocnost"]. "</div><br>";
+              echo "<div> <strong> Personální náročnost: </strong></div><div id='projectDetail--personálni_narocnost'>" .$row["personálni_narocnost"]. "</div><br>";
 
-              echo "<div> <strong> Právní aspekty: </strong></div><div>" .$row["pravni_aspekty"]. "</div><br>";
+              echo "<div> <strong> Právní aspekty: </strong></div><div id='projectDetail--pravni_aspekty'>" .$row["pravni_aspekty"]. "</div><br>";
 
-              echo "<div> <strong> Příklad z praxe: </strong></div><div>" .$row["priklad_praxe"]. "</div><br>";
+              echo "<div> <strong> Příklad z praxe: </strong></div><div id='projectDetail--priklad_praxe'>" .$row["priklad_praxe"]. "</div><br>";
 
-              echo "<div> <strong> Související kategorie </strong></div><div>" .$row["souvisejici_kategorie"]. "</div><br>";
+              echo "<div> <strong> Související kategorie </strong></div><div id='projectDetail--souvisejici_kategorie'>" .$row["souvisejici_kategorie"]. "</div><br>";
 
           }
           echo "";
@@ -110,6 +110,9 @@ include("includes/header.php");
 
         ?>
 
+    <!-- web to PDF -->
+    <script src="https://unpkg.com/jspdf@latest/dist/jspdf.min.js"></script>
+    <script src="assets/js/pdfFromHtml.js"></script> 
 
     </div>
   </div>
