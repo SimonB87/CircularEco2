@@ -35,7 +35,7 @@ include("includes/header.php");
   </div>
   <div class="row">
     <div id="projectDetailBody" class="col-md-12">
-      <a href="#" onclick="htmlToPdf();">Stránku uložit do PDF</a>
+      <a href="#" class="projectDetailPdfDowload" onclick="htmlToPdf();"> <img src="assets/images/pdfDownload.png" alt="Stáhni PDF" width="50" height="50" class=""> * PDF * test!!!</a>
 
         <?php
         $actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
@@ -86,7 +86,7 @@ include("includes/header.php");
 
               echo "<div> <strong id='projectDetailDesc--vyuzitelne_produkty'> Využitelné typy produktů/ odpadů: </strong></div><div id='projectDetail--vyuzitelne_produkty'>" .$row["vyuzitelne_produkty"]. "</div><br>";
 
-              echo "<div> <strong id='projectDetailDesc--vyuzitelne_SWOT_analyza'> SWOT analýza: </strong></div><div id='projectDetail--SWOT_analyza'>" .$row["SWOT_analyza"]. "</div><br>";
+              echo "<div> <strong id='projectDetailDesc--SWOT_analyza'> SWOT analýza: </strong></div><div id='projectDetail--SWOT_analyza'>" .$row["SWOT_analyza"]. "</div><br>";
 
               echo "<div> <strong id='projectDetailDesc--cilova_skupina'> Cílová skupina: </strong></div><div id='projectDetail--cilova_skupina'>" .$row["cilova_skupina"]. "</div><br>";
 
