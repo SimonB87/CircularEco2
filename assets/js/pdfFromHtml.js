@@ -59,45 +59,46 @@ function htmlToPdf() {
   let doc = new jsPDF();
 
   doc.setFontType("regular");
+
   doc.setFontSize(18);
   doc.setFont("FreeSerif");
   doc.text(20, 20, titulek_nazevTypovehoReseni);
 
-  doc.setFontType("regular");
+  //doc.setFontType("regular");
   doc.setFontSize(13);
   doc.setFont("FreeSerif");
   doc.setTextColor(0, 255, 0); //green color
   doc.text(20, 30, text_nazevTypovehoReseni);
 
-  doc.setFontType("regular");
+  //doc.setFontType("regular");
   doc.setFontSize(18);
   doc.setFont("FreeSerif");
   doc.setTextColor(0, 0, 0); //black
   doc.text(20, 40, titulek_kategorie);
 
-  doc.setFontType("regular");
+  //doc.setFontType("regular");
   doc.setFontSize(13);
   doc.setFont("FreeSerif");
   doc.setTextColor(0, 0, 255); //blue color
   doc.text(20, 50, text_kategorie);
 
-  doc.setFontType("regular");
+  //doc.setFontType("regular");
   doc.setFontSize(18);
   doc.setFont("FreeSerif");
   doc.setTextColor(0, 0, 0); //black
   doc.text(20, 60, titulek_plny_popis);
 
-  doc.setFontType("regular");
+  //doc.setFontType("regular");
   doc.setFontSize(13);
   doc.setFont("FreeSerif");
   doc.text(20, 70, text_plny_popis);
 
-  doc.setFontType("regular");
+  //doc.setFontType("regular");
   doc.setFontSize(18);
   doc.setFont("FreeSerif");
   doc.text(20, 100, titulek_podminky_vyuziti);
 
-  doc.setFontType("regular");
+  //doc.setFontType("regular");
   doc.setFontSize(13);
   doc.setFont("FreeSerif");
   doc.text(20, 110, text_podminky_vyuziti);
