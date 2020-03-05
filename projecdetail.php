@@ -112,9 +112,12 @@ include("includes/header.php");
         ?>
 
     <!-- web to PDF -->
-    <script src="https://unpkg.com/jspdf@latest/dist/jspdf.min.js"></script>
-    <script src="assets/js/fontFreeSerifNormal.js"></script>
-    <script src="assets/js/pdfFromHtml.js"></script> 
+    <!--
+    <script src="https://unpkg.com/jspdf@latest/dist/jspdf.min.js"></script>-->
+    
+    <script src="assets/js/pdfgeneration/package/jspdf.min.js"></script>
+    <script src="assets/js/pdfgeneration/simon/fontfreeserifnormal.js"></script>
+    <script src="assets/js/pdfgeneration/simon/pdffromhtml.js"></script> 
 
     </div>
   </div>
