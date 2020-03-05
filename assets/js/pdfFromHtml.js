@@ -30,6 +30,24 @@ function htmlToPdf() {
   );
   */
 
+  var currentdate = new Date();
+  var datetime =
+    "Datum: " +
+    currentdate.getDate() +
+    "." +
+    (currentdate.getMonth() + 1) +
+    "." +
+    currentdate.getFullYear() +
+    " Čas: " +
+    currentdate.getHours() +
+    ":" +
+    currentdate.getMinutes() +
+    ":" +
+    currentdate.getSeconds();
+
+  const docHeader =
+    "Projekt Cirkulární ekonomika - Demo : PDF generování ." + datetime;
+
   const titulek_nazevTypovehoReseni = document.getElementById(
     "projectDetailDesc--nazevTypovehoReseni"
   ).innerText;
@@ -89,6 +107,10 @@ function htmlToPdf() {
   let doc = new jsPDF();
   //set regular font style
   doc.setFontType("regular");
+
+  doc.setFontSize(9);
+  doc.setFont("FreeSerif");
+  doc.text(20, 12, docHeader);
 
   doc.setFontSize(18);
   doc.setFont("FreeSerif");
@@ -152,13 +174,16 @@ function htmlToPdf() {
 
   /* some sections skipped */
 
+  //go to next page
+  doc.addPage("a4", "portrait");
+
   doc.setFontSize(18);
   doc.setFont("FreeSerif");
-  doc.text(20, 280, titulek_priklad_praxe);
+  doc.text(20, 20, titulek_priklad_praxe);
 
   doc.setFontSize(13);
   doc.setFont("FreeSerif");
-  doc.text(20, 290, text_priklad_praxe);
+  doc.text(20, 30, text_priklad_praxe);
 
   doc.save(text_nazevTypovehoReseni + ".pdf");
 }
