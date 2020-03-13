@@ -114,7 +114,7 @@ include("includes/header.php");
 
 
             //Select columns named from "a" to "e" from a database
-            $sql = "SELECT id, web_nazev, kategorie, plny_nazev, plny_popis, cilova_skupina, souvisejici_kategorie, vyuzitelne_produkty from projety_ce";
+            $sql = "SELECT id, web_nazev, kategorie, plny_nazev, plny_popis, cilova_skupina, souvisejici_kategorie, vyuzitelne_produkty from projety_ce ORDER BY plny_nazev ASC";
             //variable to catch the results
             $results = $con-> query($sql);
             //function to fatch the data
