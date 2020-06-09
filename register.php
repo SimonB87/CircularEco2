@@ -40,7 +40,7 @@ require 'includes/form_handlers/login_handler.php';
 		<div style="margin: 1rem auto;">
   			<button class="button" style="background-color: #057705; border: none; color: white; padding: 15px 32px; text-align: center; text-decoration: none; display: inline-block; font-size: 16px; margin: 0 auto; cursor: pointer;"><a href="http://obcevkruhu.cz" style="color:#fff;">Zpět na hlavní stránku</a></button>
 		</div>
- 
+
 		<div class="login_box">
 
 			<div class="login_header">
@@ -128,7 +128,7 @@ require 'includes/form_handlers/login_handler.php';
 		</div>
 
 		<div class="demoUser">
-    		<div class="login_header">
+    		<div class="login_header" style="background:coral;">
         		<h1>Demo přihlášení</h1>
     		</div>
     		<div>
@@ -136,7 +136,7 @@ require 'includes/form_handlers/login_handler.php';
 				<p>demo@uzivatel.cz<br></p>
 				<p><strong>Heslo:</strong></p>
 				<p>Demo123456<br></p>
-			</div>    
+			</div>
 		</div>
 
 	</div>

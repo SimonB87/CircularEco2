@@ -31,7 +31,7 @@ include("includes/header.php");
 
 <div class="col-md-8 col-xs-12 col-md-push-1 main_column column">
   <div class="projekty-back">
-    <h2 class="projekty-back-title">Cirkulární projekty</h2>
+    <h2 class="projekty-back-title">Cirkulární typová řešení</h2>
   </div>
   <div class="row">
     <div id="projectDetailBody" class="col-md-12">
@@ -108,7 +108,14 @@ include("includes/header.php");
         }
         //Close the variable after finishing
         $con-> close();
+        ?>
 
+        <?php
+        include("includes/displayAddedNewExampleProjects.php");
+        ?>
+
+        <?php
+        include("includes/formAddNewExampleProject.php");
         ?>
 
     <!-- web to PDF -->
