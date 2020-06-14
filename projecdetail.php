@@ -1,6 +1,5 @@
 <?php
 include("includes/header.php");
-
 ?>
 <!-- CSS for the table of projects -->
 
