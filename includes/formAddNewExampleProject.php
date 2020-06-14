@@ -1,4 +1,4 @@
-<br>
+<section class="submitNewProject">
 <hr>
 <!-- <br>
 
@@ -14,139 +14,121 @@
 <br> -->
 
 <h2>Připojte svůj projekt:</h2><br>
-<form method="post" action="processNewExampleProject.php">
+
+<button type="button" class="btn btn-primary" style="margin-bottom: 1.5rem;" onclick="toggleNewProjectForm();">Vyplnit přihlášku nového projektu</button>
+
+<form id="newProjectSubmitForm" method="post" action="processNewExampleProject.php" class="hiddenForm">
 <!-- Hidden -->
 <div class="projectFormHiddenSection">
 
-  <label for="prefilled_userName"><strong>Username : * hidden</strong></label><br>
-  <input type="text" id="prefilled_userName" name="prefilled_userName" value="<?php echo $user['username']; ?>"><br>
+  <label for="prefilled_userName"><strong>Username : </strong><span class="hiddenLabelStyle"> * hidden </span></label><br>
+  <input type="text" id="prefilled_userName" class="newProjectForm input" name="prefilled_userName" value="<?php echo $user['username']; ?>"><br>
   <br>
 
-  <label for="prefilled_firstName"><strong>User First Name : * hidden</strong></label><br>
-  <input type="text" id="prefilled_firstName" name="prefilled_firstName" value="<?php echo $user['first_name']; ?>"><br>
+  <label for="prefilled_firstName"><strong>User First Name : </strong><span class="hiddenLabelStyle"> * hidden </span></label><br>
+  <input type="text" id="prefilled_firstName" class="newProjectForm input" name="prefilled_firstName" value="<?php echo $user['first_name']; ?>"><br>
   <br>
 
-  <label for="prefilled_lastName"><strong>User Last Name : * hidden</strong></label><br>
-  <input type="text" id="prefilled_lastName" name="prefilled_lastName" value="<?php echo $user['last_name']; ?>"><br>
+  <label for="prefilled_lastName"><strong>User Last Name : </strong><span class="hiddenLabelStyle"> * hidden </span></label><br>
+  <input type="text" id="prefilled_lastName" class="newProjectForm input" name="prefilled_lastName" value="<?php echo $user['last_name']; ?>"><br>
   <br>
 
-  <label for="prefilled_email"><strong>User Email : * hidden</strong></label><br>
-  <input type="text" id="prefilled_email" name="prefilled_email" value="<?php echo $user['email']; ?>"><br>
+  <label for="prefilled_email"><strong>User Email : </strong><span class="hiddenLabelStyle"> * hidden </span></label><br>
+  <input type="text" id="prefilled_email" class="newProjectForm input" name="prefilled_email" value="<?php echo $user['email']; ?>"><br>
   <br>
 
-  <label for="prefilled_submissionDate"><strong>Datum zaslání žádosti : * hidden</strong></label><br>
-  <input type="date" name="prefilled_submissionDate" id="prefilled_submissionDate"><br>
+  <label for="prefilled_submissionStatus"><strong>Submission status : </strong><span class="hiddenLabelStyle"> * hidden </span></label><br>
+  <input type="text" id="prefilled_submissionStatus" class="newProjectForm input" name="prefilled_submissionStatus" value="newSubmission"><br>
+  <br>
+
+  <label for="prefilled_submissionDate"><strong>Datum zaslání žádosti : </strong><span class="hiddenLabelStyle"> * hidden </span></label><br>
+  <input type="date" id="prefilled_submissionDate" class="newProjectForm input" name="prefilled_submissionDate"><br>
   <br>
 
 </div>
 <!-- Visible -->
 <label for="projectGroup"><strong>Typové řešení :</strong></label><br>
 
-<select name="projectGroup" id="projectGroup">
+<select name="projectGroup" id="projectGroup" class="newProjectForm input">
 
-<!--   <option value="volvo">Volvo</option>
-  <option value="saab">Saab</option>
-  <option value="opel" selected="selected">Opel</option>
-  <option value="audi">Audi</option> -->
+  <?php
+  //conect to the database
+  //old: $conn = mysqli_conect("md54.wedos.net", "a223948_sbforum", "phx5EXKm", "d223948_sbforum");
+  //in case of error during conecting to the database display error
+  if ($con_projects-> conect_error) {
+      die("conection Failed:". $con_projects-> conect_error);
+  }
+
+  //print the used character set - just for testing
+  //printf("Initial character set: %s\n", mysqli_character_set_name($con));
+
+  /* change character set to utf8 */
+  if (!mysqli_set_charset($con_projects, "utf8")) {
+          printf("Error loading character set utf8: %s\n", mysqli_error($con_projects));
+          exit();
+  } else {
+          //printf("Current character set: %s\n", mysqli_character_set_name($con));//used only for testing
+  }
+
+  //Select columns named from "a" to "e" from a database
+  $sql = "SELECT id, web_nazev from typova_reseni ORDER BY web_nazev ASC";
+  //variable to catch the results
+  $results = $con_projects-> query($sql);
+  //function to fatch the data
+  if ($results-> num_rows > 0 ) {
+      while ($row = $results-> fetch_assoc()) {
+          
+        echo "<option value='" . $row["id"] . " - " . $row["web_nazev"] . "'" . "> ID: [" . $row["id"] . "] - " . $row["web_nazev"] . "</option>";
+      }
+    /*  echo ""; */
+  }
+  else {
+      echo "0 result";
+  }
+  //Close the variable after finishing
+  $con_projects-> close();
+
+  ?>
+
+</select><br>
+
+<label for="projectName" class="formLabelStyle"><strong>Jméno projektu : </strong> <span class="requiredLabelStyle"> * povinné </span></label><br>
+<input type="text" name="projectName" id="projectName" class="newProjectForm input" required><br>
+
+<label for="projectLocality" class="formLabelStyle"><strong>Lokalita projektu :</strong> <span class="requiredLabelStyle"> * povinné </span></label><br>
+<input type="text" name="projectLocality" id="projectLocality" class="newProjectForm input" required><br>
+
+<label for="projectDescription" class="formLabelStyle"><strong>Popis projektu :</strong> <span class="requiredLabelStyle"> * povinné </span></label><br>
+<textarea id="projectDescription" name="projectDescription" rows="6" class="newProjectForm input" required> </textarea><br>
+
+<label for="projectCosts" class="formLabelStyle"><strong>Náklady na realizaci :</strong><span class="requiredLabelStyle"> * povinné </span></label><br>
+<textarea id="projectCosts" name="projectCosts" rows="6" class="newProjectForm input" required> </textarea><br>
+
+<label for="projectLegalIssues" class="formLabelStyle"><strong>Právní omezení a souvislosti :</strong><span class="requiredLabelStyle"> * povinné </span></label><br>
+<textarea id="projectLegalIssues" name="projectLegalIssues" rows="6" class="newProjectForm input" required> </textarea><br>
+
+<label for="projectReferenceMain" class="formLabelStyle"><strong>Odkaz na projekt (webový odkaz) :</strong><span class="requiredLabelStyle"> * povinné </span></label><br>
+<input type="text" name="projectReferenceMain" id="projectReferenceMain" class="newProjectForm input" required><br>
+
+<label for="projectReferenceOther" class="formLabelStyle"><strong>Další odkaz na projekt (webový odkaz) :</strong></label><br>
+<input type="text" name="projectReferenceOther" id="projectReferenceOther" class="newProjectForm input"><br>
 
 
-<?php
-//conect to the database
-//old: $conn = mysqli_conect("md54.wedos.net", "a223948_sbforum", "phx5EXKm", "d223948_sbforum");
-//in case of error during conecting to the database display error
-if ($con_projects-> conect_error) {
-    die("conection Failed:". $con_projects-> conect_error);
-}
-
-//print the used character set - just for testing
-//printf("Initial character set: %s\n", mysqli_character_set_name($con));
-
-/* change character set to utf8 */
-if (!mysqli_set_charset($con_projects, "utf8")) {
-        printf("Error loading character set utf8: %s\n", mysqli_error($con_projects));
-        exit();
-} else {
-        //printf("Current character set: %s\n", mysqli_character_set_name($con));//used only for testing
-}
-
-//Select columns named from "a" to "e" from a database
-$sql = "SELECT id, web_nazev from typova_reseni ORDER BY web_nazev ASC";
-//variable to catch the results
-$results = $con_projects-> query($sql);
-//function to fatch the data
-if ($results-> num_rows > 0 ) {
-    while ($row = $results-> fetch_assoc()) {
-        
-      echo "<option value='" . $row["id"] . " - " . $row["web_nazev"] . "'" . "> ID: [" . $row["id"] . "] - " . $row["web_nazev"] . "</option>";
-    }
-   /*  echo ""; */
-}
-else {
-    echo "0 result";
-}
-//Close the variable after finishing
-$con_projects-> close();
-
-?>
-
-</select>
-
-
-<!-- <input type="text" name="projectGroup" id="projectGroup" required><br> -->
-
-<br>
-<label for="projectName"><strong>Jméno projektu :</strong></label><br>
-<input type="text" name="projectName" id="projectName" required><br>
-<br>
-<label for="projectLocality"><strong>Lokalita projektu :</strong></label><br>
-<input type="text" name="projectLocality" id="projectLocality" required><br>
-<br>
-<label for="projectLocality"><strong>Popis projektu :</strong></label><br>
-<textarea id="projectDescription" name="projectDescription" rows="6" required> </textarea>
-<br>
-
-<label for="projectCosts"><strong>Náklady na realizaci :</strong></label><br>
-<textarea id="projectCosts" name="projectCosts" rows="6" required> </textarea>
-<br>
-
-<label for="projectLegalIssues"><strong>Právní omezení a souvislosti :</strong></label><br>
-<textarea id="projectLegalIssues" name="projectLegalIssues" rows="6" required> </textarea>
-<br>
-
-<label for="projectReferenceMain"><strong>Odkaz na projekt (webový odkaz) :</strong></label><br>
-<input type="text" name="projectReferenceMain" id="projectReferenceMain" required><br>
-<br>
-
-<label for="projectReferenceOther"><strong>Další odkaz na projekt (webový odkaz) :</strong></label><br>
-<input type="text" name="projectReferenceOther" id="projectReferenceOther"><br>
-<br>
-
-<input type="submit" value="Submit">
+<button type="submit" form="newProjectSubmitForm" value="Odeslat návrh projektu" class="btn btn-success" style="margin: 1.5rem 0;">Odeslat návrh projektu</button>
+<!-- <input type="submit" value="Submit"> -->
 </form>
-//Plánovaný formulář:<br>
-. (-) Username ... autofilled - HOTOVO  <br>
-. (-) UserEmail ... autofilled - HOTOVO  <br>
-. (-) čas podání žádosti ... autofilled - HOTOVO <br>
-. (-) jméno typového řešení ke kterému se projekt váže - comboBox - standardně to typové řešení, které je nyní zobrazneno je vybráno <br>
-. Jméno vzorového projektu - povinné!<br>
-. Lokalita projektu - povinné!<br>
-. Popis vzorového projektu - povinné!<br>
-. (+) Náklady na realizaci<br>
-. (+) Právní souvislosti<br>
-. Další zdroje1 - web? - povinné!<br>
-. (+) Další Zdroje2 - cokoliv?<br>
-- (-) status autofilled na (podáno) (jinak schváleno / zamítnuto / vráceno k přepracování)<br>
 
-//TODO:
-. Po podání nová obrazovka - místo echo include, kde bude menu a jen infromace pro usera o stavu podání (Děkujeme, či něco se pokazilo).
+<div>
+<br>
+//TODO:<br>
+. Po podání nová obrazovka - místo echo include, kde bude menu a jen infromace pro usera o stavu podání (Děkujeme, či něco se pokazilo).<br>
 
-//TODO:
-. založit sekci management podaných řešení
-. pro administrátora i pro uživatele
-. tabulka s projekty a jejich překlik na detail
-<br>
-<br>
+//TODO:<br>
+. založit sekci management podaných řešení<br>
+. pro administrátora i pro uživatele<br>
+. tabulka s projekty a jejich překlik na detail<br>
+</div>
 <hr>
-<br>
+</section>
 
-<script defer src="assets/js/editNewProjectForm.js"></script>
+<script defer src="assets/js/editNewProjectSumbissionForm.js"></script>

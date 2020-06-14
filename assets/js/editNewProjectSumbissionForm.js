@@ -14,3 +14,17 @@ function SetDate() {
 
   document.getElementById("prefilled_submissionDate").value = today;
 }
+
+function toggleNewProjectForm() {
+  var form = document.getElementById("newProjectSubmitForm");
+
+  if (form.classList.contains("hiddenForm")) {
+    console.log("yes hiddenForm");
+    form.classList.remove("hiddenForm");
+  } else {
+    console.log("no");
+    form.classList.add("hiddenForm");
+  }
+
+
+}

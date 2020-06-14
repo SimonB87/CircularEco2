@@ -62,7 +62,7 @@ else {
   
   <!-- <link rel="stylesheet" type="text/css" href="assets/css/tabulka.css"> -->
 
-
+  <link rel="stylesheet" href="assets/css/newProjectSumbissionForm.css" type="text/css" />
 
 
   <!------ Include the above in your HEAD tag ---------->

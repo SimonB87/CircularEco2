@@ -30,6 +30,7 @@ include("includes/header.php");
 </div>
 
 <div class="col-md-8 col-xs-12 col-md-push-1 main_column column">
+
   <div class="projekty-back">
     <h2 class="projekty-back-title">Cirkulární typová řešení</h2>
   </div>
@@ -128,6 +129,7 @@ include("includes/header.php");
 
     </div>
   </div>
+
 
 
 

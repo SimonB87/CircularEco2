@@ -1,8 +1,18 @@
 <?php
-$username = filter_input(INPUT_POST, 'username');
-$password = filter_input(INPUT_POST, 'password');
-if (!empty($username)){
-  if (!empty($password)){
+
+$prefilled_userName = filter_input(INPUT_POST, 'prefilled_userName');
+
+$prefilled_firstName = filter_input(INPUT_POST, 'prefilled_firstName');
+
+$prefilled_lastName = filter_input(INPUT_POST, 'prefilled_lastName');
+
+$prefilled_email = filter_input(INPUT_POST, 'prefilled_email');
+
+$prefilled_submissionStatus = filter_input(INPUT_POST, 'prefilled_submissionStatus');
+
+$prefilled_submissionDate = filter_input(INPUT_POST, 'prefilled_submissionDate');
+
+if (!empty($prefilled_userName )) or (!empty($prefilled_email )){
     $host = "localhost";
     $dbusername = "root";
     $dbpassword = "";
@@ -13,7 +23,7 @@ if (!empty($username)){
       die('Connect Error ('. mysqli_connect_errno() .') ' . mysqli_connect_error());
     } else {
       
-      $sql = "INSERT INTO exampleprojects (username, password) VALUES ('$username', '$password')";
+      $sql = "INSERT INTO exampleprojects (prefilled_userName, prefilled_email) VALUES ('$prefilled_userName', '$prefilled_email')";
       
       if ($dbConnection->query($sql)){
         echo "Nový záznam zapsán do databáze. Děkujeme.";
@@ -23,11 +33,7 @@ if (!empty($username)){
         $dbConnection->close();
       }
   } else{
-    echo "Pole heslo by nemělo být prázdné";
+    echo "Pole uživatelského jména nebo emailu by nemělo být prázdné";
     die();
   }
-} else {
-  echo "Pole jméno by nemělo být prázdné.";
-  die();
- }
 ?>

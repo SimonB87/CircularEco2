@@ -1,0 +1,40 @@
+.hiddenForm {
+  display: none;
+  visibility: hidden;
+}
+
+.requiredLabelStyle,
+.hiddenLabelStyle {
+  font-weight: 400;
+  font-style: italic;
+}
+
+.formLabelStyle {
+  margin-top: 1rem;
+}
+
+.newProjectForm.input {
+  width: 60%;
+  line-height: 3rem;
+  padding: 0.5rem;
+}
+
+.projectFormHiddenSection {
+  opacity: 0.6;
+}
+
+.projectFormHiddenSection .newProjectForm.input {
+  line-height: 1.25rem;
+}
+
+@media only screen and (max-width: 1000px) {
+  .newProjectForm.input {
+    width: 75%;
+  }
+}
+
+@media only screen and (max-width: 720px) {
+  .newProjectForm.input {
+    width: 100%;
+  }
+}
