@@ -96,21 +96,37 @@ $con_projects-> close();
 
 <br>
 <label for="projectName"><strong>Jméno projektu :</strong></label><br>
-<input type="text" name="projectName" id="projectName"><br>
+<input type="text" name="projectName" id="projectName" required><br>
 <br>
 <label for="projectLocality"><strong>Lokalita projektu :</strong></label><br>
-<input type="text" name="projectLocality" id="projectLocality"><br>
+<input type="text" name="projectLocality" id="projectLocality" required><br>
 <br>
 <label for="projectLocality"><strong>Popis projektu :</strong></label><br>
-<input type="text" name="projectLocality" id="projectLocality"><br>
+<textarea id="projectDescription" name="projectDescription" rows="6" required> </textarea>
+<br>
+
+<label for="projectCosts"><strong>Náklady na realizaci :</strong></label><br>
+<textarea id="projectCosts" name="projectCosts" rows="6" required> </textarea>
+<br>
+
+<label for="projectLegalIssues"><strong>Právní omezení a souvislosti :</strong></label><br>
+<textarea id="projectLegalIssues" name="projectLegalIssues" rows="6" required> </textarea>
+<br>
+
+<label for="projectReferenceMain"><strong>Odkaz na projekt (webový odkaz) :</strong></label><br>
+<input type="text" name="projectReferenceMain" id="projectReferenceMain" required><br>
+<br>
+
+<label for="projectReferenceOther"><strong>Další odkaz na projekt (webový odkaz) :</strong></label><br>
+<input type="text" name="projectReferenceOther" id="projectReferenceOther"><br>
 <br>
 
 <input type="submit" value="Submit">
 </form>
 //Plánovaný formulář:<br>
-. (-) Username ... autofilled - HOTOVO HTML <br>
-. (-) UserEmail ... autofilled - HOTOVO HTML <br>
-. (-) čas podání žádosti ... autofilled - HOTOVO HTML<br>
+. (-) Username ... autofilled - HOTOVO  <br>
+. (-) UserEmail ... autofilled - HOTOVO  <br>
+. (-) čas podání žádosti ... autofilled - HOTOVO <br>
 . (-) jméno typového řešení ke kterému se projekt váže - comboBox - standardně to typové řešení, které je nyní zobrazneno je vybráno <br>
 . Jméno vzorového projektu - povinné!<br>
 . Lokalita projektu - povinné!<br>
