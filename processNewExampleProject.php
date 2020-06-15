@@ -17,6 +17,8 @@ $projectCosts = filter_input(INPUT_POST, 'projectCosts');
 $projectLegalIssues = filter_input(INPUT_POST, 'projectLegalIssues');
 $administratorDecisionLetter = filter_input(INPUT_POST, 'administratorDecisionLetter');
 $submitterDecisionResponse = filter_input(INPUT_POST, 'submitterDecisionResponse');
+
+$prefilled_currentUrl = filter_input(INPUT_POST, 'prefilled_currentUrl');
  
 if (!empty($prefilled_userName )) {
     $host = "localhost";
@@ -32,16 +34,13 @@ if (!empty($prefilled_userName )) {
       $sql = "INSERT INTO exampleprojects (prefilled_userName, prefilled_email, prefilled_firstName, prefilled_lastName, prefilled_submissionStatus, prefilled_submissionDate, projectGroup, projectName, projectLocality, projectReferenceMain, projectReferenceOther, projectDescription, projectCosts, projectLegalIssues, administratorDecisionLetter, submitterDecisionResponse) VALUES ('$prefilled_userName', '$prefilled_email', '$prefilled_firstName', '$prefilled_lastName', '$prefilled_submissionStatus', '$prefilled_submissionDate', '$projectGroup', '$projectName', '$projectLocality', '$projectReferenceMain', '$projectReferenceOther', '$projectDescription', '$projectCosts', '$projectLegalIssues', '$administratorDecisionLetter', '$submitterDecisionResponse')";
       
       if ($dbConnection->query($sql)){
-        
         include("includes/header.php");
         echo "<h2>Nový záznam zapsán do databáze. Děkujeme</h2>.";
-        echo "</div>";
+        echo "<a href='" . $prefilled_currentUrl ."'><button type= 'button ' class= 'btn btn-primary ' style= 'margin-bottom: 1.5rem;' >Zpět</button></a></div>";
       } else {
-
         include("includes/header.php");
         echo "<h2>Chyba: </h2><br>". $sql ." ". $dbConnection->error;
-        echo "</div>";
-
+        echo "<a href='" . $prefilled_currentUrl ."'><button type= 'button ' class= 'btn btn-primary ' style= 'margin-bottom: 1.5rem;' >Zpět</button></a></div>";
       }
         $dbConnection->close();
       }

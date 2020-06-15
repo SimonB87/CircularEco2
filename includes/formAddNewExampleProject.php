@@ -41,8 +41,12 @@
   <input type="text" id="prefilled_submissionStatus" class="newProjectForm input" name="prefilled_submissionStatus" value="newSubmission"><br>
   <br>
 
-  <label for="prefilled_submissionDate"><strong>Datum zaslání žádosti : </strong><span class="hiddenLabelStyle"> * hidden </span></label><br>
-  <input type="date" id="prefilled_submissionDate" class="newProjectForm input" name="prefilled_submissionDate"><br>
+  <label for="prefilled_submissionDate"><strong>Date of submission : </strong><span class="hiddenLabelStyle"> * hidden </span></label><br>
+  <input type="text" id="prefilled_submissionDate" class="newProjectForm input" name="prefilled_submissionDate"><br>
+  <br>
+
+  <label for="prefilled_currentUrl"><strong>Current URL : </strong><span class="hiddenLabelStyle"> * hidden </span></label><br>
+  <input type="text" id="prefilled_currentUrl" class="newProjectForm input" name="prefilled_currentUrl"><br>
   <br>
 
 </div>

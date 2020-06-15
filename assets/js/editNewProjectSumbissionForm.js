@@ -1,4 +1,12 @@
 SetDate();
+getCurrentUrl();
+
+function getCurrentUrl() {
+  var urlInput = document.getElementById("prefilled_currentUrl");
+  var currentUrl = window.location.href;
+
+  urlInput.value = currentUrl;
+}
 
 function SetDate() {
   var date = new Date();
@@ -6,13 +14,13 @@ function SetDate() {
   var day = date.getDate();
   var month = date.getMonth() + 1;
   var year = date.getFullYear();
-  /*   var hour = date.getHours();
-    var minute = date.getMinutes(); */
+  var hour = date.getHours();
+  var minute = date.getMinutes();
 
   if (month < 10) month = "0" + month;
   if (day < 10) day = "0" + day;
 
-  var today = year + "-" + month + "-" + day;
+  var today = year + "-" + month + "-" + day + " " + hour + ":" + minute;
 
   document.getElementById("prefilled_submissionDate").value = today;
 }
