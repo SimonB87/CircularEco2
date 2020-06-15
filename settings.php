@@ -5,18 +5,7 @@ include("includes/form_handlers/settings_handler.php");
 
 <div class="col-md-8 col-xs-12 col-md-push-1 main_column column">
 
-  <h4>Account Settings</h4>
-  <?php
-  echo "<img src='" . $user['profile_pic'] ."' id='small_profile_pic'>";
-
-  ?>
-  <br>
-  <a href="upload.php">Upload new profile picture.</a>
-  <br><br><br>
-
-  <h4>Modify the values and click 'Update Details'</h4>
-
-  <?php
+<?php
   $user_data_query = mysqli_query($con, "SELECT first_name, last_name, email, userRole FROM users WHERE username='$userLoggedIn'");
   $row = mysqli_fetch_array($user_data_query);
   $first_name = $row['first_name'];
@@ -25,9 +14,21 @@ include("includes/form_handlers/settings_handler.php");
   $userRole = $row['userRole'];
 
   if ($userRole === "super") {
-    echo "<div><a href='manage.php'><button type= 'button ' class= 'btn btn-primary ' style= 'margin-bottom: 1.5rem;' >Administrátirská sekce </button> </a></div>";
+    echo "<div><a href='manage.php'><button type= 'button ' class= 'btn btn-primary ' style= 'margin-bottom: 1.5rem;' > Sekce pro administrátora </button> </a></div>";
   }
   ?>
+
+  <h4>Account Settings</h4>
+  
+  <?php
+  echo "<img src='" . $user['profile_pic'] ."' id='small_profile_pic'>";
+  ?>
+
+  <br>
+  <a href="upload.php">Upload new profile picture.</a>
+  <br><br><br>
+
+  <h4>Modify the values and click 'Update Details'</h4>
 
   <form class="" action="settings.php" method="POST">
     <p class="settingspara">First name: <input type="text" name="first_name" value="<?php echo $first_name; ?>" id="settings_input" class="settingsin"></p><br>
