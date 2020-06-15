@@ -1,4 +1,5 @@
 <?php
+require 'config/config_localparts.php';
 
 $prefilled_userName = filter_input(INPUT_POST, 'prefilled_userName');
 $prefilled_email = filter_input(INPUT_POST, 'prefilled_email');
@@ -22,10 +23,8 @@ $submitterDecisionResponse = filter_input(INPUT_POST, 'submitterDecisionResponse
 $prefilled_currentUrl = filter_input(INPUT_POST, 'prefilled_currentUrl');
  
 if (!empty($prefilled_userName )) {
-    $host = "localhost";
-    $dbusername = "root";
-    $dbpassword = "";
-    $dbname = "cirksocial";
+    //replace with actual log in afterwards
+
     // Create connection
     $dbConnection = new mysqli ($host, $dbusername, $dbpassword, $dbname);
     if (mysqli_connect_error()){
