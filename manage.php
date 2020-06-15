@@ -48,15 +48,16 @@ else {
  
     <div class="col-md-8 col-xs-12 col-md-push-1 main_column column">
       <section>
-        <h2>Zaslané projekty od veřejnosti:</h2>
-        
+        <h2 class="centertext">Zaslané projekty od veřejnosti:</h2>
+
         <?php
         //conect to the database
         //old: $conn = mysqli_conect("md54.wedos.net", "a223948_sbforum", "phx5EXKm", "d223948_sbforum");
         //in case of error during conecting to the database display error
-        if ($con-> conect_error) {
-            die("conection Failed:". $con-> conect_error);
-        }
+
+        //if ($con-> conect_error) {
+        //    die("conection Failed:". $con-> conect_error);
+        //}
 
         //print the used character set - just for testing
         //printf("Initial character set: %s\n", mysqli_character_set_name($con));
@@ -69,29 +70,142 @@ else {
                 //printf("Current character set: %s\n", mysqli_character_set_name($con));//used only for testing
         }
 
-        //Select columns named from "a" to "e" from a database
-        $sql = "SELECT id, prefilled_userName, prefilled_firstName, prefilled_lastName, prefilled_submissionStatus, projectGroup, projectName, projectLocality, projectDescription from exampleprojects ORDER BY prefilled_submissionStatus ASC";
-        //variable to catch the results
-        $results = $con-> query($sql);
-        //function to fatch the data
-        if ($results-> num_rows > 0 ) {
-            while ($row = $results-> fetch_assoc()) {
-                
-              echo "<div class='projectDetail'>" . 
-                "<a href='manageprojects.php?submissionid=%28x" .$row["id"]  . "%29y'><h4> Projekt ID:<strong> (" . $row["id"] . ")</strong> Název: <strong>" . $row["projectName"] . "</strong></h4></a>".
-                "<p><strong>Autor žádosti:</strong></p><p>" .
-                 $row["prefilled_firstName"] . " " . $row["prefilled_lastName"] . "<span class='projectDetail_submiter'> userName: " . $row["prefilled_userName"] . "</span></p>" .
-                 "<p><strong>Spadá k typovému řešení :</strong></p><p>" . $row["projectGroup"] . "</p>" .
-                 "<p><strong>Lokalita podaného projektu :</strong></p><p>" . $row["projectLocality"] . "</p>" .
-                 "<p><strong>Popis projektu:</strong></p>" . "<p>" . $row["projectDescription"] . "</p>" .
-                 "<p><strong>Status žádosti:</strong><p>" . $row["prefilled_submissionStatus"] . "</p>" .
-               "</div>";
-            }
-          /*  echo ""; */
-        }
-        else {
-            echo "0 result";
-        }
+        echo 
+        	"<!-- component start - Nav tabs -->" .
+          "<div role='tabpanel'>" .
+
+          "<!-- Nav tabs -->" .
+          "<ul class='nav nav-tabs' role='tablist'>" .
+            "<li role='presentation' class='active'><a href='#1novaZadost' aria-controls='1 Nová žádost' role='tab' data-toggle='tab'>Nové žádosti </a></li>" .
+            "<li role='presentation'><a href='#0zamitnuto' aria-controls='0 Zamítnuto' role='tab' data-toggle='tab'>Zamítnuto </a></li>" .
+            "<li role='presentation'><a href='#2vracenoKPrepracovani' aria-controls='2 Vráceno k přepracování' role='tab' data-toggle='tab'>Vráceno k přepracování </a></li>" .
+            "<li role='presentation'><a href='#9schvaleno' aria-controls='9 Schváleno' role='tab' data-toggle='tab'>Schváleno </a></li>" .
+          "</ul>" .
+
+          "<!-- Tab panes -->" .
+          "<!-- 1 Nová žádost, 0 Zamítnuto, 2 Vráceno k přepracování, 9 Schváleno -->" .
+          "<div class='tab-content'>" .
+
+           "<div role='tabpanel' class='tab-pane active' id='1novaZadost'><h3 class='centertext'>Nová žádost (kód 1)</h3>" .
+           "<!-- 1 Nová žádost -->";
+              //////
+              $sql = "SELECT id, prefilled_userName, prefilled_firstName, prefilled_lastName, prefilled_submissionStatus, projectGroup, projectName, projectLocality, projectDescription from exampleprojects WHERE prefilled_submissionStatus='1 Nová žádost' ORDER BY prefilled_submissionDate DESC";
+              //variable to catch the results
+              $results = $con-> query($sql);
+              //function to fatch the data
+              if ($results-> num_rows > 0 ) {
+                  while ($row = $results-> fetch_assoc()) {
+                      
+                    echo "<div class='projectDetail'>" . 
+                      "<a href='manageprojects.php?submissionid=%28x" .$row["id"]  . "%29y'><h4> Projekt ID:<strong> (" . $row["id"] . ")</strong> Název: <strong>" . $row["projectName"] . "</strong></h4></a>".
+                      "<p><strong>Autor žádosti:</strong></p><p>" .
+                      $row["prefilled_firstName"] . " " . $row["prefilled_lastName"] . "<span class='projectDetail_submiter'> userName: " . $row["prefilled_userName"] . "</span></p>" .
+                      "<p><strong>Spadá k typovému řešení :</strong></p><p>" . $row["projectGroup"] . "</p>" .
+                      "<p><strong>Lokalita podaného projektu :</strong></p><p>" . $row["projectLocality"] . "</p>" .
+                      "<p><strong>Popis projektu:</strong></p>" . "<p>" . $row["projectDescription"] . "</p>" .
+                      "<p><strong>Status žádosti:</strong><p>" . $row["prefilled_submissionStatus"] . "</p>" .
+                    "</div>";
+                  }
+                /*  echo ""; */
+              }
+              else {
+                  echo "0 result";
+              }
+              echo 
+               "</div>" .
+
+               "<div role='tabpanel' class='tab-pane' id='0zamitnuto'><h3 class='centertext'>Zamítnuto (kód 0)</h3>" .
+               "<!-- 0 Zamítnuto -->";
+                //////
+                $sql = "SELECT id, prefilled_userName, prefilled_firstName, prefilled_lastName, prefilled_submissionStatus, projectGroup, projectName, projectLocality, projectDescription from exampleprojects WHERE prefilled_submissionStatus='0 Zamítnuto' ORDER BY prefilled_submissionDate DESC";
+                //variable to catch the results
+                $results = $con-> query($sql);
+                //function to fatch the data
+                if ($results-> num_rows > 0 ) {
+                    while ($row = $results-> fetch_assoc()) {
+                        
+                      echo "<div class='projectDetail'>" . 
+                        "<a href='manageprojects.php?submissionid=%28x" .$row["id"]  . "%29y'><h4> Projekt ID:<strong> (" . $row["id"] . ")</strong> Název: <strong>" . $row["projectName"] . "</strong></h4></a>".
+                        "<p><strong>Autor žádosti:</strong></p><p>" .
+                        $row["prefilled_firstName"] . " " . $row["prefilled_lastName"] . "<span class='projectDetail_submiter'> userName: " . $row["prefilled_userName"] . "</span></p>" .
+                        "<p><strong>Spadá k typovému řešení :</strong></p><p>" . $row["projectGroup"] . "</p>" .
+                        "<p><strong>Lokalita podaného projektu :</strong></p><p>" . $row["projectLocality"] . "</p>" .
+                        "<p><strong>Popis projektu:</strong></p>" . "<p>" . $row["projectDescription"] . "</p>" .
+                        "<p><strong>Status žádosti:</strong><p>" . $row["prefilled_submissionStatus"] . "</p>" .
+                      "</div>";
+                    }
+                  /*  echo ""; */
+                }
+                else {
+                    echo "0 result";
+                }
+                echo
+                "</div>" .
+
+                "<div role='tabpanel' class='tab-pane' id='2vracenoKPrepracovani'><h3 class='centertext'>Vráceno k přepracování (kód 2)</h3>" .
+                "<!--  2 Vráceno k přepracování -->";
+
+                //////
+                $sql = "SELECT id, prefilled_userName, prefilled_firstName, prefilled_lastName, prefilled_submissionStatus, projectGroup, projectName, projectLocality, projectDescription from exampleprojects WHERE prefilled_submissionStatus='2 Vráceno k přepracování' ORDER BY prefilled_submissionDate DESC";
+                //variable to catch the results
+                $results = $con-> query($sql);
+                //function to fatch the data
+                if ($results-> num_rows > 0 ) {
+                    while ($row = $results-> fetch_assoc()) {
+                        
+                      echo "<div class='projectDetail'>" . 
+                        "<a href='manageprojects.php?submissionid=%28x" .$row["id"]  . "%29y'><h4> Projekt ID:<strong> (" . $row["id"] . ")</strong> Název: <strong>" . $row["projectName"] . "</strong></h4></a>".
+                        "<p><strong>Autor žádosti:</strong></p><p>" .
+                        $row["prefilled_firstName"] . " " . $row["prefilled_lastName"] . "<span class='projectDetail_submiter'> userName: " . $row["prefilled_userName"] . "</span></p>" .
+                        "<p><strong>Spadá k typovému řešení :</strong></p><p>" . $row["projectGroup"] . "</p>" .
+                        "<p><strong>Lokalita podaného projektu :</strong></p><p>" . $row["projectLocality"] . "</p>" .
+                        "<p><strong>Popis projektu:</strong></p>" . "<p>" . $row["projectDescription"] . "</p>" .
+                        "<p><strong>Status žádosti:</strong><p>" . $row["prefilled_submissionStatus"] . "</p>" .
+                      "</div>";
+                    }
+                  /*  echo ""; */
+                }
+                else {
+                    echo "0 result";
+                }
+
+                echo
+                "</div>" .
+
+                "<div role='tabpanel' class='tab-pane' id='9schvaleno'><h3 class='centertext'>Schváleno (kód 9)</h3>" .
+                "<!--  9 Schváleno -->";
+                //////
+                $sql = "SELECT id, prefilled_userName, prefilled_firstName, prefilled_lastName, prefilled_submissionStatus, projectGroup, projectName, projectLocality, projectDescription from exampleprojects WHERE prefilled_submissionStatus='9 Schváleno' ORDER BY prefilled_submissionDate DESC";
+                //variable to catch the results
+                $results = $con-> query($sql);
+                //function to fatch the data
+                if ($results-> num_rows > 0 ) {
+                    while ($row = $results-> fetch_assoc()) {
+                        
+                      echo "<div class='projectDetail'>" . 
+                        "<a href='manageprojects.php?submissionid=%28x" .$row["id"]  . "%29y'><h4> Projekt ID:<strong> (" . $row["id"] . ")</strong> Název: <strong>" . $row["projectName"] . "</strong></h4></a>".
+                        "<p><strong>Autor žádosti:</strong></p><p>" .
+                        $row["prefilled_firstName"] . " " . $row["prefilled_lastName"] . "<span class='projectDetail_submiter'> userName: " . $row["prefilled_userName"] . "</span></p>" .
+                        "<p><strong>Spadá k typovému řešení :</strong></p><p>" . $row["projectGroup"] . "</p>" .
+                        "<p><strong>Lokalita podaného projektu :</strong></p><p>" . $row["projectLocality"] . "</p>" .
+                        "<p><strong>Popis projektu:</strong></p>" . "<p>" . $row["projectDescription"] . "</p>" .
+                        "<p><strong>Status žádosti:</strong><p>" . $row["prefilled_submissionStatus"] . "</p>" .
+                      "</div>";
+                    }
+                  /*  echo ""; */
+                }
+                else {
+                    echo "0 result";
+                }
+
+
+                echo
+                "</div>" .
+
+                "</div>" .
+
+                "</div><!-- component end - Nav tabs -->";
+
         //Close the variable after finishing
         $con-> close();
 
