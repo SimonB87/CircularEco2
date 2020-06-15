@@ -27,7 +27,7 @@
   <br>
 
   <label for="prefilled_submissionStatus"><strong>Submission status : </strong><span class="hiddenLabelStyle"> * hidden </span></label><br>
-  <input type="text" id="prefilled_submissionStatus" class="newProjectForm input" name="prefilled_submissionStatus" value="newSubmission"><br>
+  <input type="text" id="prefilled_submissionStatus" class="newProjectForm input" name="prefilled_submissionStatus" value="Nová žádost"><br>
   <br>
 
   <label for="prefilled_submissionDate"><strong>Date of submission : </strong><span class="hiddenLabelStyle"> * hidden </span></label><br>
@@ -85,13 +85,13 @@
 
 </select><br>
 
-<label for="projectName" class="formLabelStyle"><strong>Jméno projektu : </strong> <span class="requiredLabelStyle"> * povinné </span></label><br>
+<label for="projectName" class="formLabelStyle"><strong>Jméno vašeho projektu : </strong> <span class="requiredLabelStyle"> * povinné </span></label><br>
 <input type="text" name="projectName" id="projectName" class="newProjectForm input" required><br>
 
-<label for="projectLocality" class="formLabelStyle"><strong>Lokalita projektu :</strong> <span class="requiredLabelStyle"> * povinné </span></label><br>
+<label for="projectLocality" class="formLabelStyle"><strong>Lokalita vašeho projektu :</strong> <span class="requiredLabelStyle"> * povinné </span></label><br>
 <input type="text" name="projectLocality" id="projectLocality" class="newProjectForm input" required><br>
 
-<label for="projectDescription" class="formLabelStyle"><strong>Popis projektu :</strong> <span class="requiredLabelStyle"> * povinné </span></label><br>
+<label for="projectDescription" class="formLabelStyle"><strong>Popis vašeho projektu :</strong> <span class="requiredLabelStyle"> * povinné </span></label><br>
 <textarea id="projectDescription" name="projectDescription" rows="6" class="newProjectForm input" required> </textarea><br>
 
 <label for="projectCosts" class="formLabelStyle"><strong>Náklady na realizaci :</strong><span class="requiredLabelStyle"> * povinné </span></label><br>
@@ -100,10 +100,10 @@
 <label for="projectLegalIssues" class="formLabelStyle"><strong>Právní omezení a souvislosti :</strong><span class="requiredLabelStyle"> * povinné </span></label><br>
 <textarea id="projectLegalIssues" name="projectLegalIssues" rows="6" class="newProjectForm input" required> </textarea><br>
 
-<label for="projectReferenceMain" class="formLabelStyle"><strong>Odkaz na projekt (webový odkaz) :</strong><span class="requiredLabelStyle"> * povinné </span></label><br>
+<label for="projectReferenceMain" class="formLabelStyle"><strong>Odkaz na váš projekt (webový odkaz) :</strong><span class="requiredLabelStyle"> * povinné </span></label><br>
 <input type="text" name="projectReferenceMain" id="projectReferenceMain" class="newProjectForm input" required><br>
 
-<label for="projectReferenceOther" class="formLabelStyle"><strong>Další odkaz na projekt (webový odkaz) :</strong></label><br>
+<label for="projectReferenceOther" class="formLabelStyle"><strong>Další odkaz na výš projekt (webový odkaz) :</strong></label><br>
 <input type="text" name="projectReferenceOther" id="projectReferenceOther" class="newProjectForm input"><br>
 
 
@@ -112,7 +112,7 @@
 </form>
 
 <div>
-<br>
+<br><br>
 //TODO:<br>
 . Po podání nová obrazovka - místo echo include, kde bude menu a jen infromace pro usera o stavu podání (Děkujeme, či něco se pokazilo).<br>
 
