@@ -1,4 +1,5 @@
 <?php
+
 $prefilled_userName = filter_input(INPUT_POST, 'prefilled_userName');
 $prefilled_email = filter_input(INPUT_POST, 'prefilled_email');
 $prefilled_firstName = filter_input(INPUT_POST, 'prefilled_firstName');
@@ -30,12 +31,19 @@ if (!empty($prefilled_userName )) {
     if (mysqli_connect_error()){
       die('Connect Error ('. mysqli_connect_errno() .') ' . mysqli_connect_error());
     } else {
-      
+
+      if (!mysqli_set_charset($dbConnection, "utf8")) {
+        printf("Error loading character set utf8: %s\n", mysqli_error($con));
+        exit();
+        } else {
+                //printf("Current character set: %s\n", mysqli_character_set_name($con));//used only for testing
+        }
+        
       $sql = "INSERT INTO exampleprojects (prefilled_userName, prefilled_email, prefilled_firstName, prefilled_lastName, prefilled_submissionStatus, prefilled_submissionDate, projectGroup, projectName, projectLocality, projectReferenceMain, projectReferenceOther, projectDescription, projectCosts, projectLegalIssues, administratorDecisionLetter, submitterDecisionResponse) VALUES ('$prefilled_userName', '$prefilled_email', '$prefilled_firstName', '$prefilled_lastName', '$prefilled_submissionStatus', '$prefilled_submissionDate', '$projectGroup', '$projectName', '$projectLocality', '$projectReferenceMain', '$projectReferenceOther', '$projectDescription', '$projectCosts', '$projectLegalIssues', '$administratorDecisionLetter', '$submitterDecisionResponse')";
       
       if ($dbConnection->query($sql)){
         include("includes/header.php");
-        echo "<h2>Nový záznam zapsán do databáze. Děkujeme</h2>.";
+        echo "<h2>Nový záznam zapsán do databáze. Děkujeme Vám za Váš podmět, již se mu věnujeme. </h2>.";
         echo "<a href='" . $prefilled_currentUrl ."'><button type= 'button ' class= 'btn btn-primary ' style= 'margin-bottom: 1.5rem;' >Zpět</button></a></div>";
       } else {
         include("includes/header.php");
