@@ -28,7 +28,7 @@
 
   <label for="prefilled_submissionStatus"><strong>Submission status : </strong><span class="hiddenLabelStyle"> * hidden </span></label><br>
   <input type="text" id="prefilled_submissionStatus" class="newProjectForm input" name="prefilled_submissionStatus" value="1 Nová žádost"><br>
-  <!-- 1 Nová žádost, 0 Zamítnuto, 3 Vráceno k přepracování, 9 Schváleno -->
+  <!-- 1 Nová žádost, 0 Zamítnuto, 2 Vráceno k přepracování, 9 Schváleno -->
   <br>
 
   <label for="prefilled_submissionDate"><strong>Date of submission : </strong><span class="hiddenLabelStyle"> * hidden </span></label><br>
@@ -47,11 +47,10 @@
 
   <?php
   //conect to the database
-  //old: $conn = mysqli_conect("md54.wedos.net", "a223948_sbforum", "phx5EXKm", "d223948_sbforum");
   //in case of error during conecting to the database display error
-  if ($con_projects-> conect_error) {
-      die("conection Failed:". $con_projects-> conect_error);
-  }
+  //if ($con_projects-> conect_error) {
+  //    die("conection Failed:". $con_projects-> conect_error);
+  //}
 
   //print the used character set - just for testing
   //printf("Initial character set: %s\n", mysqli_character_set_name($con));
