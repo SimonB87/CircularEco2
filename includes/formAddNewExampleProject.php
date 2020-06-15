@@ -1,17 +1,6 @@
 <section class="submitNewProject">
 <hr>
-<!-- <br>
 
-<h2>Test heslo:</h2>
-<br>
-<form method="post" action="processNewExampleProject.php">
-<label for="username"><strong>Username :</strong></label><br>
-<input type="text" id="username" name="username"><br><br>
-<label for="username"><strong>Password :</strong></label><br>
-<input type="password" name="password"><br><br>
-<input type="submit" value="Submit">
-</form>
-<br> -->
 
 <h2>Připojte svůj projekt:</h2><br>
 
@@ -82,7 +71,7 @@
   if ($results-> num_rows > 0 ) {
       while ($row = $results-> fetch_assoc()) {
           
-        echo "<option value='" . $row["id"] . " - " . $row["web_nazev"] . "'" . "> ID: [" . $row["id"] . "] - " . $row["web_nazev"] . "</option>";
+        echo "<option value='" . $row["id"] . " - " . $row["web_nazev"] . "'" . ">" . $row["web_nazev"] . " - ID: " . $row["id"] . "</option>";
       }
     /*  echo ""; */
   }
