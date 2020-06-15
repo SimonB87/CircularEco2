@@ -42,3 +42,23 @@ a.carousel-control > span > i.fa {
 ol.carousel-indicators {
   transform: translateY(45px);
 }
+
+/* list new projects */
+
+.projectDetail {
+  padding: 2rem 0;
+  font-size: 1.5rem;
+}
+
+.projectDetail a {
+  color: var(--main-dark-color);
+}
+
+.projectDetail_submiter {
+  color: var(--main-light-color);
+  font-style: italic;
+}
+
+.submission--heading {
+  color: var(--main-dark-color);
+}
