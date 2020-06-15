@@ -112,14 +112,7 @@
 </form>
 
 <div>
-<br><br>
-//TODO:<br>
-. Po podání nová obrazovka - místo echo include, kde bude menu a jen infromace pro usera o stavu podání (Děkujeme, či něco se pokazilo).<br>
-
-//TODO:<br>
-. založit sekci management podaných řešení<br>
-. pro administrátora i pro uživatele<br>
-. tabulka s projekty a jejich překlik na detail<br>
+<br>
 </div>
 <hr>
 </section>

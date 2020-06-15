@@ -33,12 +33,8 @@ if ($results-> num_rows > 0 ) {
         
       echo "<div class='projectDetail'>" . 
         "<a href='exampleProjectDetail.php?submissionid=%28x" .$row["id"]  . "%29y'><h4> Projekt ID:<strong> (" . $row["id"] . ")</strong> Název: <strong>" . $row["projectName"] . "</strong></h4></a>".
-        "<p><strong>Autor žádosti:</strong></p><p>" .
-        $row["prefilled_firstName"] . " " . $row["prefilled_lastName"] . "<span class='projectDetail_submiter'> userName: " . $row["prefilled_userName"] . "</span></p>" .
-        "<p><strong>Spadá k typovému řešení :</strong></p><p>" . $row["projectGroup"] . "</p>" .
         "<p><strong>Lokalita podaného projektu :</strong></p><p>" . $row["projectLocality"] . "</p>" .
         "<p><strong>Popis projektu:</strong></p>" . "<p>" . $row["projectDescription"] . "</p>" .
-        "<p><strong>Status žádosti:</strong><p>" . $row["prefilled_submissionStatus"] . "</p>" .
       "</div>";
     }
   /*  echo ""; */
