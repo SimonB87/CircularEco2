@@ -27,7 +27,8 @@
   <br>
 
   <label for="prefilled_submissionStatus"><strong>Submission status : </strong><span class="hiddenLabelStyle"> * hidden </span></label><br>
-  <input type="text" id="prefilled_submissionStatus" class="newProjectForm input" name="prefilled_submissionStatus" value="Nová žádost"><br>
+  <input type="text" id="prefilled_submissionStatus" class="newProjectForm input" name="prefilled_submissionStatus" value="1 Nová žádost"><br>
+  <!-- 1 Nová žádost, 0 Zamítnuto, 3 Vráceno k přepracování, 9 Schváleno -->
   <br>
 
   <label for="prefilled_submissionDate"><strong>Date of submission : </strong><span class="hiddenLabelStyle"> * hidden </span></label><br>
