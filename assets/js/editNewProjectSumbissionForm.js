@@ -1,6 +1,8 @@
 SetDate();
 getCurrentUrl();
 
+var currentOptionSelected = 0;
+
 function setCurrentSollutionFromOptions() {
   var urlString = window.location.href;
   var keyWord = "projectnumber=";
@@ -17,7 +19,9 @@ function setCurrentSollutionFromOptions() {
 
     if (currentOption == id) {
       var optionText = targetSelect.options[i].innerHTML;
-      targetSelect.options[i].innerHTML = " >> " + optionText + " << ";
+      if (currentOptionSelected === 0) {
+        targetSelect.options[i].innerHTML = " >> " + optionText + " << ";
+      }
       targetSelect.options[i].selected = "selected";
     }
   }
@@ -57,6 +61,9 @@ function toggleNewProjectForm() {
     form.classList.add("hiddenForm");
   }
 
-  setCurrentSollutionFromOptions();
+  if (currentOptionSelected == false) {
+    setCurrentSollutionFromOptions();
+    currentOptionSelected++;
+  }
 
 }
