@@ -48,8 +48,8 @@ else {
  
     <div class="col-md-8 col-xs-12 col-md-push-1 main_column column">
       <section>
-        <h2>Zaslané projekty od veřejnosti:<h2>
-
+        <h2>Zaslané projekty od veřejnosti:</h2>
+        
         <?php
         //conect to the database
         //old: $conn = mysqli_conect("md54.wedos.net", "a223948_sbforum", "phx5EXKm", "d223948_sbforum");
@@ -70,21 +70,22 @@ else {
         }
 
         //Select columns named from "a" to "e" from a database
-        $sql = "SELECT id, prefilled_userName, prefilled_firstName, prefilled_lastName, prefilled_submissionStatus, projectGroup, projectName, projectLocality from exampleprojects ORDER BY prefilled_submissionStatus ASC";
+        $sql = "SELECT id, prefilled_userName, prefilled_firstName, prefilled_lastName, prefilled_submissionStatus, projectGroup, projectName, projectLocality, projectDescription from exampleprojects ORDER BY prefilled_submissionStatus ASC";
         //variable to catch the results
         $results = $con-> query($sql);
         //function to fatch the data
         if ($results-> num_rows > 0 ) {
             while ($row = $results-> fetch_assoc()) {
                 
-              echo "<div class='projectDetail' style='margin-botom: 2rem;'>" . 
-                "<h3> Projekt ID: (" . $row["id"] . ") Název: " . $row["projectName"] .
-                "</h3><h4>Autor žádosti:</h4><p>" .
-                 $row["prefilled_firstName"] . " " . $row["prefilled_lastName"] . " userName: " . $row["prefilled_userName"] . "</p>" .
-                 "<h4>Spadá k typovému řešení :</h4><p>" . $row["projectGroup"] . "</p>" .
-                 "<h4>Lokalita podaného projektu :</h4><p>" . $row["projectLocality"] . "</p>" .
-                 "<h4>Status žádosti:</h4><p>" . $row["prefilled_submissionStatus"] . "</p>" .
-               "</div><br><br><br>";
+              echo "<div class='projectDetail'>" . 
+                "<a href='manageprojects.php?submissionid=%28x" .$row["id"]  . "%29y'><h4> Projekt ID:<strong> (" . $row["id"] . ")</strong> Název: <strong>" . $row["projectName"] . "</strong></h4></a>".
+                "<p><strong>Autor žádosti:</strong></p><p>" .
+                 $row["prefilled_firstName"] . " " . $row["prefilled_lastName"] . "<span class='projectDetail_submiter'> userName: " . $row["prefilled_userName"] . "</span></p>" .
+                 "<p><strong>Spadá k typovému řešení :</strong></p><p>" . $row["projectGroup"] . "</p>" .
+                 "<p><strong>Lokalita podaného projektu :</strong></p><p>" . $row["projectLocality"] . "</p>" .
+                 "<p><strong>Popis projektu:</strong></p>" . "<p>" . $row["projectDescription"] . "</p>" .
+                 "<p><strong>Status žádosti:</strong><p>" . $row["prefilled_submissionStatus"] . "</p>" .
+               "</div>";
             }
           /*  echo ""; */
         }
