@@ -17,11 +17,16 @@ include("includes/form_handlers/settings_handler.php");
   <h4>Modify the values and click 'Update Details'</h4>
 
   <?php
-  $user_data_query = mysqli_query($con, "SELECT first_name, last_name, email FROM users WHERE username='$userLoggedIn'");
+  $user_data_query = mysqli_query($con, "SELECT first_name, last_name, email, userRole FROM users WHERE username='$userLoggedIn'");
   $row = mysqli_fetch_array($user_data_query);
   $first_name = $row['first_name'];
   $last_name = $row['last_name'];
   $email = $row['email'];
+  $userRole = $row['userRole'];
+
+  if ($userRole === "super") {
+    echo "<div><a href='manage.php'><button type= 'button ' class= 'btn btn-primary ' style= 'margin-bottom: 1.5rem;' >Administrátirská sekce </button> </a></div>";
+  }
   ?>
 
   <form class="" action="settings.php" method="POST">
