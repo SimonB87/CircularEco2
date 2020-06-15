@@ -20,6 +20,8 @@ $projectLegalIssues = filter_input(INPUT_POST, 'projectLegalIssues');
 $administratorDecisionLetter = filter_input(INPUT_POST, 'administratorDecisionLetter');
 $submitterDecisionResponse = filter_input(INPUT_POST, 'submitterDecisionResponse');
 
+$projectGroupCode = substr($projectGroup, 0, 4); 
+
 $prefilled_currentUrl = filter_input(INPUT_POST, 'prefilled_currentUrl');
  
 if (!empty($prefilled_userName )) {
@@ -38,12 +40,13 @@ if (!empty($prefilled_userName )) {
                 //printf("Current character set: %s\n", mysqli_character_set_name($con));//used only for testing
         }
         
-      $sql = "INSERT INTO exampleprojects (prefilled_userName, prefilled_email, prefilled_firstName, prefilled_lastName, prefilled_submissionStatus, prefilled_submissionDate, projectGroup, projectName, projectLocality, projectReferenceMain, projectReferenceOther, projectDescription, projectCosts, projectLegalIssues, administratorDecisionLetter, submitterDecisionResponse) VALUES ('$prefilled_userName', '$prefilled_email', '$prefilled_firstName', '$prefilled_lastName', '$prefilled_submissionStatus', '$prefilled_submissionDate', '$projectGroup', '$projectName', '$projectLocality', '$projectReferenceMain', '$projectReferenceOther', '$projectDescription', '$projectCosts', '$projectLegalIssues', '$administratorDecisionLetter', '$submitterDecisionResponse')";
+      $sql = "INSERT INTO exampleprojects (prefilled_userName, prefilled_email, prefilled_firstName, prefilled_lastName, prefilled_submissionStatus, prefilled_submissionDate, projectGroup, projectGroupCode, projectName, projectLocality, projectReferenceMain, projectReferenceOther, projectDescription, projectCosts, projectLegalIssues, administratorDecisionLetter, submitterDecisionResponse) VALUES ('$prefilled_userName', '$prefilled_email', '$prefilled_firstName', '$prefilled_lastName', '$prefilled_submissionStatus', '$prefilled_submissionDate', '$projectGroup', '$projectGroupCode','$projectName', '$projectLocality', '$projectReferenceMain', '$projectReferenceOther', '$projectDescription', '$projectCosts', '$projectLegalIssues', '$administratorDecisionLetter', '$submitterDecisionResponse')";
       
       if ($dbConnection->query($sql)){
         include("includes/header.php");
-        echo "<h2>Nový záznam zapsán do databáze. Děkujeme Vám za Váš podmět, již se mu věnujeme. </h2>.";
-        echo "<a href='" . $prefilled_currentUrl ."'><button type= 'button ' class= 'btn btn-primary ' style= 'margin-bottom: 1.5rem;' >Zpět</button></a></div>";
+        echo "<h2>Nový záznam zapsán do databáze. Děkujeme Vám za Váš podmět, již se mu věnujeme. </h2>.".
+              "<a href='" . $prefilled_currentUrl ."'><button type= 'button ' class= 'btn btn-primary ' style= 'margin-bottom: 1.5rem;' >Zpět</button></a></div><br>";        
+        
       } else {
         include("includes/header.php");
         echo "<h2>Chyba: </h2><br>". $sql ." ". $dbConnection->error;
