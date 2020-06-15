@@ -76,9 +76,9 @@ else {
         //conect to the database
         
         //in case of error during conecting to the database display error
-        if ($con-> conect_error) {
-          die("conection Failed:". $con-> conect_error);
-        }
+        //if ($con-> conect_error) {
+        //  die("conection Failed:". $con-> conect_error);
+        //}
 
         //print the used character set - just for testing
         //printf("Initial character set: %s\n", mysqli_character_set_name($con));
@@ -120,7 +120,7 @@ else {
                         "<option value='volvo'>Vyberte ...</option>" .
                         "<option value='volvo'>1 Nová žádost</option>" .
                         "<option value='volvo'>0 Zamítnuto</option>" .
-                        "<option value='saab'>3 Vráceno k přepracování</option>" .
+                        "<option value='saab'>2 Vráceno k přepracování</option>" .
                         "<option value='opel'>9 Schváleno</option>" .
                       "</select>" .
                     "<br><br>" .
