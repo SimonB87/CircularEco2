@@ -49,11 +49,10 @@ include("includes/header.php");
         $project_number = substr($project_number, 0, 5);
 
         //conect to the database
-        //old: $conn = mysqli_conect("md54.wedos.net", "a223948_sbforum", "phx5EXKm", "d223948_sbforum");
         //in case of error during conecting to the database display error
-        if ($con-> conect_error) {
-          die("conection Failed:". $con-> conect_error);
-        }
+        //if ($con-> conect_error) {
+        //  die("conection Failed:". $con-> conect_error);
+        //}
 
         //print the used character set - just for testing
         //printf("Initial character set: %s\n", mysqli_character_set_name($con));
