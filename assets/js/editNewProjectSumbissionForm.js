@@ -8,8 +8,6 @@ function setCurrentSollutionFromOptions() {
 
   var id = urlString.slice(idStart, idStart + 4);
 
-  console.log(id);
-
   var targetSelect = document.getElementById("projectGroup");
   var numberOfOptionsInTargetSelect = targetSelect.options.length;
   var currentOption;
@@ -19,7 +17,7 @@ function setCurrentSollutionFromOptions() {
 
     if (currentOption == id) {
       var optionText = targetSelect.options[i].innerHTML;
-      targetSelect.options[i].innerHTML = ">> " + optionText + " <<";
+      targetSelect.options[i].innerHTML = " >> " + optionText + " << ";
       targetSelect.options[i].selected = "selected";
     }
   }
