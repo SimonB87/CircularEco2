@@ -99,14 +99,14 @@ else {
         //function to fatch the data
         if ($results-> num_rows > 0 ) {
           while ($row = $results-> fetch_assoc()) {
-              echo "<form id='adminEditNewProject' method='post' action='editExampleProject.php'>".
+              echo "<form id='formProcessEditExampleProject' method='post' action='processEditExampleProject.php'>".
                    "<h4 class='submission--heading submissionDetail--id'> ID podání: </h4>" .
                    "<p>" . $row["id"] . "<p>" .
                    "<h4 class='submission--heading submissionDetail--name'> Název: </h4>" .
                    "<p>" . $row["projectName"] . "<p>" .
                    "<h4 class='submission--heading submissionDetail--submiter'> Projekt podal: </h4> " . 
                    "<p> <strong>Jméno:</strong>" . $row["prefilled_firstName"] . " " . $row["prefilled_lastName"] . "</p>" .
-                   "<p> <strong>Uživatelské jméno: </strong>" . $row["prefilled_email"] . ", <strong> email uživatele: </strong>" . $row["prefilled_email"] . "</p>" .
+                   "<p> <strong>Uživatelské jméno: </strong>" . $row["prefilled_userName"] . ", <strong> email uživatele: </strong>" . $row["prefilled_email"] . "</p>" .
                    "<h4 class='submission--heading submissionDetail--projectDescription'> Popis projektu: </h4>" . 
                    "<p>" . $row["projectDescription"] . "</p>".
                    "<h4 class='submission--heading submissionDetail--projectLegalIssues'> Právní souvislosti projektu: </h4>" . 
@@ -118,10 +118,10 @@ else {
                    "<label for='prefilled_submissionStatus'>Nový status žádosti :</label><br>" .
                     "<select name='prefilled_submissionStatus' id='prefilled_submissionStatus'>" .
                         "<option value='volvo'>Vyberte ...</option>" .
-                        "<option value='volvo'>1 Nová žádost</option>" .
-                        "<option value='volvo'>0 Zamítnuto</option>" .
-                        "<option value='saab'>2 Vráceno k přepracování</option>" .
-                        "<option value='opel'>9 Schváleno</option>" .
+                        "<option value='1 Nová žádost'>1 Nová žádost</option>" .
+                        "<option value='0 Zamítnuto'>0 Zamítnuto</option>" .
+                        "<option value='2 Vráceno k přepracování'>2 Vráceno k přepracování</option>" .
+                        "<option value='9 Schváleno'>9 Schváleno</option>" .
                       "</select>" .
                     "<br><br>" .
                    "<p><strong>Přiřazené typové řešení: </strong>" . $row["projectGroup"] . ", <strong> lokalita projektu: </strong>" . $row["projectLocality"] . "</p>" .
@@ -132,10 +132,14 @@ else {
                     "<textarea id='administratorDecisionLetter' name='administratorDecisionLetter' rows='10' class='newProjectForm input' required>" . $row["administratorDecisionLetter"] ."</textarea><br>" .
                    "<h4 class='submission--heading submissionDetail--submitterDecisionResponse'> Vyjádření podavatele k projektu: </h4>" . 
                    "<p> " . $row["submitterDecisionResponse"] . "</p><br>".
+                   "<div class='projectFormHiddenSection'>" .
                    "<label for='id'><strong>ID : </strong><span class='hiddenLabelStyle'> * hidden </span></label><br>".
                    "<input type='text' id='id' class='newProjectForm input' name='id' value='" . $row['id'] . "'><br>" .
-                   "</form>".
-                   "<button type='submit' form='adminEditNewProject' value='Upravit projekt' class='btn btn-success' style='margin: 1.5rem 0;'>Upravit projekt</button>";
+                   "<label for= 'prefilled_currentUrl'><strong>Current URL : </strong><span class= 'hiddenLabelStyle '> * hidden </span></label><br>" .
+                   "<input type= 'text ' id= 'prefilled_currentUrl' class= 'newProjectForm input ' name= 'prefilled_currentUrl'><br>" .
+                   "</div>" .
+                   "</form>" .
+                   "<button type='submit' form='formProcessEditExampleProject' value='Upravit projekt' class='btn btn-success' style='margin: 1.5rem 0;'>Upravit projekt</button>";
           }
           echo "";
         }
@@ -152,5 +156,13 @@ else {
     </div>
     </div> <!-- closing of the wrapper div, this div stars in the included header file-->
 
+    <script defer=""> 
+      setTimeout(function(){ 
+        var targetInput = document.getElementById("prefilled_currentUrl");
+        var windowUrl = window.location.href;
+
+        targetInput.value = windowUrl;
+      }, 300); 
+    </script>
     </body>
     </html>
