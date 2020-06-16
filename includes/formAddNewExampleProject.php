@@ -117,4 +117,4 @@
 <hr>
 </section>
 
-<script defer src="assets/js/editNewProjectSumbissionForm.js"></script>
+<script src="assets/js/editNewProjectSumbissionForm.js" defer></script>
