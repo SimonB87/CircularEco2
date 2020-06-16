@@ -123,8 +123,8 @@ include("includes/header.php");
     
     <script src="assets/js/pdfgeneration/package/jspdf.min.js"></script>
     <script src="assets/js/pdfgeneration/simon/fontfreeserifnormal.js"></script>
-    <script src="assets/js/pdfgeneration/simon/pdffromhtml.js"></script> 
-
+    <script src="assets/js/pdfgeneration/simon/pdffromhtml.js"></script>
+    
     </div>
   </div>
 
