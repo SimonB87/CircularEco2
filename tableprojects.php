@@ -85,11 +85,12 @@ include("includes/header.php");
 
             <?php
             //conect to the database
-            //old: $conn = mysqli_conect("md54.wedos.net", "a223948_sbforum", "phx5EXKm", "d223948_sbforum");
+ 
             //in case of error during conecting to the database display error
-            if ($con-> conect_error) {
-                die("conection Failed:". $con-> conect_error);
-            }
+
+            //if ($con-> conect_error) {
+            //    die("conection Failed:". $con-> conect_error);
+            //}
 
             //truncate a string only at a whitespace (by nogdog)
             function truncate($text, $length) {
