@@ -202,7 +202,7 @@ else {
 
                 echo
                 "</div>" .
-                "<div role='tabpanel' class='tab-pane active' id='xVsechnyZadosti'><h3 class='centertext'>Všechny žádosti </h3>" .
+                "<div role='tabpanel' class='tab-pane' id='xVsechnyZadosti'><h3 class='centertext'>Všechny žádosti </h3>" .
                 "<!-- Všechny žádosti -->";
 
                 //////
@@ -241,6 +241,5 @@ else {
       <section>
     </div>
     </div> <!-- closing of the wrapper div, this div stars in the included header file-->
-
     </body>
     </html>
