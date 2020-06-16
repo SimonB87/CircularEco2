@@ -37,7 +37,7 @@ else {
 
 
   <!-- Bootstrap 3.3.2 - https://getbootstrap.com/docs/3.3/getting-started/ -->
-  <script src="assets/js/bootstrap.js"></script>
+  <script src="assets/js/bootstrap.js" defer></script>
   <link rel="stylesheet"  type="text/css" href="assets/css/bootstrap.css">
 
   <script src="assets/js/bootbox.js"></script>
@@ -64,7 +64,7 @@ else {
 
   <link rel="stylesheet" href="assets/css/newProjectSumbissionForm.css" type="text/css" />
 
-
+  <script src="assets/js/editNewProjectSumbissionForm.js" defer></script>
   <!------ Include the above in your HEAD tag ---------->
 
 
