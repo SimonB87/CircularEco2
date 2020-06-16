@@ -80,6 +80,7 @@ else {
             "<li role='presentation'><a href='#0zamitnuto' aria-controls='0 Zamítnuto' role='tab' data-toggle='tab'>Zamítnuto </a></li>" .
             "<li role='presentation'><a href='#2vracenoKPrepracovani' aria-controls='2 Vráceno k přepracování' role='tab' data-toggle='tab'>Vráceno k přepracování </a></li>" .
             "<li role='presentation'><a href='#9schvaleno' aria-controls='9 Schváleno' role='tab' data-toggle='tab'>Schváleno </a></li>" .
+            "<li role='presentation'><a href='#xVsechnyZadosti' aria-controls='Všechny žádosti' role='tab' data-toggle='tab'>Všechny žádosti </a></li>" .
           "</ul>" .
 
           "<!-- Tab panes -->" .
@@ -201,6 +202,32 @@ else {
 
                 echo
                 "</div>" .
+                "<div role='tabpanel' class='tab-pane active' id='xVsechnyZadosti'><h3 class='centertext'>Všechny žádosti </h3>" .
+                "<!-- Všechny žádosti -->";
+
+                //////
+                $sql = "SELECT id, prefilled_userName, prefilled_firstName, prefilled_lastName, prefilled_submissionStatus, projectGroup, projectName, projectLocality, projectDescription from exampleprojects ORDER BY prefilled_submissionDate DESC";
+                //variable to catch the results
+                $results = $con-> query($sql);
+                //function to fatch the data
+                if ($results-> num_rows > 0 ) {
+                    while ($row = $results-> fetch_assoc()) {
+                        
+                      echo "<div class='projectDetail'>" . 
+                        "<a href='manageprojects.php?submissionid=%28x" .$row["id"]  . "%29y'><h4> Projekt ID:<strong> (" . $row["id"] . ")</strong> Název: <strong>" . $row["projectName"] . "</strong></h4></a>".
+                        "<p><strong>Autor žádosti:</strong></p><p>" .
+                        $row["prefilled_firstName"] . " " . $row["prefilled_lastName"] . "<span class='projectDetail_submiter'> userName: " . $row["prefilled_userName"] . "</span></p>" .
+                        "<p><strong>Spadá k typovému řešení :</strong></p><p>" . $row["projectGroup"] . "</p>" .
+                        "<p><strong>Lokalita podaného projektu :</strong></p><p>" . $row["projectLocality"] . "</p>" .
+                        "<p><strong>Popis projektu:</strong></p>" . "<p>" . $row["projectDescription"] . "</p>" .
+                        "<p><strong>Status žádosti:</strong><p>" . $row["prefilled_submissionStatus"] . "</p>" .
+                      "</div>";
+                    }
+                  /*  echo ""; */
+                }
+                else {
+                    echo "0 result";
+                }
 
                 "</div>" .
 
