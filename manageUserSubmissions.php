@@ -121,7 +121,7 @@ else {
                     while ($row = $results-> fetch_assoc()) {
                         
                       echo "<div class='projectDetail'>" . 
-                        "<a href='amendProjectDetail.php?submissionid=%28x" .$row["id"]  . "%29y'><h4> Projekt ID:<strong> (" . $row["id"] . ")</strong> Název: <strong>" . $row["projectName"] . "</strong></h4></a>".
+                        "<a href='exampleProjectDetail.php?submissionid=%28x" .$row["id"]  . "%29y'><h4> Projekt ID:<strong> (" . $row["id"] . ")</strong> Název: <strong>" . $row["projectName"] . "</strong></h4></a>".
                         "<p><strong>Autor žádosti:</strong></p><p>" .
                         $row["prefilled_firstName"] . " " . $row["prefilled_lastName"] . "<span class='projectDetail_submiter'> userName: " . $row["prefilled_userName"] . "</span></p>" .
                         "<p><strong>Spadá k typovému řešení :</strong></p><p>" . $row["projectGroup"] . "</p>" .
