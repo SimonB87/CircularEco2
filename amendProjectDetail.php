@@ -110,7 +110,7 @@ if (isset($_SESSION['username'])) {
         //Select columns named from "a" to "e" from a database
         $sql = "SELECT id, prefilled_userName, prefilled_email, prefilled_firstName, prefilled_lastName, prefilled_submissionStatus, prefilled_submissionDate, projectGroup, projectName, projectLocality, projectReferenceMain, projectReferenceOther, projectDescription, projectCosts, projectLegalIssues, administratorDecisionLetter, submitterDecisionResponse FROM exampleprojects WHERE id='$sub_number'";
 
-        if ($row["prefilled_submissionStatus"] = "2 Vráceno k přepracování") {
+        if (($row["prefilled_submissionStatus"] = "2 Vráceno k přepracování") and ($row["prefilled_userName"] = $userLoggedIn)) { //FIX THIS Condition
 
 
         //variable to catch the results
@@ -118,6 +118,10 @@ if (isset($_SESSION['username'])) {
         //function to fatch the data
         if ($results-> num_rows > 0 ) {
           while ($row = $results-> fetch_assoc()) {
+
+              //echo "prefilled_userName " . $row["prefilled_userName"];//test
+              //echo "userLoggedIn " . $userLoggedIn;//test
+
               echo "<form id='amendProjectForm' method='post' action='processAmendExampleProject.php' class=''>" .
                    "<h4 class='submission--heading submissionDetail--id'> ID podání: </h4>" .
                    "<p>" . $row["id"] . "<p>" .
@@ -155,7 +159,7 @@ if (isset($_SESSION['username'])) {
 
                    "<h4 class='submission--heading submissionDetail--metaData'> Podrobnosti žádosti: </h4>" . 
                    "<p> <strong>Datum opětovného podání: </strong>" . $row["prefilled_submissionDate"] . ", <strong> status: </strong>" . $row["prefilled_submissionStatus"] . "</p>" .
-                   "<input type='text' id='projectCosts' class='newProjectForm input' name='projectCosts' value=''><br>".
+                   "<input type='text' id='prefilled_submissionDate' class='newProjectForm input' name='prefilled_submissionDate' value=''><br>".
                    "<br>".
 
                    "<p><strong>Odkaz na projekt: </strong>" . $row["projectReferenceMain"] . "</p>" .
@@ -185,11 +189,9 @@ if (isset($_SESSION['username'])) {
         else {
           echo "<h3 style='text-align: center; color: coral'>Podaný projekt s vybraným ID není v databázi. Vyberte existující projekt!</h3>";
         }
-        
       } else {
 
         header("Location: manageUserSubmissions.php");
-
       }
 
         //Close the variable after finishing
