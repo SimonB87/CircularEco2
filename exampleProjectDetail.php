@@ -1,6 +1,8 @@
 <?php
 include("includes/header.php");
 
+// user - submission detail view
+
 if (isset($_SESSION['username'])) {
   $user_data_query = mysqli_query($con, "SELECT first_name, last_name, email, userRole FROM users WHERE username='$userLoggedIn'");
   $row = mysqli_fetch_array($user_data_query);
