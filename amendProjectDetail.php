@@ -117,9 +117,9 @@ if (isset($_SESSION['username'])) {
         //Select columns named from "a" to "e" from a database
         $sql = "SELECT id, prefilled_userName, prefilled_email, prefilled_firstName, prefilled_lastName, prefilled_submissionStatus, prefilled_submissionDate, projectGroup, projectName, projectLocality, projectReferenceMain, projectReferenceOther, projectDescription, projectCosts, projectLegalIssues, administratorDecisionLetter, submitterDecisionResponse FROM exampleprojects WHERE id='$sub_number'";
 
-        
-        $placeholder_row_prefilledSubmissionStatus = ""; 
-        $placeholder_prefilled_userName = "";
+        //conditions if user is editing his submission
+        $condition_isSubmissionStatus_code2 = "";
+        $condition_isUserOpeningHisSubmission = "";
 
         //variable to catch the results
         $results = $con-> query($sql);
@@ -127,8 +127,8 @@ if (isset($_SESSION['username'])) {
         if ($results-> num_rows > 0 ) {
           while ($row = $results-> fetch_assoc()) {
 
-              $placeholder_prefilled_userName = $row["prefilled_userName"];
-              $placeholder_prefilled_userName = $row["prefilled_userName"];
+              $condition_isSubmissionStatus_code2 = ($row["prefilled_submissionStatus"] ==  "2 Vráceno k přepracování");
+              $condition_isUserOpeningHisSubmission = ($row["prefilled_userName"] == $userLoggedIn);
 
               echo "<form id='amendProjectForm' method='post' action='processAmendExampleProject.php' class=''>" .
                    "<h4 class='submission--heading submissionDetail--id'> ID podání: </h4>" .
@@ -187,9 +187,19 @@ if (isset($_SESSION['username'])) {
               }
 
               echo "<h4 class='submission--heading submissionDetail--submitterDecisionResponse'> Vyjádření podavatele k projektu: </h4>" .
-                   "<textarea id='submitterDecisionResponse' class='newProjectForm input' name='submitterDecisionResponse' rows='6'>" . $row["submitterDecisionResponse"] . "</textarea> <br>" .
+                   "<textarea id='submitterDecisionResponse' class='newProjectForm input' name='submitterDecisionResponse' rows='6'>" . $row["submitterDecisionResponse"] . "</textarea> <br>";
+
+              //conditions for next step validation on target process
+
+              if ($condition_isSubmissionStatus_code2) { $value_a = "true"; } else { $value_a = "false"; }
+              if ($condition_isUserOpeningHisSubmission) { $value_b = "true"; } else { $value_b = "false"; }
+              if ($condition_isUserAdmin) { $value_c = "true"; } else { $value_c = "false"; }
+
+              echo  "<input type='text' id='condition_isSubmissionStatus_code2' class='newProjectForm input' name='condition_isSubmissionStatus_code2' value='" . $value_a  . "'><br>".
+              "<input type='text' id='condition_isUserOpeningHisSubmission' class='newProjectForm input' name='condition_isUserOpeningHisSubmission' value='" . $value_b  . "'><br>".
+              "<input type='text' id='condition_isUserAdmin' class='newProjectForm input' name='condition_isUserAdmin' value='" . $value_c  . "'><br>";
               
-                   "<button type='submit' form='amendProjectForm' value='Odeslat návrh projektu' class='btn btn-success' style='margin: 1.5rem 0;'>Odeslat návrh projektu</button>" .
+              echo "<button type='submit' form='amendProjectForm' value='Odeslat návrh projektu' class='btn btn-success' style='margin: 1.5rem 0;'>Odeslat návrh projektu</button>" .
                    "</form>";
           }
           echo "";
@@ -199,10 +209,9 @@ if (isset($_SESSION['username'])) {
         }
 
         //test if the user can actually edit this
-        $condition_isSubmissionStatus_code2 = ($placeholder_row_prefilledSubmissionStatus ==  "2 Vráceno k přepracování");
-        $condition_isUserOpeningHisSubmission = ($placeholder_prefilled_userName == $userLoggedIn);
+
         if ( ( $condition_isSubmissionStatus_code2 && $condition_isUserOpeningHisSubmission ) || $condition_isUserAdmin ) { //FIX THIS Condition
-          echo "  ";
+            echo "  ";
         } else { 
             header("Location: manageUserSubmissions.php");
         }
