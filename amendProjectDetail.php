@@ -191,9 +191,9 @@ if (isset($_SESSION['username'])) {
 
               //conditions for next step validation on target process
 
-              if ($condition_isSubmissionStatus_code2) { $value_a = "true"; } else { $value_a = "false"; }
-              if ($condition_isUserOpeningHisSubmission) { $value_b = "true"; } else { $value_b = "false"; }
-              if ($condition_isUserAdmin) { $value_c = "true"; } else { $value_c = "false"; }
+              if ($condition_isSubmissionStatus_code2) { $value_a = "41"; } else { $value_a = "22"; }
+              if ($condition_isUserOpeningHisSubmission) { $value_b = "54"; } else { $value_b = "65"; }
+              if ($condition_isUserAdmin) { $value_c = "87"; } else { $value_c = "48"; }
 
               echo  "<input type='text' id='condition_isSubmissionStatus_code2' class='newProjectForm input' name='condition_isSubmissionStatus_code2' value='" . $value_a  . "'><br>".
               "<input type='text' id='condition_isUserOpeningHisSubmission' class='newProjectForm input' name='condition_isUserOpeningHisSubmission' value='" . $value_b  . "'><br>".
