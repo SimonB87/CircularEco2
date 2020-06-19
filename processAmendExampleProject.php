@@ -9,7 +9,7 @@ $condition_isUserAdmin = filter_input(INPUT_POST, 'condition_isUserAdmin');
 
 // další inputy
 
-if ((( $condition_isSubmissionStatus_code2 == "true" ) && ( $condition_isUserOpeningHisSubmission == "true" )) ||  ( $condition_isUserAdmin == "true") ) {
+if ((( $condition_isSubmissionStatus_code2 == "41" ) && ( $condition_isUserOpeningHisSubmission == "54" )) ||  ( $condition_isUserAdmin == "87") ) {
 
   //connect and save
 
