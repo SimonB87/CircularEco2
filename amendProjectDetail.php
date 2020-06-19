@@ -3,6 +3,8 @@ include("includes/header.php");
 
 // user - submission detail view
 
+$condition_isUserAdmin = "";
+
 if (isset($_SESSION['username'])) {
   $user_data_query = mysqli_query($con, "SELECT first_name, last_name, email, userRole FROM users WHERE username='$userLoggedIn'");
   $row = mysqli_fetch_array($user_data_query);
@@ -10,7 +12,12 @@ if (isset($_SESSION['username'])) {
   $last_name = $row['last_name'];
   $email = $row['email'];
   $userRole = $row['userRole'];
-  
+
+  if ($userRole == "super") {
+    $condition_isUserAdmin = true;
+  } else {
+    $condition_isUserAdmin = false;
+  }
 }
 
 ?>
@@ -110,8 +117,9 @@ if (isset($_SESSION['username'])) {
         //Select columns named from "a" to "e" from a database
         $sql = "SELECT id, prefilled_userName, prefilled_email, prefilled_firstName, prefilled_lastName, prefilled_submissionStatus, prefilled_submissionDate, projectGroup, projectName, projectLocality, projectReferenceMain, projectReferenceOther, projectDescription, projectCosts, projectLegalIssues, administratorDecisionLetter, submitterDecisionResponse FROM exampleprojects WHERE id='$sub_number'";
 
-        if (($row["prefilled_submissionStatus"] = "2 Vráceno k přepracování") and ($row["prefilled_userName"] = $userLoggedIn)) { //FIX THIS Condition
-
+        
+        $placeholder_row_prefilledSubmissionStatus = ""; 
+        $placeholder_prefilled_userName = "";
 
         //variable to catch the results
         $results = $con-> query($sql);
@@ -119,8 +127,8 @@ if (isset($_SESSION['username'])) {
         if ($results-> num_rows > 0 ) {
           while ($row = $results-> fetch_assoc()) {
 
-              //echo "prefilled_userName " . $row["prefilled_userName"];//test
-              //echo "userLoggedIn " . $userLoggedIn;//test
+              $placeholder_prefilled_userName = $row["prefilled_userName"];
+              $placeholder_prefilled_userName = $row["prefilled_userName"];
 
               echo "<form id='amendProjectForm' method='post' action='processAmendExampleProject.php' class=''>" .
                    "<h4 class='submission--heading submissionDetail--id'> ID podání: </h4>" .
@@ -189,13 +197,19 @@ if (isset($_SESSION['username'])) {
         else {
           echo "<h3 style='text-align: center; color: coral'>Podaný projekt s vybraným ID není v databázi. Vyberte existující projekt!</h3>";
         }
-      } else {
 
-        header("Location: manageUserSubmissions.php");
-      }
+        //test if the user can actually edit this
+        $condition_isSubmissionStatus_code2 = ($placeholder_row_prefilledSubmissionStatus ==  "2 Vráceno k přepracování");
+        $condition_isUserOpeningHisSubmission = ($placeholder_prefilled_userName == $userLoggedIn);
+        if ( ( $condition_isSubmissionStatus_code2 && $condition_isUserOpeningHisSubmission ) || $condition_isUserAdmin ) { //FIX THIS Condition
+          echo "  ";
+        } else { 
+            header("Location: manageUserSubmissions.php");
+        }
 
         //Close the variable after finishing
         $con-> close();
+
         ?>
 
 
