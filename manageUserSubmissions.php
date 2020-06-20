@@ -74,6 +74,7 @@ else {
             "<li role='presentation' class='active'><a href='#1novaZadost' aria-controls='1 Nová žádost' role='tab' data-toggle='tab'>Nové žádosti </a></li>" .
             "<li role='presentation'><a href='#0zamitnuto' aria-controls='0 Zamítnuto' role='tab' data-toggle='tab'>Zamítnuto </a></li>" .
             "<li role='presentation'><a href='#2vracenoKPrepracovani' aria-controls='2 Vráceno k přepracování' role='tab' data-toggle='tab'>Vráceno k přepracování </a></li>" .
+            "<li role='presentation'><a href='#3prepracovano' aria-controls='3 přepracováno' role='tab' data-toggle='tab'>Přepracováno</a></li>" .
             "<li role='presentation'><a href='#9schvaleno' aria-controls='9 Schváleno' role='tab' data-toggle='tab'>Schváleno </a></li>" .
             "<li role='presentation'><a href='#xVsechnyZadosti' aria-controls='Všechny žádosti' role='tab' data-toggle='tab'>Všechny žádosti </a></li>" .
           "</ul>" .
@@ -167,6 +168,38 @@ else {
 
                 echo
                 "</div>" .
+
+
+                
+                "<div role='tabpanel' class='tab-pane' id='3prepracovano'><h3 class='centertext'>Přepracováno podavatelem (kód 3)</h3>" .
+                "<!-- 3 přepracováno podavatelem -->";
+                 //////
+                 $sql = "SELECT id, prefilled_userName, prefilled_firstName, prefilled_lastName, prefilled_submissionStatus, projectGroup, projectName, projectLocality, projectDescription from exampleprojects WHERE prefilled_submissionStatus='3 přepracováno podavatelem' ORDER BY prefilled_submissionDate DESC";
+                 //variable to catch the results
+                 $results = $con-> query($sql);
+                 //function to fatch the data
+                 if ($results-> num_rows > 0 ) {
+                     while ($row = $results-> fetch_assoc()) {
+                         
+                       echo "<div class='projectDetail'>" . 
+                         "<a href='manageprojects.php?submissionid=%28x" .$row["id"]  . "%29y'><h4> Projekt ID:<strong> (" . $row["id"] . ")</strong> Název: <strong>" . $row["projectName"] . "</strong></h4></a>".
+                         "<p><strong>Autor žádosti:</strong></p><p>" .
+                         $row["prefilled_firstName"] . " " . $row["prefilled_lastName"] . "<span class='projectDetail_submiter'> userName: " . $row["prefilled_userName"] . "</span></p>" .
+                         "<p><strong>Spadá k typovému řešení :</strong></p><p>" . $row["projectGroup"] . "</p>" .
+                         "<p><strong>Lokalita podaného projektu :</strong></p><p>" . $row["projectLocality"] . "</p>" .
+                         "<p><strong>Popis projektu:</strong></p>" . "<p>" . $row["projectDescription"] . "</p>" .
+                         "<p><strong>Status žádosti:</strong><p>" . $row["prefilled_submissionStatus"] . "</p>" .
+                       "</div>";
+                     }
+                   /*  echo ""; */
+                 }
+                 else {
+                     echo "0 result";
+                 }
+                 echo
+                 "</div>" .
+
+
 
                 "<div role='tabpanel' class='tab-pane' id='9schvaleno'><h3 class='centertext'>Schváleno (kód 9)</h3>" .
                 "<!--  9 Schváleno -->";
