@@ -762,7 +762,7 @@ button.btn.btn-info a {
   width: 200px;
 }
 
-#settings_input {
+.settingsin {
   border: 1px solid #ccc;
   height: 20px;
   padding: 4px 6px;
