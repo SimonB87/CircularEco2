@@ -44,13 +44,13 @@ if (!empty($prefilled_userName )) {
       
       if ($dbConnection->query($sql)){
         include("includes/header.php");
-        echo "<h2>Nový záznam zapsán do databáze. Děkujeme Vám za Váš podmět, již se mu věnujeme. </h2>.".
-              "<a href='" . $prefilled_currentUrl ."'><button type= 'button ' class= 'btn btn-primary ' style= 'margin-bottom: 1.5rem;' >Zpět</button></a></div><br>";        
+        echo "<a href='" . $prefilled_currentUrl ."'><button type= 'button ' class= 'btn btn-primary ' style= 'margin-bottom: 1.5rem;' >Zpět</button></a><br>" .
+             "<h2>Nový záznam zapsán do databáze. Děkujeme Vám za Váš podmět, již se mu věnujeme. </h2>";
         
       } else {
         include("includes/header.php");
-        echo "<h2>Chyba: </h2><br>". $sql ." ". $dbConnection->error;
         echo "<a href='" . $prefilled_currentUrl ."'><button type= 'button ' class= 'btn btn-primary ' style= 'margin-bottom: 1.5rem;' >Zpět</button></a></div>";
+        echo "<h2>Chyba: </h2><br>". $sql ." ". $dbConnection->error;
       }
         $dbConnection->close();
       }
