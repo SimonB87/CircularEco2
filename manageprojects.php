@@ -130,12 +130,15 @@ else {
                    "<p><strong>Přiřazené typové řešení: </strong>" . $row["projectGroup"] . ", <strong> lokalita projektu: </strong>" . $row["projectLocality"] . "</p>" .
                    "<p><strong>Odkaz na projekt: </strong>" . $row["projectReferenceMain"] . "</p>" .
                    "<p><strong>Další odkaz na projekt: </strong>" . $row["projectReferenceOther"] . "</p>" .
-                   "<span id='clickToAdDateTimeForAdmin' clickTarget='000' class='btn btn-default button-secondary' style='margin: 1.5rem 0;'>Vložit aktuání datum do pole</span><br>" .
-                   "<h4 class='submission--heading submissionDetail--administratorDecisionLetter'> Vyjádření administrátora k projektu: </h4>" . 
-                   "<label for='administratorDecisionLetter' class='formLabelStyle'><span class='requiredLabelStyle'> * povinné </span></label><br>" .
-                    "<textarea id='administratorDecisionLetter' name='administratorDecisionLetter' rows='10' class='newProjectForm input' required>" . $row["administratorDecisionLetter"] ."</textarea><br>" .
+
                    "<h4 class='submission--heading submissionDetail--submitterDecisionResponse'> Vyjádření podavatele k projektu: </h4>" . 
                    "<p> " . $row["submitterDecisionResponse"] . "</p><br>".
+
+                   "<h4 class='submission--heading submissionDetail--administratorDecisionLetter'> Vyjádření administrátora k projektu: </h4>" . 
+                   "<label for='administratorDecisionLetter' class='formLabelStyle'><span class='requiredLabelStyle'> * povinné </span></label><br>" .
+                   "<span id='clickToAdDateTimeForAdmin' clickTarget='000' class='btn btn-default button-secondary' style='margin: 1.5rem 0;'>Vložit aktuání datum do pole</span><br>" .
+                    "<textarea id='administratorDecisionLetter' name='administratorDecisionLetter' rows='10' class='newProjectForm input' required>" . $row["administratorDecisionLetter"] ."</textarea><br>" .
+
                    "<div class='projectFormHiddenSection'>" .
                    "<label for='id'><strong>ID : </strong><span class='hiddenLabelStyle'> * hidden </span></label><br>".
                    "<input type='text' id='id' class='newProjectForm input' name='id' value='" . $row['id'] . "'><br>" .

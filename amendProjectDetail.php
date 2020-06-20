@@ -134,7 +134,14 @@ if (isset($_SESSION['username'])) {
                    "<h4 class='submission--heading submissionDetail--id'> ID podání: </h4>" .
                    "<p>" . $row["id"] . "<p>" .
 
-                   "<label for='prefilled_id'><strong>ID podaného projektu : </strong><span class='hiddenLabelStyle'> * hidden </span></label><br>" .
+                   "<h4 class='submission--heading submissionDetail--administratorDecisionLetter'> Vyjádření administrátora k projektu: </h4>";
+
+                   if ( strlen($row["administratorDecisionLetter"]) < 1) {
+                     echo "<br>";
+                   } else {
+                     echo "<p>" . $row["administratorDecisionLetter"] . "</p>";
+                   }
+              echo "<label for='prefilled_id'><strong>ID podaného projektu : </strong><span class='hiddenLabelStyle'> * hidden </span></label><br>" .
                    "<input type='text' id='prefilled_id' class='newProjectForm input' name='prefilled_id' value='" . $row["id"] . "'><br>" .
 
                    "<h4 class='submission--heading submissionDetail--name'> Název: </h4>" .
@@ -203,15 +210,8 @@ if (isset($_SESSION['username'])) {
 
                    "<p><strong>Další odkaz na projekt: </strong>" . $row["projectReferenceOther"] . "</p>" .
                    "<input type='text' id='projectReferenceOther' class='newProjectForm input' name='projectReferenceOther' value='" . $row["projectReferenceOther"]  . "'><br>".
-                   "<br>".
+                   "<br>";
 
-                   "<h4 class='submission--heading submissionDetail--administratorDecisionLetter'> Vyjádření administrátora k projektu: </h4>";
-
-              if ( strlen($row["administratorDecisionLetter"]) < 1) {
-                echo "<br>";
-              } else {
-                echo "<p>" . $row["administratorDecisionLetter"] . "</p>";
-              }
 
               echo "<h4 class='submission--heading submissionDetail--submitterDecisionResponse'> Vyjádření podavatele k projektu: </h4>" .
                    "<span id='clickToAdDateTime' clickTarget='000' class='btn btn-default button-secondary' style='margin: 1.5rem 0;'>Vložit aktuání datum do pole</span><br>" .
