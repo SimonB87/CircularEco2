@@ -1,7 +1,21 @@
-SetDate();
-getCurrentUrl();
-
 var currentOptionSelected = 0;
+
+let isCurrentUrlIsAmendProjectDetail = checkCurrentUrlIsAmendProjectDetail(window.location.href);
+if (isCurrentUrlIsAmendProjectDetail) {
+  setDate();
+}
+
+function checkCurrentUrlIsAmendProjectDetail(currentUrl){
+  let result = currentUrl.indexOf("amendProjectDetail.php");
+
+  if (!(result == -1)) {
+    
+    return true;
+  } else {
+    
+    return false;
+  }
+}
 
 function setCurrentSollutionFromOptions() {
   var urlString = window.location.href;
@@ -35,7 +49,7 @@ function getCurrentUrl() {
   urlInput.value = currentUrl;
 }
 
-function SetDate() {
+function setDate() {
   var date = new Date();
 
   var day = date.getDate();
@@ -44,6 +58,8 @@ function SetDate() {
   var hour = date.getHours();
   var minute = date.getMinutes();
 
+  if (minute < 10) { minute = "0" + minute }
+  if (hour < 10) { hour = "0" + hour }
   if (month < 10) month = "0" + month;
   if (day < 10) day = "0" + day;
 
@@ -53,6 +69,8 @@ function SetDate() {
 }
 
 function toggleNewProjectForm() {
+  setDate();
+  getCurrentUrl();
   var form = document.getElementById("newProjectSubmitForm");
 
   if (form.classList.contains("hiddenForm")) {
