@@ -119,16 +119,18 @@ else {
                    "<p> <strong>Datum podání: </strong>" . $row["prefilled_submissionDate"] . ", <strong> status: </strong>" . $row["prefilled_submissionStatus"] . "</p>" .
                    "<label for='prefilled_submissionStatus'>Nový status žádosti :</label><br>" .
                     "<select name='prefilled_submissionStatus' id='prefilled_submissionStatus'>" .
-                        "<option value='volvo'>Vyberte ...</option>" .
+                        "<option value='Vyberte ...'>Vyberte ...</option>" .
                         "<option value='1 Nová žádost'>1 Nová žádost</option>" .
                         "<option value='0 Zamítnuto'>0 Zamítnuto</option>" .
                         "<option value='2 Vráceno k přepracování'>2 Vráceno k přepracování</option>" .
+                        "<option value='3 přepracováno podavatelem'>3 přepracováno podavatelem</option>" .
                         "<option value='9 Schváleno'>9 Schváleno</option>" .
                       "</select>" .
                     "<br><br>" .
                    "<p><strong>Přiřazené typové řešení: </strong>" . $row["projectGroup"] . ", <strong> lokalita projektu: </strong>" . $row["projectLocality"] . "</p>" .
                    "<p><strong>Odkaz na projekt: </strong>" . $row["projectReferenceMain"] . "</p>" .
                    "<p><strong>Další odkaz na projekt: </strong>" . $row["projectReferenceOther"] . "</p>" .
+                   "<span id='clickToAdDateTimeForAdmin' clickTarget='000' class='btn btn-default button-secondary' style='margin: 1.5rem 0;'>Vložit aktuání datum do pole</span><br>" .
                    "<h4 class='submission--heading submissionDetail--administratorDecisionLetter'> Vyjádření administrátora k projektu: </h4>" . 
                    "<label for='administratorDecisionLetter' class='formLabelStyle'><span class='requiredLabelStyle'> * povinné </span></label><br>" .
                     "<textarea id='administratorDecisionLetter' name='administratorDecisionLetter' rows='10' class='newProjectForm input' required>" . $row["administratorDecisionLetter"] ."</textarea><br>" .
@@ -166,5 +168,6 @@ else {
         targetInput.value = windowUrl;
       }, 300); 
     </script>
+    <script src="assets/js/formFunctionsForAdmin.js" defer></script>
     </body>
     </html>
