@@ -41,7 +41,7 @@ if (isset($_SESSION['username'])) {
  
     <div class="col-md-8 col-xs-12 col-md-push-1 main_column column">
       <section>
-        <a href="manage.php"><button type="button " class="btn btn-primary " style="margin-bottom: 1.5rem;">Zpět </button></a>
+        <a href="manageUserSubmissions.php"><button type="button " class="btn btn-primary " style="margin-bottom: 1.5rem;">Zpět </button></a>
         <h2>Detail projektu</h2>
 
 
