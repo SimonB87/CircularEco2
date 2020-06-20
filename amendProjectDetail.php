@@ -134,6 +134,9 @@ if (isset($_SESSION['username'])) {
                    "<h4 class='submission--heading submissionDetail--id'> ID podání: </h4>" .
                    "<p>" . $row["id"] . "<p>" .
 
+                   "<label for='prefilled_id'><strong>ID podaného projektu : </strong><span class='hiddenLabelStyle'> * hidden </span></label><br>" .
+                   "<input type='text' id='prefilled_id' class='newProjectForm input' name='prefilled_id' value='" . $row["id"] . "'><br>" .
+
                    "<h4 class='submission--heading submissionDetail--name'> Název: </h4>" .
                    "<p> <strong>Původní název: </strong>" . $row["projectName"] . "<p>" .
                    "<input type='text' id='submission_name' class='newProjectForm input' name='submission_name' value='" . $row["projectName"] . "'><br>".
@@ -146,6 +149,27 @@ if (isset($_SESSION['username'])) {
                       $optionStorage .
                    "</select><br>" .
 
+                   "<script defer>" . 
+                   "const targetSelect = document.getElementById('projectGroup');" .
+                   "const numberOfOptionsInTargetSelect = targetSelect.options.length;" .
+                   "let currentOption;" .
+                   "const projectGroupString = '" . $row["projectGroup"] . "';" .
+                   "const projectGroup = projectGroupString.slice(0, 4); " .
+
+                   "for (let i = 0; i < numberOfOptionsInTargetSelect; i++) {" .
+
+                   "  currentOption = targetSelect.options[i].value.slice(0, 4);" .
+
+                    " if( currentOption == projectGroup) {" . 
+                      "let theChoosenOption = targetSelect.options[i];" .
+                      "let optionText = theChoosenOption.innerHTML; " . 
+                      "theChoosenOption.innerHTML = ' >> ' + optionText + ' << '; ". 
+                      "theChoosenOption.selected = 'true';" .
+                     "} " .
+
+                   "}" .
+
+                   "</script> " .
 
                    "<h4 class='submission--heading submissionDetail--projectDescription'> Lokalita projektu: </h4>" . 
                    "<p><strong>Původní lokalita: </strong>". $row["projectLocality"] . "</p>" .
@@ -167,6 +191,9 @@ if (isset($_SESSION['username'])) {
 
                    "<h4 class='submission--heading submissionDetail--metaData'> Podrobnosti žádosti: </h4>" . 
                    "<p> <strong>Datum opětovného podání: </strong>" . $row["prefilled_submissionDate"] . ", <strong> status: </strong>" . $row["prefilled_submissionStatus"] . "</p>" .
+
+
+                   "<label for='prefilled_submissionDate'>Prefilled date : <span class='hiddenLabelStyle'> * hidden </span></label><br>".
                    "<input type='text' id='prefilled_submissionDate' class='newProjectForm input' name='prefilled_submissionDate' value=''><br>".
                    "<br>".
 
@@ -187,17 +214,10 @@ if (isset($_SESSION['username'])) {
               }
 
               echo "<h4 class='submission--heading submissionDetail--submitterDecisionResponse'> Vyjádření podavatele k projektu: </h4>" .
+                   "<span id='clickToAdDateTime' clickTarget='000' class='btn btn-default button-secondary' style='margin: 1.5rem 0;'>Vložit aktuání datum do pole</span><br>" .
                    "<textarea id='submitterDecisionResponse' class='newProjectForm input' name='submitterDecisionResponse' rows='6'>" . $row["submitterDecisionResponse"] . "</textarea> <br>";
 
               //conditions for next step validation on target process
-
-              if ($condition_isSubmissionStatus_code2) { $value_a = "41"; } else { $value_a = "22"; }
-              if ($condition_isUserOpeningHisSubmission) { $value_b = "54"; } else { $value_b = "65"; }
-              if ($condition_isUserAdmin) { $value_c = "87"; } else { $value_c = "48"; }
-
-              echo  "<input type='text' id='condition_isSubmissionStatus_code2' class='newProjectForm input' name='condition_isSubmissionStatus_code2' value='" . $value_a  . "'><br>".
-              "<input type='text' id='condition_isUserOpeningHisSubmission' class='newProjectForm input' name='condition_isUserOpeningHisSubmission' value='" . $value_b  . "'><br>".
-              "<input type='text' id='condition_isUserAdmin' class='newProjectForm input' name='condition_isUserAdmin' value='" . $value_c  . "'><br>";
               
               echo "<button type='submit' form='amendProjectForm' value='Odeslat návrh projektu' class='btn btn-success' style='margin: 1.5rem 0;'>Odeslat návrh projektu</button>" .
                    "</form>";
@@ -209,8 +229,7 @@ if (isset($_SESSION['username'])) {
         }
 
         //test if the user can actually edit this
-
-        if ( ( $condition_isSubmissionStatus_code2 && $condition_isUserOpeningHisSubmission ) || $condition_isUserAdmin ) { //FIX THIS Condition
+        if ( ( $condition_isSubmissionStatus_code2 && $condition_isUserOpeningHisSubmission ) || $condition_isUserAdmin ) {
             echo "  ";
         } else { 
             header("Location: manageUserSubmissions.php");
@@ -225,14 +244,6 @@ if (isset($_SESSION['username'])) {
       <section>
     </div>
     </div> <!-- closing of the wrapper div, this div stars in the included header file-->
-
-    <script defer=""> 
-      setTimeout(function(){ 
-        var targetInput = document.getElementById("prefilled_currentUrl");
-        var windowUrl = window.location.href;
-
-        targetInput.value = windowUrl;
-      }, 300); 
-    </script>
+    <script src="assets/js/formFunctionsForUser.js" defer></script>
     </body>
     </html>
