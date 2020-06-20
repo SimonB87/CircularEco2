@@ -83,6 +83,8 @@ if (isset($_SESSION['username'])) {
         //print the used character set - just for testing
         //printf("Initial character set: %s\n", mysqli_character_set_name($con));
 
+        require("config/config_var.php");
+
         // change character set to utf8
         if (!mysqli_set_charset($con, "utf8")) {
               printf("Error loading character set utf8: %s\n", mysqli_error($con));
@@ -230,8 +232,9 @@ if (isset($_SESSION['username'])) {
 
         //test if the user can actually edit this
         if ( ( $condition_isSubmissionStatus_code2 && $condition_isUserOpeningHisSubmission ) || $condition_isUserAdmin ) {
-            echo "  ";
+            //echo " <h4>Good condition</h4> ";
         } else { 
+            //echo " <h4>Bad condition</h4> ";
             header("Location: manageUserSubmissions.php");
         }
 
