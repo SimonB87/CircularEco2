@@ -45,7 +45,7 @@ if (!empty($prefilled_userName )) {
       if ($dbConnection->query($sql)){
         include("includes/header.php");
         echo "<a href='" . $prefilled_currentUrl ."'><button type= 'button ' class= 'btn btn-primary ' style= 'margin-bottom: 1.5rem;' >Zpět</button></a><br>" .
-             "<h2>Nový záznam zapsán do databáze. Děkujeme Vám za Váš podmět, již se mu věnujeme. </h2>";
+             "<h2>Nový záznam zapsán do databáze. </h2> <p> Děkujeme Vám za Váš podmět, již se mu věnujeme. </p>";
         
       } else {
         include("includes/header.php");
@@ -54,6 +54,7 @@ if (!empty($prefilled_userName )) {
       }
         $dbConnection->close();
       }
+      include("includes/sendEmailNotificationToAdmin.php");
   } else{
     echo "Pole uživatelského jména by nemělo být prázdné";
     die();
