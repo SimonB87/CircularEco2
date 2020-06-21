@@ -15,6 +15,9 @@ else {
   header("Location: register.php");
 }
 
+$userLoggedInFillerPlaceholder = $user['username'];
+$userLoggedInNameFillerPlaceholder = $user['first_name'] . " " . $user['last_name'];
+
 ?>
 
 <html>

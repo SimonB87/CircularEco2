@@ -54,7 +54,15 @@ if (!empty($prefilled_userName )) {
       }
         $dbConnection->close();
       }
+      //send email to notify admin
       include("includes/sendEmailNotificationToAdmin.php");
+
+      //send notification to notify user and admin about a new submission
+      include("includes/insertSubmissionNotification.php");
+      insertSubmissionNotification($prefilled_userName, "submission_delivered_toUser", $userLoggedInFillerPlaceholder, $userLoggedInNameFillerPlaceholder);
+      insertSubmissionNotification("spravce_obcevkruhu", "submission_delivered_toAdmin", $userLoggedInFillerPlaceholder, $userLoggedInNameFillerPlaceholder);
+      insertSubmissionNotification("Å imon_buryan", "submission_delivered_toAdmin", $userLoggedInFillerPlaceholder, $userLoggedInNameFillerPlaceholder);
+
   } else{
     echo "Pole uživatelského jména by nemělo být prázdné";
     die();
