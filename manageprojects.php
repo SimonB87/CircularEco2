@@ -142,8 +142,13 @@ else {
                    "<div class='projectFormHiddenSection'>" .
                    "<label for='id'><strong>ID : </strong><span class='hiddenLabelStyle'> * hidden </span></label><br>".
                    "<input type='text' id='id' class='newProjectForm input' name='id' value='" . $row['id'] . "'><br>" .
-                   "<label for= 'prefilled_currentUrl'><strong>Current URL : </strong><span class= 'hiddenLabelStyle '> * hidden </span></label><br>" .
-                   "<input type= 'text ' id= 'prefilled_currentUrl' class= 'newProjectForm input ' name= 'prefilled_currentUrl'><br>" .
+
+                   "<label for='prefilled_userName'><strong>Jméno žadatele : </strong><span class='hiddenLabelStyle'> * hidden </span></label><br>".
+                   "<input type='text' id='prefilled_userName' class='newProjectForm input' name='prefilled_userName' value='" . $row['prefilled_userName'] . "'><br>" .
+
+                   "<label for='prefilled_currentUrl'><strong>Current URL : </strong><span class='hiddenLabelStyle'> * hidden </span></label><br>" .
+                   "<input type= 'text' id='prefilled_currentUrl' class= 'newProjectForm input' name='prefilled_currentUrl'><br>" .
+
                    "</div>" .
                    "</form>" .
                    "<button type='submit' form='formProcessEditExampleProject' value='Upravit projekt' class='btn btn-success' style='margin: 1.5rem 0;'>Upravit projekt</button>";

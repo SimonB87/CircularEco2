@@ -13,13 +13,13 @@ function insertSubmissionNotification($user_to, $type, $userLoggedIn, $userLogge
         $message = " A submission was delivered from " . $userLoggedInName;
         break;
 			case 'submission_cancelled':
-				$message = "Admin user " . $userLoggedInName . " did cancel your submitted case";
+				$message = "Admin user " . $userLoggedInName . " did cancel your submitted project example";
 				break;
 			case 'submission_returned':
-				$message = "Admin user " . $userLoggedInName . " did returned your submitted case for further work";
+				$message = "Admin user " . $userLoggedInName . " did returned your submitted project example for further work";
 				break;
 			case 'submission_approved':
-				$message = "Admin user " . $userLoggedInName . " did approved your submitted case and it's now public";
+				$message = "Admin user " . $userLoggedInName . " did approved your submitted project example and it is now public";
 				break;
 		}
     $link = "manageUserSubmissions.php";
@@ -41,12 +41,9 @@ function insertSubmissionNotification($user_to, $type, $userLoggedIn, $userLogge
         
       $sql = "INSERT INTO notifications (user_to, user_from, message, link, datetime, opened, viewed) VALUES ('$user_to', '$userLoggedIn', '$message', '$link', '$date_time', 'no', 'no')";
       
-      //test
-      echo "SQL::<br>";
-      echo $sql . "<br><br>"; //test
 
       if ($dbConnection->query($sql)){
-        echo "<strong>Notification added All Good.</strong><br>";
+        //echo "<strong>Notification added All Good.</strong><br>";
         
       } else {
         echo "<h3>Chyba: </h3><br>". $sql ." ". $dbConnection->error . "<br>";
