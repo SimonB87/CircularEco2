@@ -2,7 +2,7 @@
 header('Content-Type: text/html; charset=utf-8');
 
 $to				= 	"spravce@obcevkruhu.cz";
-$subject	=		"Máme novou žádosti o vložení příkladu z praxe do katalogu - Platforma www.obcevkruhu.cz";
+$subject	=		"Byl úspěšně zvěřejněn nový případ dobré praxe - Platforma www.obcevkruhu.cz";
 
 $message_head	=	"<div style='max-width: 550px; margin: 0 auto; line-height: 1.5rem; font-size: 0.9rem;'>" .
                 "<p>Krásný den, </p><p> platforma www.obcevkruhu.cz má další nově schválený příklad dobré praxe.</p></div><br>";
