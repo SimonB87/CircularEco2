@@ -146,6 +146,12 @@ else {
                    "<label for='prefilled_userName'><strong>Jméno žadatele : </strong><span class='hiddenLabelStyle'> * hidden </span></label><br>".
                    "<input type='text' id='prefilled_userName' class='newProjectForm input' name='prefilled_userName' value='" . $row['prefilled_userName'] . "'><br>" .
 
+                   "<label for='prefilled_id'><strong>Jméno žadatele : </strong><span class='hiddenLabelStyle'> * hidden </span></label><br>".
+                   "<input type='text' id='prefilled_id' class='newProjectForm input' name='prefilled_id' value='" . $row['id'] . "'><br>" .
+
+                   "<label for='prefilled_projectName'><strong>Jméno žadatele : </strong><span class='hiddenLabelStyle'> * hidden </span></label><br>".
+                   "<input type='text' id='prefilled_projectName' class='newProjectForm input' name='prefilled_projectName' value='" . $row['projectName'] . "'><br>" .
+
                    "<label for='prefilled_currentUrl'><strong>Current URL : </strong><span class='hiddenLabelStyle'> * hidden </span></label><br>" .
                    "<input type= 'text' id='prefilled_currentUrl' class= 'newProjectForm input' name='prefilled_currentUrl'><br>" .
 

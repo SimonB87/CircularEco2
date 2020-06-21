@@ -6,6 +6,10 @@ $subject	=		"Byl úspěšně zvěřejněn nový případ dobré praxe - Platform
 
 $message_head	=	"<div style='max-width: 550px; margin: 0 auto; line-height: 1.5rem; font-size: 0.9rem;'>" .
                 "<p>Krásný den, </p><p> platforma www.obcevkruhu.cz má další nově schválený příklad dobré praxe.</p></div><br>";
+$message_body = "<div style='max-width: 550px; margin: 0 auto; line-height: 1.5rem; font-size: 0.9rem;'>" .
+                "<h4>ID příkladu dobré praxe</h4> <p>" . $prefilled_id . "</p>" .
+                "<h4>Název příkladu dobré praxe</h4> <p>" . $prefilled_projectName . "</p>" .
+                "</div><br>";
 $message_footer =  "<div style='max-width: 550px; margin: 0 auto; line-height: 1.5rem; font-size: 0.9rem;'>"  . 
               "<p>Děkujeme za spolupráci. :-) <br><br>" .
               "INFO: Tato zpráva byla automaticky generována algorytmem. <br><br>"  . 
