@@ -39,10 +39,10 @@ if (mysqli_connect_error()){
       insertSubmissionNotification("spravce_obcevkruhu", "submission_cancelled", $userLoggedInFillerPlaceholder, $userLoggedInNameFillerPlaceholder);
     } elseif ( $prefilled_submissionStatus == "2 Vráceno k přepracování" ) {
       insertSubmissionNotification($prefilled_userName, "submission_returned", $userLoggedInFillerPlaceholder, $userLoggedInNameFillerPlaceholder);
-      insertSubmissionNotification("spravce_obcevkruhu", "submission_cancelled", $userLoggedInFillerPlaceholder, $userLoggedInNameFillerPlaceholder);
+      insertSubmissionNotification("spravce_obcevkruhu", "submission_returned", $userLoggedInFillerPlaceholder, $userLoggedInNameFillerPlaceholder);
     } elseif ( $prefilled_submissionStatus == "9 Schváleno" ) {
       insertSubmissionNotification($prefilled_userName, "submission_approved", $userLoggedInFillerPlaceholder, $userLoggedInNameFillerPlaceholder);
-      insertSubmissionNotification("spravce_obcevkruhu", "submission_cancelled", $userLoggedInFillerPlaceholder, $userLoggedInNameFillerPlaceholder);
+      insertSubmissionNotification("spravce_obcevkruhu", "submission_approved", $userLoggedInFillerPlaceholder, $userLoggedInNameFillerPlaceholder);
       //send email to admin about new submission aproved!
       include("includes/sendEmailNotificationToAdmin_submApproved.php");
     }
