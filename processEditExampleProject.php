@@ -6,6 +6,8 @@ $prefilled_submissionStatus = filter_input(INPUT_POST, 'prefilled_submissionStat
 $administratorDecisionLetter = filter_input(INPUT_POST, 'administratorDecisionLetter');
 $prefilled_currentUrl = filter_input(INPUT_POST, 'prefilled_currentUrl');
 $prefilled_userName = filter_input(INPUT_POST, 'prefilled_userName');
+$prefilled_projectName = filter_input(INPUT_POST, 'prefilled_projectName');
+$prefilled_id = filter_input(INPUT_POST, 'prefilled_id');
 
 // Create connection
 $dbConnection = new mysqli ($host, $dbusername, $dbpassword, $dbname);
