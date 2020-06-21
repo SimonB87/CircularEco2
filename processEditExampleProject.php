@@ -43,6 +43,8 @@ if (mysqli_connect_error()){
     } elseif ( $prefilled_submissionStatus == "9 Schváleno" ) {
       insertSubmissionNotification($prefilled_userName, "submission_approved", $userLoggedInFillerPlaceholder, $userLoggedInNameFillerPlaceholder);
       insertSubmissionNotification("spravce_obcevkruhu", "submission_cancelled", $userLoggedInFillerPlaceholder, $userLoggedInNameFillerPlaceholder);
+      //send email to admin about new submission aproved!
+      include("includes/sendEmailNotificationToAdmin_submApproved.php");
     }
 
 
