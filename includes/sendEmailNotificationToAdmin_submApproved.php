@@ -19,7 +19,7 @@ $headers = "Content-Type: text/html; charset=UTF-8";
 
 if (mail($to, $subject, $message, $headers)) {
   //test
-  echo "<h4>Email odeslán.</h4> <p>v pořádku.</p>";//test
+  //echo "<h4>Email odeslán.</h4> <p>v pořádku.</p>";//test
 } else {
   //test
   echo "<p>Chyba! Email neodeslán<p>";//test
