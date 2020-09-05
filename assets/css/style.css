@@ -872,6 +872,14 @@ tr:nth-child(even) {
   color: #f6f6f6;
 }
 
+#projectDetailBody button.btn.pdfBtnTop.btn-info {
+  margin-top: 1rem;
+}
+
+#projectDetailBody button.btn.pdfBtnBottom.btn-info {
+  margin-bottom: 1rem;
+}
+
 
 @media only screen and (max-width: 768px) {
   /*
