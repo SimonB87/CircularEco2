@@ -51,16 +51,16 @@ require 'includes/form_handlers/login_handler.php';
 			<div id="first">
 
 				<form action="register.php" method="POST">
-					<input type="email" name="log_email" placeholder="Email" value="<?php
+					<input id="log_email" type="email" name="log_email" placeholder="Email" value="<?php
 					if(isset($_SESSION['log_email'])) {
 						echo $_SESSION['log_email'];
 					}
 					?>" required>
 					<br>
-					<input type="password" name="log_password" placeholder="Heslo">
+					<input id="password" type="password" name="log_password" placeholder="Heslo">
 					<br>
 					<?php if(in_array("Email nebo heslo nejsou správné<br>", $error_array)) echo  "Email nebo heslo nejsou správné<br>"; ?>
-					<input type="submit" name="login_button" value="Přihlásit se">
+					<input id="signInButton" type="submit" name="login_button" value="Přihlásit se">
 					<br>
 					<a href="#" id="signup" class="signup">Nemáte účet? Registrovat lze zde!</a>
 
@@ -132,15 +132,23 @@ require 'includes/form_handlers/login_handler.php';
         		<h1>Demo přihlášení</h1>
     		</div>
     		<div>
-				<p><strong>Email:</strong></p>
-				<p>demo@uzivatel.cz<br></p>
-				<p><strong>Heslo:</strong></p>
-				<p>Demo123456<br></p>
+				<p><strong>Email:</strong> <span id="userDemoEmail">demo@uzivatel.cz</span></p>
+				<p><strong>Heslo:</strong> <span id="userDemoEmail">Demo123456</span></p>
+				<p> <button type="button" class="btn btn-success" onclick="userDemoAccount();"> Použít demo účet </button> </p>
 			</div>
 		</div>
 
 	</div>
 
-
+	<script>
+	function userDemoAccount() {
+		let demoUserName = document.querySelector("#userDemoEmail").innerText;
+		let demoPassWord = document.querySelector("#userDemoEmail").innerText;
+		demoUserName = "demo@uzivatel.cz";
+		demoPassWord = "Demo123456";
+		document.querySelector("#log_email").value = demoUserName;
+    document.querySelector("#password").value = demoPassWord;
+	}
+	</script>
 </body>
 </html>
