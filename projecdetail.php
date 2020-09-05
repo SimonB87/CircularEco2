@@ -34,8 +34,9 @@ include("includes/header.php");
     <h2 class="projekty-back-title">Cirkulární typová řešení</h2>
   </div>
   <div class="row">
-    <div id="projectDetailBody" class="col-md-12">
-      <a href="#" class="projectDetailPdfDowload" onclick="htmlToPdf();"> <img src="assets/images/pdfDownload.png" alt="Stáhni PDF" width="50" height="50" class=""> * PDF * test!!!</a>
+    <div id="projectDetailBody" class="col-md-12">  
+      <button type="button" class="btn btn-info" style="margin-bottom: 1.5rem;"><a href="" id="pdflink1">Stáhnout PDF  &nbsp; <i class="far fa-file-pdf"></i></a></button>
+      <!-- <a href="#" class="projectDetailPdfDowload" onclick="htmlToPdf();"> <img src="assets/images/pdfDownload.png" alt="Stáhni PDF" width="50" height="50" class=""> * PDF * test!!!</a> -->
 
         <?php
         $actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
@@ -68,6 +69,10 @@ include("includes/header.php");
 
         //Select columns named from "a" to "e" from a database
         $sql = "SELECT kategorie, plny_nazev, plny_popis, podminky_vyuziti, vyuzitelne_produkty, SWOT_analyza, cilova_skupina, ekonomicke_podminky, personálni_narocnost, pravni_aspekty, priklad_praxe, souvisejici_kategorie FROM projety_ce WHERE id='$project_number'";
+
+        $getProjectIdForAhrefLink = $project_number;
+        echo "<div id='project_number_value' style='display:none; visibility:hidden'>" . $getProjectIdForAhrefLink ."</div>";
+
         //variable to catch the results
         $results = $con-> query($sql);
         //function to fatch the data
@@ -109,6 +114,8 @@ include("includes/header.php");
         $con-> close();
         ?>
 
+        <button type="button" class="btn btn-info" style="margin-bottom: 1.5rem;"><a href="" id="pdflink2">Stáhnout PDF &nbsp; <i class="far fa-file-pdf"></i> </a></button>
+
         <?php
         include("includes/displayAddedNewExampleProjects.php");
         ?>
@@ -124,6 +131,15 @@ include("includes/header.php");
     <script src="assets/js/pdfgeneration/package/jspdf.min.js"></script>
     <script src="assets/js/pdfgeneration/simon/fontfreeserifnormal.js"></script>
     <script src="assets/js/pdfgeneration/simon/pdffromhtml.js"></script>
+
+    <script> 
+      var projectNumber = document.querySelector('#project_number_value').innerText;
+      var urlString = "projectdetailpdf.php?projectnumber=" + projectNumber;
+      console.log(projectNumber);
+      console.log(urlString);
+      document.querySelector('#pdflink1').setAttribute('href', urlString);
+      document.querySelector('#pdflink2').setAttribute('href', urlString);
+    </script>
     
     </div>
   </div>
