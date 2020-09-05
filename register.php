@@ -47,7 +47,8 @@ require 'includes/form_handlers/login_handler.php';
 			<div class="login_box">
 
 				<div class="login_header">
-					<h1>Cirkulární projekty</h1>
+					<h1>Obcevkruhu.cz</h1>
+					<h3>Modul sociální sítě</h3>
 					Přihlaste se nebo se registrujte níže!
 				</div>
 				<br>
