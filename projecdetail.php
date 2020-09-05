@@ -35,7 +35,9 @@ include("includes/header.php");
   </div>
   <div class="row">
     <div id="projectDetailBody" class="col-md-12">  
-      <button type="button" class="btn btn-info" style="margin-bottom: 1.5rem;"><a href="" id="pdflink1">Stáhnout PDF  &nbsp; <i class="far fa-file-pdf"></i></a></button>
+      <div id="projectDetailBody" class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        <button type="button" class="btn btn-info pdfBtnTop" style="margin-bottom: 1.5rem;"><a href="" id="pdflink1" target="_blank">Stáhnout PDF  &nbsp; <i class="far fa-file-pdf"></i></a></button> <br>
+      </div>  
       <!-- <a href="#" class="projectDetailPdfDowload" onclick="htmlToPdf();"> <img src="assets/images/pdfDownload.png" alt="Stáhni PDF" width="50" height="50" class=""> * PDF * test!!!</a> -->
 
         <?php
@@ -78,6 +80,7 @@ include("includes/header.php");
         //function to fatch the data
         if ($results-> num_rows > 0 ) {
           while ($row = $results-> fetch_assoc()) {
+              echo "<div id='projectDetailBody' class='col-xs-12 col-sm-12 col-md-12 col-lg-12'>";
               echo "<p id='projectDetailDesc--nazevTypovehoReseni' style='display:none; visibility:hidden;'>Název typového řešení</p>";
 
               echo "<h2 id='projectDetail--titul'>".$row["plny_nazev"]."</h2>";
@@ -103,9 +106,9 @@ include("includes/header.php");
               echo "<div> <strong id='projectDetailDesc--priklad_praxe'> Příklad z praxe: </strong></div><div id='projectDetail--priklad_praxe'>" .$row["priklad_praxe"]. "</div><br>";
 
               echo "<div> <strong id='projectDetailDesc--souvisejici_kategorie'> Související kategorie </strong></div><div id='projectDetail--souvisejici_kategorie'>" .$row["souvisejici_kategorie"]. "</div><br>";
-
+              echo "";
           }
-          echo "";
+          echo "</div>";
         }
         else {
           echo "<h3 style='text-align: center; color: coral'>Projekt s vybraným číslem není v databázi. Vyberte existující projekt!</h3>";
@@ -113,8 +116,10 @@ include("includes/header.php");
         //Close the variable after finishing
         $con-> close();
         ?>
-
-        <button type="button" class="btn btn-info" style="margin-bottom: 1.5rem;"><a href="" id="pdflink2">Stáhnout PDF &nbsp; <i class="far fa-file-pdf"></i> </a></button>
+        <div id="projectDetailBody" class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+          <br>
+          <button type="button" class="btn btn-info pdfBtnBottom" style="margin-bottom: 1.5rem;"><a href="" id="pdflink2" target="_blank">Stáhnout PDF &nbsp; <i class="far fa-file-pdf"></i> </a></button>
+        </div>
 
         <?php
         include("includes/displayAddedNewExampleProjects.php");
