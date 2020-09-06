@@ -9,10 +9,12 @@ require 'includes/form_handlers/login_handler.php';
 <head>
 	<title>Cirkulární projekty | Web pro projekty v Cirkulární ekonomice a Oběhovém hospodářství</title>
 	<link rel="stylesheet" type="text/css" href="assets/css/register_style.css">
-	<link rel="stylesheet" type="text/css" href="assets/css/register.css">
+	<link rel="stylesheet" type="text/css" href="assets/css/main.css">
+	<link rel="stylesheet" type="text/css" href="assets/css/register.css">	
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 	<script src="assets/js/register.js"></script>
+
 
 </head>
 <body>
@@ -41,7 +43,7 @@ require 'includes/form_handlers/login_handler.php';
 		<div class="thewrapped">
 
 			<div style="margin: 1rem auto;">
-					<button class="button" style="background-color: #e5b896; border: none; padding: 15px 32px; text-align: center; text-decoration: none; display: inline-block; font-size: 16px; margin: 0 auto; cursor: pointer;"><a href="http://obcevkruhu.cz" style="color:#000;">Zpět na hlavní stránku</a></button>
+					<button class="button" style="background-color: #e5b896; border: none; text-align: center; text-decoration: none; display: inline-block; font-size: 16px; margin: 0 auto; cursor: pointer;"><a href="http://obcevkruhu.cz" style="color:#000;">Zpět na hlavní stránku</a></button>
 			</div>
 
 			<div class="login_box">

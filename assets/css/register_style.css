@@ -106,13 +106,17 @@ input[type="password"]:hover {
   display: none;
 }
 
-.btn-reload {
+.thewrapped div.demoUser button.btn-reload {
   background-color: #e5b896;
   border-radius: 3px;
   margin: 5px 0 10px 0;
-  padding: 5px 10px 5px 10px;
-  color: #000;
+  color: #000 !important;
   font-size: 100%;
+}
+
+.thewrapped div.demoUser button.btn-reload:hover {
+  color: #fff !important;
+  background-color: unset;
 }
 
 .text-center{
