@@ -6,12 +6,15 @@
 :root {
   --main-dark-color: #057705;
   --main-light-color: #16db16;
-  --link-color: #20aae5;
+  --link-color: var(--main-opposite-brown);
   --dark-element-color: #73b6e2;
   --gray-color: #d3d3d3;
   --success-color: #2ecc71;
   --main-complementary-color: #d6b4b4;
   --secondary-complementary-color: #ae1506;
+  --main-green-color: #96e5b8;
+  --main-opposite-brown: #e5b896;
+  --main-opposite-darkerBrow: #b79378;
 }
 
 @font-face {
@@ -24,9 +27,25 @@
   src: url("../fonts/Bellota-BoldItalic.otf");
 }
 
-body {
-  /*line-height: 17px;*/
-  background-color: #e6eae8;
+.body{
+  background: #000;
+}
+
+.background{
+  background-image: url(../images/backgrounds/desktop.jpg);
+  background-position: top;
+  background-size: contain;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  position: relative;
+  z-index: 1;
+}
+
+.background-seeThrough{
+  z-index: 2;
+  background-image: linear-gradient( to top, rgba(19, 21, 25, 0.5), rgba(19, 21, 25, 0.5) ), url(../images/backgrounds/overlay.png);
+  background-attachment: fixed;
 }
 
 a {
@@ -108,7 +127,7 @@ nav a {
 }
 
 nav li .projectContent {
-  color: var(--main-complementary-color);
+  color: var(--main-opposite-brown);
 }
 
 nav a div,
@@ -120,7 +139,7 @@ nav a:hover div,
 nav a:hover div i,
 nav a:hover .websiteMobileMenu--Icon,
 nav a:hover .websiteMobileMenu--Description {
-  color: var(--main-light-color);
+  color: var(--main-opposite-darkerBrown);
 }
 
 nav a:hover div.projectContent,
@@ -154,13 +173,11 @@ nav a:hover div i {
 }
 
 .column {
-  background-color: #fff;
-  padding: 10px;
-  border: 1px solid var(--gray-color);
-  border-radius: 5px;
-  box-shadow: 2px 2px 1px var(--gray-color);
+  background-color: rgba(27, 31, 34, 0.85);
+  padding: 2rem;
   z-index: 1;
-  color: #555;
+  color: #fff;
+  margin-bottom: 3rem;
 }
 
 .user_details {
@@ -188,7 +205,7 @@ nav a:hover div i {
 }
 
 .user_details_left_right a {
-  color: var(--main-dark-color);
+  color: var(--main-green-color);
 }
 
 .user_details img {
@@ -242,9 +259,9 @@ nav a:hover div i {
 
 .status_post {
   width: 96%;
-  font-size: 15px;
-  padding: 0px 5px;
-  min-height: 75px;
+  font-size: 1.5rem;
+  padding: 1rem;
+  min-height: 4.7rem;
   cursor: pointer;
 }
 
@@ -392,6 +409,14 @@ iframe {
   background-color: #0043f0;
 }
 
+.brownBack{
+  background-color: var(--main-opposite-brown);
+}
+
+button.brownBack i.fa-times{
+  color: #000;
+}
+
 .profile_left input[type="submit"] {
   width: 90%;
   height: 30px;
@@ -432,7 +457,7 @@ iframe {
 }
 
 .delete_button i.fa-times {
-  color: #fff;
+  color: #000;
   transform: translateY(-2px);
 }
 
@@ -443,6 +468,11 @@ iframe {
   z-index: 1;
   min-height: 160px;
   position: relative;
+}
+
+.main_column.column hr{
+  width: 100%;
+  padding: 0.5rem 0;
 }
 
 /*Styl pro projekty */

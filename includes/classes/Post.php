@@ -193,7 +193,7 @@ class Post {
 					}
 
 					if($userLoggedIn == $added_by)
-						$delete_button = "<button class='delete_button btn deep_blue' id='post$id'><i class='fas fa-times'></i></button>";
+						$delete_button = "<button class='delete_button btn brownBack' id='post$id'><i class='fas fa-times'></i></button>";
 					else
 						$delete_button = "";
 
@@ -601,7 +601,7 @@ class Post {
 				if($user_logged_obj->isFriend($added_by)){
 
 					if($userLoggedIn == $added_by)
-						$delete_button = "<button class='delete_button btn deep_blue' id='post$id'>X</button>";
+						$delete_button = "<button class='delete_button btn brownBack' id='post$id'>X</button>";
 					else
 						$delete_button = "";
 
