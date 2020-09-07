@@ -308,11 +308,10 @@ class Post {
 									<a href='$added_by'> $first_name $last_name </a> $user_to &nbsp;&nbsp;&nbsp;&nbsp;$time_message
 									$delete_button
 								</div>
-								<div id='post_body'>
+								<div id='post_body' class='user_post_body'><p class='user_post_body_text'>
 									$body
-									<br>
+									</p>
 									$imageDiv
-									<br>
 									<br>
 								</div>
 
