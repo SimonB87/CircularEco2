@@ -59,7 +59,7 @@ $userLoggedInNameFillerPlaceholder = $user['first_name'] . " " . $user['last_nam
 
 
   <!-- my style sheet -->
-  <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+  <link rel="stylesheet" type="text/css" href="assets/css/style_designed.css">
   <link rel="stylesheet" type="text/css" href="assets/css/projectinfo.css">
   <link rel="stylesheet" type="text/css" href="assets/css/projectdashboard.css">
   

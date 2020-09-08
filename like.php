@@ -32,12 +32,23 @@ else {
       *{
         font-family: Arial, Helvetica, sans-serif;
       }
-      body{background: #fff;}
+
+      body {background: transparent;
+      }
+
+      input.comment_like {
+        color: #96e5b8;
+      }
+
+      .like_value{
+        color: #fff;
+      }
 
       form {
         position: absolute;
-        top: 0;
+        top: -4px;
       }
+
     </style>
 
 
