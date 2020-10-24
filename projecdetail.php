@@ -139,7 +139,7 @@ include("includes/header.php");
 
     <script> 
       var projectNumber = document.querySelector('#project_number_value').innerText;
-      var urlString = "projectdetailpdf.php?projectnumber=" + projectNumber;
+      var urlString = "/../sollution/projectdetailmpdf.php?projectnumber=" + projectNumber;
       console.log(projectNumber);
       console.log(urlString);
       document.querySelector('#pdflink1').setAttribute('href', urlString);
