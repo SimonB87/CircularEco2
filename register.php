@@ -7,6 +7,17 @@ require 'includes/form_handlers/login_handler.php';
 
 <html>
 <head>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-CSE7MKYW1L"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-CSE7MKYW1L');
+  </script>
+
 	<title>Cirkulární projekty | Web pro projekty v Cirkulární ekonomice a Oběhovém hospodářství</title>
 	<link rel="stylesheet" type="text/css" href="assets/css/register_style.css">
 	<link rel="stylesheet" type="text/css" href="assets/css/main.css">
