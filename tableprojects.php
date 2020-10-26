@@ -42,7 +42,7 @@ include("includes/head_designed_pageheader.php");
   </div>
 </div>
 
-<div class="col-md-12 col-xs-12 col-md-push-1 main_column column">
+<div class="col-md-12 col-xs-12 col-md-push-1 main_column column extraDarkBack">
 
   <div class="project_table">
       <div class="project_table_info">Stránka je optimalizována pro rozlišení s šířkou 1000px a větší.</div>
