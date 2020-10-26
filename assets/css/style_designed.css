@@ -176,6 +176,12 @@ nav a:hover div i {
   margin-bottom: 3rem;
 }
 
+.column.extraDarkBack {
+  background-color: rgba(27, 31, 34, 0.94);
+
+}
+
+
 .user_details {
   align-items: center;
   float: left;
