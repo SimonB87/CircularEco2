@@ -1,5 +1,15 @@
 <?php
-include("includes/header.php");
+include("includes/head_designed_htmlhead.php");
+
+?>
+
+<link rel="stylesheet" href="assets/css/projecttablestyle2019.css">
+
+</head>
+<body>
+
+<?php
+include("includes/head_designed_pageheader.php");
 
 ?>
 <!-- CSS for the table of projects -->
@@ -41,7 +51,8 @@ include("includes/header.php");
 
         <br>
 
-        <table id="mySearchTable" class="search_project_table">
+        <table id="mySearchTable" class="table-wrapper tableDesign2019 search_project_table">
+          <tbody>
             <tr class="mySearchTable_header">
                 <th>Plný název 
                   <br>
@@ -115,7 +126,7 @@ include("includes/header.php");
 
 
             //Select columns named from "a" to "e" from a database
-            $sql = "SELECT id, web_nazev, kategorie, plny_nazev, plny_popis, cilova_skupina, souvisejici_kategorie, vyuzitelne_produkty from projety_ce ORDER BY plny_nazev ASC";
+            $sql = "SELECT id, web_nazev, kategorie, plny_nazev, plny_popis, cilova_skupina, souvisejici_kategorie, vyuzitelne_produkty from typova_reseni ORDER BY plny_nazev ASC";
             //variable to catch the results
             $results = $con-> query($sql);
             //function to fatch the data
@@ -137,10 +148,7 @@ include("includes/header.php");
 
             ?>
 
-            <tr>
-                <td>KONEC TABULKY</td>
-            </tr>
-
+          </tbody>
         </table>
 
     </div>
