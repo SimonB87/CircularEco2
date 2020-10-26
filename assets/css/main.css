@@ -1807,6 +1807,11 @@ body.is-preload #footer {
 
 /* Simon Styles Edits 2020 */
 
+.displayNone {
+  display: none;
+  visibility: hidden;
+}
+
 #header .content p {
   font-size: 0.95rem;
 }
