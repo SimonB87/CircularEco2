@@ -1,4 +1,4 @@
-<section class="submitNewProject">
+<section id="submitNewProject" class="submitNewProject">
 <hr>
 
 
