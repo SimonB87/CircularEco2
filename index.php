@@ -1,5 +1,13 @@
 <?php
-include("includes/header_designed.php");
+include("includes/head_designed_htmlhead.php");
+
+?>
+
+</head>
+<body>
+
+<?php
+include("includes/head_designed_pageheader.php");
 
 /*destroy all the log ins after refresh
 session_destroy();*/
