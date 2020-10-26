@@ -1,6 +1,8 @@
-table {
+.table-wrapper table {
   border-collapse: collapse;
-  border-spacing: 0;
+	border-spacing: 0;
+	line-height: 2.9rem;
+	color: #ffffff;
 }
 
 .table-wrapper {
@@ -8,36 +10,31 @@ table {
   overflow-x: auto;
 }
 
-table.table-wrapper.tableDesign2019 {
+.table-wrapper table.tableDesign2019 {
   margin: 0 0;
   width: 100%;
 }
 
-.table-wrapper {
-  -webkit-overflow-scrolling: touch;
-  overflow-x: auto;
-}
-
-table {
+.table-wrapper table {
   margin: 0 0 2rem 0;
   width: 100%;
 }
 
-table tbody tr {
+.table-wrapper table tbody tr {
   border: solid 1px #ffffff;
   border-left: 0;
   border-right: 0;
 }
 
-table tbody tr:nth-child(2n + 1) {
+.table-wrapper table tbody tr:nth-child(2n + 1) {
   background-color: rgba(255, 255, 255, 0.075);
 }
 
-table td {
+.table-wrapper table td {
   padding: 0.75em 0.75em;
 }
 
-table th {
+.table-wrapper table th {
   color: #ffffff;
   font-size: 0.9em;
   font-weight: 600;
@@ -45,108 +42,84 @@ table th {
   text-align: left;
 }
 
-table thead {
+.table-wrapper table thead {
   border-bottom: solid 2px #ffffff;
 }
 
-table tfoot {
+.table-wrapper table tfoot {
   border-top: solid 2px #ffffff;
 }
 
-table.alt {
+.table-wrapper table.alt {
   border-collapse: separate;
 }
 
-table.alt tbody tr td {
+.table-wrapper table.alt tbody tr td {
   border: solid 1px #ffffff;
   border-left-width: 0;
   border-top-width: 0;
 }
 
-table.alt tbody tr td:first-child {
+.table-wrapper table.alt tbody tr td:first-child {
   border-left-width: 1px;
 }
 
-table.alt tbody tr:first-child td {
+.table-wrapper table.alt tbody tr:first-child td {
   border-top-width: 1px;
 }
 
-table.alt thead {
+.table-wrapper table.alt thead {
   border-bottom: 0;
 }
 
-table.alt tfoot {
+.table-wrapper table.alt tfoot {
   border-top: 0;
 }
 
-/*
-	table {
-		margin: 0 0 _size(element-margin) 0;
-		width: 100%;
+.table .pdfIcon {
+  font-size: 2.5rem;
+}
 
-		tbody {
-			tr {
-				border: solid _size(border-width) _palette(border);
-				border-left: 0;
-				border-right: 0;
+.table .addToPDF {
+	position: relative;
+	padding-left: 2.5rem;
+}
 
-				&:nth-child(2n + 1) {
-					background-color: _palette(border-bg);
-				}
-			}
-		}
+.table .addToPDF .addIcon {
+    position: absolute;
+    bottom: -0.6rem;
+    left: -0.6rem;
+    background: #fff;
+    /* margin: 0.5rem; */
+    padding: 2px;
+    border: 3px solid #000;
+    border-radius: 50%;
+    font-size: 0.7em;
+}
 
-		td {
-			padding: 0.75em 0.75em;
-		}
+.actionButtons {
+  float: right;
+  padding: 1rem 0;
+  margin-right: 0;
+  margin-left: 0;
+}
 
-		th {
-			color: _palette(fg-bold);
-			font-size: 0.9em;
-			font-weight: _font(weight-bold);
-			padding: 0 0.75em 0.75em 0.75em;
-			text-align: left;
-		}
+.actionButtons .actionButtons--itemWrapper .btn {
+  width: 100%;
+	height: 100%;
+	max-height: 5rem;
+}
 
-		thead {
-			border-bottom: solid (_size(border-width) * 2) _palette(border);
-		}
+tr.footable-detail-row .footable-details.table.tableDesign2019{ 
+	background-color: inherit;
+}
 
-		tfoot {
-			border-top: solid (_size(border-width) * 2) _palette(border);
-		}
+tr.footable-detail-row .footable-details.table.tableDesign2019 input[type=text] { 
+	display: none;
+	visibility: hidden;
+}
 
-		&.alt {
-			border-collapse: separate;
+.table .pdfIcon.checkboxIcon {
+	font-size: 3rem;
 
-			tbody {
-				tr {
-					td {
-						border: solid _size(border-width) _palette(border);
-						border-left-width: 0;
-						border-top-width: 0;
-
-						&:first-child {
-							border-left-width: _size(border-width);
-						}
-					}
-
-					&:first-child {
-						td {
-							border-top-width: _size(border-width);
-						}
-					}
-				}
-			}
-
-			thead {
-				border-bottom: 0;
-			}
-
-			tfoot {
-				border-top: 0;
-			}
-		}
-	}
-
-*/
+}
