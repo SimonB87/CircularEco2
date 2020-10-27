@@ -1,0 +1,55 @@
+.table-wrapper input[type="checkbox"], input[type="radio"] {
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  -ms-appearance: none;
+  appearance: none;
+  display: block;
+  float: left;
+  margin-right: -2rem;
+  opacity: 0;
+  width: 1rem;
+  z-index: -1;
+}
+
+.table-wrapper input[type="checkbox"] + label:before {
+  border-radius: 4px;
+}
+
+.table-wrapper input[type="checkbox"] + label:before, input[type="radio"] + label:before {
+  -moz-transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out, background-color 0.2s ease-in-out;
+  -webkit-transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out, background-color 0.2s ease-in-out;
+  -ms-transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out, background-color 0.2s ease-in-out;
+  transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out, background-color 0.2s ease-in-out;
+  border-radius: 4px;
+  border: solid 1px #ffffff;
+  content: '';
+  display: inline-block;
+  height: 1.65rem;
+  left: 0;
+  line-height: 1.65rem;
+  position: absolute;
+  text-align: center;
+  top: -0.15rem;
+  width: 1.65rem;
+}
+
+.table-wrapper input[type="checkbox"] + label:before, input[type="radio"] + label:before {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  display: inline-block;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  line-height: 1;
+  text-transform: none !important;
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 900;
+  position: relative;
+}
+
+.table-wrapper input[type="checkbox"]:checked + label:before, input[type="radio"]:checked + label:before {
+  background: #ffffff !important;
+  border-color: #ffffff !important;
+  color: #1b1f22;
+  content: '\f00c';
+}
