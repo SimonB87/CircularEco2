@@ -1,8 +1,12 @@
 .table-wrapper table {
   border-collapse: collapse;
 	border-spacing: 0;
-	line-height: 2.9rem;
+
 	color: #ffffff;
+}
+
+.table-wrapper table.table.tableDesign2019 tr td {
+	line-height: 2.75rem;
 }
 
 .table-wrapper {
@@ -82,19 +86,19 @@
 
 .table .addToPDF {
 	position: relative;
-	padding-left: 2.5rem;
+	margin-left: 2.5rem;
 }
 
 .table .addToPDF .addIcon {
     position: absolute;
     bottom: -0.6rem;
     left: -0.6rem;
-    background: #fff;
+    background: #000;
     /* margin: 0.5rem; */
     padding: 2px;
-    border: 3px solid #000;
+    border: 2px solid #fff;
     border-radius: 50%;
-    font-size: 0.7em;
+    font-size: 0.5em;
 }
 
 .actionButtons {
@@ -107,8 +111,12 @@
 .actionButtons .actionButtons--itemWrapper .btn {
   width: 100%;
 	height: 100%;
-	max-height: 5rem;
+  max-height: 5rem;
+  max-width: 20rem;
+  white-space: normal;
+  word-wrap: break-word;
 }
+
 
 tr.footable-detail-row .footable-details.table.tableDesign2019{ 
 	background-color: inherit;
@@ -121,5 +129,11 @@ tr.footable-detail-row .footable-details.table.tableDesign2019 input[type=text] 
 
 .table .pdfIcon.checkboxIcon {
 	font-size: 3rem;
+}
 
+@media only screen and (max-width: 1000px) {
+  .actionButtons .actionButtons--itemWrapper {
+    padding: 0.5rem 0;
+    text-align: center;
+  }
 }
