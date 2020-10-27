@@ -14,7 +14,7 @@ include("includes/form_handlers/settings_handler.php");
   $userRole = $row['userRole'];
 
   if ($userRole === "super") {
-    echo "<div><a href='manage.php'><button type= 'button' class='btn btn-primary' style= 'margin-bottom: 1.5rem;' > Sekce pro administrátora </button> </a>".
+    echo "<div><a href='manage.php'><button type= 'button' class='btn btn-primary' style= 'margin-bottom: 1.5rem;' > Sekce pro administrátora </button> </a>" .
     "<a href='manageUserSubmissions.php'><button type='button' class='btn btn-info' style='margin-bottom: 1.5rem;'> Správa mých podaných projektů </button> </a></div>";
   } else {
     echo "<div><span> &nbsp; </span><a href='manageUserSubmissions.php'><button type='button' class='btn btn-info' style='margin-bottom: 1.5rem;'> Správa mých podaných projektů </button> </a></div>";
