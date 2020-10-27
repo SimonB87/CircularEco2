@@ -53,6 +53,11 @@ a {
   text-decoration: none;
 }
 
+a:hover {
+  color: var(--main-complementary-color);
+  text-decoration: none;
+}
+
 .top_bar {
   width: 100%;
   height: 9rem;
@@ -149,10 +154,6 @@ nav a:hover .websiteMobileMenu--Description.projectContent {
   color: var(--secondary-complementary-color);
 }
 
-/*
-.websiteMobileMenu--Icon
-.websiteMobileMenu--Description
-*/
 
 nav a:hover div i {
   font-size: 175%;
@@ -179,6 +180,12 @@ nav a:hover div i {
   color: #fff;
   margin-bottom: 3rem;
 }
+
+.column.extraDarkBack {
+  background-color: rgba(27, 31, 34, 0.94);
+
+}
+
 
 .user_details {
   align-items: center;
@@ -857,41 +864,6 @@ button.btn.btn-info a {
   padding: 12px 20px 12px 40px;
   border: 1px solid #ddd;
   margin-bottom: 12px;
-}
-
-#mySearchTable {
-  border-collapse: collapse;
-  width: 100%;
-  border: 1px solid #ddd;
-  /*font-size: 18px;*/
-}
-
-.mySearchTable_header {
-  background-color: var(--main-light-color);
-  color: #fff;
-}
-
-.mySearchTable_header:hover {
-  color: #000;
-}
-
-#mySearchTable th,
-#mySearchTable td {
-  text-align: left;
-  padding: 12px;
-  vertical-align: top;
-}
-
-#mySearchTable tr {
-  border-bottom: 1px solid #ddd;
-}
-
-#mySearchTable tr:hover {
-  background-color: #8aed8a;
-}
-
-tr:nth-child(even) {
-  background-color: #f2f2f2;
 }
 
 #projectDetailBody #projectDetail--titul {
