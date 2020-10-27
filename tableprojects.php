@@ -45,15 +45,16 @@ include("includes/head_designed_pageheader.php");
 <div class="col-md-12 col-xs-12 col-md-push-1 main_column column extraDarkBack">
 
   <div class="project_table">
-      <div class="project_table_info">Stránka je optimalizována pro rozlišení s šířkou 1000px a větší.</div>
+
       <br>
         <input type="text" id="mySearchInput" onkeyup="mySearchFunction()" placeholder="Hledej v projektech.." title="Hledat v projektech">
       <br>
 
       <br>
+
       <div class="table-wrapper">
 
-        <div class="row actionButtons">
+      <div class="row actionButtons" style="width:100%;text-align: center;">
           <div class="actionButtons--itemWrapper col-sm-12 col-md-4 col-lg-4 col-xl-4">
            <button type="button" class="btn btn-success" onclick="setAllSolutionCheckboxes(true);">Přidat všechna řešení <i class="far fa-file-pdf"></i></button>
           </div>
@@ -162,7 +163,7 @@ include("includes/head_designed_pageheader.php");
                     $rowEdit_vyuzitelne_produkty = truncate($row["vyuzitelne_produkty"], 600);
                     
                     echo "<tr><td><strong> <a href='projecdetail.php?projectnumber=".$row["id"]."'>".$row["plny_nazev"]."</a></strong></td><td>".$rowEdit_plny_popis."</td> <td>".$row["kategorie"]."</td> <td>".$row["cilova_skupina"]."</td><td>".$row["souvisejici_kategorie"]."</td><td>". $rowEdit_vyuzitelne_produkty ."</td>" . 
-                    "<td> <input type='checkbox' id='type_" . $row["id"] . "' onclick='addTypeIDtoLink(" . $row["id"] . ")' name='Typ_". $row["id"] ."' solutionid='". $row["id"] ."' class='includeSolutionToPdf'> <label for='typ_". $row["id"] ."'> <span class='addToPDF '> <i class='far fa-file-pdf pdfIcon checkboxIcon'></i> </span></label></td>" .
+                    "<td> <input type='checkbox' id='type_" . $row["id"] . "' onclick='addTypeIDtoLink(" . $row["id"] . ")' name='Typ_". $row["id"] ."' solutionid='". $row["id"] ."' class='includeSolutionToPdf'> <label for='typ_". $row["id"] ."'> <span class='addToPDF '> <i class='fas fa-plus plusIcon addIcon'></i> <i class='far fa-file-pdf pdfIcon checkboxIcon'></i> </span></label></td>" .
                     "</tr>";
                 }
                 echo "";
