@@ -59,12 +59,30 @@
         </a>
         </li>
 
-        <li> 
-        <a href="project.php" class="mainMenuItems mobileInvisible">
+          <!--  <a href="project.php" class="mainMenuItems mobileInvisible">
           <div class="mainMenuItemIcon"><i class="fas fa-frog projectContent"></i></div>
           <div class="projectContent">Přehled řešení</div>
-        </a>
-      </li>
+        </a> -->
+
+        <?php
+          $user_data_query = mysqli_query($con, "SELECT first_name, last_name, email, userRole FROM users WHERE username='$userLoggedIn'");
+          $row = mysqli_fetch_array($user_data_query);
+          $first_name = $row['first_name'];
+          $last_name = $row['last_name'];
+          $email = $row['email'];
+          $userRole = $row['userRole'];
+
+          if ($userRole === "super") {
+            echo "<li><a href='manage.php' class='mainMenuItems mobileInvisible'>" .
+                    "<div class='mainMenuItemIcon'><i class='fas fa-user-tie'></i></div>" .
+                    "<div class='projectContent'>Administrace příkladů</div>" .
+                  "</a></li>";
+          } 
+          echo "<li><a href='manageUserSubmissions.php' class='mainMenuItems mobileInvisible'>" .
+                "<div class='mainMenuItemIcon'><i class='far fa-edit'></i></div>" .
+                "<div class='projectContent'>Mé podané příklady</div>" .
+              "</a></li>";
+          ?>
 
       <li>  
         <a href="tableprojects.php" class="mainMenuItems mobileInvisible">
@@ -168,12 +186,29 @@
           </a>
         </li> 
     
-      <li class="websiteMobileMenu--Item invisible">
+<!--       <li class="websiteMobileMenu--Item invisible">
           <a href="project.php"> 
             <span class="websiteMobileMenu--Icon"> <i class="fas fa-frog projectContent"></i> </span> 
             <span class="websiteMobileMenu--Description projectContent">Přehled řešení</span>
           </a>
-      </li>     
+      </li>      -->
+
+      <?php 
+      if ($userRole === "super") {
+        echo "<li class='websiteMobileMenu--Item invisible'>" .
+                "<a href='manage.php'>"  .
+                  "<span class='websiteMobileMenu--Icon'> <i class='fas fa-user-tie'></i> </span>"  .
+                  "<span class='websiteMobileMenu--Description projectContent'>Administrace příkladů</span>" .
+                "</a>" .
+            "</li>"; 
+      }
+      echo "<li class='websiteMobileMenu--Item invisible'>" .
+              "<a href='manageUserSubmissions.php'>"  .
+                "<span class='websiteMobileMenu--Icon'> <i class='far fa-edit'></i> </span>"  .
+                "<span class='websiteMobileMenu--Description projectContent'>Mé podané příklady</span>" .
+              "</a>" .
+          "</li> " ;
+      ?>
     
       <li class="websiteMobileMenu--Item invisible">
           <a href="tableprojects.php"> 
