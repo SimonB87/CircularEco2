@@ -19,7 +19,7 @@ function addTypeIDtoLink(indexValue){
       }
 
       link.setAttribute(`solutions`, newSolutionsString);
-      const newLinkHref = `solutionmpdfbatch.php?types=[${newSolutionsString}]`;
+      const newLinkHref = `/../sollution/solutionmpdfbatch.php?types=[${newSolutionsString}]`;
       link.setAttribute(`href`, newLinkHref); 
     }
   
@@ -75,8 +75,14 @@ function setAllSolutionCheckboxes(boolean){
     if (boolean === true) {
       allCheckBoxes[index].checked = true;
       document.getElementById("pdfBatchDownload").setAttribute("solutions", "1002,1003,1203,1204,2202,2204,1105,2003,2303,1103,1207,2002,1201,2102,1001,1107,1102,1101,1205,2103,1106,2301,1104,1202,2201,1302,2001,1206,1303,1301,2203,2101,1006,1004,1005,2302,2304");
-      document.getElementById("pdfBatchDownload").setAttribute("href", "solutionmpdfbatch.php?types=[1002,1003,1203,1204,2202,2204,1105,2003,2303,1103,1207,2002,1201,2102,1001,1107,1102,1101,1205,2103,1106,2301,1104,1202,2201,1302,2001,1206,1303,1301,2203,2101,1006,1004,1005,2302,2304]");
+      document.getElementById("pdfBatchDownload").setAttribute("href", "/../sollution/solutionmpdfbatch.php?types=[1002,1003,1203,1204,2202,2204,1105,2003,2303,1103,1207,2002,1201,2102,1001,1107,1102,1101,1205,2103,1106,2301,1104,1202,2201,1302,2001,1206,1303,1301,2203,2101,1006,1004,1005,2302,2304]");
     }
   }
 
 }
+
+const clickCheckbox = (indexNumber) => {
+  const targetSelector = `type_${indexNumber}`;
+  const targetItem = document.getElementById(targetSelector);
+  targetItem.click();
+};
