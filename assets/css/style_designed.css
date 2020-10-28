@@ -70,13 +70,16 @@ a:hover {
 }
 
 .logo a {
-  font-family: "Bellota-LightItalic", sans-serif;
   margin-left: 20px;
-  font-size: 150%;
   position: relative;
-  top: 8px;
+  padding-top: 8px;
   text-shadow: var(--dark-element-color) 0.5px 0.5px 0px;
   color: #fff;
+}
+
+img.websiteLogo {
+  padding-top: 0.75rem;
+  max-width: 15rem;
 }
 
 a:hover {
