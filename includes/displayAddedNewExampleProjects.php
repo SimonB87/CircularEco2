@@ -32,7 +32,7 @@ if ($results-> num_rows > 0 ) {
     while ($row = $results-> fetch_assoc()) {
         
       echo "<div class='projectDetail'>" . 
-        "<a href='readSubmissionDetails.php?submissionid=%28x" .$row["id"]  . "%29y'><h4> Projekt ID:<strong> (" . $row["id"] . ")</strong> Název: <strong>" . $row["projectName"] . "</strong></h4></a>".
+        "<a target='_blank' href='readSubmissionDetails.php?submissionid=%28x" .$row["id"]  . "%29y'><h4> Projekt ID:<strong> (" . $row["id"] . ")</strong> Název: <strong>" . $row["projectName"] . "</strong></h4></a>".
         "<p><strong>Lokalita podaného projektu :</strong></p><p>" . $row["projectLocality"] . "</p>" .
         "<p><strong>Popis projektu:</strong></p>" . "<p>" . $row["projectDescription"] . "</p>" .
       "</div>";
