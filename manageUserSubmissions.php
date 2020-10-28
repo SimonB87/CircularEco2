@@ -48,7 +48,7 @@ else {
   </div>
   </div>
  
-    <div class="col-md-8 col-xs-12 col-md-push-1 main_column column">
+    <div class="col-md-8 col-xs-12 col-md-push-1 main_column column" id="main_column">
       <section>
         <h2 class="centertext">Přehled mých podaných projektů:</h2>
 

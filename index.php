@@ -101,7 +101,7 @@ if($uploadOk) {
 			</div>
 		</div>
 
-		<div class="col-md-8 col-xs-12 col-md-push-1 main_column column">
+		<div class="col-md-8 col-xs-12 col-md-push-1 main_column column" id="main_column">
 
 			<form class="post_form" action="index.php" method="POST" enctype="multipart/form-data">
 
