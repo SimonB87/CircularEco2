@@ -1,5 +1,14 @@
 <?php
-include("includes/header.php");
+include("includes/head_designed_htmlhead.php");
+
+?>
+<title>Detail příkladu dobré praxe | Obce v kruhu.cz</title>
+</head>
+<body>
+
+<?php
+include("includes/head_designed_pageheader.php");
+
 
 if (isset($_SESSION['username'])) {
   $user_data_query = mysqli_query($con, "SELECT first_name, last_name, email, userRole FROM users WHERE username='$userLoggedIn'");
@@ -37,7 +46,7 @@ if (isset($_SESSION['username'])) {
   </div>
   </div>
  
-    <div class="col-md-8 col-xs-12 col-md-push-1 main_column column">
+    <div class="col-md-8 col-xs-12 col-md-push-1 main_column column" id="main_column">
       <section>
         <a href="tableprojects.php"><button type="button " class="btn btn-primary " style="margin-bottom: 1.5rem;">Zpět na typová řešení</button></a>
         <h2>Detail projektu</h2>

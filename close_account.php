@@ -1,5 +1,13 @@
 <?php
-include("includes/header.php");
+include("includes/head_designed_htmlhead.php");
+
+?>
+<title>Odhlásit účet | Obce v kruhu.cz</title>
+</head>
+<body>
+
+<?php
+include("includes/head_designed_pageheader.php");
 
 if(isset($_POST['cancel'])){
   header("Location: settings.php");

@@ -1,6 +1,11 @@
 <?php
+include("includes/head_designed_htmlhead.php");
 
-include("includes/header.php");
+?>
+
+
+<?php
+
 
 $message_obj = new Message($con, $userLoggedIn);
 
@@ -47,9 +52,17 @@ if(isset($_POST['post_message'])) {
 	</script>";
 
 }
-
 ?>
 
+<title>Profil - <?php echo $username; ?> | Obce v kruhu.cz</title>
+</head>
+<body>
+
+<?php
+include("includes/head_designed_pageheader.php");
+?>
+
+  
 
 	<style media="screen">
 		.wrapper {
@@ -112,7 +125,7 @@ if(isset($_POST['post_message'])) {
 	</div>
 
 
-	<div class="col-md-8 col-xs-12 col-md-push-1 main_column column">
+	<div class="col-md-8 col-xs-12 col-md-push-1 main_column column" id="main_column">
 
 		<ul class="nav nav-tabs" role="tablist" id="profileTabs">
 			<li role="presentation" class="active"><a href="#newsfeed_div" aria-controls="newsfeed_div" role="tab" data-toggle="tab">Newsfeed</a></li>
