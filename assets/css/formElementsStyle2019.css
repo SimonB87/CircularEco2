@@ -78,7 +78,7 @@ form > .fields {
 
 }
 
-label {
+form label {
 color: #ffffff;
 display: block;
 font-size: 0.8rem;
@@ -89,12 +89,7 @@ margin: 0 0 1rem 0;
 text-transform: uppercase;
 }
 
-input[type="text"],
-input[type="password"],
-input[type="email"],
-input[type="tel"],
-select,
-textarea {
+form input[type="text"], form input[type="password"], form input[type="email"], form input[type="tel"], form select, form textarea {
 -moz-appearance: none;
 -webkit-appearance: none;
 -ms-appearance: none;
@@ -114,27 +109,17 @@ text-decoration: none;
 width: 100%;
 }
 
-input[type="text"]:invalid,
-input[type="password"]:invalid,
-input[type="email"]:invalid,
-input[type="tel"]:invalid,
-select:invalid,
-textarea:invalid {
+form input[type="text"]:invalid, form input[type="password"]:invalid, form input[type="email"]:invalid, form input[type="tel"]:invalid, form select:invalid, form textarea:invalid {
   box-shadow: none;
 }
 
-input[type="text"]:focus,
-input[type="password"]:focus,
-input[type="email"]:focus,
-input[type="tel"]:focus,
-select:focus,
-textarea:focus {
+form input[type="text"]:focus, form input[type="password"]:focus, form input[type="email"]:focus, form input[type="tel"]:focus, form select:focus, form textarea:focus {
   background: rgba(255, 255, 255, 0.075);
   border-color: #ffffff;
   box-shadow: 0 0 0 1px #ffffff;
 }
 
-select {
+form select {
 background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' preserveAspectRatio='none' viewBox='0 0 40 40'%3E%3Cpath d='M9.4,12.3l10.4,10.4l10.4-10.4c0.2-0.2,0.5-0.4,0.9-0.4c0.3,0,0.6,0.1,0.9,0.4l3.3,3.3c0.2,0.2,0.4,0.5,0.4,0.9 c0,0.4-0.1,0.6-0.4,0.9L20.7,31.9c-0.2,0.2-0.5,0.4-0.9,0.4c-0.3,0-0.6-0.1-0.9-0.4L4.3,17.3c-0.2-0.2-0.4-0.5-0.4-0.9 c0-0.4,0.1-0.6,0.4-0.9l3.3-3.3c0.2-0.2,0.5-0.4,0.9-0.4S9.1,12.1,9.4,12.3z' fill='%23ffffff' /%3E%3C/svg%3E");
 background-size: 1.25rem;
 background-repeat: no-repeat;
@@ -144,32 +129,28 @@ padding-right: 2.75rem;
 text-overflow: ellipsis;
 }
 
-select option {
+form select option {
   color: #ffffff;
   background: #1b1f22;
 }
 
-select:focus::-ms-value {
+form select:focus::-ms-value {
   background-color: transparent;
 }
 
-select::-ms-expand {
+form select::-ms-expand {
   display: none;
 }
 
-input[type="text"],
-input[type="password"],
-input[type="email"],
-select {
+form input[type="text"], form input[type="password"], form input[type="email"], form select {
 min-height: 2.75rem;
 }
 
-textarea {
+form textarea {
 padding: 0.75rem 1rem;
 }
 
-input[type="checkbox"],
-input[type="radio"] {
+form input[type="checkbox"], form input[type="radio"] {
 -moz-appearance: none;
 -webkit-appearance: none;
 -ms-appearance: none;
@@ -182,8 +163,7 @@ width: 1rem;
 z-index: -1;
 }
 
-input[type="checkbox"] + label,
-input[type="radio"] + label {
+form input[type="checkbox"] + label, form input[type="radio"] + label {
   text-decoration: none;
   -moz-user-select: none;
   -webkit-user-select: none;
@@ -200,8 +180,8 @@ input[type="radio"] + label {
   position: relative;
 }
 
-  input[type="checkbox"] + label:before,
-  input[type="radio"] + label:before {
+  form input[type="checkbox"] + label:before,
+  form input[type="radio"] + label:before {
     -moz-osx-font-smoothing: grayscale;
     -webkit-font-smoothing: antialiased;
     display: inline-block;
@@ -214,8 +194,8 @@ input[type="radio"] + label {
     font-weight: 900;
   }
 
-  input[type="checkbox"] + label:before,
-  input[type="radio"] + label:before {
+  form input[type="checkbox"] + label:before,
+  form input[type="radio"] + label:before {
     -moz-transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out, background-color 0.2s ease-in-out;
     -webkit-transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out, background-color 0.2s ease-in-out;
     -ms-transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out, background-color 0.2s ease-in-out;
@@ -233,25 +213,25 @@ input[type="radio"] + label {
     width: 1.65rem;
   }
 
-input[type="checkbox"]:checked + label:before,
-input[type="radio"]:checked + label:before {
+form input[type="checkbox"]:checked + label:before,
+form input[type="radio"]:checked + label:before {
   background: #ffffff !important;
   border-color: #ffffff !important;
   color: #1b1f22;
   content: '\f00c';
 }
 
-input[type="checkbox"]:focus + label:before,
-input[type="radio"]:focus + label:before {
+form input[type="checkbox"]:focus + label:before,
+form input[type="radio"]:focus + label:before {
   background: rgba(255, 255, 255, 0.075);
   border-color: #ffffff;
   box-shadow: 0 0 0 1px #ffffff;
 }
 
-input[type="checkbox"] + label:before {
+form input[type="checkbox"] + label:before {
 border-radius: 4px;
 }
 
-input[type="radio"] + label:before {
+form input[type="radio"] + label:before {
 border-radius: 100%;
 }
