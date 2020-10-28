@@ -5,7 +5,7 @@ include("includes/head_designed_htmlhead.php");
   <title>Tabulka typových řešení | Obce v kruhu.cz</title>
   <link rel="stylesheet" href="assets/css/projecttablestyle2019.css">
   <link rel="stylesheet" type="text/css" href="assets/libs/footablebootstrap/css/footable.bootstrap.min.css">
-  <link rel="stylesheet" type="text/css" href="assets/css/checkboxes.css">
+  <link rel="stylesheet" type="text/css" href="assets/css/checkboxesStyle2019.css">
 
 </head>
 <body>
@@ -55,7 +55,7 @@ include("includes/head_designed_pageheader.php");
 
       <div class="table-wrapper">
 
-      <div class="row actionButtons" style="width:100%;text-align: center;">
+        <div class="row actionButtons" style="width:100%;text-align: center;">
           <div class="actionButtons--itemWrapper col-sm-12 col-md-4 col-lg-4 col-xl-4">
            <button type="button" class="btn btn-success" onclick="setAllSolutionCheckboxes(true);">Přidat všechna řešení <i class="far fa-file-pdf"></i></button>
           </div>
