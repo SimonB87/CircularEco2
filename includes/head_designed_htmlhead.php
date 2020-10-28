@@ -19,8 +19,8 @@ $userLoggedInFillerPlaceholder = $user['username'];
 $userLoggedInNameFillerPlaceholder = $user['first_name'] . " " . $user['last_name'];
 
 ?>
-
-<html>
+<!DOCTYPE html>
+<html lang="cs">
 <head>
 
   <!-- Global site tag (gtag.js) - Google Analytics -->

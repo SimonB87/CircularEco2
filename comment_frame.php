@@ -15,7 +15,7 @@ else {
 
 ?>
 
-<html>
+<html lang="cs">
 <head>
 	<title></title>
 	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
