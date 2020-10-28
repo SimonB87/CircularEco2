@@ -4,8 +4,7 @@
   <div class="background-seeThrough">
   <div class="top_bar">
     <div class="logo">
-      <img class="" src="assets/images/circlogo.png" alt="" width="25" height="25">
-      <a href="index.php">Circularní řešení</a>
+      <a href="index.php"> <img class="websiteLogo" src="assets/images/logoobcevkruhu_small_bw.png" alt="obce v kruhu logo"> </a>
     </div>
 
     <div class="search">
