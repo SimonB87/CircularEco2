@@ -131,6 +131,15 @@ tr.footable-detail-row .footable-details.table.tableDesign2019 input[type=text] 
 	font-size: 3rem;
 }
 
+span.footable-toggle.fooicon.fooicon-plus, span.footable-toggle.fooicon.fooicon-minus {
+  margin-right: 1rem;
+  color: #7cc67c;
+  padding: 0.5rem 0.75rem;
+  border: 1.5px solid #7cc67c;
+  border-radius: 50%;
+  opacity: 0.9;
+}
+
 @media only screen and (max-width: 1000px) {
   .actionButtons .actionButtons--itemWrapper {
     padding: 0.5rem 0;
