@@ -1,6 +1,13 @@
 <?php
-include("includes/header.php");
+include("includes/head_designed_htmlhead.php");
 
+?>
+
+</head>
+<body>
+
+<?php
+include("includes/head_designed_pageheader.php");
 // user - his projects - basic view
 
 if (isset($_SESSION['username'])) {

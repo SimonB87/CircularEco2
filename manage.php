@@ -1,5 +1,13 @@
 <?php
-include("includes/header.php");
+include("includes/head_designed_htmlhead.php");
+
+?>
+
+</head>
+<body>
+
+<?php
+include("includes/head_designed_pageheader.php");
 
 //only admin - basic view
 
@@ -12,7 +20,7 @@ if (isset($_SESSION['username'])) {
   $userRole = $row['userRole'];
   
   if ( $userRole === "super" ) {
-    echo "<div><h3 style='text-align: center;'>Vítejte v sekci pro správu</h3></div>";
+    echo "<div><h3 style='text-align: center; color: #fff;'padding: 1rem;><strong>Vítejte v sekci pro správu</strong></h3></div>";
   } else {
     header("Location: index.php");
   }
@@ -48,7 +56,7 @@ else {
   </div>
   </div>
  
-    <div class="col-md-8 col-xs-12 col-md-push-1 main_column column">
+    <div class="col-md-9 col-xs-12 col-md-push-1 main_column column" id="main_column">
       <section>
         <h2 class="centertext">Zaslané projekty od veřejnosti:</h2>
 

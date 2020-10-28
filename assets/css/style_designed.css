@@ -165,12 +165,10 @@ nav a:hover div i {
 }
 
 .wrapper {
-  margin: 0 auto;
-  top: 11rem;
   position: relative;
-  padding: 0 10px;
-  padding-bottom: 7rem;
   width: 85%;
+  margin: 0 auto;
+  padding: 11rem 0 7rem 0;
 }
 
 .column {
@@ -185,7 +183,6 @@ nav a:hover div i {
   background-color: rgba(27, 31, 34, 0.94);
 
 }
-
 
 .user_details {
   align-items: center;
@@ -217,7 +214,6 @@ nav a:hover div i {
 
 .user_details img {
   height: 125px;
-  border-radius: 5px;
   margin-right: 5px;
 }
 
@@ -1011,3 +1007,23 @@ button.btn.btn-info a {
     padding: 0.5rem;
   }
 }
+
+/* other generic styles - start */
+
+.paddingTopBottom_big{
+  padding: 2rem 0;
+}
+
+.paddingBottom_big{
+  padding-bottom: 2rem;
+}
+
+.paddingTopBottom_small{
+  padding: 0.5rem 0;
+}
+
+.paddingTopBottom_medium{
+  padding: 1rem 0;
+}
+
+/* other generic styles - end */
