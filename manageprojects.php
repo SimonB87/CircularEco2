@@ -1,5 +1,14 @@
 <?php
-include("includes/header.php");
+include("includes/head_designed_htmlhead.php");
+
+?>
+<title>Administrace příkladů - detail projektu | Obce v kruhu.cz</title>
+<link rel="stylesheet" href="assets/css/formElementsStyle2019.css">
+</head>
+<body>
+
+<?php
+include("includes/head_designed_pageheader.php");
 
 //only admin - submission detail view
 
@@ -47,8 +56,8 @@ else {
 		</div>
   </div>
   </div>
- 
-    <div class="col-md-8 col-xs-12 col-md-push-1 main_column column">
+
+    <div class="col-md-8 col-xs-12 col-md-push-1 main_column column" id="main_column">
       <section>
         <a href="manage.php"><button type="button " class="btn btn-primary " style="margin-bottom: 1.5rem;">Zpět </button></a>
         <h2>Detail projektu</h2>

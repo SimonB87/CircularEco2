@@ -1,5 +1,13 @@
 <?php
-include("includes/header.php");
+include("includes/head_designed_htmlhead.php");
+
+?>
+<title>Cirkulární typové řešení | Obce v kruhu.cz</title>
+</head>
+<body>
+
+<?php
+include("includes/head_designed_pageheader.php");
 ?>
 <!-- CSS for the table of projects -->
 
@@ -31,7 +39,7 @@ include("includes/header.php");
 <div class="col-md-8 col-xs-12 col-md-push-1 main_column column">
 
   <div class="projekty-back">
-    <h2 class="projekty-back-title">Cirkulární typová řešení</h2>
+    <h2 class="projekty-back-title">Cirkulární typové řešení</h2>
   </div>
   <div class="row">
     <div id="projectDetailBody" class="col-md-12">  

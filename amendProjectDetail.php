@@ -1,5 +1,14 @@
 <?php
-include("includes/header.php");
+include("includes/head_designed_htmlhead.php");
+
+?>
+
+</head>
+<body>
+
+<?php
+include("includes/head_designed_pageheader.php");
+
 
 // user - submission detail view
 

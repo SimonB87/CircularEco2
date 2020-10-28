@@ -2,7 +2,7 @@
 include("includes/head_designed_htmlhead.php");
 
 ?>
-
+<title>Administrace příkladů | Obce v kruhu.cz</title>
 </head>
 <body>
 
@@ -56,7 +56,7 @@ else {
   </div>
   </div>
  
-    <div class="col-md-9 col-xs-12 col-md-push-1 main_column column" id="main_column">
+    <div class="col-md-8 col-xs-12 col-md-push-1 main_column column" id="main_column">
       <section>
         <h2 class="centertext">Zaslané projekty od veřejnosti:</h2>
 

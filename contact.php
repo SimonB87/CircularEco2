@@ -1,5 +1,13 @@
 <?php
-include("includes/header.php");
+include("includes/head_designed_htmlhead.php");
+
+?>
+<title>Kontakt na správce | Obce v kruhu.cz</title>
+</head>
+<body>
+
+<?php
+include("includes/head_designed_pageheader.php");
 
 /*destroy all the log ins after refresh
 session_destroy();*/
@@ -34,10 +42,10 @@ if(isset($_POST['post'])){
 		</div>
 </div>
 
-	<div class="col-md-8 col-xs-12 col-md-push-1 main_column column">
+	<div class="col-md-8 col-xs-12 col-md-push-1 main_column column" id="main_column">
 
     <div class="developercontact">
-      <h1>Ing. Simon Buryan</h1>
+      <h1>Ing. Simon Buryan, Ph.D.</h1>
       <img src="http://www.simonburyan.cz/circ8/assets/images/profile_pics/simon.jpg" alt="Ing. Simon Buryan">
       <h3>Project web developer, Project manager</h3>
       <h5 class="text-center"><strong>Contact:</strong></h5>
