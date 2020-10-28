@@ -2,7 +2,7 @@
 include("includes/head_designed_htmlhead.php");
 
 ?>
-
+<title>Feed | Obce v kruhu.cz</title>
 </head>
 <body>
 

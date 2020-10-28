@@ -2,7 +2,7 @@
 include("includes/head_designed_htmlhead.php");
 
 ?>
-
+<title>Žádosti o přidání nových kontaktů | Obce v kruhu.cz</title>
 </head>
 <body>
 

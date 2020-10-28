@@ -2,7 +2,7 @@
 include("includes/head_designed_htmlhead.php");
 ?>
 <link rel="stylesheet" href="assets/css/formElementsStyle2019.css">
-
+<title>Uživatelská nastavení | Obce v kruhu.cz</title>
 </head>
 <body>
 
@@ -36,7 +36,7 @@ include("includes/form_handlers/settings_handler.php");
   </div>
 </div>
 
-<div class="col-md-9 col-xs-12 col-md-push-1 main_column column" id="main_column">
+<div class="col-md-8 col-xs-12 col-md-push-1 main_column column" id="main_column">
 
 <?php
   $user_data_query = mysqli_query($con, "SELECT first_name, last_name, email, userRole FROM users WHERE username='$userLoggedIn'");

@@ -2,7 +2,7 @@
 include("includes/head_designed_htmlhead.php");
 
 ?>
-
+  <title>Tabulka typových řešení | Obce v kruhu.cz</title>
   <link rel="stylesheet" href="assets/css/projecttablestyle2019.css">
   <link rel="stylesheet" type="text/css" href="assets/libs/footablebootstrap/css/footable.bootstrap.min.css">
   <link rel="stylesheet" type="text/css" href="assets/css/checkboxes.css">
