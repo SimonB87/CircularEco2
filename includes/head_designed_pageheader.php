@@ -74,12 +74,12 @@
 
           if ($userRole === "super") {
             echo "<li><a href='manage.php' class='mainMenuItems mobileInvisible'>" .
-                    "<div class='mainMenuItemIcon'><i class='fas fa-user-tie'></i></div>" .
+                    "<div class='mainMenuItemIcon'><i class='fas fa-user-tie projectContent'></i></div>" .
                     "<div class='projectContent'>Administrace příkladů</div>" .
                   "</a></li>";
           } 
           echo "<li><a href='manageUserSubmissions.php' class='mainMenuItems mobileInvisible'>" .
-                "<div class='mainMenuItemIcon'><i class='far fa-edit'></i></div>" .
+                "<div class='mainMenuItemIcon'><i class='far fa-edit projectContent'></i></div>" .
                 "<div class='projectContent'>Mé podané příklady</div>" .
               "</a></li>";
           ?>
@@ -197,14 +197,14 @@
       if ($userRole === "super") {
         echo "<li class='websiteMobileMenu--Item invisible'>" .
                 "<a href='manage.php'>"  .
-                  "<span class='websiteMobileMenu--Icon'> <i class='fas fa-user-tie'></i> </span>"  .
+                  "<span class='websiteMobileMenu--Icon'> <i class='fas fa-user-tie projectContent'></i> </span>"  .
                   "<span class='websiteMobileMenu--Description projectContent'>Administrace příkladů</span>" .
                 "</a>" .
             "</li>"; 
       }
       echo "<li class='websiteMobileMenu--Item invisible'>" .
               "<a href='manageUserSubmissions.php'>"  .
-                "<span class='websiteMobileMenu--Icon'> <i class='far fa-edit'></i> </span>"  .
+                "<span class='websiteMobileMenu--Icon'> <i class='far fa-edit projectContent'></i> </span>"  .
                 "<span class='websiteMobileMenu--Description projectContent'>Mé podané příklady</span>" .
               "</a>" .
           "</li> " ;
