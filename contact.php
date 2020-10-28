@@ -40,7 +40,7 @@ if(isset($_POST['post'])){
 					</div>
 			</div>
 		</div>
-</div>
+  </div>
 
 	<div class="col-md-8 col-xs-12 col-md-push-1 main_column column" id="main_column">
 
