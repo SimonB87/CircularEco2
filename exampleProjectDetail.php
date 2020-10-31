@@ -1,7 +1,14 @@
 <?php
-include("includes/header.php");
+include("includes/head_designed_htmlhead.php");
+?>
+<title>Detail příkladu dobré praxe| Obce v kruhu.cz</title>
 
+</head>
+<body>
+<?php
 // user - submission detail view
+
+include("includes/head_designed_pageheader.php");
 
 if (isset($_SESSION['username'])) {
   $user_data_query = mysqli_query($con, "SELECT first_name, last_name, email, userRole FROM users WHERE username='$userLoggedIn'");
