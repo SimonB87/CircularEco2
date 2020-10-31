@@ -46,6 +46,8 @@
   z-index: 2;
   background-image: linear-gradient( to top, rgba(19, 21, 25, 0.5), rgba(19, 21, 25, 0.5) ), url(../images/backgrounds/overlay.png);
   background-attachment: fixed;
+  height: 100%;
+  min-height: 100vh;
 }
 
 a {
@@ -1027,6 +1029,11 @@ button.btn.btn-info a {
 
 .paddingTopBottom_medium{
   padding: 1rem 0;
+}
+
+.displayNone{
+  display: none;
+  visibility: hidden;
 }
 
 /* other generic styles - end */
