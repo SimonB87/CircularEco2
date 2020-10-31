@@ -105,16 +105,37 @@ include("includes/form_handlers/settings_handler.php");
   </form>
 
   <h3 class="paddingTopBottom_big">Změnit heslo</h3>
-  <form class="" action="settings.php" method="POST">
-    <p class="settingspara">Old password: <input type="password" name="old_password" id="settings_input_old_password" class="settingsin"></p><br>
-    <p class="settingspara">New password: <input type="password" name="new_password_1" id="settings_input_new_password_1" class="settingsin"></p><br>
-    <p class="settingspara">Varify new password: <input type="password" name="new_password_2" id="settings_input_new_password_2" class="settingsin"></p><br>
-    <?php echo $password_message; ?>
-    <input type="submit" name="update_password" id="save_password" value="Update Password" class="info settings_submit"><br>
-  </form>
+  
+    <form class="" action="settings.php" method="POST">
+      <div class="fields">
+      <div class="field half"> 
+        <label for="settings_input_old_password">Old password:</label>
+        <input type="password" name="old_password" id="settings_input_old_password" class="settingsin">
+      </div>
+      <div class="field half"> 
+        <label for="settings_input_new_password_1">New password: </label>
+        <input type="password" name="new_password_1" id="settings_input_new_password_1" class="settingsin">
+      </div>
+      <div class="field half"> 
+        <label for="settings_input_new_password_2">New password: </label>
+        <input type="password" name="new_password_2" id="settings_input_new_password_2" class="settingsin">
+      </div>
+      <div class="field half"> 
+        <p><?php echo $password_message; ?></p>
+      </div>
+      <div class="field half"> 
+        <input type="submit" name="update_password" id="save_password" value="Update Password" class="info settings_submit">
+      </div>  
+      </div>
+    </form>
+ 
 
-  <h4>Close Account</h4>
-  <form class="" action="settings.php" method="POST">
-    <input type="submit" name="close_account" id="close_account" value="Close Account" class="danger settings_submit">
-  </form>
+  <h3 class="paddingTopBottom_big">Close Account</h3>
+  <div class="fields">
+    <form class="" action="settings.php" method="POST">
+      <div class="field half"> 
+        <input type="submit" name="close_account" id="close_account" value="Close Account" class="danger settings_submit">
+      </div>
+    </form>
+  </div>
 </div>
