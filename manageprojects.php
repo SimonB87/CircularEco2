@@ -148,7 +148,7 @@ else {
                    "<span id='clickToAdDateTimeForAdmin' clickTarget='000' class='btn btn-default button-secondary' style='margin: 1.5rem 0;'>Vložit aktuání datum do pole</span><br>" .
                     "<textarea id='administratorDecisionLetter' name='administratorDecisionLetter' rows='10' class='newProjectForm input' required>" . $row["administratorDecisionLetter"] ."</textarea><br>" .
 
-                   "<div class='projectFormHiddenSection'>" .
+                   "<div class='projectFormHiddenSection displayNone'>" .
                    "<label for='id'><strong>ID : </strong><span class='hiddenLabelStyle'> * hidden </span></label><br>".
                    "<input type='text' id='id' class='newProjectForm input' name='id' value='" . $row['id'] . "'><br>" .
 
