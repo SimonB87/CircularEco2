@@ -2,7 +2,9 @@
 include("includes/head_designed_htmlhead.php");
 
 ?>
+<link rel="stylesheet" href="assets/css/formElementsStyle2019.css">
 <title>Cirkulární typové řešení | Obce v kruhu.cz</title>
+
 </head>
 <body>
 

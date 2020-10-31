@@ -14,7 +14,7 @@ form input[type="text"], form input[type="password"], form  input[type="email"],
   padding: 1.5rem;
 }
 
-form > .fields {
+form > .fields, form .fields  {
   display: -moz-flex;
   display: -webkit-flex;
   display: -ms-flex;
@@ -27,7 +27,7 @@ form > .fields {
   margin: -1.5rem 0 2rem -1.5rem;
 }
 
-  form > .fields > .field {
+  form > .fields > .field, form .fields .field {
     -moz-flex-grow: 0;
     -webkit-flex-grow: 0;
     -ms-flex-grow: 0;
@@ -40,7 +40,7 @@ form > .fields {
     width: calc(100% - 1.5rem);
   }
 
-    form > .fields > .field.half {
+    form > .fields > .field.half, form .fields .field.half {
       width: calc(50% - 0.75rem);
     }
 
@@ -54,17 +54,17 @@ form > .fields {
 
 @media screen and (max-width: 700px) {
 
-  .column form > .fields {
+  .column form > .fields, .column form .fields {
     width: calc(100% + 3rem);
     margin: -1.5rem 0 2rem -1.5rem;
   }
 
-  .column form > .fields > .field {
+  .column form > .fields > .field, .column form .fields .field {
     padding: 1.5rem 0 0 1.5rem;
     width: calc(100% - 1.5rem);
   }
 
-  .column form > .fields > .field.half {
+  .column form > .fields > .field.half, .column form .fields .field.half {
     width: calc(100% - 1.5rem);
   }
 
@@ -233,4 +233,8 @@ border-radius: 4px;
 
 form input[type="radio"] + label:before {
 border-radius: 100%;
+}
+
+.column .fields .field .newProjectForm.input{
+  width: 100%;
 }
