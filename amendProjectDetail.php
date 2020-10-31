@@ -2,7 +2,7 @@
 include("includes/head_designed_htmlhead.php");
 
 ?>
-
+<title>Upravit projekt | Obce v kruhu.cz</title>
 </head>
 <body>
 
