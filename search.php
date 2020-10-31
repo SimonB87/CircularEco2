@@ -1,5 +1,15 @@
 <?php
-include("includes/header.php");
+include("includes/head_designed_htmlhead.php");
+?>
+<link rel="stylesheet" href="assets/css/formElementsStyle2019.css">
+<title>Vyhledávání | Obce v kruhu.cz</title>
+</head>
+<body>
+
+<?php
+include("includes/head_designed_pageheader.php");
+
+include("includes/form_handlers/settings_handler.php");
 
 if(isset($_GET['q'])) {
   $query = $_GET['q'];
@@ -14,7 +24,7 @@ if(isset($_GET['type'])) {
 }
 ?>
 
-<div class="main_column column" id="main_column">
+<div class="col-md-8 col-xs-12 col-md-push-1 main_column column" id="main_column">
 
 <?php
  if ($query == "") {
