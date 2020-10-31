@@ -58,7 +58,7 @@ else {
  
     <div class="col-md-8 col-xs-12 col-md-push-1 main_column column" id="main_column">
       <section>
-        <h2 class="centertext">Zaslané projekty od veřejnosti:</h2>
+        <h2 class="centertext">Kategorie zaslaných příkladů od veřejnosti:</h2>
 
         <?php
         //conect to the database
