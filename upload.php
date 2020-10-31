@@ -1,5 +1,13 @@
 <?php
-include("includes/header.php");
+include("includes/head_designed_htmlhead.php");
+?>
+<link rel="stylesheet" href="assets/css/formElementsStyle2019.css">
+<title>Nahrát obrázek | Obce v kruhu.cz</title>
+</head>
+<body>
+
+<?php
+include("includes/head_designed_pageheader.php");
 ?>
 
 
@@ -167,7 +175,7 @@ if (isset($_POST['x'])){
 	    <form action="upload.php" method="post"  enctype="multipart/form-data">
 	        Upload something<br /><br />
 	        <input type="file" id="image" name="image" style="width:200px; height:30px; " /><br /><br />
-	        <input type="submit" value="Submit" style="width:85px; height:25px;" />
+	        <input type="submit" value="Submit" style="width:85px; height:25px; color: #000;" />
 	    </form><br /><br />
 
 	</div> <!-- Form-->
@@ -212,7 +220,7 @@ if (isset($_POST['x'])){
 
 	        <div id="CropImageForm2" style="width:100px; height:30px; float:left; margin:10px 0px 0px 40px;" >
 	            <form action="upload.php" method="post" onsubmit="return cancelCrop();">
-	                <input type="submit" value="Cancel Crop" style="width:100px; height:30px;"   />
+	                <input type="submit" value="Cancel Crop" style="width:100px; height:30px; color: #000;" />
 	            </form>
 	        </div>
 
