@@ -109,32 +109,32 @@ include("includes/form_handlers/settings_handler.php");
     <form class="" action="settings.php" method="POST">
       <div class="fields">
       <div class="field half"> 
-        <label for="settings_input_old_password">Old password:</label>
+        <label for="settings_input_old_password">Staré heslo:</label>
         <input type="password" name="old_password" id="settings_input_old_password" class="settingsin">
       </div>
       <div class="field half"> 
-        <label for="settings_input_new_password_1">New password: </label>
+        <label for="settings_input_new_password_1">Nové heslo: </label>
         <input type="password" name="new_password_1" id="settings_input_new_password_1" class="settingsin">
       </div>
       <div class="field half"> 
-        <label for="settings_input_new_password_2">New password: </label>
+        <label for="settings_input_new_password_2">Znovu nové heslo: </label>
         <input type="password" name="new_password_2" id="settings_input_new_password_2" class="settingsin">
       </div>
       <div class="field half"> 
         <p><?php echo $password_message; ?></p>
       </div>
       <div class="field half"> 
-        <input type="submit" name="update_password" id="save_password" value="Update Password" class="info settings_submit">
+        <input type="submit" name="update_password" id="save_password" value="Aktualizovat heslo" class="info settings_submit">
       </div>  
       </div>
     </form>
  
 
-  <h3 class="paddingTopBottom_big">Close Account</h3>
+  <h3 class="paddingTopBottom_big">Ukončit platnost účtu</h3>
   <div class="fields">
     <form class="" action="settings.php" method="POST">
       <div class="field half"> 
-        <input type="submit" name="close_account" id="close_account" value="Close Account" class="danger settings_submit">
+        <input type="submit" name="close_account" id="close_account" value="Zrušit účet" class="danger settings_submit">
       </div>
     </form>
   </div>
