@@ -18,7 +18,7 @@ require 'includes/form_handlers/login_handler.php';
     gtag('config', 'G-CSE7MKYW1L');
   </script>
 
-	<title>Cirkulární projekty | Web pro projekty v Cirkulární ekonomice a Oběhovém hospodářství</title>
+	<title>Registrace | Web pro projekty v Cirkulární ekonomice a Oběhovém hospodářství</title>
 	<link rel="stylesheet" type="text/css" href="assets/css/register_style.css">
 	<link rel="stylesheet" type="text/css" href="assets/css/main.css">
 	<link rel="stylesheet" type="text/css" href="assets/css/register.css">	
@@ -94,7 +94,7 @@ require 'includes/form_handlers/login_handler.php';
 						}
 						?>" required>
 						<br>
-						<?php if(in_array("Your first name must be between 2 and 25 characters<br>", $error_array)) echo "Your first name must be between 2 and 25 characters<br>"; ?>
+						<?php if(in_array("Your first name must be between 2 and 25 characters<br>", $error_array)) echo "Vše jméno musí mít počet znaků 2 až 25<br>"; ?>
 
 
 
@@ -105,7 +105,7 @@ require 'includes/form_handlers/login_handler.php';
 						}
 						?>" required>
 						<br>
-						<?php if(in_array("Your last name must be between 2 and 25 characters<br>", $error_array)) echo "Your last name must be between 2 and 25 characters<br>"; ?>
+						<?php if(in_array("Your last name must be between 2 and 25 characters<br>", $error_array)) echo "Vše příjmení musí mít počet znaků 2 až 25<br>"; ?>
 
 						<input type="email" name="reg_email" placeholder="Email" value="<?php
 						if(isset($_SESSION['reg_email'])) {
@@ -120,24 +120,24 @@ require 'includes/form_handlers/login_handler.php';
 						}
 						?>" required>
 						<br>
-						<?php if(in_array("Email already in use<br>", $error_array)) echo "Email already in use<br>";
-						else if(in_array("Invalid email format<br>", $error_array)) echo "Invalid email format<br>";
-						else if(in_array("Emails don't match<br>", $error_array)) echo "Emails don't match<br>"; ?>
+						<?php if(in_array("Email already in use<br>", $error_array)) echo "Email je již užíván<br>";
+						else if(in_array("Invalid email format<br>", $error_array)) echo "email nemá validní formát<br>";
+						else if(in_array("Emails don't match<br>", $error_array)) echo "Emaily se neshodují<br>"; ?>
 
 
 						<input type="password" name="reg_password" placeholder="Password" required>
 						<br>
 						<input type="password" name="reg_password2" placeholder="Confirm Password" required>
 						<br>
-						<?php if(in_array("Your passwords do not match<br>", $error_array)) echo "Your passwords do not match<br>";
-						else if(in_array("Your password can only contain english characters or numbers<br>", $error_array)) echo "Your password can only contain english characters or numbers<br>";
-						else if(in_array("Your password must be betwen 5 and 30 characters<br>", $error_array)) echo "Your password must be betwen 5 and 30 characters and include one or more characters.<br>"; ?>
+						<?php if(in_array("Your passwords do not match<br>", $error_array)) echo "Vaše hesla se neshodují<br>";
+						else if(in_array("Your password can only contain english characters or numbers<br>", $error_array)) echo "Vae heslo může obsahovat jen znaky bez diakritiky a čísla<br>";
+						else if(in_array("Your password must be betwen 5 and 30 characters<br>", $error_array)) echo "Vaše heslo musí mít od 5 do 30 znaků.<br>"; ?>
 
 
 						<input type="submit" name="register_button" value="Register">
 						<br>
 
-						<?php if(in_array("<span style='color: #14C800;'>You're all set! Go ahead and login!</span><br>", $error_array)) echo "<span style='color: #14C800;'>You're all set! Go ahead and login!</span><br>"; ?>
+						<?php if(in_array("<span style='color: #14C800;'>You're all set! Go ahead and login!</span><br>", $error_array)) echo "<span style='color: #14C800;'>Vše připraveno! Můžete se přihlásit!</span><br>"; ?>
 						<a href="#" id="signin" class="signup">Již máte účet? Vstupte zde!</a>
 					</form>
 				</div>
