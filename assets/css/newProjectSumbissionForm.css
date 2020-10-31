@@ -19,13 +19,6 @@
   padding: 0.5rem;
 }
 
-.projectFormHiddenSection {
-  opacity: 0.6;
-}
-
-.projectFormHiddenSection .newProjectForm.input {
-  line-height: 1.25rem;
-}
 
 @media only screen and (max-width: 1000px) {
   .newProjectForm.input {
