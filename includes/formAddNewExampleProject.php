@@ -9,9 +9,10 @@
 <form id="newProjectSubmitForm" method="post" action="processNewExampleProject.php" class="hiddenForm">
 <!-- Hidden -->
 
-    <div class="projectFormHiddenSection">
+    <div class="projectFormHiddenSection displayNone">
+
      <div class="fields">
-      <!-- TODO - nasázet všechny labely s imputama do fileds.half -->
+
       <div class="field half">
         <label for="prefilled_userName">Username: <span class="hiddenLabelStyle"> * hidden </span></label>
         <input type="text" id="prefilled_userName" class="newProjectForm input" name="prefilled_userName" value="<?php echo $user['username']; ?>">
