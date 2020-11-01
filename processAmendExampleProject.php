@@ -1,7 +1,17 @@
 <?php
 require 'config/config_localparts.php';
 
-include("includes/header.php");
+include("includes/head_designed_htmlhead.php");
+
+?>
+<link rel="stylesheet" href="assets/css/formElementsStyle2019.css">
+<title>Úprava příkladu dobré praxe | Obce v kruhu.cz</title>
+
+</head>
+<body>
+
+<?php
+include("includes/head_designed_pageheader.php");
 
 
 // Create connection
@@ -111,16 +121,20 @@ if ($results-> num_rows > 0 ) {
            "<h2>Nový záznam zapsán do databáze.</h2> <h4>Děkujeme Vám za Váš podmět, již se mu věnujeme. </h4>";
       
     } else {
+      echo "<div class='col-md-8 col-xs-12 col-md-push-1 main_column column'>";
       echo "<h2>Chyba: </h2><br>". $sql ." ". $dbConnection->error;
       echo "<a href='manageUserSubmissions.php'><button type= 'button ' class= 'btn btn-primary ' style= 'margin-bottom: 1.5rem;' >Zpět na mé projekty</button></a></div>";
+      echo "</div>";
     }
       $dbConnection->close();
     }
   
 
 } else{
+    echo "<div class='col-md-8 col-xs-12 col-md-push-1 main_column column'>";
     echo "<h3>Došlo k chybě. Opakujte akci později</h3>" .
          "<a href='manageUserSubmissions.php'><button type='button' class='btn btn-info' style='margin-bottom: 1.5rem;'> Zpět na mé projekty </button> </a>";
+    echo "</div>";
     //Close the variable after finishing
     $con-> close();
     die();

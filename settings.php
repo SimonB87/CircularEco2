@@ -37,19 +37,20 @@ include("includes/form_handlers/settings_handler.php");
 </div>
 
 <div class="col-md-8 col-xs-12 col-md-push-1 main_column column" id="main_column">
+<div class="settingsContent">
 
-<?php
-  $user_data_query = mysqli_query($con, "SELECT first_name, last_name, email, userRole FROM users WHERE username='$userLoggedIn'");
-  $row = mysqli_fetch_array($user_data_query);
-  $first_name = $row['first_name'];
-  $last_name = $row['last_name'];
-  $email = $row['email'];
-  $userRole = $row['userRole'];
+  <?php
+    $user_data_query = mysqli_query($con, "SELECT first_name, last_name, email, userRole FROM users WHERE username='$userLoggedIn'");
+    $row = mysqli_fetch_array($user_data_query);
+    $first_name = $row['first_name'];
+    $last_name = $row['last_name'];
+    $email = $row['email'];
+    $userRole = $row['userRole'];
 
-  if ($userRole === "super") {
-    echo "<div><a href='manage.php'><button type= 'button' class='btn btn-primary' style= 'margin-bottom: 1.5rem;' > Administrace příkladů <i class='fas fa-user-tie'></i> </button> </a>";
-  } 
-  echo "<a href='manageUserSubmissions.php'><button type='button' class='btn btn-info' style='margin-bottom: 1.5rem;'> Mé podané příklady <i class='far fa-edit'></i> </button> </a></div>";
+    if ($userRole === "super") {
+      echo "<div><a href='manage.php'><button type= 'button' class='btn btn-primary' style= 'margin-bottom: 1.5rem;' > Administrace příkladů <i class='fas fa-user-tie'></i> </button> </a>";
+    } 
+    echo "<a href='manageUserSubmissions.php'><button type='button' class='btn btn-info' style='margin-bottom: 1.5rem;'> Mé podané příklady <i class='far fa-edit'></i> </button> </a></div>";
   ?>
 
   <h1 class="paddingTopBottom_big">Nastavení účtu</h1>
@@ -87,12 +88,6 @@ include("includes/form_handlers/settings_handler.php");
       </div>
 
     </div>
-
-<!--     <p class="settingspara">First name: <input type="text" name="first_name" value="<?php /*echo $first_name;*/ ?>" id="settings_input_first_name" class="settingsin"></p>
-
-    <p class="settingspara">Last name: <input type="text" name="last_name" value="<?php /*echo $last_name; */?>" id="settings_input_last_name" class="settingsin"></p>
-
-    <p class="settingspara">Email: <input type="text" name="email" value="<?php /*echo $email;*/ ?>" id="settings_input_email" class="settingsin"></p> -->
 
     <div class="field half">
       <?php echo $message; ?>
@@ -138,4 +133,5 @@ include("includes/form_handlers/settings_handler.php");
       </div>
     </form>
   </div>
+</div>
 </div>

@@ -1,5 +1,14 @@
 <?php
-include("includes/header.php");
+include("includes/head_designed_htmlhead.php");
+?>
+<link rel="stylesheet" href="assets/css/formElementsStyle2019.css">
+
+<title>Zprávy a korespondence | Obce v kruhu.cz</title>
+</head>
+<body>
+
+<?php
+include("includes/head_designed_pageheader.php");
 
 $message_obj = new Message($con, $userLoggedIn);
 
@@ -78,16 +87,24 @@ if($user_to != "new")
 		 <form action="" method="POST">
 			 <?php
 			 if($user_to == "new") {
-				 echo "Select the friend you would like to message <br><br>";
+				 echo "Vyberte přítele, kterému chcete poslat zprávu: <br>";
 				 ?>
-				 To: <input type='text' onkeyup='getUsers(this.value, "<?php echo $userLoggedIn; ?>")' name='q' placeholder='Name' autocomplete='off' id='seach_text_input'>
+				 
+				 <div class='fields'><div class='field full'>
+				 	<label for="seach_text_input">
+				 	<input type='text' onkeyup='getUsers(this.value, "<?php echo $userLoggedIn; ?>")' name='q' placeholder='Name' autocomplete='off' id='seach_text_input'>
+				</div></div>
 
 				 <?php
 				 echo "<div class='results'></div>";
 			 }
 			 else {
-				 echo "<textarea name='message_body' id='message_textarea' placeholder='Write your message ...'></textarea>";
-				 echo "<input type='submit' name='post_message' class='info' id='message_submit' value='Send'>";
+				 echo "<div class='fields'><div class='field full'>".
+							 "<textarea name='message_body' id='message_textarea' placeholder='Napište svou zprávu ...'></textarea>".
+							 "</div></div>";
+				 echo "<div class='fields'><div class='field full'>".
+							 "<input type='submit' name='post_message' class='info' id='message_submit' value='Odeslat'>".
+							 "</div></div>";
 			 }
 
 			 ?>

@@ -21,12 +21,13 @@ $replyto	=		"From: " . $prefilled_email . " \n\r" . "Reply-To:" . $prefilled_ema
 
 $headers = "Content-Type: text/html; charset=UTF-8";
 
+echo "<div class='col-md-8 col-xs-12 col-md-push-1 main_column column'>";
 if (mail($to, $subject, $message, $headers)) {
   //test
-  //echo "<h4>Email odeslán.</h4> <p>v pořádku.</p>";//test
+  echo "<h4>Žádost byla odeslána.</h4> <p>Děkujeme za využití našich služeb.</p>";
 } else {
   //test
-  echo "<p>Chyba! Email neodeslán<p>";//test
+  echo "<p>Chyba! Email neodeslán<p> <p>Informujte případně správce.</p>";//test
 }
-
+echo "</div>";
 ?>

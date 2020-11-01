@@ -26,6 +26,7 @@ if (mysqli_connect_error()){
   
   if ($dbConnection->query($sql)){
     include("includes/header.php");
+    echo "<div class='col-md-8 col-xs-12 col-md-push-1 main_column column'>";
     echo "<a href='" . $prefilled_currentUrl . "'><button type= 'button' class= 'btn btn-primary' style= 'margin-bottom: 1.5rem;' >Zpět</button></a><br>". 
          "<a href= 'manage.php'><button type='button' class='btn btn-primary' style= 'margin-bottom: 1.5rem;'>Zpět na žádosti</button></a>" .
          "<h3>Žádost: ID: " . $id . " byla upravena administrátorem. Nový stav je: " . $prefilled_submissionStatus ." </h3>";
@@ -49,12 +50,14 @@ if (mysqli_connect_error()){
       include("includes/sendEmailNotificationToAdmin_submApproved.php");
     }
 
-
+    echo "</div>";
   } else {
     include("includes/header.php");
+    echo "<div class='col-md-8 col-xs-12 col-md-push-1 main_column column'>";
     echo "<h3>Chyba: </h3><br>". $sql ." ". $dbConnection->error . "<br>";
     echo "<a href='" . $prefilled_currentUrl ."'><button type= 'button ' class= 'btn btn-primary ' style= 'margin-bottom: 1.5rem;' >Zpět</button></a>" .
          "<a href= 'manage.php'><button type='button' class='btn btn-primary' style= 'margin-bottom: 1.5rem;'>Zpět na žádosti</button></a>";
+    echo "</div>";
   }
     $dbConnection->close();
   }

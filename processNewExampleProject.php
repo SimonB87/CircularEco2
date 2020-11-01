@@ -1,6 +1,18 @@
 <?php
 require 'config/config_localparts.php';
 
+include("includes/head_designed_htmlhead.php");
+
+?>
+<link rel="stylesheet" href="assets/css/formElementsStyle2019.css">
+<title>Zpracování žádosti o příklad dobré praxe | Obce v kruhu.cz</title>
+
+</head>
+<body>
+
+<?php
+include("includes/head_designed_pageheader.php");
+
 $prefilled_userName = filter_input(INPUT_POST, 'prefilled_userName');
 $prefilled_email = filter_input(INPUT_POST, 'prefilled_email');
 $prefilled_firstName = filter_input(INPUT_POST, 'prefilled_firstName');
@@ -43,14 +55,14 @@ if (!empty($prefilled_userName )) {
       $sql = "INSERT INTO exampleprojects (prefilled_userName, prefilled_email, prefilled_firstName, prefilled_lastName, prefilled_submissionStatus, prefilled_submissionDate, projectGroup, projectGroupCode, projectName, projectLocality, projectReferenceMain, projectReferenceOther, projectDescription, projectCosts, projectLegalIssues, administratorDecisionLetter, submitterDecisionResponse) VALUES ('$prefilled_userName', '$prefilled_email', '$prefilled_firstName', '$prefilled_lastName', '$prefilled_submissionStatus', '$prefilled_submissionDate', '$projectGroup', '$projectGroupCode','$projectName', '$projectLocality', '$projectReferenceMain', '$projectReferenceOther', '$projectDescription', '$projectCosts', '$projectLegalIssues', '$administratorDecisionLetter', '$submitterDecisionResponse')";
       
       if ($dbConnection->query($sql)){
-        include("includes/header.php");
+        echo "<div class='col-md-8 col-xs-12 col-md-push-1 main_column column'>";
         echo "<a href='" . $prefilled_currentUrl ."'><button type= 'button ' class= 'btn btn-primary ' style= 'margin-bottom: 1.5rem;' >Zpět</button></a><br>" .
-             "<h2>Nový záznam zapsán do databáze. </h2> <p> Děkujeme Vám za Váš podmět, již se mu věnujeme. </p>";
+             "<h2>Nový záznam zapsán do databáze. </h2> <p> Děkujeme Vám za Váš podmět, již se mu věnujeme. </p></div>";
         
       } else {
-        include("includes/header.php");
+        echo "<div class='col-md-8 col-xs-12 col-md-push-1 main_column column'>";
         echo "<a href='" . $prefilled_currentUrl ."'><button type= 'button ' class= 'btn btn-primary ' style= 'margin-bottom: 1.5rem;' >Zpět</button></a></div>";
-        echo "<h2>Chyba: </h2><br>". $sql ." ". $dbConnection->error;
+        echo "<h2>Chyba: </h2><br>". $sql ." ". $dbConnection->error ."</div>";
       }
         $dbConnection->close();
       }

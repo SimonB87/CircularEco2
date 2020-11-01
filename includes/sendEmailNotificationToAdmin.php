@@ -42,10 +42,11 @@ $replyto	=		"From: " . $prefilled_email . " \n\r" . "Reply-To:" . $prefilled_ema
 
 $headers = "Content-Type: text/html; charset=UTF-8";
 
+echo "<div class='col-md-8 col-xs-12 col-md-push-1 main_column column'>";
 if (mail($to, $subject, $message, $headers)) {
   echo "<h4>Žádost byla odeslána.</h4> <p>Děkujeme za využití našich služeb.</p>";
 } else {
   echo "<h4>Objevila se chyba.</h4> <p>Informujte případně správce.</p>";
 }
-
+echo "</div>";
 ?>
