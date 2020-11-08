@@ -63,12 +63,37 @@ a:hover {
 .top_bar {
   width: 100%;
   height: 9rem;
-  background-color: var(--main-dark-color);
-  border-bottom: 0.25em solid var(--main-light-color);
+  background-color: #333;
   margin: 0 0 10px 0;
   display: inline-flex;
   position: fixed; /*make the nav fixed*/
   z-index: 10; /*show the nav first over before the body*/
+  padding-top: 1.75rem;
+}
+
+.top_bar nav li a.mainMenuItems{
+  position: relative;
+}
+
+.top_bar nav li.dropdown{
+  position: relative;
+}
+
+.top_bar nav li.dropdown .dropdown-content {
+  opacity: 0;
+  transition: all 0.25s ease-in 0.25s;
+}
+
+.top_bar nav li.dropdown:hover .dropdown-content{
+  position: absolute;
+  top: 6rem;
+  right: 0;
+  display: block;
+  visibility: visible;
+  background: #666;
+  min-width: 20rem;
+  opacity: 1;
+  padding: 1rem 2rem 2.5rem 2rem;
 }
 
 .logo a {
@@ -113,7 +138,7 @@ nav #websiteMobileMenu {
 nav #websitePcMenu li {
   text-align: center;
   margin: 0 auto;
-  padding-right: 0.5rem;
+  padding-right: 2.5rem;
 }
 nav #websitePcMenu li a div {
   margin-top: 0.75rem;
@@ -952,7 +977,7 @@ button.btn.btn-info a {
     visibility: visible;
     color: #fff;
     padding: 1rem;
-    background-color: var(--main-dark-color);
+    background-color: #333;
     width: 3rem;
     right: 2rem;
   }
@@ -979,6 +1004,7 @@ button.btn.btn-info a {
     flex-direction: column;
     font-size: 2rem;
     margin-top: 10px;
+    background-color: #333;
   }
 
   nav #websiteMobileMenu .websiteMobileMenu--Item {
@@ -1002,7 +1028,6 @@ button.btn.btn-info a {
   }
 
   nav .websiteMobileMenu--Item {
-    background-color: var(--main-dark-color);
     padding: 0.5rem 1rem;
     width: 10rem;
     float: right;

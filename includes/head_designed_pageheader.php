@@ -41,7 +41,7 @@
         }
       </script>
 
-        <ul id="websitePcMenu">
+        <ul id="websitePcMenu" class="websitePcMenu">
 
         <li>
           <a href="#" class="mainMenuItems mobileInvisible">
@@ -52,41 +52,43 @@
         
 
         <li> 
-        <a href="index.php" class="mainMenuItems mobileInvisible">
-          <div class="mainMenuItemIcon"><i class="fa fa-home fa-lg"></i></div>
-          <div class="nav-icon-mobile">Novinky</div>
-        </a>
+          <a href="index.php" class="mainMenuItems mobileInvisible">
+            <div class="mainMenuItemIcon"><i class="fa fa-home fa-lg"></i></div>
+            <div class="nav-icon-mobile">Novinky</div>
+          </a>
         </li>
 
-          <!--  <a href="project.php" class="mainMenuItems mobileInvisible">
-          <div class="mainMenuItemIcon"><i class="fas fa-frog projectContent"></i></div>
-          <div class="projectContent">Přehled řešení</div>
-        </a> -->
+        <li class="dropdown">
+          <a class="mainMenuItems mainMenuItems--largeScreen mobileInvisible">
+              <div class="mainMenuItemIcon"><i class="fas fa-user-tie projectContent"></i></div>
+              <div class="nav-icon-mobile projectContent">Typová řešení <i class="fas fa-angle-down"></i> </div>
 
-        <?php
-          $user_data_query = mysqli_query($con, "SELECT first_name, last_name, email, userRole FROM users WHERE username='$userLoggedIn'");
-          $row = mysqli_fetch_array($user_data_query);
-          $first_name = $row['first_name'];
-          $last_name = $row['last_name'];
-          $email = $row['email'];
-          $userRole = $row['userRole'];
+              <div class='dropdown-content displayNone'> <!-- start of responsive drop down -->
+                <a href="tableprojects.php" class="dropdown-content__item">
+                  <div class="mainMenuItemIcon"><i class="fas fa-dove "></i></div>
+                  <div class="">Tabulka typových řešení</div>
+                </a>
 
-          if ($userRole === "super") {
-            echo "<li><a href='manage.php' class='mainMenuItems mobileInvisible'>" .
-                    "<div class='mainMenuItemIcon'><i class='fas fa-user-tie projectContent'></i></div>" .
-                    "<div class='projectContent'>Administrace příkladů</div>" .
-                  "</a></li>";
-          } 
-          echo "<li><a href='manageUserSubmissions.php' class='mainMenuItems mobileInvisible'>" .
-                "<div class='mainMenuItemIcon'><i class='far fa-edit projectContent'></i></div>" .
-                "<div class='projectContent'>Mé podané příklady</div>" .
-              "</a></li>";
-          ?>
+            <?php
+              $user_data_query = mysqli_query($con, "SELECT first_name, last_name, email, userRole FROM users WHERE username='$userLoggedIn'");
+              $row = mysqli_fetch_array($user_data_query);
+              $first_name = $row['first_name'];
+              $last_name = $row['last_name'];
+              $email = $row['email'];
+              $userRole = $row['userRole'];
 
-      <li>  
-        <a href="tableprojects.php" class="mainMenuItems mobileInvisible">
-          <div class="mainMenuItemIcon"><i class="fas fa-dove projectContent"></i></div>
-          <div class="projectContent">Typová řešení</div>
+              if ($userRole === "super") {
+                echo "<a href='manage.php' class='dropdown-content__item'>" .
+                        "<div class='mainMenuItemIcon'><i class='fas fa-user-tie '></i></div>" .
+                        "<div class=''>Administrace příkladů</div>" .
+                      "</a>";
+              } 
+              echo "<a href='manageUserSubmissions.php' class='dropdown-content__item'>" .
+                    "<div class='mainMenuItemIcon'><i class='far fa-edit '></i></div>" .
+                    "<div class=''>Mé podané příklady</div>" .
+                  "</a>";
+              ?>
+          </div><!-- end of responsive drop down -->
         </a>
       </li>
 
@@ -128,39 +130,38 @@
         </a>
       </li>
 
-      <li>   
+      <li class="dropdown">   
         <a href="settings.php" class="mainMenuItems mobileInvisible"> 
-          <div class="mainMenuItemIcon"><i class="fa fa-cog fa-lg"></i></div>
-          <div>Nastavení</div>
+          <div class="mainMenuItemIcon"> <i class="fas fa-user-cog"></i> </div>
+          <div>Další <i class="fas fa-angle-down"></i> </div>
         </a>
+        <div class='dropdown-content displayNone'> <!-- start of responsive drop down -->
+
+          <a href="settings.php" class="mainMenuItems mobileInvisible"> 
+            <div class="mainMenuItemIcon"><i class="fa fa-cog fa-lg"></i></div>
+            <div>Nastavení</div>
+          </a>
+
+          <a href="#" class="mainMenuItems mobileInvisible">
+            <div class="mainMenuItemIcon"><i class="fas fa-question"></i></div>
+            <div>Nápověda</div>
+          </a>
+
+          <a href="contact.php" class="mainMenuItems mobileInvisible"> 
+            <div class="mainMenuItemIcon"><i class="far fa-comment"></i></div>
+            <div>Správce</div>
+          </a>
+
+        </div>
+
       </li>
-        
-      <li>   
-        <a href="#" class="mainMenuItems mobileInvisible">
-          <div class="mainMenuItemIcon"><i class="fas fa-question"></i></div>
-          <div>Nápověda</div>
-        </a>
-      </li>
-        
-      <li> 
-        <a href="contact.php" class="mainMenuItems mobileInvisible"> 
-          <div class="mainMenuItemIcon"><i class="far fa-comment"></i></div>
-          <div>Správce</div>
-        </a>
-      </li>
-        
-      <li>   
+
+      <li>
         <a href="includes\handlers\logout.php" class="mainMenuItems mobileInvisible">
           <div class="mainMenuItemIcon"> <i class="fa fa-sign-out-alt fa-lg"></i></div>
           <div>Odejít</div>
         </a>
       </li>
-
-      <!--
-      <a href="messages.php" class="mainMenuItems mobileInvisible"><i class="far fa-comment-alt"></i></i></a>
-      -->
-    
-      <!--<a href="upload.php" class="mainMenuItems mobileInvisible"> <i class="fa fa-cog fa-lg"></i></a> -->
 
     </ul>
 
@@ -184,13 +185,6 @@
             <span class="websiteMobileMenu--Description">Novinky</span>
           </a>
         </li> 
-    
-<!--       <li class="websiteMobileMenu--Item invisible">
-          <a href="project.php"> 
-            <span class="websiteMobileMenu--Icon"> <i class="fas fa-frog projectContent"></i> </span> 
-            <span class="websiteMobileMenu--Description projectContent">Přehled řešení</span>
-          </a>
-      </li>      -->
 
       <?php 
       if ($userRole === "super") {
