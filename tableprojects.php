@@ -43,7 +43,7 @@ include("includes/head_designed_pageheader.php");
   </div>
 </div>
 
-<div class="col-md-12 col-xs-12 col-md-push-1 main_column column extraDarkBack">
+<div class="col-md-12 col-xs-12 main_column column extraDarkBack">
 
   <div class="project_table">
 
@@ -77,7 +77,7 @@ include("includes/head_designed_pageheader.php");
                   <br>
                   <input type="text" class="hledej form-control" id="myInput0" onkeyup="mySearchColumnFunction(0)" placeholder="Hledej ..." title="Hledej ...">
                 </th>
-                <th data-breakpoints="xs sm md">
+                <th data-breakpoints="xs sm md" style="min-width: 25vw;">
                   <strong>Plný popis </strong> 
                   <br>
                   <span><i>Seřadit</i></span> <!-- onclick="sortTable(1)" -->
