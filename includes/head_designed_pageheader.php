@@ -54,14 +54,14 @@
         <li> 
           <a href="index.php" class="mainMenuItems mobileInvisible">
             <div class="mainMenuItemIcon"><i class="fa fa-home fa-lg"></i></div>
-            <div class="nav-icon-mobile">Novinky</div>
+            <div class="nav-icon-mobile mainMenuItems__navTitle">Novinky</div>
           </a>
         </li>
 
-        <li class="dropdown">
+        <li class="dropdown navItem__typovaReseni">
           <a class="mainMenuItems mainMenuItems--largeScreen mobileInvisible">
               <div class="mainMenuItemIcon"><i class="fas fa-user-tie projectContent"></i></div>
-              <div class="nav-icon-mobile projectContent">Typová řešení <i class="fas fa-angle-down"></i> </div>
+              <div class="nav-icon-mobile projectContent mainMenuItems__navTitle">Typová řešení <i class="fas fa-angle-down"></i> </div>
 
               <div class='dropdown-content displayNone'> <!-- start of responsive drop down -->
                 <a href="tableprojects.php" class="dropdown-content__item">
@@ -92,23 +92,23 @@
         </a>
       </li>
 
-      <li>  
+      <li>
         <a href="javascript:void(0);" onclick="getDropdownData('<?php echo $userLoggedIn; ?>', 'message')" class="mainMenuItems mobileInvisible"> 
           <div class="mainMenuItemIcon"><i class="fa fa-envelope fa-lg"></i></div>
-          <div>Zprávy
+          <div class="mainMenuItems__navTitle">Zprávy
             <?php
             if($num_notifications > 0){
                 echo '<span class="notification_badge unread_notification" id="unread_notifications">' . $num_notifications .'</span> ';
             }
             ?>
-          </div>        
+          </div>
         </a>
       </li>
 
       <li>   
         <a href="javascript:void(0);" onclick="getDropdownData('<?php echo $userLoggedIn; ?>', 'notification')" class="mainMenuItems mobileInvisible">
           <div class="mainMenuItemIcon"><i class="fas fa-eye"></i></div>
-          <div>Upozornění
+          <div class="mainMenuItems__navTitle">Upozornění
           <?php
           if($num_messages > 0){
               echo '<span class="notification_badge unread_message" id="unread_message">' . $num_messages .'</span> ';
@@ -120,7 +120,7 @@
       <li>
         <a href="requests.php" class="mainMenuItems mobileInvisible"> 
           <div class="mainMenuItemIcon"><i class="fa fa-users fa-lg"></i></div>
-          <div>Kontakty
+          <div class="mainMenuItems__navTitle">Kontakty
           <?php
           if($num_requests > 0){
               echo '<span class="notification_badge unread_requests" id="unread_requests">' . $num_requests .'</span> ';
@@ -133,7 +133,7 @@
       <li class="dropdown">   
         <a href="settings.php" class="mainMenuItems mobileInvisible"> 
           <div class="mainMenuItemIcon"> <i class="fas fa-user-cog"></i> </div>
-          <div>Další <i class="fas fa-angle-down"></i> </div>
+          <div class="mainMenuItems__navTitle">Další <i class="fas fa-angle-down"></i> </div>
         </a>
         <div class='dropdown-content displayNone'> <!-- start of responsive drop down -->
 
@@ -159,7 +159,7 @@
       <li>
         <a href="includes\handlers\logout.php" class="mainMenuItems mobileInvisible">
           <div class="mainMenuItemIcon"> <i class="fa fa-sign-out-alt fa-lg"></i></div>
-          <div>Odejít</div>
+          <div class="mainMenuItems__navTitle">Odejít</div>
         </a>
       </li>
 
