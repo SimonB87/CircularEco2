@@ -328,7 +328,7 @@ nav a:hover div i {
 }
 
 #comment_iframe {
-  max-height: 250px;
+  max-height: 30rem;
   width: 100%;
   margin-top: 5px;
 }
@@ -342,6 +342,8 @@ iframe {
 .comment_section {
   padding: 0 5px 5px 5px;
   width: 100%;
+  color: #fff;
+  font-size: 0.8rem;
 }
 
 .comment_section img {
@@ -384,9 +386,10 @@ iframe {
 }
 
 .newsfeedPostOptions iframe {
-  border: 0px;
-  height: 17px;
-  width: 120px;
+  border: 0;
+  margin: 2px;
+  height: 2rem;
+  width: 30rem;
 }
 
 .comment_like {
@@ -581,6 +584,10 @@ button.btn.btn-info a {
 .centertext,
 .developertext {
   text-align: center;
+}
+
+.admin-contact-img{
+  width: 50%;
 }
 
 /* contact end */
@@ -915,6 +922,7 @@ button.btn.btn-info a {
 .sortAction{
   padding: 0.5rem;
   color: #4caf50;
+  cursor: pointer;
 }
 
 .btn.btn-default.button-secondary {
@@ -939,46 +947,7 @@ button.btn.btn-info a {
 }
 
 @media only screen and (max-width: 768px) {
-  /*
-  nav {
-    display: flex;
-    flex-direction: column;
-    background: var(--main-dark-color);
-    top: 0px;
-  }
-  nav a {
-    width: 150px;
-    display: inline-flex;
-    padding: 0 10px;
-  }
-  nav .nav-mobile-hamburger,
-  nav .nav-menu-mobile {
-    display: flex;
-    flex-direction: row-reverse;
-  }
 
-  nav .nav-menu-mobile-hamburger {
-    text-align: right;
-  }
-
-  nav a.mobileInvisible:not(:first-child) {
-    display: none;
-    visibility: hidden;
-  }
-
-  nav a i.fas {
-    margin-right: 10px;
-  }
-  nav a:hover {
-    border-bottom: 0px;
-  }
-  nav a .nav-icon-mobile {
-    width: 40px;
-  }
-  .mainMenuItems {
-    padding-bottom: 6px;
-  }
-  */
   span.nav-repsonsive-description {
     display: block;
   }

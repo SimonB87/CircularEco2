@@ -45,8 +45,8 @@ if(isset($_POST['post'])){
 	<div class="col-md-8 col-xs-12 col-md-push-1 main_column column" id="main_column">
 
     <div class="developercontact">
-      <h1>Ing. Simon Buryan, Ph.D.</h1>
-      <img src="http://www.simonburyan.cz/circ8/assets/images/profile_pics/simon.jpg" alt="Ing. Simon Buryan">
+      <h2>Ing. Simon Buryan, Ph.D.</h2>
+      <img class="admin-contact-img" src="assets/images/profile_pics/simon.jpg" alt="Ing. Simon Buryan">
       <h3>Project web developer, Project manager</h3>
       <h5 class="text-center"><strong>Contact:</strong></h5>
     </div>
@@ -65,9 +65,9 @@ if(isset($_POST['post'])){
 
       <div class="col-md-6 developertext">
         <p class="strongtext">Personal Contact:</p>
-        <p>simon.buryan{at}vse.cz</p>
+        <p>email { at } simonburyan.cz</p>
         <p>+420 731443262</p>
-        <p>NB032</p>
+        <p>Místnost: NB032</p>
       </div>
 
       </div>

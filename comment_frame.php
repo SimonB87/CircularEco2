@@ -30,6 +30,40 @@ else {
 		a{
 			text-decoration: none;
 		}
+		.comment_frame_postForm{
+			width: 100%;
+		}
+		.comment_frame_postForm textarea{
+			width: 100%;
+			min-height: 5rem;
+			font-size: 1.25rem;
+			letter-spacing: 1px;
+			background: rgba(27, 31, 34, 0.85);
+			color: #fff;
+		}
+		.comment_frame_postForm__submit{
+			text-decoration: none;
+			background: #e5b896;
+			color: #000;
+			font-size: 1.25rem;
+			margin-top: 0.5rem;
+			padding: 0.5rem;
+			border: none;
+		}
+		.comment_section {
+			color: #fff;
+			font-size: 1.25rem;
+		}
+		.comment_section img{
+			margin-right: 1rem;
+		}
+		.comment_section a{
+			color: #96e5b8;
+		}
+		.comment_section a:visited, .comment_section a:focus{
+			color: 	#9ce596;
+		}
+
 	</style>
 
 
@@ -87,12 +121,12 @@ else {
 			}
 		}
 
-		echo "<p>Comment Posted! </p>";
+		echo "<p style='color:#96e5b8;'>Komentář zaslán </p>";
 	}
 	?>
-	<form action="comment_frame.php?post_id=<?php echo $post_id; ?>" id="comment_form" name="postComment<?php echo $post_id; ?>" method="POST">
+	<form class="comment_frame_postForm" action="comment_frame.php?post_id=<?php echo $post_id; ?>" id="comment_form" name="postComment<?php echo $post_id; ?>" method="POST">
 		<textarea name="post_body"></textarea>
-		<input type="submit" name="postComment<?php echo $post_id; ?>" value="Post">
+		<input class="comment_frame_postForm__submit" type="submit" name="postComment<?php echo $post_id; ?>" value="Zaslat">
 	</form>
 
 	<!-- Load comments -->

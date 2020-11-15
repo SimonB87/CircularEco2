@@ -31,9 +31,11 @@ else {
 
       *{
         font-family: Arial, Helvetica, sans-serif;
+        padding: 2px;
       }
 
-      body {background: transparent;
+      body {
+        background: transparent;
       }
 
       input.comment_like {
@@ -103,20 +105,20 @@ else {
     $num_rows = mysqli_num_rows($check_query);
 
     if($num_rows > 0) {
-      echo '<form action="like.php?post_id='  . $post_id . '" method="POST">
+      echo '<form action="like.php?post_id=' . $post_id . '" method="POST" style="min-width: 30rem;">
               <input type="submit" class="comment_like" name="unlike_button" value="Dát ♥">
-              <div class="like_value">
-                '. $total_likes . ' Likes
-              </div>
+              <span class="like_value">
+                '. $total_likes . ' počet ♥
+              </span>
             </form>
        ';
     }
     else {
-      echo '<form action="like.php?post_id='  . $post_id . '" method="POST">
+      echo '<form action="like.php?post_id=' . $post_id . '" method="POST" style="min-width: 30rem;">
               <input type="submit" class="comment_like" name="like_button" value="Odebrat ♥ ">
-              <div class="like_value">
-                '. $total_likes . ' Likes
-              </div>
+              <span class="like_value">
+                '. $total_likes . ' počet ♥
+              </span>
             </form>
        ';
     }

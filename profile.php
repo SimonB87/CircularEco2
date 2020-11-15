@@ -191,7 +191,7 @@ include("includes/head_designed_pageheader.php");
       </div>
 
       <div class="modal-body">
-      	<p>This will appear on the user's profile page and also their newsfeed for your friends to see!</p>
+      	<p> Toto se ukáže na uživatelově profilu a také na nástěnce s Novinkami, kde to uvidí i Vaši přátelé.</p>
 
       	<form class="profile_post" action="" method="POST">
       		<div class="form-group">
