@@ -60,12 +60,12 @@
 
         <li class="dropdown navItem__typovaReseni">
           <a class="mainMenuItems mainMenuItems--largeScreen mobileInvisible">
-              <div class="mainMenuItemIcon"><i class="fas fa-user-tie projectContent"></i></div>
+              <div class="mainMenuItemIcon"><i class="fas fa-project-diagram projectContent"></i></div>
               <div class="nav-icon-mobile projectContent mainMenuItems__navTitle">Typová řešení <i class="fas fa-angle-down"></i> </div>
 
               <div class='dropdown-content displayNone'> <!-- start of responsive drop down -->
                 <a href="tableprojects.php" class="dropdown-content__item">
-                  <div class="mainMenuItemIcon"><i class="fas fa-dove "></i></div>
+                  <div class="mainMenuItemIcon"><i class="fas fa-thumbtack "></i></div>
                   <div class="">Tabulka typových řešení</div>
                 </a>
 
@@ -79,8 +79,8 @@
 
               if ($userRole === "super") {
                 echo "<a href='manage.php' class='dropdown-content__item'>" .
-                        "<div class='mainMenuItemIcon'><i class='fas fa-user-tie '></i></div>" .
-                        "<div class=''>Administrace příkladů</div>" .
+                        "<div class='mainMenuItemIcon'><i class='fas fa-user-edit'></i></div>" .
+                        "<div class=''>Administrace příkladů od uživatelů</div>" .
                       "</a>";
               } 
               echo "<a href='manageUserSubmissions.php' class='dropdown-content__item'>" .
@@ -148,8 +148,8 @@
           </a>
 
           <a href="contact.php" class="mainMenuItems mobileInvisible"> 
-            <div class="mainMenuItemIcon"><i class="far fa-comment"></i></div>
-            <div>Správce</div>
+            <div class="mainMenuItemIcon"><i class="fas fa-user-tie"></i></div>
+            <div>Správce aplikace</div>
           </a>
 
         </div>
