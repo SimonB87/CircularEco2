@@ -66,7 +66,7 @@ a:hover {
 }
 
 .top_bar {
-  width: 100%;
+  width: 100vw;
   height: 9rem;
   background-color: #333;
   margin: 0 0 10px 0;
@@ -947,7 +947,12 @@ button.btn.btn-info a {
 }
 
 @media only screen and (max-width: 768px) {
-
+  .search #search_text_input {
+    width: 7rem;
+  }
+  .post_form input[type="submit"] {
+    width: 5rem;
+  }
   span.nav-repsonsive-description {
     display: block;
   }

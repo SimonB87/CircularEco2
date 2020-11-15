@@ -23,7 +23,7 @@ $userLoggedInNameFillerPlaceholder = $user['first_name'] . " " . $user['last_nam
 <html>
 <head>
 
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 	<title>Vítejte na webu Circularních projektů</title>
 
