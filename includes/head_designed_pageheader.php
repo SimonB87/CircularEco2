@@ -51,7 +51,7 @@
         </li>
         
 
-        <li> 
+        <li>
           <a href="index.php" class="mainMenuItems mobileInvisible">
             <div class="mainMenuItemIcon"><i class="fa fa-home fa-lg"></i></div>
             <div class="nav-icon-mobile mainMenuItems__navTitle">Novinky</div>
@@ -105,7 +105,7 @@
         </a>
       </li>
 
-      <li>   
+      <li>
         <a href="javascript:void(0);" onclick="getDropdownData('<?php echo $userLoggedIn; ?>', 'notification')" class="mainMenuItems mobileInvisible">
           <div class="mainMenuItemIcon"><i class="fas fa-eye"></i></div>
           <div class="mainMenuItems__navTitle">Upozornění
@@ -125,12 +125,12 @@
           if($num_requests > 0){
               echo '<span class="notification_badge unread_requests" id="unread_requests">' . $num_requests .'</span> ';
           }
-          ?>        
+          ?>
           </div>
         </a>
       </li>
 
-      <li class="dropdown">   
+      <li class="dropdown">
         <a href="settings.php" class="mainMenuItems mobileInvisible"> 
           <div class="mainMenuItemIcon"> <i class="fas fa-user-cog"></i> </div>
           <div class="mainMenuItems__navTitle">Další <i class="fas fa-angle-down"></i> </div>
