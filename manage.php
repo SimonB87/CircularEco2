@@ -20,7 +20,7 @@ if (isset($_SESSION['username'])) {
   $userRole = $row['userRole'];
   
   if ( $userRole === "super" ) {
-    echo "<div><h3 style='text-align: center; color: #fff;'padding: 1rem;><strong>Vítejte v sekci pro správu</strong></h3></div>";
+    echo "<div><h3 style='text-align: center; color: #fff;'padding: 1rem;><strong style='color:#fff;'>Vítejte v sekci pro správu</strong></h3></div>";
   } else {
     header("Location: index.php");
   }

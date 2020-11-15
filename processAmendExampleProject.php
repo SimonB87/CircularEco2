@@ -115,7 +115,9 @@ if ($results-> num_rows > 0 ) {
       }
     
     $sql =  "UPDATE exampleprojects SET prefilled_submissionStatus='3 přepracováno podavatelem', projectName='$submission_name', projectGroup='$projectGroup', projectLocality='$projectLocality', projectDescription='$projectDescription', projectLegalIssues='$projectLegalIssues', projectCosts='$projectCosts', prefilled_submissionDate='$prefilled_submissionDate',	projectReferenceMain='$projectReferenceMain', projectReferenceOther='$projectReferenceOther', submitterDecisionResponse='$submitterDecisionResponse' WHERE id = $prefilled_id";
-    
+
+    echo "<div class='col-md-8 col-xs-12 col-md-push-1 main_column column' id='main_column'>";
+
     if ($dbConnection->query($sql)){
       echo "<a href='manageUserSubmissions.php'><button type= 'button ' class= 'btn btn-primary ' style= 'margin-bottom: 1.5rem;' >Zpět</button></a><br>" .
            "<h2>Nový záznam zapsán do databáze.</h2> <h4>Děkujeme Vám za Váš podmět, již se mu věnujeme. </h4>";
@@ -143,4 +145,5 @@ if ($results-> num_rows > 0 ) {
   //Close the variable after finishing
   $con-> close();
 
+  echo "</div>";
 ?>

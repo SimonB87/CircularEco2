@@ -25,7 +25,15 @@ if (mysqli_connect_error()){
   $sql = "UPDATE exampleprojects SET prefilled_submissionStatus='$prefilled_submissionStatus', administratorDecisionLetter='$administratorDecisionLetter' WHERE id='$id'";
   
   if ($dbConnection->query($sql)){
-    include("includes/header.php");
+    include("includes/head_designed_htmlhead.php");
+    ?>
+    <link rel="stylesheet" href="assets/css/formElementsStyle2019.css">
+    <title>Uživatelská nastavení | Obce v kruhu.cz</title>
+    </head>
+    <body>
+
+    <?php
+    include("includes/head_designed_pageheader.php");
     echo "<div class='col-md-8 col-xs-12 col-md-push-1 main_column column'>";
     echo "<a href='" . $prefilled_currentUrl . "'><button type= 'button' class= 'btn btn-primary' style= 'margin-bottom: 1.5rem;' >Zpět</button></a><br>". 
          "<a href= 'manage.php'><button type='button' class='btn btn-primary' style= 'margin-bottom: 1.5rem;'>Zpět na žádosti</button></a>" .
@@ -52,7 +60,15 @@ if (mysqli_connect_error()){
 
     echo "</div>";
   } else {
-    include("includes/header.php");
+    include("includes/head_designed_htmlhead.php");
+    ?>
+    <link rel="stylesheet" href="assets/css/formElementsStyle2019.css">
+    <title>Uživatelská nastavení | Obce v kruhu.cz</title>
+    </head>
+    <body>
+
+    <?php
+    include("includes/head_designed_pageheader.php");
     echo "<div class='col-md-8 col-xs-12 col-md-push-1 main_column column'>";
     echo "<h3>Chyba: </h3><br>". $sql ." ". $dbConnection->error . "<br>";
     echo "<a href='" . $prefilled_currentUrl ."'><button type= 'button ' class= 'btn btn-primary ' style= 'margin-bottom: 1.5rem;' >Zpět</button></a>" .

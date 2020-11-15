@@ -2,6 +2,7 @@
 include("includes/head_designed_htmlhead.php");
 
 ?>
+<link rel="stylesheet" href="assets/css/formElementsStyle2019.css">
 <title>Upravit projekt | Obce v kruhu.cz</title>
 </head>
 <body>
@@ -141,7 +142,7 @@ if (isset($_SESSION['username'])) {
               $condition_isSubmissionStatus_code2 = ($row["prefilled_submissionStatus"] ==  "2 Vráceno k přepracování");
               $condition_isUserOpeningHisSubmission = ($row["prefilled_userName"] == $userLoggedIn);
 
-              echo "<form id='amendProjectForm' method='post' action='processAmendExampleProject.php' class=''>" .
+              echo "<form id='amendProjectForm' method='post' action='processAmendExampleProject.php' class='paddingBottom_big'>" .
                    "<h4 class='submission--heading submissionDetail--id'> ID podání: </h4>" .
                    "<p>" . $row["id"] . "<p>" .
 
@@ -152,20 +153,28 @@ if (isset($_SESSION['username'])) {
                    } else {
                      echo "<p>" . $row["administratorDecisionLetter"] . "</p>";
                    }
-              echo "<label for='prefilled_id'><strong>ID podaného projektu : </strong><span class='hiddenLabelStyle'> * hidden </span></label><br>" .
-                   "<input type='text' id='prefilled_id' class='newProjectForm input' name='prefilled_id' value='" . $row["id"] . "'><br>" .
+              echo "<div class='field full' style='display:none;visibility:hidden;'>" . 
+                    "<label for='prefilled_id'><strong>ID podaného projektu : </strong><span class='hiddenLabelStyle'> * hidden </span></label>" .
+                    "<input type='text' id='prefilled_id' class='newProjectForm input' name='prefilled_id' value='" . $row["id"] . "'>".
+                   "</div>" .
+                   "<br>" .
 
-                   "<h4 class='submission--heading submissionDetail--name'> Název: </h4>" .
-                   "<p> <strong>Původní název: </strong>" . $row["projectName"] . "<p>" .
-                   "<input type='text' id='submission_name' class='newProjectForm input' name='submission_name' value='" . $row["projectName"] . "'><br>".
+                   "<div class='field full'>" .
+                    "<h4 class='submission--heading submissionDetail--name'> Název: </h4>" .
+                    "<label for='submission_name'> <strong>Původní název: </strong>" . $row["projectName"] . "<label>" .
+                    "<input type='text' id='submission_name' class='newProjectForm input' name='submission_name' value='" . $row["projectName"] . "'>".
+                   "</div>".
                    "<br>".
 
-                   "<h4 class='submission--heading submissionDetail--projectDescription'> Přiřazené typové řešení: </h4>" . 
-                   "<p><strong>Původní hodnota: </strong>" . $row["projectGroup"] . "</p>" .
-                   "<select name='projectGroup' id='projectGroup' class='newProjectForm input'>" .
-                      "<option value='Vyberte ...'>Vyberte ...</option>" .
-                      $optionStorage .
-                   "</select><br>" .
+                   "<div class='field full'" .
+                    "<h4 class='submission--heading submissionDetail--projectDescription'> Přiřazené typové řešení: </h4>" . 
+                    "<label for='projectGroup'><strong>Původní hodnota: </strong>" . $row["projectGroup"] . "</label>" .
+                    "<select name='projectGroup' id='projectGroup' class='newProjectForm input'>" .
+                        "<option value='Vyberte ...'>Vyberte ...</option>" .
+                        $optionStorage .
+                    "</select>" . 
+                   "</div>". 
+                   "<br>" .
 
                    "<script defer>" . 
                    "const targetSelect = document.getElementById('projectGroup');" .
@@ -189,49 +198,72 @@ if (isset($_SESSION['username'])) {
 
                    "</script> " .
 
-                   "<h4 class='submission--heading submissionDetail--projectDescription'> Lokalita projektu: </h4>" . 
-                   "<p><strong>Původní lokalita: </strong>". $row["projectLocality"] . "</p>" .
-                   "<input type='text' id='projectLocality' class='newProjectForm input' name='projectLocality' value='" . $row["projectLocality"] . "'><br>".
+                   "<div class='field full'>" .
+                    "<h4 class='submission--heading submissionDetail--projectDescription'> Lokalita projektu: </h4>" . 
+                    "<label for='projectLocality'><strong>Původní lokalita: </strong>". $row["projectLocality"] . "</label>" .
+                    "<input type='text' id='projectLocality' class='newProjectForm input' name='projectLocality' value='" . $row["projectLocality"] . "'>".
+                   "</div><br>".
 
-                   "<h4 class='submission--heading submissionDetail--projectDescription'> Popis projektu: </h4>" . 
-                   "<p> <strong>Původní popis: </strong>" . $row["projectDescription"] . "</p>" .
-                   "<textarea id='projectDescription' class='newProjectForm input' name='projectDescription' rows='6'>" . $row["projectDescription"] . "</textarea> <br>".
+                   "<div class='field full'>" .
+                    "<h4 class='submission--heading submissionDetail--projectDescription'> Popis projektu: </h4>" . 
+                    "<label for='projectDescription'> <strong>Původní popis: </strong>" . $row["projectDescription"] . "</label>" .
+                    "<textarea id='projectDescription' class='newProjectForm input' name='projectDescription' rows='6'>" . $row["projectDescription"] . "</textarea>". 
+                   "</div>".
                    "<br>".
 
-                   "<h4 class='submission--heading submissionDetail--projectLegalIssues'> Právní souvislosti projektu: </h4>" . 
-                   "<p> <strong>Původní právní souvislosti: </strong>" . $row["projectLegalIssues"] . "</p>".
-                   "<textarea id='projectLegalIssues' class='newProjectForm input' name='projectLegalIssues' rows='6'>" . $row["projectLegalIssues"] . "</textarea> <br>".
-
-                   "<h4 class='submission--heading submissionDetail--projectLegalIssues'> Nákladové souvislosti projektu: </h4>" . 
-                   "<p> <strong>Původní nákladové souvislosti: </strong>" . $row["projectCosts"] . "</p>".
-                   "<textarea id='projectCosts' class='newProjectForm input' name='projectCosts' rows='6'>" . $row["projectCosts"] . "</textarea> <br>".
+                   "<div class='field full'>" .
+                    "<h4 class='submission--heading submissionDetail--projectLegalIssues'> Právní souvislosti projektu: </h4>" . 
+                    "<label for='projectLegalIssues'> <strong>Původní právní souvislosti: </strong>" . $row["projectLegalIssues"] . "</label>".
+                    "<textarea id='projectLegalIssues' class='newProjectForm input' name='projectLegalIssues' rows='6'>" . $row["projectLegalIssues"] . "</textarea>". 
+                   "</div>".
                    "<br>".
 
-                   "<h4 class='submission--heading submissionDetail--metaData'> Podrobnosti žádosti: </h4>" . 
-                   "<p> <strong>Datum opětovného podání: </strong>" . $row["prefilled_submissionDate"] . ", <strong> status: </strong>" . $row["prefilled_submissionStatus"] . "</p>" .
-
-
-                   "<label for='prefilled_submissionDate'>Prefilled date : <span class='hiddenLabelStyle'> * hidden </span></label><br>".
-                   "<input type='text' id='prefilled_submissionDate' class='newProjectForm input' name='prefilled_submissionDate' value=''><br>".
+                   "<div class='field full'>" .
+                    "<h4 class='submission--heading submissionDetail--projectLegalIssues'> Nákladové souvislosti projektu: </h4>" . 
+                    "<label for='projectCosts'> <strong>Původní nákladové souvislosti: </strong>" . $row["projectCosts"] . "</label>".
+                    "<textarea id='projectCosts' class='newProjectForm input' name='projectCosts' rows='6'>" . $row["projectCosts"] . "</textarea>".
+                   "</div>".
                    "<br>".
 
-                   "<p><strong>Odkaz na projekt: </strong>" . $row["projectReferenceMain"] . "</p>" .
-                   "<input type='text' id='projectReferenceMain' class='newProjectForm input' name='projectReferenceMain' value='" . $row["projectReferenceMain"]  . "'><br>".
+                   "<div class='field full'>" .
+                    "<h4 class='submission--heading submissionDetail--metaData'> Podrobnosti žádosti: </h4>" . 
+                    "<label> <strong>Datum opětovného podání: </strong>" . $row["prefilled_submissionDate"] . ", <strong> status: </strong>" . $row["prefilled_submissionStatus"] . "</label>" .
+                  "</div>" .
+
+                  "<div class='field full' style='display:none;visibility:hidden;'>" .
+                    "<label for='prefilled_submissionDate'>Prefilled date : <span class='hiddenLabelStyle'> * hidden </span></label><br>".
+                    "<input type='text' id='prefilled_submissionDate' class='newProjectForm input' name='prefilled_submissionDate' value=''><br>".
+                  "</div>" .
+                  "<br>".
+
+                  "<div class='field full'>" .
+                    "<label for='projectReferenceMain'><strong>Odkaz na projekt: </strong>" . $row["projectReferenceMain"] . "</label>" .
+                    "<input type='text' id='projectReferenceMain' class='newProjectForm input' name='projectReferenceMain' value='" . $row["projectReferenceMain"]  . "'><br>".
+                   "</div>" .
                    "<br>".
 
-                   "<p><strong>Další odkaz na projekt: </strong>" . $row["projectReferenceOther"] . "</p>" .
-                   "<input type='text' id='projectReferenceOther' class='newProjectForm input' name='projectReferenceOther' value='" . $row["projectReferenceOther"]  . "'><br>".
+                   "<div class='field full'>" .
+                    "<label for='projectReferenceOther'><strong>Další odkaz na projekt: </strong>" . $row["projectReferenceOther"] . "</label>" .
+                    "<input type='text' id='projectReferenceOther' class='newProjectForm input' name='projectReferenceOther' value='" . $row["projectReferenceOther"]  . "'><br>".
+                   "</div>" .
                    "<br>";
 
 
               echo "<h4 class='submission--heading submissionDetail--submitterDecisionResponse'> Vyjádření podavatele k projektu: </h4>" .
+                   "<div class='field full'>" .
                    "<span id='clickToAdDateTime' clickTarget='000' class='btn btn-default button-secondary' style='margin: 1.5rem 0;'>Vložit aktuání datum do pole</span><br>" .
-                   "<textarea id='submitterDecisionResponse' class='newProjectForm input' name='submitterDecisionResponse' rows='6'>" . $row["submitterDecisionResponse"] . "</textarea> <br>";
+                   "<label for='submitterDecisionResponse'> Vyjádření k podanému příkladu </label>" .
+                   "<textarea id='submitterDecisionResponse' class='newProjectForm input' name='submitterDecisionResponse' rows='6'>" . $row["submitterDecisionResponse"] . "</textarea>" .
+                   "</div>" .
+                   "<br>";
 
               //conditions for next step validation on target process
               
-              echo "<button type='submit' form='amendProjectForm' value='Odeslat návrh projektu' class='btn btn-success' style='margin: 1.5rem 0;'>Odeslat návrh projektu</button>" .
+              echo "<div class='field full'>".
+                    "<button type='submit' form='amendProjectForm' value='Odeslat návrh projektu' class='btn btn-success' style='margin: 1.5rem 0;'>Odeslat návrh projektu</button>" .
+                    "</div>" .
                    "</form>";
+
           }
           echo "";
         }
