@@ -56,40 +56,40 @@ if(isset($_POST['register_button'])){
 			$num_rows = mysqli_num_rows($e_check);
 
 			if($num_rows > 0) {
-				array_push($error_array, "Email already in use<br>");
+				array_push($error_array, "Email je již využíván<br>");
 			}
 
 		}
 		else {
-			array_push($error_array, "Invalid email format<br>");
+			array_push($error_array, "Email nemá validní formát <br>");
 		}
 
 
 	}
 	else {
-		array_push($error_array, "Emails don't match<br>");
+		array_push($error_array, "Emaily nejsou stejné<br>");
 	}
 
 
 	if(strlen($fname) > 25 || strlen($fname) < 2) {
-		array_push($error_array, "Your first name must be between 2 and 25 characters<br>");
+		array_push($error_array, "Vaše jméno musí mít mezi 2 a 25 znaky<br>");
 	}
 
 	if(strlen($lname) > 25 || strlen($lname) < 2) {
-		array_push($error_array,  "Your last name must be between 2 and 25 characters<br>");
+		array_push($error_array,  "Vaše příjmení musí mít mezi 2 a 25 znaky<br>");
 	}
 
 	if($password != $password2) {
-		array_push($error_array,  "Your passwords do not match<br>");
+		array_push($error_array,  "Hesla neodpovídají<br>");
 	}
 	else {
 		if(preg_match('/[^A-Za-z0-9]/', $password)) {
-			array_push($error_array, "Your password can only contain english characters or numbers<br>");
+			array_push($error_array, "Vaše hesla mohou obsahovat jen písmena bez diakritiky a celá čísla<br>");
 		}
 	}
 
 	if(strlen($password > 30 || strlen($password) < 5)) {
-		array_push($error_array, "Your password must be betwen 5 and 30 characters<br>");
+		array_push($error_array, "Vaše heslo musí být mezi 5 a 30 znaky<br>");
 	}
 
 

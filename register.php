@@ -5,7 +5,7 @@ require 'includes/form_handlers/login_handler.php';
 ?>
 
 
-<html>
+<html lang="cs">
 <head>
 
   <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -76,7 +76,7 @@ require 'includes/form_handlers/login_handler.php';
 						<br>
 						<input id="password" type="password" name="log_password" placeholder="Heslo">
 						<br>
-						<?php if(in_array("Email nebo heslo nejsou správné<br>", $error_array)) echo  "Email nebo heslo nejsou správné<br>"; ?>
+						<?php if(in_array("Email nebo heslo nejsou správné<br>", $error_array)) echo "<p class='registration_error'>Email nebo heslo nejsou správné</p>"; ?>
 						<input id="signInButton" type="submit" name="login_button" value="Přihlásit se">
 						<br>
 						<a href="#" id="signup" class="signup">Nemáte účet? Registrovat lze zde!</a>
@@ -88,24 +88,24 @@ require 'includes/form_handlers/login_handler.php';
 				<div id="second">
 
 					<form action="register.php" method="POST">
-						<input type="text" name="reg_fname" placeholder="First Name" value="<?php
+						<input type="text" name="reg_fname" placeholder="Jméno" value="<?php
 						if(isset($_SESSION['reg_fname'])) {
 							echo $_SESSION['reg_fname'];
 						}
 						?>" required>
 						<br>
-						<?php if(in_array("Your first name must be between 2 and 25 characters<br>", $error_array)) echo "Vše jméno musí mít počet znaků 2 až 25<br>"; ?>
+						<?php if(in_array("Vaše jméno musí mít mezi 2 a 25 znaky<br>", $error_array)) echo "<p class='registration_error'>Vaše jméno musí mít počet znaků 2 až 25</p>"; ?>
 
 
 
 
-						<input type="text" name="reg_lname" placeholder="Last Name" value="<?php
+						<input type="text" name="reg_lname" placeholder="Příjmení" value="<?php
 						if(isset($_SESSION['reg_lname'])) {
 							echo $_SESSION['reg_lname'];
 						}
 						?>" required>
 						<br>
-						<?php if(in_array("Your last name must be between 2 and 25 characters<br>", $error_array)) echo "Vše příjmení musí mít počet znaků 2 až 25<br>"; ?>
+						<?php if(in_array("Vaše příjmení musí mít mezi 2 a 25 znaky<br>", $error_array)) echo "<p class='registration_error'>Vaše příjmení musí mít počet znaků 2 až 25</p>"; ?>
 
 						<input type="email" name="reg_email" placeholder="Email" value="<?php
 						if(isset($_SESSION['reg_email'])) {
@@ -114,30 +114,31 @@ require 'includes/form_handlers/login_handler.php';
 						?>" required>
 						<br>
 
-						<input type="email" name="reg_email2" placeholder="Confirm Email" value="<?php
+						<input type="email" name="reg_email2" placeholder="Ověřit email" value="<?php
 						if(isset($_SESSION['reg_email2'])) {
 							echo $_SESSION['reg_email2'];
 						}
 						?>" required>
 						<br>
-						<?php if(in_array("Email already in use<br>", $error_array)) echo "Email je již užíván<br>";
-						else if(in_array("Invalid email format<br>", $error_array)) echo "email nemá validní formát<br>";
-						else if(in_array("Emails don't match<br>", $error_array)) echo "Emaily se neshodují<br>"; ?>
+						<?php if(in_array("Email je již využíván<br>", $error_array)) echo "<p class='registration_error'>Email je již užíván</p>";
+						else if(in_array("Email nemá validní formát <br>", $error_array)) echo "<p class='registration_error'>email nemá validní formát</p>";
+						else if(in_array("Emaily nejsou stejné<br>", $error_array)) echo "<p class='registration_error'>Emaily se neshodují</p>"; ?>
 
 
-						<input type="password" name="reg_password" placeholder="Password" required>
+						<input type="password" name="reg_password" placeholder="Heslo" required>
 						<br>
-						<input type="password" name="reg_password2" placeholder="Confirm Password" required>
+						<input type="password" name="reg_password2" placeholder="Ověřit heslo" required>
 						<br>
-						<?php if(in_array("Your passwords do not match<br>", $error_array)) echo "Vaše hesla se neshodují<br>";
-						else if(in_array("Your password can only contain english characters or numbers<br>", $error_array)) echo "Vae heslo může obsahovat jen znaky bez diakritiky a čísla<br>";
-						else if(in_array("Your password must be betwen 5 and 30 characters<br>", $error_array)) echo "Vaše heslo musí mít od 5 do 30 znaků.<br>"; ?>
+						<?php if(in_array("Hesla neodpovídají<br>", $error_array)) echo "<p class='registration_error'>Vaše hesla se neshodují</p>";
+
+						else if(in_array("Vaše hesla mohou obsahovat jen písmena bez diakritiky a celá čísla<br>", $error_array)) echo "<p class='registration_error'>Vaše heslo může obsahovat jen znaky bez diakritiky a čísla</p>";
+						else if(in_array("Vaše heslo musí být mezi 5 a 30 znaky<br>", $error_array)) echo "<p class='registration_error'>Vaše heslo musí mít od 5 do 30 znaků.</p>"; ?>
 
 
-						<input type="submit" name="register_button" value="Register">
+						<input type="submit" name="register_button" value="Registrovat">
 						<br>
 
-						<?php if(in_array("<span style='color: #14C800;'>You're all set! Go ahead and login!</span><br>", $error_array)) echo "<span style='color: #14C800;'>Vše připraveno! Můžete se přihlásit!</span><br>"; ?>
+						<?php if(in_array("<span style='color: #14C800;'>Jste připraven/a! Nyní se můžete přihlásit!</span><br>", $error_array)) echo "<span style='color: #14C800;'>Vše je připraveno! Můžete se přihlásit!</span></p>"; ?>
 						<a href="#" id="signin" class="signup">Již máte účet? Vstupte zde!</a>
 					</form>
 				</div>

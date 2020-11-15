@@ -65,6 +65,11 @@ body {
   color: #fff;
 }
 
+p.registration_error {
+  color: orange;
+  margin-bottom: 0.5rem;
+}
+
 .login_header {
   border-bottom: solid 1px #ffffff;
   width: -moz-max-content;
