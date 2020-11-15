@@ -70,27 +70,27 @@ class Message {
 		$interval = $start_date->diff($end_date); //Difference between dates
 		if($interval->y >= 1) {
 			if($interval == 1)
-				$time_message = $interval->y . " year ago"; //1 year ago
+				$time_message = $interval->y . " rok nazpět"; //1 year ago
 			else
-				$time_message = $interval->y . " years ago"; //1+ year ago
+				$time_message = $interval->y . " roků nazpět"; //1+ year ago
 		}
 		else if ($interval->m >= 1) {
 			if($interval->d == 0) {
-				$days = " ago";
+				$days = " nazpět";
 			}
 			else if($interval->d == 1) {
-				$days = $interval->d . " day ago";
+				$days = $interval->d . " den nazpět";
 			}
 			else {
-				$days = $interval->d . " days ago";
+				$days = $interval->d . " dní nazpět";
 			}
 
 
 			if($interval->m == 1) {
-				$time_message = $interval->m . " month". $days;
+				$time_message = $interval->m . " měsíc ". $days;
 			}
 			else {
-				$time_message = $interval->m . " months". $days;
+				$time_message = $interval->m . " měsíců ". $days;
 			}
 
 		}
@@ -99,31 +99,31 @@ class Message {
 				$time_message = "Yesterday";
 			}
 			else {
-				$time_message = $interval->d . " days ago";
+				$time_message = $interval->d . " den nazpět";
 			}
 		}
 		else if($interval->h >= 1) {
 			if($interval->h == 1) {
-				$time_message = $interval->h . " hour ago";
+				$time_message = $interval->h . " hodinu nazpět";
 			}
 			else {
-				$time_message = $interval->h . " hours ago";
+				$time_message = $interval->h . " hodin nazpět";
 			}
 		}
 		else if($interval->i >= 1) {
 			if($interval->i == 1) {
-				$time_message = $interval->i . " minute ago";
+				$time_message = $interval->i . " minutu nazpět";
 			}
 			else {
-				$time_message = $interval->i . " minutes ago";
+				$time_message = $interval->i . " minut nazpět";
 			}
 		}
 		else {
 			if($interval->s < 30) {
-				$time_message = "Just now";
+				$time_message = "Právě teď";
 			}
 			else {
-				$time_message = $interval->s . " seconds ago";
+				$time_message = $interval->s . " sekund nazpět";
 			}
 		}
 
@@ -233,7 +233,7 @@ class Message {
 		if($count > $limit) {
 			$return_string .= "<input type='hidden' class='nextPageDropdownData' value='" . ($page + 1) . "'><input type='hidden' class='noMoreDropdownData' value='false'>";
 		} else {
-			$return_string .= "<input type='hidden' class='noMoreDropdownData' value='true'><p style='text-align: center;'>No more messages to load.</p>";
+			$return_string .= "<input type='hidden' class='noMoreDropdownData' value='true'><p style='text-align: center;'>Nejsou žádné další zprávy.</p>";
 		}
 		return $return_string;
 	}

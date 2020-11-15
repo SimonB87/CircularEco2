@@ -37,7 +37,11 @@ else {
       }
 
       input.comment_like {
-        color: #96e5b8;
+        color: #e5b896;
+        background-color: rgba(27, 31, 34, 0.85);
+        border: none;
+        padding-top: 2px;
+        text-decoration: none;
       }
 
       .like_value{
@@ -82,7 +86,7 @@ else {
 			}
 
     }
-    //Unlke button
+    //Unlike button
     if(isset($_POST['unlike_button'])) {
       $total_likes--;
       $query = mysqli_query($con, "UPDATE posts SET likes='$total_likes' WHERE id='$post_id'");
@@ -100,7 +104,7 @@ else {
 
     if($num_rows > 0) {
       echo '<form action="like.php?post_id='  . $post_id . '" method="POST">
-              <input type="submit" class="comment_like" name="unlike_button" value="Unlike">
+              <input type="submit" class="comment_like" name="unlike_button" value="Dát ♥">
               <div class="like_value">
                 '. $total_likes . ' Likes
               </div>
@@ -109,7 +113,7 @@ else {
     }
     else {
       echo '<form action="like.php?post_id='  . $post_id . '" method="POST">
-              <input type="submit" class="comment_like" name="like_button" value="Like">
+              <input type="submit" class="comment_like" name="like_button" value="Odebrat ♥ ">
               <div class="like_value">
                 '. $total_likes . ' Likes
               </div>

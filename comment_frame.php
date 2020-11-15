@@ -118,73 +118,73 @@ else {
 
 				if($interval->y >= 1) {
 					if($interval = 1)
-						$time_message = $interval->y . " year ago"; //1 year ago.
+						$time_message = $interval->y . " rok nazpět"; //1 year ago.
 					else
-						$time_message = $interval->y . " year ago"; //1+ year ago.
+						$time_message = $interval->y . " roků nazpět"; //1+ year ago.
 				}
 
 				else if ($interval-> m >= 1) {
 					if($interval->d == 0) {
-						$days = " ago";
+						$days = " nazpět";
 					}
 
 					else if($interval->d == 1) {
-						$days = $interval->d . " day ago";
+						$days = $interval->d . " den nazpět";
 					}
 
 					else {
-						$days = $interval->d . " days ago";
+						$days = $interval->d . " dní nazpět";
 					}
 
 
 					if($interval->m = 1) {
-						$time_message = $interval->m . " month " . $days;
+						$time_message = $interval->m . " měsíc " . $days;
 					}
 
 					else {
-						$time_message = $interval->m . " months " . $days;
+						$time_message = $interval->m . " měsíců " . $days;
 					}
 				}
 
 
 				else if($interval->d >= 1) {
 					if($interval->d == 1) {
-						$time_message = "Yesterday";
+						$time_message = "Včera";
 					}
 
 					else {
-						$time_message = $interval->d . " days ago";
+						$time_message = $interval->d . " dní nazpět";
 					}
 				}
 
 				else if($interval->h >= 1) {
 					if($interval->h == 1) {
-						$time_message = $interval->h . " hour ago";
+						$time_message = $interval->h . " hodin nazpět";
 					}
 
 					else {
-						$time_message = $interval->h . " hours ago";
+						$time_message = $interval->h . " hodin nazpět";
 					}
 				}
 
 				else if($interval->i >= 1) {
 					if($interval->i == 1) {
-						$time_message = $interval->i . " minute ago";
+						$time_message = $interval->i . " minutu nazpět";
 
 					}
 
 					else {
-						$time_message = $interval->i . " minute ago";
+						$time_message = $interval->i . " minut nazpět";
 					}
 				}
 
 				else {
 					if($interval->s <30) {
-						$time_message = "Just now";
+						$time_message = "Právě teď";
 					}
 
 					else {
-						$time_message = $interval->s . " seconds ago";
+						$time_message = $interval->s . " sekund nazpět";
 					}
 				}
 
@@ -205,7 +205,7 @@ else {
 		}
 
 		else {
-			echo "<center><br><br>No Comments to show.</center>";
+			echo "<center><br><br>Žádné příspěvky k zobrazení.</center>";
 		}
 	?>
 

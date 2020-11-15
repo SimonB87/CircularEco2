@@ -234,60 +234,60 @@ class Post {
 					$interval = $start_date->diff($end_date); //Difference between dates
 					if($interval->y >= 1) {
 						if($interval == 1)
-							$time_message = $interval->y . " year ago "; //1 year ago
+							$time_message = $interval->y . " rok nazpět "; //1 year ago
 						else
-							$time_message = $interval->y . " years ago "; //1+ year ago
+							$time_message = $interval->y . " roků nazpět "; //1+ year ago
 					}
 					else if ($interval->m >= 1) {
 						if($interval->d == 0) {
-							$days = " ago";
+							$days = " nazpět";
 						}
 						else if($interval->d == 1) {
-							$days = $interval->d . " day ago ";
+							$days = $interval->d . " den nazpět";
 						}
 						else {
-							$days = $interval->d . " days ago ";
+							$days = $interval->d . " dní nazpět ";
 						}
 
 
 						if($interval->m == 1) {
-							$time_message = $interval->m . " month ". $days;
+							$time_message = $interval->m . " měsíc ". $days;
 						}
 						else {
-							$time_message = $interval->m . " months ". $days;
+							$time_message = $interval->m . " měsíců ". $days;
 						}
 
 					}
 					else if($interval->d >= 1) {
 						if($interval->d == 1) {
-							$time_message = "Yesterday ";
+							$time_message = "Včera ";
 						}
 						else {
-							$time_message = $interval->d . " days ago ";
+							$time_message = $interval->d . " den nazpět ";
 						}
 					}
 					else if($interval->h >= 1) {
 						if($interval->h == 1) {
-							$time_message = $interval->h . " hour ago ";
+							$time_message = $interval->h . " hodinu nazpět ";
 						}
 						else {
-							$time_message = $interval->h . " hours ago ";
+							$time_message = $interval->h . " hodin nazpět ";
 						}
 					}
 					else if($interval->i >= 1) {
 						if($interval->i == 1) {
-							$time_message = $interval->i . " minute ago ";
+							$time_message = $interval->i . " minutu nazpět ";
 						}
 						else {
-							$time_message = $interval->i . " minutes ago ";
+							$time_message = $interval->i . " minut nazpět ";
 						}
 					}
 					else {
 						if($interval->s < 30) {
-							$time_message = "Just now";
+							$time_message = "Právě teď";
 						}
 						else {
-							$time_message = $interval->s . " seconds ago ";
+							$time_message = $interval->s . " sekundu nazpět ";
 						}
 					}
 
@@ -316,7 +316,7 @@ class Post {
 								</div>
 
 								<div class='newsfeedPostOptions'>
-									Comments($comments_check_num)&nbsp;&nbsp;&nbsp;
+									Komentářů ($comments_check_num) &nbsp;&nbsp;&nbsp;
 									<iframe src='like.php?post_id=$id' scrolling='no'></iframe>
 								</div>
 
@@ -333,7 +333,7 @@ class Post {
 					$(document).ready(function() {
 
 						$('#post<?php echo $id; ?>').on('click', function() {
-							bootbox.confirm("Are you sure you want to delete this post?", function(result) {
+							bootbox.confirm("Jste si jistý, že chcete tento příspěvek smazat?", function(result) {
 
 								$.post("includes/form_handlers/delete_post.php?post_id=<?php echo $id; ?>", {result:result});
 
@@ -355,7 +355,7 @@ class Post {
 				$str .= "<input type='hidden' class='nextPage' value='" . ($page + 1) . "'>
 							<input type='hidden' class='noMorePosts' value='false'>";
 			else
-				$str .= "<input type='hidden' class='noMorePosts' value='true'><p style='text-align: centre;'> No more posts to show! </p>";
+				$str .= "<input type='hidden' class='noMorePosts' value='true'><p style='text-align: centre;'> Žádné další příspěvky k zobrazení! </p>";
 		}
 
 		echo $str;
@@ -374,7 +374,7 @@ class Post {
 
 
 		$str = ""; //String to return
-		$data_query = mysqli_query($this->con, "SELECT * FROM posts WHERE deleted='no' AND ((added_by='$profileUser' AND user_to='none') OR user_to='$profileUser')  ORDER BY id DESC");
+		$data_query = mysqli_query($this->con, "SELECT * FROM posts WHERE deleted='no' AND ((added_by='$profileUser' AND user_to='none') OR user_to='$profileUser') ORDER BY id DESC");
 
 		if(mysqli_num_rows($data_query) > 0) {
 
@@ -555,7 +555,7 @@ class Post {
 				$str .= "<input type='hidden' class='nextPage' value='" . ($page + 1) . "'>
 							<input type='hidden' class='noMorePosts' value='false'>";
 			else
-				$str .= "<input type='hidden' class='noMorePosts' value='true'><p style='text-align: centre;'> No more posts to show! </p>";
+				$str .= "<input type='hidden' class='noMorePosts' value='true'><p style='text-align: centre;'> Nejsou žádné další příspěvky k zobrazení</p>";
 		}
 
 		echo $str;
@@ -641,60 +641,60 @@ class Post {
 					$interval = $start_date->diff($end_date); //Difference between dates
 					if($interval->y >= 1) {
 						if($interval == 1)
-							$time_message = $interval->y . " year ago "; //1 year ago
+							$time_message = $interval->y . " rok nazpět "; //1 year ago
 						else
-							$time_message = $interval->y . " years ago "; //1+ year ago
+							$time_message = $interval->y . " roků nazpět "; //1+ year ago
 					}
 					else if ($interval->m >= 1) {
 						if($interval->d == 0) {
 							$days = " ago";
 						}
 						else if($interval->d == 1) {
-							$days = $interval->d . " day ago ";
+							$days = $interval->d . " den nazpět ";
 						}
 						else {
-							$days = $interval->d . " days ago ";
+							$days = $interval->d . " dní nazpět ";
 						}
 
 
 						if($interval->m == 1) {
-							$time_message = $interval->m . " month ". $days;
+							$time_message = $interval->m . " měsíc ". $days;
 						}
 						else {
-							$time_message = $interval->m . " months ". $days;
+							$time_message = $interval->m . " měsíců ". $days;
 						}
 
 					}
 					else if($interval->d >= 1) {
 						if($interval->d == 1) {
-							$time_message = "Yesterday ";
+							$time_message = "Včera ";
 						}
 						else {
-							$time_message = $interval->d . " days ago ";
+							$time_message = $interval->d . " dní nazpět ";
 						}
 					}
 					else if($interval->h >= 1) {
 						if($interval->h == 1) {
-							$time_message = $interval->h . " hour ago ";
+							$time_message = $interval->h . " hodinu nazpět ";
 						}
 						else {
-							$time_message = $interval->h . " hours ago ";
+							$time_message = $interval->h . " hodin nazpět ";
 						}
 					}
 					else if($interval->i >= 1) {
 						if($interval->i == 1) {
-							$time_message = $interval->i . " minute ago ";
+							$time_message = $interval->i . " minutu nazpět ";
 						}
 						else {
-							$time_message = $interval->i . " minutes ago ";
+							$time_message = $interval->i . " minut nazpět ";
 						}
 					}
 					else {
 						if($interval->s < 30) {
-							$time_message = "Just now";
+							$time_message = "Právě teď";
 						}
 						else {
-							$time_message = $interval->s . " seconds ago ";
+							$time_message = $interval->s . " sekund nazpět ";
 						}
 					}
 
@@ -740,12 +740,12 @@ class Post {
 				<?php
 							}
 							else {
-								echo "<p>You are not friend with this user, so you can not see this post.</p>";
+								echo "<p>Nejsi přítel toho uživatele, nemůžete vidět tento příspěvek.</p>";
 								return;
 							}
 		}
 		else {
-			echo "<p>No post found. If you selected a link, it might be broken.</p>";
+			echo "<p> Žádný příspěvek nebyl nalezen. Pokud jste vybrali odkaz, může být poškozený.</p>";
 			return;
 		}
 

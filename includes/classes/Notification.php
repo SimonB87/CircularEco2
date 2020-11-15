@@ -62,60 +62,60 @@ class Notification {
 				$interval = $start_date->diff($end_date); //Difference between dates
 				if($interval->y >= 1) {
 					if($interval->y == 1)
-						$time_message = $interval->y . " year ago"; //1 year ago
+						$time_message = $interval->y . " rok nazpět"; //1 year ago
 					else
-						$time_message = $interval->y . " years ago"; //1+ year ago
+						$time_message = $interval->y . " roků nazpět"; //1+ year ago
 				}
 				else if ($interval->m >= 1) {
 					if($interval->d == 0) {
-						$days = " ago";
+						$days = " nazpět";
 					}
 					else if($interval->d == 1) {
-						$days = $interval->d . " day ago";
+						$days = $interval->d . " den nazpět";
 					}
 					else {
-						$days = $interval->d . " days ago";
+						$days = $interval->d . " dní nazpět";
 					}
 
 
 					if($interval->m == 1) {
-						$time_message = $interval->m . " month". $days;
+						$time_message = $interval->m . " měsíc ". $days;
 					}
 					else {
-						$time_message = $interval->m . " months". $days;
+						$time_message = $interval->m . " měsíců ". $days;
 					}
 
 				}
 				else if($interval->d >= 1) {
 					if($interval->d == 1) {
-						$time_message = "Yesterday";
+						$time_message = "Včera";
 					}
 					else {
-						$time_message = $interval->d . " days ago";
+						$time_message = $interval->d . " dní nazpět";
 					}
 				}
 				else if($interval->h >= 1) {
 					if($interval->h == 1) {
-						$time_message = $interval->h . " hour ago";
+						$time_message = $interval->h . " hodinu nazpět";
 					}
 					else {
-						$time_message = $interval->h . " hours ago";
+						$time_message = $interval->h . " hodin nazpět";
 					}
 				}
 				else if($interval->i >= 1) {
 					if($interval->i == 1) {
-						$time_message = $interval->i . " minute ago";
+						$time_message = $interval->i . " minutu nazpět";
 					}
 					else {
-						$time_message = $interval->i . " minutes ago";
+						$time_message = $interval->i . " minut nazpět";
 					}
 				}
 				else {
 					if($interval->s < 30) {
-						$time_message = "Just now";
+						$time_message = "Právě teď";
 					}
 					else {
-						$time_message = $interval->s . " seconds ago";
+						$time_message = $interval->s . " sekund nazpět";
 					}
 				}
 
@@ -136,7 +136,7 @@ class Notification {
 		if($count > $limit) {
 			$return_string .= "<input type='hidden' class='nextPageDropdownData' value='" . ($page + 1) . "'><input type='hidden' class='noMoreDropdownData' value='false'>";
 		} else {
-			$return_string .= "<input type='hidden' class='noMoreDropdownData' value='true'><p style='text-align: center;'>No more notifications to load.</p>";
+			$return_string .= "<input type='hidden' class='noMoreDropdownData' value='true'><p style='text-align: center;'>NNejsou žádná další upozornění.</p>";
 		}
 		return $return_string;
 	}
@@ -148,19 +148,19 @@ class Notification {
 		$date_time = date("Y-m-d H:i:s");
 		switch($type) {
 			case 'comment':
-				$message = $userLoggedInName . " commented on your post";
+				$message = $userLoggedInName . " komentoval/a Váš příspěvek";
 				break;
 			case 'like':
-				$message = $userLoggedInName . " liked your post";
+				$message = $userLoggedInName . " oblíbil/a si Váš příspěvek";
 				break;
 			case 'profile_post':
-				$message = $userLoggedInName . " posted on your profile";
+				$message = $userLoggedInName . " poslal/a příspěvěk na Váš profil";
 				break;
 			case 'comment_non_owner':
-				$message = $userLoggedInName . " commented on a post you commented on";
+				$message = $userLoggedInName . " komentoval/a na Váš příspěvek, který jste komentoval/a";
 				break;
 			case 'profile_comment':
-				$message = $userLoggedInName . " commented on your profile post";
+				$message = $userLoggedInName . " komentoval/a na Váš profilový příspěvek";
 				break;
 		}
 		$link = "post.php?id=" . $post_id;
