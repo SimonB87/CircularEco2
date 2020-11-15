@@ -73,42 +73,42 @@ include("includes/head_designed_pageheader.php");
               <tr class="mySearchTable_header">
                 <th>Plný název 
                   <br>
-                  <span><i>Seřadit</i></span> <!-- onclick="sortTable(0)" -->
+                  <span class="sortAction" onclick="sortTable(0)"> <em>Seřadit</em> <i class="fas fa-sort"></i> </span>
                   <br>
-                  <input type="text" class="hledej form-control" id="myInput0" onkeyup="mySearchColumnFunction(0)" placeholder="Hledej ..." title="Hledej ...">
+                 <!--  <input type="text" class="hledej form-control" id="myInput0" onkeyup="mySearchColumnFunction(0)" placeholder="Hledej ..." title="Hledej ..."> -->
                 </th>
                 <th data-breakpoints="xs sm md" style="min-width: 20vw;">
                   <strong>Plný popis </strong> 
                   <br>
-                  <span><i>Seřadit</i></span> <!-- onclick="sortTable(1)" -->
+                  <span class="sortAction" onclick="sortTable(1)"> <em>Seřadit</em> <i class="fas fa-sort"></i> </span>
                   <br>
-                  <input type="text" class="hledej form-control" id="myInput1" onkeyup="mySearchColumnFunction(1)" placeholder="Hledej ..." title="Hledej ...">
+                  <!-- <input type="text" class="hledej form-control" id="myInput1" onkeyup="mySearchColumnFunction(1)" placeholder="Hledej ..." title="Hledej ..."> -->
                 </th>
 
                 <th data-breakpoints="xs sm">Kategorie
                   <br>
-                  <span><i>Seřadit</i></span> <!-- onclick="sortTable(2)" -->
+                  <span class="sortAction" onclick="sortTable(2)"> <em>Seřadit</em> <i class="fas fa-sort"></i> </span>
                   <br>
-                  <input type="text" class="hledej form-control" id="myInput4" onkeyup="mySearchColumnFunction(2)" placeholder="Hledej ..." title="Hledej ...">
+                  <!-- <input type="text" class="hledej form-control" id="myInput4" onkeyup="mySearchColumnFunction(2)" placeholder="Hledej ..." title="Hledej ..."> -->
                 </th>
 
                 <th data-breakpoints="xs sm">Cílová skupina 
                   <br>
-                  <span><i>Seřadit</i></span> <!-- onclick="sortTable(3)" -->
+                  <span class="sortAction" onclick="sortTable(3)"> <em>Seřadit</em> <i class="fas fa-sort"></i> </span>
                   <br>
-                  <input type="text" class="hledej form-control" id="myInput2" onkeyup="mySearchColumnFunction(3)" placeholder="Hledej ..." title="Hledej ...">
+                  <!-- <input type="text" class="hledej form-control" id="myInput2" onkeyup="mySearchColumnFunction(3)" placeholder="Hledej ..." title="Hledej ..."> -->
                 </th>
                 <th data-breakpoints="xs sm md">Související kategorie 
                   <br>
-                  <span><i>Seřadit</i></span> <!-- onclick="sortTable(4)" -->
+                  <span class="sortAction" onclick="sortTable(4)"> <em>Seřadit</em> <i class="fas fa-sort"></i> </span>
                   <br>
-                  <input type="text" class="hledej form-control" id="myInput3" onkeyup="mySearchColumnFunction(4)" placeholder="Hledej ..." title="Hledej ...">
+                  <!-- <input type="text" class="hledej form-control" id="myInput3" onkeyup="mySearchColumnFunction(4)" placeholder="Hledej ..." title="Hledej ..."> -->
                 </th>
                 <th data-breakpoints="xs">Využitelné produkty
                   <br>
-                  <span><i>Seřadit</i></span> <!-- onclick="sortTable(5)" -->
+                  <span class="sortAction" onclick="sortTable(5)"> <em>Seřadit</em> <i class="fas fa-sort"></i> </span>
                   <br>
-                  <input type="text" class="hledej form-control" id="myInput4" onkeyup="mySearchColumnFunction(5)" placeholder="Hledej ..." title="Hledej ...">
+                  <!-- <input type="text" class="hledej form-control" id="myInput4" onkeyup="mySearchColumnFunction(5)" placeholder="Hledej ..." title="Hledej ..."> -->
                 </th>
                 <th class="headerIcon">
                   <a id="pdfBatchDownload" class="pdfDownloadLink" target="_blank" href="#" solutions=""> 

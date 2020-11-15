@@ -912,6 +912,11 @@ button.btn.btn-info a {
   color: coral;
 }
 
+.sortAction{
+  padding: 0.5rem;
+  color: #4caf50;
+}
+
 .btn.btn-default.button-secondary {
   background-color: #eee;
 }
