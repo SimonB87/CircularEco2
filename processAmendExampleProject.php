@@ -4,7 +4,7 @@ require 'config/config_localparts.php';
 include("includes/head_designed_htmlhead.php");
 
 ?>
-<link rel="stylesheet" href="assets/css/formElementsStyle2019.css">
+<link rel="stylesheet" href="assets/css/formElementsStyle2019.min.css">
 <title>Úprava příkladu dobré praxe | Obce v kruhu.cz</title>
 
 </head>

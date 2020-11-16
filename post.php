@@ -1,5 +1,13 @@
 <?php
-include("includes/header.php");
+include("includes/head_designed_htmlhead.php");
+
+?>
+<title>Post detail | Obce v kruhu.cz</title>
+</head>
+<body>
+
+<?php
+include("includes/head_designed_pageheader.php");
 
 if(isset($_GET['id'])) {
   $id = $_GET['id'];

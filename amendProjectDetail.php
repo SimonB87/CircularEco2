@@ -2,7 +2,7 @@
 include("includes/head_designed_htmlhead.php");
 
 ?>
-<link rel="stylesheet" href="assets/css/formElementsStyle2019.css">
+<link rel="stylesheet" href="assets/css/formElementsStyle2019.min.css">
 <title>Upravit projekt | Obce v kruhu.cz</title>
 </head>
 <body>

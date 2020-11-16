@@ -1,7 +1,7 @@
 <?php
 include("includes/head_designed_htmlhead.php");
 ?>
-<link rel="stylesheet" href="assets/css/formElementsStyle2019.css">
+<link rel="stylesheet" href="assets/css/formElementsStyle2019.min.css">
 <title>Uživatelská nastavení | Obce v kruhu.cz</title>
 </head>
 <body>

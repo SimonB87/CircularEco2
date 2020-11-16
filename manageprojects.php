@@ -3,7 +3,7 @@ include("includes/head_designed_htmlhead.php");
 
 ?>
 <title>Administrace příkladů - detail projektu | Obce v kruhu.cz</title>
-<link rel="stylesheet" href="assets/css/formElementsStyle2019.css">
+<link rel="stylesheet" href="assets/css/formElementsStyle2019.min.css">
 </head>
 <body>
 

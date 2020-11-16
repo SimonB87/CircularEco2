@@ -4,10 +4,8 @@ require 'includes/form_handlers/register_handler.php';
 require 'includes/form_handlers/login_handler.php';
 ?>
 
-
 <html lang="cs">
 <head>
-
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-CSE7MKYW1L"></script>
   <script>
@@ -16,16 +14,15 @@ require 'includes/form_handlers/login_handler.php';
     gtag('js', new Date());
 
     gtag('config', 'G-CSE7MKYW1L');
-  </script>
-
-	<title>Registrace | Web pro projekty v Cirkulární ekonomice a Oběhovém hospodářství</title>
-	<link rel="stylesheet" type="text/css" href="assets/css/register_style.css">
-	<link rel="stylesheet" type="text/css" href="assets/css/main.css">
-	<link rel="stylesheet" type="text/css" href="assets/css/register.css">	
+	</script>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Registrace | Web pro projekty v Cirkulární ekonomice a Oběhovém hospodářství</title>
+	<link rel="stylesheet" type="text/css" href="assets/css/register_style.min.css">
+	<link rel="stylesheet" type="text/css" href="assets/css/main.min.css">
+	<link rel="stylesheet" type="text/css" href="assets/css/register.min.css">	
+	
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 	<script src="assets/js/register.js"></script>
-
 
 </head>
 <body>
@@ -46,10 +43,8 @@ require 'includes/form_handlers/login_handler.php';
 		';
 	}
 
-
 	?>
 	<div id="wrapper"> 
-
 
 		<div class="thewrapped">
 
@@ -95,9 +90,6 @@ require 'includes/form_handlers/login_handler.php';
 						?>" required>
 						<br>
 						<?php if(in_array("Vaše jméno musí mít mezi 2 a 25 znaky<br>", $error_array)) echo "<p class='registration_error'>Vaše jméno musí mít počet znaků 2 až 25</p>"; ?>
-
-
-
 
 						<input type="text" name="reg_lname" placeholder="Příjmení" value="<?php
 						if(isset($_SESSION['reg_lname'])) {

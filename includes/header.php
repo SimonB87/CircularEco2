@@ -33,8 +33,6 @@ $userLoggedInNameFillerPlaceholder = $user['first_name'] . " " . $user['last_nam
 
   <link rel="stylesheet" type="text/css" href="assets/css/carousel-projects.css">
 
-  <!-- <script src="assets/js/carousel-projects.js"></script> -->
-
   <!-- jQuery link -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 
@@ -46,9 +44,7 @@ $userLoggedInNameFillerPlaceholder = $user['first_name'] . " " . $user['last_nam
   <script src="assets/js/bootbox.js"></script>
 
   <!-- my JS file -->
-  <script src="assets/js/demo.js"></script>
-  <!-- my carousel JS file -->
-  <script src="assets/js/carousel.js"></script>
+  <script src="assets/js/demo.min.js"></script>
 
   <!-- J Crop Files-->
   <link rel="stylesheet" href="assets/css/jquery.Jcrop.css" type="text/css" />
@@ -56,18 +52,15 @@ $userLoggedInNameFillerPlaceholder = $user['first_name'] . " " . $user['last_nam
   <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.5.0/css/all.css' integrity='sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU' crossorigin='anonymous'>
 
   <!-- my style sheet -->
-  <link rel="stylesheet" type="text/css" href="assets/css/style_designed.css">
+  <link rel="stylesheet" type="text/css" href="assets/css/style_designed.min.css">
   <link rel="stylesheet" type="text/css" href="assets/css/projectinfo.css">
-  <link rel="stylesheet" type="text/css" href="assets/css/projectdashboard.css">
-  
-  <!-- <link rel="stylesheet" type="text/css" href="assets/css/tabulka.css"> -->
+  <link rel="stylesheet" type="text/css" href="assets/css/projectdashboard.min.css">
+
 
   <link rel="stylesheet" href="assets/css/newProjectSumbissionForm.css" type="text/css" />
 
   <script src="assets/js/editNewProjectSumbissionForm.js" defer></script>
   <!------ Include the above in your HEAD tag ---------->
-
-
 
 </head>
 <body>
