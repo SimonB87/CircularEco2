@@ -237,13 +237,13 @@ if (isset($_SESSION['username'])) {
                   "<br>".
 
                   "<div class='field full'>" .
-                    "<label for='projectReferenceMain'><strong>Odkaz na projekt: </strong>" . $row["projectReferenceMain"] . "</label>" .
+                    "<label for='projectReferenceMain'><strong>Odkaz na projekt: </strong><a href='" . $row["projectReferenceMain"] . "'>" . $row["projectReferenceMain"] . "</a></label>" .
                     "<input type='text' id='projectReferenceMain' class='newProjectForm input' name='projectReferenceMain' value='" . $row["projectReferenceMain"]  . "'><br>".
                    "</div>" .
                    "<br>".
 
                    "<div class='field full'>" .
-                    "<label for='projectReferenceOther'><strong>Další odkaz na projekt: </strong>" . $row["projectReferenceOther"] . "</label>" .
+                    "<label for='projectReferenceOther'><strong>Další odkaz na projekt: </strong> <a href='" . $row["projectReferenceOther"] . "'>" . $row["projectReferenceOther"] . "</a></label>" .
                     "<input type='text' id='projectReferenceOther' class='newProjectForm input' name='projectReferenceOther' value='" . $row["projectReferenceOther"]  . "'><br>".
                    "</div>" .
                    "<br>";

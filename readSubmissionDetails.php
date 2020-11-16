@@ -103,8 +103,8 @@ if (isset($_SESSION['username'])) {
                    "<p>" . $row["id"] . "<p>" .
                    "<h4 class='submission--heading submissionDetail--name'> Název: </h4>" .
                    "<p>" . $row["projectName"] . "<p>" .
-                   "<h4 class='submission--heading submissionDetail--submiter'> Projekt podal: </h4> " . 
-                   "<p> <strong>Jméno:</strong>" . $row["prefilled_firstName"] . " " . $row["prefilled_lastName"] . "</p>" .
+                   "<h4 class='submission--heading submissionDetail--submiter'> Příkald dobré praxe dodal: </h4> " . 
+                   "<p> <strong>Jméno: </strong>" . $row["prefilled_firstName"] . " " . $row["prefilled_lastName"] . "</p>" .
                    "<p> <strong>Uživatelské jméno: </strong>" . $row["prefilled_userName"] . 
                    "<h4 class='submission--heading submissionDetail--projectDescription'> Popis projektu: </h4>" . 
                    "<p>" . $row["projectDescription"] . "</p>".
@@ -115,8 +115,8 @@ if (isset($_SESSION['username'])) {
                    "<h4 class='submission--heading submissionDetail--metaData'> Podrobnosti žádosti: </h4>" . 
                    "<p> <strong>Datum podání: </strong>" . $row["prefilled_submissionDate"] . ", <strong> status: </strong>" . $row["prefilled_submissionStatus"] . "</p>" .
                    "<p><strong>Přiřazené typové řešení: </strong>" . $row["projectGroup"] . ", <strong> lokalita projektu: </strong>" . $row["projectLocality"] . "</p>" .
-                   "<p><strong>Odkaz na projekt: </strong>" . $row["projectReferenceMain"] . "</p>" .
-                   "<p><strong>Další odkaz na projekt: </strong>" . $row["projectReferenceOther"] . "</p>" .
+                   "<p><strong>Odkaz na projekt: </strong><a href='" . $row["projectReferenceMain"] . "'>" . $row["projectReferenceMain"] . "</a></p>" .
+                   "<p><strong>Další odkaz na projekt: </strong> <a href='" . $row["projectReferenceOther"] . "'>" . $row["projectReferenceOther"] . "</a></p>" .
                    "<h4 class='submission--heading submissionDetail--administratorDecisionLetter'> Vyjádření administrátora k projektu: </h4>";
 
               if ( strlen($row["administratorDecisionLetter"]) < 1) {

@@ -137,8 +137,8 @@ else {
                       "</select>" .
                     "<br><br>" .
                    "<p><strong>Přiřazené typové řešení: </strong>" . $row["projectGroup"] . ", <strong> lokalita projektu: </strong>" . $row["projectLocality"] . "</p>" .
-                   "<p><strong>Odkaz na projekt: </strong>" . $row["projectReferenceMain"] . "</p>" .
-                   "<p><strong>Další odkaz na projekt: </strong>" . $row["projectReferenceOther"] . "</p>" .
+                   "<p><strong>Odkaz na projekt: </strong><a href='" . $row["projectReferenceMain"] . "'>" . $row["projectReferenceMain"] . "</a></p>" .
+                   "<p><strong>Další odkaz na projekt: </strong><a href='" . $row["projectReferenceOther"] . "'>".  $row["projectReferenceOther"] ."</a></p>" .
 
                    "<h4 class='submission--heading submissionDetail--submitterDecisionResponse'> Vyjádření podavatele k projektu: </h4>" . 
                    "<p> " . $row["submitterDecisionResponse"] . "</p><br>".
