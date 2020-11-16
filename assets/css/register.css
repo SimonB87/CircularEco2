@@ -81,7 +81,6 @@ body.is-preload #bg:before {
 }
 
 /*---- background - Wrapper ----*/
-
 #wrapper {
   display: -moz-flex;
   display: -webkit-flex;
@@ -110,22 +109,3 @@ body.is-preload #bg:before {
   content: "";
   display: block;
 }
-/*
-@media screen and (max-width: 1680px) {
-  #wrapper {
-    padding: 3rem 2rem;
-  }
-}
-
-@media screen and (max-width: 736px) {
-  #wrapper {
-    padding: 2rem 1rem;
-  }
-}
-
-@media screen and (max-width: 480px) {
-  #wrapper {
-    padding: 1rem;
-  }
-}
-*/
