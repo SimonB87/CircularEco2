@@ -76,11 +76,7 @@ a:hover {
   padding-top: 1.75rem;
 }
 
-.top_bar nav li a.mainMenuItems {
-  position: relative;
-}
-
-.top_bar nav li.dropdown {
+.top_bar nav li a.mainMenuItems, .top_bar nav li.dropdown, .top_bar .mainMenuItems__navTitle {
   position: relative;
 }
 
@@ -601,16 +597,10 @@ button.btn.btn-info a {
 }
 
 #message_submit {
-  height: 58px;
-  width: 120px;
-  margin: 0;
   position: absolute;
   border: none;
   background-color: var(--link-color);
-  color: #156588;
-  border-radius: 5px;
-  font-family: "Bellota-BoldItalic", sans-serif;
-  text-shadow: var(--dark-element-color) 0.5px 0.5px 0px;
+  color: #000;
 }
 
 .message {
@@ -644,8 +634,7 @@ button.btn.btn-info a {
 }
 
 .loaded_conversations {
-  max-height: 316px;
-  overflow: scroll;
+  overflow-y: scroll;
 }
 
 .user_found_messages {
