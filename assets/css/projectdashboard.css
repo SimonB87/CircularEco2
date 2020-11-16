@@ -50,8 +50,8 @@ ol.carousel-indicators {
   font-size: 1.5rem;
 }
 
-.projectDetail a {
-  color: var(--main-dark-color);
+.projectDetail a, span.projectDetail_submiter {
+  color: var(--link-color);
 }
 
 .projectDetail_submiter {
@@ -59,6 +59,6 @@ ol.carousel-indicators {
   font-style: italic;
 }
 
-.submission--heading {
-  color: var(--main-dark-color);
+.submission--heading, .projectDetail h4 {
+  color: var(--main-green-color);
 }
