@@ -44,7 +44,7 @@ require 'includes/form_handlers/login_handler.php';
 	}
 
 	?>
-	<div id="wrapper"> 
+	<div id="wrapper" class="registerBody">
 
 		<div class="thewrapped">
 
