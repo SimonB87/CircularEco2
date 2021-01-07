@@ -75,7 +75,8 @@ require 'includes/form_handlers/login_handler.php';
 						<input id="signInButton" type="submit" name="login_button" value="Přihlásit se">
 						<br>
 						<a href="#" id="signup" class="signup">Nemáte účet? Registrovat lze zde!</a>
-
+						<br>
+						<a href="newpassword.php" id="forgotPassword" class="signup">Obnovení zapomenutého hesla</a>
 					</form>
 
 				</div>
