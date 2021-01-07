@@ -109,3 +109,7 @@ body.is-preload #bg:before {
   content: "";
   display: block;
 }
+
+div.registerBody{
+  overflow-y: scroll;
+}
