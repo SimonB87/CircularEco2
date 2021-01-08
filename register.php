@@ -138,32 +138,12 @@ require 'includes/form_handlers/login_handler.php';
 
 			</div>
 
-			<div class="demoUser">
-					<div class="login_header">
-							<h1>Demo přihlášení</h1>
-					</div>
-					<div>
-					<p class="text-center"><strong>Email:</strong> <span id="userDemoEmail">demo@uzivatel.cz</span></p>
-					<p class="text-center"><strong>Heslo:</strong> <span id="userDemoEmail">Demo123456</span></p>
-					<p class="text-center"> <button type="button" class="btn btn-reload" onclick="userDemoAccount();"> Použít demo účet </button> </p>
-				</div>
-			</div>
-
 		</div>
 
 	</div>
 
 	<div id="bg"> </div>
 
-	<script>
-	function userDemoAccount() {
-		let demoUserName = document.querySelector("#userDemoEmail").innerText;
-		let demoPassWord = document.querySelector("#userDemoEmail").innerText;
-		demoUserName = "demo@uzivatel.cz";
-		demoPassWord = "Demo123456";
-		document.querySelector("#log_email").value = demoUserName;
-    document.querySelector("#password").value = demoPassWord;
-	}
-	</script>
+
 </body>
 </html>
