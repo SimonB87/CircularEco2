@@ -51,7 +51,7 @@ require 'includes/form_handlers/login_handler.php';
 				<br>
 				<div id="first">
 
-					<form action="newpassword.php" method="POST">
+					<form method="POST">
 						<input id="email" type="email" name="email" placeholder="Email" autocomplete="off" value="<?php
 						if(isset($_SESSION['log_email'])) {
 							echo $_SESSION['log_email'];
