@@ -38,6 +38,7 @@
       <script>
         function showMobileMenu() {
           $(".websiteMobileMenu--Item").toggleClass("invisible");
+          $("#websiteMobileMenu").toggleClass("menuVisible");
         }
       </script>
 
@@ -275,6 +276,12 @@
           <a href="includes\handlers\logout.php"> 
             <span class="websiteMobileMenu--Icon"> <i class="fa fa-sign-out-alt fa-lg"></i> </span> 
             <span class="websiteMobileMenu--Description">Odejít</span>
+          </a>
+      </li>
+
+      <li class="websiteMobileMenu--Item invisible">
+          <a href="#"> 
+            <span class="websiteMobileMenu--Description"> &nbsp; &nbsp; &nbsp; </span>
           </a>
       </li> 
 
