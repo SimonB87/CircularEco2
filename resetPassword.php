@@ -46,93 +46,73 @@ require 'includes/form_handlers/login_handler.php';
 				<br>
 				<div id="first">
 
-					<form action="newpassword.php" method="POST">
-						<input id="email" type="email" name="email" placeholder="Email" autocomplete="off" value="<?php
-						if(isset($_SESSION['log_email'])) {
-							echo $_SESSION['log_email'];
-						}
-						?>" required>
+					<form action="resetPassword.php" method="POST">
+						<input id="password1" type="password" name="new_password_1" placeholder="Nové heslo" autocomplete="off" required>
 						<br>
-						<?php if(in_array("Email nebo heslo nejsou správné<br>", $error_array)) echo "<p class='registration_error'>Email nebo heslo nejsou správné</p>"; ?>
-						<input id="submit" type="submit" name="submit" value="Odeslat email">
+            <input id="password2" type="password" name="new_password_2" placeholder="Opakujte opět heslo" autocomplete="off" required>
+						<br>
+						<input id="submit" type="submit" name="submit" value="Obnov heslo">
 						<br>
 
 						<?php 
-						/*
-						* Add PHP Mailer
-            */
-            
             require "config/config_password.php";
             if(!isset($_GET["code"])) {
-              exit("<h4>Stránka nebyla nalezena.</h4>");
+              $password_message =  "Stránka nebyla nalezena.";
             }
 
             $code = $_GET["code"];
 
-						require 'PHPMailer/src/Exception.php';
-						require 'PHPMailer/src/PHPMailer.php';
-            require 'PHPMailer/src/SMTP.php';
-
-
-						// Import PHPMailer classes into the global namespace
-						// These must be at the top of your script, not inside a function
-						use PHPMailer\PHPMailer\PHPMailer;
-						use PHPMailer\PHPMailer\SMTP;
-						use PHPMailer\PHPMailer\Exception;
-
-            if(isset($_POST["email"])) {
-
-              $emailTo = $_POST["email"];
-
-              //generate a request ID for new password
-              $code = uniqid(true);
-              $query = mysqli_query($con_password, "INSERT INTO resetPassword(code, email) VALUES('$code', '$emailTo') ");
-              if(!$query){
-                exit("Error during processing the request.");
-              }
-
-              // Instantiation and passing `true` enables exceptions
-              $mail = new PHPMailer(true);
-
-              try {
-                  //edit character set in email
-                  //Server settings
-                  //$mail->SMTPDebug = SMTP::DEBUG_SERVER;                      // Enable verbose debug output
-                  //$mail->isSMTP();                                            // Send using SMTP
-                  $mail->CharSet = 'UTF-8';
-                  $mail->Host       = 'w223948@hc1-wd54.wedos.net';                    // Set the SMTP server to send through
-                  $mail->SMTPAuth   = true;                                   // Enable SMTP authentication
-                  $mail->Username   = 'spravce@obcevkruhu.cz';                     // SMTP username
-                  $mail->Password   = 'SuperUser99++';                               // SMTP password
-                  $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;         // Enable TLS encryption; `PHPMailer::ENCRYPTION_SMTPS` encouraged
-                  $mail->Port       = 587;                                    // TCP port to connect to, use 465 for `PHPMailer::ENCRYPTION_SMTPS` above
-
-                  //Recipients
-                  $mail->setFrom('spravce@obcevkruhu.cz', 'Správce - obcevkruhu.cz');
-                  $mail->addAddress($emailTo);     // Add a recipient
-                  $mail->addReplyTo('no-reply@obcevkruhu.cz', 'No-reply - obcevkruhu.cz');
-
-                  // Attachments
-                  //$mail->addAttachment('/var/tmp/file.tar.gz');         // Add attachments
-                  //$mail->addAttachment('/tmp/image.jpg', 'new.jpg');    // Optional name
-
-                  // Content
-                  $url_link = "http://" . $_SERVER["HTTP_HOST"] . dirname($_SERVER["PHP_SELF"]) . "/resetPassword.php?code=$code"; 
-                  $mail->isHTML(true);                                  // Set email format to HTML
-                  $mail->Subject = 'Obcevkruhu.cz - Požadavek na obnovu hesla';
-                  $mail->Body    = "<div style='max-width: 550px; margin: 0 auto; line-height: 1.5rem; font-size: 0.9rem;'>" .
-                  "<p>Krásný den, </p>" .
-                  "<p>požadovali jste nové heslo pro platformu www.obcevkruhu.cz.</p>" . 
-                  "<p>Použijte <a href='$url_link'>odkaz pro obnovu </a></p> </div><br>";
-                  $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
-
-                  $mail->send();
-                  echo '<h4>Obcevkruhu.cz - zkontrolujte si zadanou emailovou schránku.</h4>';
-              } catch (Exception $e) {
-                  echo "<h4>Obcevkruhu.cz - zpráva s obnovením nemohla být odeslána. Došlo k chybě: {$mail->ErrorInfo}</h4>";
-              }
-              exit();
+            $getEmailQuery = mysqli_query($con_password, "SELECT email FROM resetPassword WHERE code='$code'");
+            if(mysqli_num_rows($getEmailQuery) == 0 ){
+              $password_message =  "Stránka s požadavkem nebyla nalezena.";
             }
+
+            $row = mysqli_fetch_array($getEmailQuery);
+            $userEmail = $row['email'];
+
+            //test
+            echo "test row - userEmail: " . $userEmail . "<br>";
+            //test
+
+            if(isset($_POST['new_password_1'])) {
+
+              $new_password_1 = strip_tags($_POST['new_password_1']);
+              $new_password_2 = strip_tags($_POST['new_password_2']);
+
+                            //test
+                            echo "test - new_password_1:: $new_password_1 :: <br>";
+                            echo "test - new_password_2:: $new_password_2 :: <br>";
+                            //test
+
+              $new_password_md5 = md5($new_password_1);
+
+              //$password_query = mysqli_query($con, "SELECT password FROM users WHERE email='$userEmail'");
+
+              if($new_password_1 === $new_password_2) {
+
+              //test
+              echo "passwords match OK <br>";
+              //test
+            
+              $update_password_query = mysqli_query($con, "UPDATE users SET password='$new_password_md5' WHERE email='$userEmail'");
+              $update_query = mysqli_query($con, "UPDATE users SET friend_array='test1' WHERE email='$userEmail'");
+              
+              if($update_password_query) {
+                $delete_request = mysqli_query($con, "DELETE FROM resetPassword WHERE code='$code'");
+                $password_message = "Heslo bylo úspěšně změněno.<br><br>";
+              } else {
+                $password_message = "Heslo nemohlo být změněno.<br><br>";
+              }
+
+              } else {
+                $password_message = "Obě zadaná hesla se musí schodovat!<br><br>";
+              }
+
+            }
+
+            //$password_message = "";
+            echo "<h4>" . $password_message . "</h4><br>";
+            echo "<a href='register.php' class='signup'>Opět se přihlásit</a><br>";
 
 						?>
 

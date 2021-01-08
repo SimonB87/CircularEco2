@@ -89,7 +89,7 @@ require 'includes/form_handlers/login_handler.php';
 
                 $query = mysqli_query($con_password, "INSERT INTO resetPassword(code, email) VALUES('$code', '$emailTo')");
                 if(!$query){
-                  exit("<h4>Nastala chyba při zpracování požadavku.</h4>");
+                  exit("<h4 style='color:coral;'>Nastala chyba při zpracování požadavku.</h4>");
                 }
 
                 // Instantiation and passing `true` enables exceptions
@@ -122,18 +122,18 @@ require 'includes/form_handlers/login_handler.php';
                     "<p>požadovali jste nové heslo pro platformu www.obcevkruhu.cz.</p>" . 
                     "<p>Použijte <a href='$url_link'>odkaz pro obnovu </a></p>" . 
                     " </div><br>";
-                    $mail->AltBody = 'Tento email vyžaduje kódování HTML';
+                    $mail->AltBody = "Krásný den," . "požadovali jste nové heslo pro platformu www.obcevkruhu.cz." . "Použijte odkaz: $url_link pro obnovu </a></p>"; 
 
                     $mail->send();
 
-                    echo '<h4>Obcevkruhu.cz - email pro obnovu zaslán. Zkontrolujte si došlé zprávy v zadané emailové schránce.</h4>';
-                    
+                    echo '<h4 style="color:darkgreeen;">Obcevkruhu.cz - email pro obnovu zaslán. Zkontrolujte si došlé zprávy v zadané emailové schránce.</h4>';
+
                 } catch (Exception $e) {
-                    echo "<h4>Obcevkruhu.cz - zpráva s obnovením nemohla být odeslána. Došlo k chybě: {$mail->ErrorInfo}</h4>";
+                    echo "<h4 style='color:coral;'>Obcevkruhu.cz - zpráva s obnovením nemohla být odeslána. Došlo k chybě: {$mail->ErrorInfo}</h4>";
                 }
 
               } else {
-                echo "<h4>Obcevkruhu.cz - Uživatel nenalezen. Použijte <i>platný</i> email, který je již registrován na platformě.</h4>";
+                echo "<h4 style='color:coral;'>Obcevkruhu.cz - Uživatel nenalezen. Použijte <i>platný</i> email, který je již registrován na platformě.</h4>";
               }
             }
 						?>
