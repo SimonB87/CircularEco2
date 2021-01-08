@@ -9,10 +9,8 @@ include("includes/head_designed_htmlhead.php");
 
 $message_obj = new Message($con, $userLoggedIn);
 
-/*destroy all the log ins after refresh
-
-session_destroy();*/
-
+//destroy all the log ins after refresh
+//session_destroy();
 
 if(isset($_GET['profile_username'])) {
 	$username = $_GET['profile_username'];
