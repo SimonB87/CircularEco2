@@ -406,16 +406,19 @@ iframe {
 
 .profile_left {
   top: -10px;
-  width: 17%;
-  max-width: 240px;
-  min-width: 130px;
-  height: 100vh;
+  min-height: 30vh;
   float: left;
   position: relative;
-  background-color: #37b0e9; /***********/
-  border-right: 10px solid #83d6fe;
+  background-color: rgba(27, 31, 34, 0.85);
   color: #cbeaf8;
   margin-right: 20px;
+  padding: 1rem 0.5rem;
+}
+
+@media (min-width: 992px) {
+  .profile_left {
+    height: 100vh;
+  }
 }
 
 .profile_left img {
