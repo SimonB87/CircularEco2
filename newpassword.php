@@ -104,7 +104,7 @@ require 'includes/form_handlers/login_handler.php';
                     $mail->Host       = 'w223948@hc1-wd54.wedos.net';                    // Set the SMTP server to send through
                     $mail->SMTPAuth   = true;                                   // Enable SMTP authentication
                     $mail->Username   = 'spravce@obcevkruhu.cz';                     // SMTP username
-                    $mail->Password   = 'SuperUser99++';                               // SMTP password
+                    $mail->Password   = $con_password_forEmail;                               // SMTP password
                     $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;         // Enable TLS encryption; `PHPMailer::ENCRYPTION_SMTPS` encouraged
                     $mail->Port       = 587;                                    // TCP port to connect to, use 465 for `PHPMailer::ENCRYPTION_SMTPS` above
 
