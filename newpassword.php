@@ -132,7 +132,7 @@ require 'includes/form_handlers/login_handler.php';
 
                     $mail->send();
 
-                    echo '<h4 style="color:darkgreeen;">Obcevkruhu.cz - email pro obnovu zaslán. Zkontrolujte si došlé zprávy v zadané emailové schránce.</h4>';
+                    echo '<h4 style="color:lightgreen;">Obcevkruhu.cz - email pro obnovu zaslán. Zkontrolujte si došlé zprávy v zadané emailové schránce.</h4>';
 
                 } catch (Exception $e) {
                     echo "<h4 style='color:coral;'>Obcevkruhu.cz - zpráva s obnovením nemohla být odeslána. Došlo k chybě: {$mail->ErrorInfo}</h4>";
