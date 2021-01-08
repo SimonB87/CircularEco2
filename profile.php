@@ -18,6 +18,7 @@ if(isset($_GET['profile_username'])) {
 	$username = $_GET['profile_username'];
 	$user_details_query = mysqli_query($con, "SELECT * FROM users WHERE username ='$username'");
 	$user_array = mysqli_fetch_array($user_details_query);
+	$userEmail = $user_array['email'];
 
 	$num_friends = (substr_count($user_array['friend_array'], ",")) - 1;
 }
@@ -55,6 +56,8 @@ if(isset($_POST['post_message'])) {
 ?>
 
 <title>Profil - <?php echo $username; ?> | Obce v kruhu.cz</title>
+<link rel="stylesheet" href="assets/css/formElementsStyle2019.min.css">
+
 </head>
 <body>
 
@@ -94,16 +97,16 @@ include("includes/head_designed_pageheader.php");
 				if($userLoggedIn != $username) {
 
 					if($logged_in_user_obj->isFriend($username)) {
-						echo '<input type="submit" name="remove_friend" class="danger" value="Remove Friend"><br>';
+						echo '<input type="submit" name="remove_friend" class="danger" value="Ostranit z přátel"><br>';
 					}
 					else if ($logged_in_user_obj->didReceiveRequest($username)) {
-						echo '<input type="submit" name="respond_request" class="warning" value="Respond to Request"><br>';
+						echo '<input type="submit" name="respond_request" class="warning" value="Odpovědět na požadavek"><br>';
 					}
 					else if ($logged_in_user_obj->didSendRequest($username)) {
-						echo '<input type="submit" name="" class="default" value="Request Sent"><br>';
+						echo '<input type="submit" name="" class="default" value="Požadavek zaslán"><br>';
 					}
 					else
-						echo '<input type="submit" name="add_friend" class="success" value="Add Friend"><br>';
+						echo '<input type="submit" name="add_friend" class="success" value="Přidat uživatele"><br>';
 
 				}
 
@@ -112,7 +115,7 @@ include("includes/head_designed_pageheader.php");
 
 			</form>
 
-			<input type="submit" class="deep_blue" data-toggle="modal" data-target="#post_form" value="Post Something">
+			<input type="submit" class="deep_blue" data-toggle="modal" data-target="#post_form" value="Pošlete vzkaz">
 
 			<?php
 			if($userLoggedIn != $username) {
@@ -142,8 +145,56 @@ include("includes/head_designed_pageheader.php");
 					<img id="loading" src="assets/images/loading.gif">
 				</div>
 
-				<div role="tabpanel" class="tab-pane fade" id="about_div">
+				<div role="tabpanel" class="tab-pane fade" id="about_div"> <!-- About section -->
+					<form method="post">
 
+					<?php
+					//show current user profile
+					$user_data_query = mysqli_query($con, "SELECT first_name, last_name, email, userRole FROM users WHERE username='$userLoggedIn'");
+					$row = mysqli_fetch_array($user_data_query);
+					$userLoggedInEmail = $row['email'];
+
+ 					if (!mysqli_set_charset($con, "utf8")) {
+						printf("Error loading character set utf8: %s\n", mysqli_error($con));
+						exit();
+					} else {
+						//printf("Current character set: %s\n", mysqli_character_set_name($con));//used only for testing
+					} 
+
+					$getUserProfileQuery = mysqli_query($con, "SELECT * FROM user_profile WHERE email='$userEmail'");
+
+					if(mysqli_num_rows($getUserProfileQuery) === 0 ) {
+						echo "<textarea id='user_profile' style='min-height: 5rem;' name='user_profile' placeholder='Uživatel nemá vyplněný profil' maxlength='2500'></textarea>";
+					}	else {
+						$row = mysqli_fetch_array( $getUserProfileQuery );
+						$user_profile = strip_tags( $row['profile'] );
+						echo "<textarea id='user_profile' style='min-height: 30vh;' name='user_profile' maxlength='2500'>" . $user_profile . "</textarea>";
+					}
+
+					if($userLoggedIn === $username) {
+						echo "<input id='submit' type='submit' name='submit' style='border: 0;background-color: rgba(0,0,0,0.25); margin: 1rem 0;' value='Aktualizovat profil'>";
+					}
+
+					?>
+
+					<?php
+					//hadle profile update 
+					if(isset($_POST['user_profile'])) {
+					
+						$updateUserProfile = strip_tags($_POST['user_profile']);
+
+						$update_password_query = mysqli_query($con, "UPDATE user_profile SET profile='$updateUserProfile' WHERE email='$userLoggedInEmail'");
+
+						if ($update_password_query) {
+							echo "<h4 style='color:lightgreen'>Profil úpěšně změněn. Aktualizujte stránku prohlížeče.</h4>";
+						} else {
+							echo "<h4 style='color:coral'>Pozor, profil nemohl být změněn.</h4>";
+						}
+
+					}
+					?>
+
+					</form>
 				</div>
 
 				<div role="tabpanel" class="tab-pane fade" id="messages_div"> <!-- 	<div role="tabpanel" class="tab-panel fade in active" id="messages_div">  -->
