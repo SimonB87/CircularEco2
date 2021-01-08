@@ -80,7 +80,7 @@ require 'includes/form_handlers/login_handler.php';
 
             if(isset($_POST["email"])) {
 
-              $emailTo = $_POST["email"];
+              $emailTo = strip_tags($_POST["email"]);
 
               //generate a request ID for new password
               $code = uniqid(true);
@@ -120,7 +120,7 @@ require 'includes/form_handlers/login_handler.php';
                     $mail->addReplyTo('no-reply@obcevkruhu.cz', 'No-reply - obcevkruhu.cz');
 
                     // Content
-                    $url_link = "http://" . $_SERVER["HTTP_HOST"] . dirname($_SERVER["PHP_SELF"]) . "/resetPassword.php?code=$code"; 
+                    $url_link = "https://" . $_SERVER["HTTP_HOST"] . dirname($_SERVER["PHP_SELF"]) . "/resetPassword.php?code=$code"; 
                     $mail->isHTML(true);                                  // Set email format to HTML
                     $mail->Subject = 'Obcevkruhu.cz - Požadavek na obnovu hesla';
                     $mail->Body    = "<div style='max-width: 550px; margin: 0 auto; line-height: 1.5rem; font-size: 0.9rem;'>" .
