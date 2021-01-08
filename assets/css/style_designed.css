@@ -990,6 +990,12 @@ button.btn.btn-info a {
     padding: 2rem;
   }
 
+  nav ul#websiteMobileMenu.menuVisible {
+    overflow-y: scroll;
+    transform: translateX(-2rem);
+    max-height: 100vh;
+}
+
   nav #websiteMobileMenu .websiteMobileMenu--Item {
     display: block;
     visibility: visible;
