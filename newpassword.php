@@ -24,10 +24,16 @@ require 'includes/form_handlers/login_handler.php';
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 	<script src="assets/js/register.js"></script>
 
+  <style>
+  .wrapper {
+    overflow-y: scroll;
+  }
+  </style>
+
 </head>
 <body>
 
-	<div id="wrapper"> 
+	<div id="wrapper" class="wrapper"> 
 
 		<div class="thewrapped">
 
