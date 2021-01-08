@@ -66,16 +66,16 @@ require 'includes/form_handlers/login_handler.php';
               $password_message =  "Pozor, stránka nebyla nalezena.";
             }
 
-            $code = $_GET["code"];
+            $code = strip_tags($_GET["code"]);
 
             $getEmailQuery = mysqli_query($con_password, "SELECT email, code FROM resetPassword WHERE code='$code'");
             if(mysqli_num_rows($getEmailQuery) == 0 ){
               $password_message =  "Pozor, stránka s požadavkem nebyla nalezena.";
             }
 
-            $row = mysqli_fetch_array($getEmailQuery);
-            $userEmail = $row['email'];
-            $reqCode = $row['code'];
+            $row = mysqli_fetch_array( $getEmailQuery );
+            $userEmail = strip_tags( $row['email'] );
+            $reqCode = strip_tags( $row['code'] );
 
 
             if(isset($_POST['new_password_1'])) {
