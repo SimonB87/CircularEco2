@@ -76,7 +76,7 @@ require 'includes/form_handlers/login_handler.php';
 						<br>
 						<a href="#" id="signup" class="signup">Nemáte účet? Registrovat lze zde!</a>
 						<br>
-						<a href="newpassword.php" id="forgotPassword" class="signup">Obnovení zapomenutého hesla</a>
+						<a href="newPassword.php" id="forgotPassword" class="signup">Obnovení zapomenutého hesla</a>
 					</form>
 
 				</div>
