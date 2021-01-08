@@ -63,14 +63,14 @@ require 'includes/form_handlers/login_handler.php';
 						<?php 
             require "config/config_password.php";
             if(!isset($_GET["code"])) {
-              $password_message =  "Stránka nebyla nalezena.";
+              $password_message =  "Pozor, stránka nebyla nalezena.";
             }
 
             $code = $_GET["code"];
 
             $getEmailQuery = mysqli_query($con_password, "SELECT email, code FROM resetPassword WHERE code='$code'");
             if(mysqli_num_rows($getEmailQuery) == 0 ){
-              $password_message =  "Stránka s požadavkem nebyla nalezena.";
+              $password_message =  "Pozor, stránka s požadavkem nebyla nalezena.";
             }
 
             $row = mysqli_fetch_array($getEmailQuery);
@@ -88,25 +88,30 @@ require 'includes/form_handlers/login_handler.php';
               //$password_query = mysqli_query($con, "SELECT password FROM users WHERE email='$userEmail'");
 
               if($new_password_1 === $new_password_2) {
-            
-              $update_password_query = mysqli_query($con_password, "UPDATE users SET password='$new_password_md5' WHERE email='$userEmail'");
-              
-              if($update_password_query) {
-                $delete_request = mysqli_query($con_password, "DELETE FROM resetPassword WHERE code='$code'");
-                $password_message = "Heslo bylo úspěšně změněno.<br>";
-              } else {
-                $password_message = "Heslo nemohlo být změněno.<br>";
-              }
+
+                if(strlen($new_password_1) <= 4) {
+                  $password_message = "Pozor, heslo musí mít více jak 4 znaky.<br>";
+                } else {
+
+                  $update_password_query = mysqli_query($con_password, "UPDATE users SET password='$new_password_md5' WHERE email='$userEmail'");
+
+                  if($update_password_query) {
+                    $delete_request = mysqli_query($con_password, "DELETE FROM resetPassword WHERE code='$code'");
+                    $password_message = "Heslo bylo úspěšně změněno.<br>";
+                  } else {
+                    $password_message = "Pozor, heslo nemohlo být změněno.<br>";
+                  }
+                }
 
               } else {
-                $password_message = "Obě zadaná hesla se musí schodovat!<br>";
+                $password_message = "Pozor, obě zadaná hesla se musí schodovat!<br>";
               }
 
             }
 
             //$password_message = "";
             echo "<h4>" . $password_message . "</h4><br>";
-            echo "<a href='register.php' class='signup'>Opět se přihlásit</a><br>";
+            echo "<a href='register.php' class='signup'>Přihlásit se</a><br>";
 
 						?>
 
