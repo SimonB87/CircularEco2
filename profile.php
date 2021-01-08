@@ -149,6 +149,7 @@ include("includes/head_designed_pageheader.php");
 					<form method="post">
 
 					<?php
+					require "config/config_password.php";
 					//show current user profile
 					$user_data_query = mysqli_query($con, "SELECT first_name, last_name, email, userRole FROM users WHERE username='$userLoggedIn'");
 					$row = mysqli_fetch_array($user_data_query);
@@ -183,12 +184,30 @@ include("includes/head_designed_pageheader.php");
 					
 						$updateUserProfile = strip_tags($_POST['user_profile']);
 
-						$update_password_query = mysqli_query($con, "UPDATE user_profile SET profile='$updateUserProfile' WHERE email='$userLoggedInEmail'");
+						$delete_request = mysqli_query($con, "DELETE FROM user_profile WHERE email='$userLoggedInEmail'");
 
-						if ($update_password_query) {
-							echo "<h4 style='color:lightgreen'>Profil úpěšně změněn. Aktualizujte stránku prohlížeče.</h4>";
+						$progress;
+
+						if(!$delete_request){
+							echo "<h4 style='color:coral'>Pozor, nedošlo ke smazání původního záznamu.</h4>";
+							echo "Chyba:" . mysqli_error();
+							$progress = false;
 						} else {
+							$progress = true;
+						}
+
+						$sqlQuery = "INSERT INTO user_profile (user, email, profile) VALUES ('$userLoggedIn', '$userLoggedInEmail', '$updateUserProfile')";
+						$insert_user_profile = mysqli_query($con, $sqlQuery );
+						if(!$insert_user_profile) {
 							echo "<h4 style='color:coral'>Pozor, profil nemohl být změněn.</h4>";
+							echo "Chyba:" . mysqli_error();
+							$progress = false;
+						} else {
+							$progress = true;
+						}
+
+						if ($progress) {
+							echo "<h4 style='color:lightgreen'>Profil byl upraven. Aktualizujte si stránku.</h4>";
 						}
 
 					}
